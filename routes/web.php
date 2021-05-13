@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login/{erro?}', 'LoginController@index')->name('login');
+Route::post('/login', 'LoginController@autenticar')->name('login');
 
 
 
-Route::prefix('')->group(function (){
-    Route::get('/home', 'HomeController@index');
+Route::middleware('login')->prefix('')->group(function (){
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/sair', 'LoginController@sair')->name('logout');
     /*
     Route::get('/cadastrar', 'HomeController@index');
     Route::get('/cadastrar', 'HomeController@index');
