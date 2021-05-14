@@ -3,24 +3,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-2">
-                    logo
+                    <img src="{{asset('/images/logo.png')}}" class="custom-logo">
                 </div>
                 <div class="col-sm-7">
                     <div class="menuarea">
                         <nav>
-                           <a href="{{ route('logout')}}">sair</a>
+                            <ul>
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresas</a>
+                                    <div class="dropdown-menu sub-menu">
+                                        <a href="{{route('nova-empresa')}}" ><li><img src="{{asset('/images/icon-Add.svg')}}" />Cadastrar empresa</li></a>
+                                        <a href="{{route('ver-empresas')}}"><li><img src="{{asset('/images/icon-Visualizar.svg')}}" />Ver empresas</li></a>
+                                    </div>
+                                </div>
+                                <li><a href="">Dashboard</a></li>
+                                <li><a href="">Notícias</a></li>
+                                <li><a href="">Sobre</a></li>
+                                <li><a href="">Fale conosco</a></li>
+                            </ul>
+                           <!-- <a href="{{ route('logout')}}">sair</a> -->
                         </nav>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="usuario">
-                        <img src="/assets/images/user.png">
+                        <img src="{{asset('/images/user.png')}}">
                         <div class="info">
                             <span>Seja bem-vindo</span><br/>
                             
                         </div>
                         <a href="">
-                            <img class="dado" src="/assets/images/icon-Arow.svg" />
+                            <img class="dado" src="{{asset('/images/icon-Arow.svg')}}" />
                         </a>
                     </div>
                 </div>

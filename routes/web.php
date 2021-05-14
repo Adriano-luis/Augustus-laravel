@@ -19,14 +19,22 @@ Route::post('/login', 'LoginController@autenticar')->name('login');
 
 
 Route::middleware('login')->prefix('')->group(function (){
+    //Geral
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sair', 'LoginController@sair')->name('logout');
+
+    //Empresas
+    Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
+    Route::get('/ver-empresas', 'VerEmpresasController@index')->name('ver-empresas');
+
+
+    //Noticias
+
+    //Oportunidades
+
     /*
-    Route::get('/cadastrar', 'HomeController@index');
-    Route::get('/cadastrar', 'HomeController@index');
     Route::get('/dashboard', 'HomeController@index');
     Route::get('/perfil-usuario', 'HomeController@index');
-    Route::get('/ver-empresas', 'HomeController@index');
     Route::get('/sobre', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
     Route::get('/noticias', 'HomeController@index');

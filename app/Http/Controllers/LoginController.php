@@ -49,10 +49,6 @@ class LoginController extends Controller
             return redirect()->route('home');
 
         }else {
-            /*echo "Usuário não existe..";
-            echo "<pre>";
-            print_r($senha);
-            echo "</pre>";*/
             return redirect()->route('login',['erro'=>1]);
         }
 

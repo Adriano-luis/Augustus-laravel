@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Noticia;
+use App\Empresa;
 
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('home');
+        $empresa = new Empresa();
+        $dadosEmpresa = $empresa->all()->toArray();
+        
+        return view('home',['dadosEmpresa'=>$dadosEmpresa]);
     }
 }
