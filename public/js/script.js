@@ -11,7 +11,7 @@ function iniciamodal(modalID){
 
 
 }
-const fale = document.querySelector('#menu-item-1434');
+const fale = document.querySelector('#menu-item');
     fale.addEventListener('click',function(e){
         iniciamodal('modal-contato');
         e.preventDefault();

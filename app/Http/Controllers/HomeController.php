@@ -1,17 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Noticia;
-use App\Empresa;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+
+use App\Noticia;
+use App\Empresa;
 
 class HomeController extends Controller
 {
     public function index(){
+        $noticias=Noticia::orderBy('post_date')->paginate(3);
+
+
         $empresa = new Empresa();
-        $dadosEmpresa = $empresa->all()->toArray();
+        $dadosEmpresa = $empresa->paginate(3);
+
         
-        return view('home',['dadosEmpresa'=>$dadosEmpresa]);
+        
+        return view('home',['dadosEmpresa'=>$dadosEmpresa,'noticias'=>$noticias]);
     }
+
+    
 }

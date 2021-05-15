@@ -41,7 +41,7 @@
                     </div>
                     <div class="row cadastrar">
                         <div class=" row colunas">
-                            <a href="/cadastrar-empresa">
+                            <a href="{{route('nova-empresa')}}">
                                 <div class="col botao">
                                     Cadastrar nova empresa
                                 </div>
@@ -57,33 +57,17 @@
                         <div class="title">
                             <h4>Seja bem-vindo</h4>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img src="{{asset('/images/foto3.jpg')}}" class="img">
+                        @foreach ($noticias as $noticia)
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="{{asset('/images/foto3.jpg')}}" class="img">
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="teste"><span class="title">{{$noticia->post_title}}</span><br/></div>
+                                    <span><a href="">Leia mais</a></span>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <span>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</span><br/>
-                                <span><a href="">Leia mais</a></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img src="{{asset('/images/foto3.jpg')}}" class="img">
-                            </div>
-                            <div class="col-sm-6">
-                                <span>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</span><br/>
-                                <span><a href="">Leia mais</a></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img src="{{asset('/images/foto3.jpg')}}" class="img">
-                            </div>
-                            <div class="col-sm-6">
-                                <span>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</span><br/>
-                                <span><a href="">Leia mais</a></span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -114,7 +98,7 @@
                     <div class="col-sm-4 opcoes">
                         <div class="nome">
                             <span>Nome da Empresa</span>
-                            <h4>{{$dado['nome']}}</h4>
+                            <h4>{{$dado->nome}}</h4>
                         </div>
                         <hr>
                         <div class="row menus">
@@ -123,8 +107,8 @@
                             <div class="relatorios"><a href=""><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
                         </div>
                         <div class="col par-2">
-                            <div class="editar"><a href=""><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
-                            <div class="excluir"><a href=""><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
+                            <div class="editar"><a href="" id="link-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
+                            <div class="excluir"><a href="" id="link-excluir"><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
                         </div>
                         </div>
                     </div>
@@ -157,8 +141,6 @@
                     </div>
                 </div>
                 @endforeach
-                
-                
             </div>
         </div>
         <div class="paginacao">

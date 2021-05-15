@@ -2,12 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <img src="/assets/images/logo-augustus-rodape.svg" />
+                <a href="{{route('home')}}"><img src="{{asset('/images/logo-augustus-rodape.svg')}}" /></a>
             </div>
             <div class="col-sm-8">
                 <div class="menuarea">
                     <nav>
-                    
+                        <ul>
+                            <li><a href="{{route('ver-empresas')}}">Empresas</a></li>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Notícias</a></li>
+                            <li><a href="">Sobre</a></li>
+                            <li><a href="" id="menu-item">Fale conosco</a></li>
+                        </ul>
                     </nav>
                 </div>
             </div>
