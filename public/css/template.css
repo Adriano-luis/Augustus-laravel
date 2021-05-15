@@ -295,7 +295,7 @@ footer .info{
     left: 0px;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1500;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
