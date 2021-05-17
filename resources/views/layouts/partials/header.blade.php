@@ -21,7 +21,7 @@
                                 <li><a href="">Sobre</a></li>
                                 <li><a href="" id="menu-item">Fale conosco</a></li>
                             </ul>
-                           <!-- <a href="{{ route('logout')}}">sair</a> -->
+                            <a href="{{ route('logout')}}">sair</a> 
                         </nav>
                     </div>
                 </div>

@@ -879,6 +879,7 @@ footer .info{
 
 .home .empresas .cartao .col-sm-4{
     max-width: 285px;
+    max-height: 258px;
 }
 
 .home .empresas .cartao .opcoes .nome span{
@@ -994,28 +995,46 @@ footer .info{
 .home .paginacao{
     width: 100%;
     max-width: 940px;
-    margin-left: 203px;
     text-align: center;
     margin-top: 45px;
 }
 
-.home .paginacao .page-numbers{
-    margin: 5px;
-    color: #89879E;
+.home .pagination{
+    padding-left: 570px;
 }
 
-.home .paginacao .page-numbers.current{
+.home .pagination .page-item.active .page-link{
     margin: 5px;
     padding: 5px 10px 5px 10px;
     background-color: #6694FB;
     border-radius: 5px 5px 10px 5px;
+    border-color: rgba(0, 0, 0, 0.0);
     color: #FFFFFF;
 }
 
-.home .paginacao .prev,
-.home .paginacao .next{
-    color: #6694FB;
-    font-weight: 700;
+.home .pagination .page-item .page-link{
+    margin: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 5px 0px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #89879E;
+    border: 0;
+
+}
+
+.home .pagination .page-item:first-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
+}
+
+.home .pagination .page-item:last-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
 }
 
 .home .marca img{

@@ -17,7 +17,7 @@
                                 <div class="col-sm-6 cadastradas">
                                     <img class="img-cadastradas" src="{{asset('/images/icon-Empresa.svg')}}">
                                     <div class="info-cadastradas">
-                                        <h2>14</h2>
+                                        <h2>{{$qtEmpresas}}</h2>
                                         Empresas cadastradas
                                     </div>
                                     <a href="/ver-empresas">
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="paginacao">
-
+            {{$dadosEmpresa->links()}}
         </div><br/><br/>
         <div class="marca">
         <img src="{{asset('/images/img-augustus-fundo.png')}}">
