@@ -20,7 +20,7 @@
                                         <h2>{{$qtEmpresas}}</h2>
                                         Empresas cadastradas
                                     </div>
-                                    <a href="/ver-empresas">
+                                    <a href="{{ route('ver-empresas')}}">
                                         <div class="col botao-cadastradas">
                                             Ver empresas
                                         </div>
@@ -116,7 +116,7 @@
                         <div class="row dados">
                             <img src="{{asset('/images/icon-informacoes.svg')}}">
                             <div class="porcentagem-info">
-                                <h3>20%</h3>
+                                <h3>{{$porcentagemConcluido}}%</h3>
                             </div>
                             <div class="info-texto">
                                 DAS INFORMAÇÕES<br/> FORNECIDAS

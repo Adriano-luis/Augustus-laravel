@@ -16,7 +16,7 @@
                             <div class="col-sm-6 cadastradas">
                                 <div class="row">
                                     <img class="img-cadastradas" src="{{asset('/images/icon-Empresa.svg')}}">
-                                    <h1>14</h1>
+                                    <h1>{{$qtEmpresas}}</h1>
                                     <div class="info-cadastradas">
                                         Empresas cadastradas
                                     </div>
@@ -26,9 +26,11 @@
                     </div>
                     <div class="row cadastrar">
                         <div class=" row colunas">
-                            <div class="col botao">
-                                Cadastrar nova empresa
-                            </div>
+                            <a href="{{route('nova-empresa')}}">
+                                <div class="col botao">
+                                    Cadastrar nova empresa
+                                </div>
+                            </a>
                             <div class="col info">
                                 Cadastre sua empresa e descubra quais <span>oportunidades tributárias</span>, tanto juridicas como admistrativas sua empresa possui.
                             </div>
@@ -58,20 +60,21 @@
                 </div>
             </div>
             <div class="cartoes">
+                @foreach ($dadosEmpresa as $dado)
                 <div class="row cartao">
                     <div class="col-sm-4 opcoes">
                         <div class="nome">
                             <span>Nome da Empresa</span>
-                            <h4>Empresa fictícia 001</h4>
+                            <h4>{{$dado->nome}}</h4>
                         </div>
                         <hr>
                         <div class="row menus">
                         <div class="col par-1">
-                            <div class="visualizar"><a href="" id="link-visualizar"><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
-                            <div class="relatorios"><a href=""  id="link-relatorios"><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
+                            <div class="visualizar"><a href=""><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
+                            <div class="relatorios"><a href=""><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
                         </div>
                         <div class="col par-2">
-                            <div class="editar"><a href=""  id="link-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
+                            <div class="editar"><a href="" id="link-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
                             <div class="excluir"><a href="" id="link-excluir"><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
                         </div>
                         </div>
@@ -104,98 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row cartao">
-                    <div class="col-sm-4 opcoes">
-                        <div class="nome">
-                            <span>Nome da Empresa</span>
-                            <h4>Empresa fictícia 002</h4>
-                        </div>
-                        <hr>
-                        <div class="row menus">
-                        <div class="col par-1">
-                            <div class="visualizar"><a href=""><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
-                            <div class="relatorios"><a href=""><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
-                        </div>
-                        <div class="col par-2">
-                            <div class="editar"><a href=""><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
-                            <div class="excluir"><a href=""><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 info">
-                        <div class="row dados">
-                            <img src="{{asset('/images/icon-informacoes.svg')}}">
-                            <div class="porcentagem-info">
-                                <h3>60%</h3>
-                            </div>
-                            <div class="info-texto">
-                                DAS INFORMAÇÕES<br/> FORNECIDAS
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar color-2" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="atualizar"><a href="">Atualizar informações</a></div>
-                    </div>
-                    <div class="col-sm-4 oportunidades">
-                        <div class="row dados">
-                            <img src="{{asset('/images/icon-Oportunidades.svg')}}">
-                            <div class="porcentagem-opo">
-                                <h3>08</h3>
-                            </div>
-                            <div class="opo-texto">
-                                OPORTUNIDADES<br/> GERADAS
-                            </div>
-                            <div class="ver"><a href="">Ver oportunidades</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row cartao">
-                    <div class="col-sm-4 opcoes">
-                        <div class="nome">
-                            <span>Nome da Empresa</span>
-                            <h4>Empresa fictícia 003</h4>
-                        </div>
-                        <hr>
-                        <div class="row menus">
-                        <div class="col par-1">
-                            <div class="visualizar"><a href=""><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
-                            <div class="relatorios"><a href=""><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
-                        </div>
-                        <div class="col par-2">
-                            <div class="editar"><a href=""><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
-                            <div class="excluir"><a href=""><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 info">
-                        <div class="row dados">
-                            <img src="{{asset('/images/icon-informacoes.svg')}}">
-                            <div class="porcentagem-info">
-                                <h3>100%</h3>
-                            </div>
-                            <div class="info-texto">
-                                DAS INFORMAÇÕES<br/> FORNECIDAS
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar color-3" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="atualizar"><a href="">Atualizar informações</a></div>
-                    </div>
-                    <div class="col-sm-4 oportunidades">
-                        <div class="row dados">
-                            <img src="{{asset('/images/icon-Oportunidades.svg')}}">
-                            <div class="porcentagem-opo">
-                                <h3>15</h3>
-                            </div>
-                            <div class="opo-texto">
-                                OPORTUNIDADES<br/> GERADAS
-                            </div>
-                            <div class="ver"><a href="">Ver oportunidades</a></div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="paginacao">

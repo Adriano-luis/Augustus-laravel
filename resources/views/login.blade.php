@@ -7,7 +7,7 @@
                     <div class="retangulo">
                         <div class="form-area">
                             <div class="logo">
-                                logo
+                                <img src="{{asset('/images/logo.png')}}" class="logo"/>
                             </div>
                             <div class="form">
                                 <form action="{{route('login')}}" method="POST">

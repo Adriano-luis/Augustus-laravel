@@ -21,20 +21,23 @@
                                 <li><a href="">Sobre</a></li>
                                 <li><a href="" id="menu-item">Fale conosco</a></li>
                             </ul>
-                            <a href="{{ route('logout')}}">sair</a> 
                         </nav>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="usuario">
-                        <img src="{{asset('/images/user.png')}}">
+                        <img src="{{asset('/images/user.png')}}" class="avatar">
                         <div class="info">
                             <span>Seja bem-vindo</span><br/>
-                            
+                            <p>{{$_SESSION['nome']}}</p>
                         </div>
-                        <a href="">
-                            <img class="dado" src="{{asset('/images/icon-Arow.svg')}}" />
-                        </a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="dado" src="{{asset('/images/icon-Arow.svg')}}" /></a>
+                            <div class="dropdown-menu sub-menu">
+                                <a href="{{route('nova-empresa')}}"><li class="primeiro"><img src="{{asset('/images/icon-Profile.svg')}}" />Perfil</li></a>
+                                <a href="{{ route('logout')}}"><li><img src="{{asset('/images/icon-Logout.svg')}}" />Sair</li></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
