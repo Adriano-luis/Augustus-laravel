@@ -17,8 +17,8 @@
                                     </div>
                                 </div>
                                 <li><a href="">Dashboard</a></li>
-                                <li><a href="">Notícias</a></li>
-                                <li><a href="">Sobre</a></li>
+                                <li><a href="{{route('noticias')}}">Notícias</a></li>
+                                <li><a href="{{route('sobre')}}">Sobre</a></li>
                                 <li><a href="" id="menu-item">Fale conosco</a></li>
                             </ul>
                         </nav>

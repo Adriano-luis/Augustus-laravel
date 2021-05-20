@@ -22,6 +22,7 @@ Route::middleware('login')->prefix('')->group(function (){
     //Geral
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sair', 'LoginController@sair')->name('logout');
+    Route::get('/sobre', 'HomeController@sobre')->name('sobre');
 
     //Empresas
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
@@ -29,6 +30,8 @@ Route::middleware('login')->prefix('')->group(function (){
 
 
     //Noticias
+    Route::get('/noticias', 'NoticiaController@index')->name('noticias');
+    Route::get('/forneca-informacoes', 'FornecaInformacoesController@index')->name('forneca-informacoes');
 
     //Oportunidades
 
@@ -37,7 +40,7 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/perfil-usuario', 'HomeController@index');
     Route::get('/sobre', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
-    Route::get('/noticias', 'HomeController@index');
+   
     Route::get('/noticia', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');

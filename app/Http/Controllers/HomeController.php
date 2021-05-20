@@ -77,5 +77,9 @@ class HomeController extends Controller
         ]);
     }
 
+    public function sobre(){
+        return view('sobre');
+    }
+
     
 }
