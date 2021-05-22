@@ -35,9 +35,11 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Oportunidades
 
+    //Usuários
+    Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
+
     /*
     Route::get('/dashboard', 'HomeController@index');
-    Route::get('/perfil-usuario', 'HomeController@index');
     Route::get('/sobre', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
    
