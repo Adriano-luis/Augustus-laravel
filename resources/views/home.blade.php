@@ -29,7 +29,7 @@
                                 <div class="col-sm-6 geradas">
                                     <img class="img-geradas" src="{{asset('/images/icon-Estrela-Oportunidade.svg')}}">
                                     <div class="info-geradas">
-                                        <h2>72</h2>
+                                        <h2>{{$totalOportunidades}}</h2>
                                         Oportunidades geradas
                                     </div>
                                     <div class="col botao-geradas">
@@ -117,14 +117,14 @@
                         <div class="row dados">
                             <img src="{{asset('/images/icon-informacoes.svg')}}">
                             <div class="porcentagem-info">
-                                <h3>{{round($porcentagemConcluido[$cont])}}%</h3>
+                                <h3 id="porcentagem">{{round($porcentagemConcluido[$cont])}}%</h3>
                             </div>
                             <div class="info-texto">
                                 DAS INFORMAÇÕES<br/> FORNECIDAS
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar color" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="atualizar"><a href="">Atualizar informações</a></div>
                     </div>
@@ -132,7 +132,7 @@
                         <div class="row dados">
                             <img src="{{asset('/images/icon-Oportunidades.svg')}}">
                             <div class="porcentagem-opo">
-                                <h3>02</h3>
+                                <h3>{{$oportunidades[$cont]}}</h3>
                             </div>
                             <div class="opo-texto">
                                 OPORTUNIDADES<br/> GERADAS
