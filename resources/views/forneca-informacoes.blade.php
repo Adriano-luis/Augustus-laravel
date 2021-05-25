@@ -44,57 +44,56 @@
                 <img src="{{asset('/images/img-Informacoes.png')}}" class="img-informacoes">
             </div>
             <div class="topico-1">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ramo de Atuação</a>
-                    <div class="dropdown-menu desc">
-                        <a href="{{route('nova-empresa')}}" ><li class="primeiro"><img src="{{asset('/images/icon-Add.svg')}}" />Cadastrar empresa</li></a>
-                        <a href="{{route('ver-empresas')}}"><li><img src="{{asset('/images/icon-Visualizar.svg')}}" />Ver empresas</li></a>
+                <div class="dropdown dropright mar-1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />Ramo de Atuação</a>
+                    <div class="dropdown-menu menu-1">
+
                     </div>
                 </div>
             </div>
             <div class="topico-2">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tributação</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-2">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />Tributação</a>
+                    <div class="dropdown-menu menu-2">
 
                     </div>
                 </div>
             </div>
             <div class="topico-3">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Número de funcionários</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-3">
+                    <a href="#" class="dropdown-toggle drop-3" data-toggle="dropdown"><img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />Número de<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;funcionários</a>
+                    <div class="dropdown-menu menu-3">
                     </div>
                 </div>
             </div>
             <div class="topico-4">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Previdencia</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-4">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Previdencia.svg')}}" />Previdencia</a>
+                    <div class="dropdown-menu menu-4">
                 
                     </div>
                 </div>
             </div>
             <div class="topico-5">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comércio Exterior</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-5">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />Comércio Exterior</a>
+                    <div class="dropdown-menu menu-5">
                         
                     </div>
                 </div>
             </div>
             <div class="topico-6">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relacionamento</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-6">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Relacionamento.svg')}}" />Relacionamento</a>
+                    <div class="dropdown-menu menu-6">
                         
                     </div>
                 </div>
             </div>
             <div class="topico-7">
-                <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outros</a>
-                    <div class="dropdown-menu desc">
+                <div class="dropdown dropright mar-7">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Outros.svg')}}" />Outros</a>
+                    <div class="dropdown-menu menu-7">
                         
                     </div>
                 </div>

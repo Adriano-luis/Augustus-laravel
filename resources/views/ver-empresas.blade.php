@@ -60,6 +60,7 @@
                 </div>
             </div>
             <div class="cartoes">
+                <?php $cont = 0; ?>
                 @foreach ($dadosEmpresa as $dado)
                 <div class="row cartao">
                     <div class="col-sm-4 opcoes">
@@ -83,14 +84,14 @@
                         <div class="row dados">
                             <img src="{{asset('/images/icon-informacoes.svg')}}">
                             <div class="porcentagem-info">
-                                <h3>20%</h3>
+                                <h3 id="porcentagem">{{round($porcentagemConcluido[$cont])}}%</h3>
                             </div>
                             <div class="info-texto">
                                 DAS INFORMAÇÕES<br/> FORNECIDAS
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar color" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div id="barra-{{$cont}}"class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="atualizar"><a href="">Atualizar informações</a></div>
                     </div>
@@ -98,7 +99,7 @@
                         <div class="row dados">
                             <img src="{{asset('/images/icon-Oportunidades.svg')}}">
                             <div class="porcentagem-opo">
-                                <h3>02</h3>
+                                <h3>{{$oportunidades[$cont]}}</h3>
                             </div>
                             <div class="opo-texto">
                                 OPORTUNIDADES<br/> GERADAS
@@ -107,6 +108,7 @@
                         </div>
                     </div>
                 </div>
+                <?php $cont++ ?>
                 @endforeach
             </div>
         </div>

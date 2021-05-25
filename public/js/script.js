@@ -1,3 +1,4 @@
+$(document).ready(function(){
 //MODAL
 function iniciamodal(modalID){
     const modal = document.getElementById(modalID);
@@ -37,19 +38,24 @@ const excluir = document.querySelector('#link-excluir');
 
 //PROGRESSO BARRA
 function corProgresso(empresas,i){
-    let barra = document.querySelector('.progress-bar');
+    let barra = document.querySelector('#barra-'+[i]);
     empresa = parseInt(empresas.innerHTML,10);
     if(empresa<32){
         barra.classList.add('color');
-        alert(empresa+'color');
-    }else if(empresa > 32 && empresa<66){
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+       
+    }else if(empresa > 32 && empresa<99){
         barra.classList.add('color-2');
-        alert(empresa+'color-2');
-    }else if(empresa>66){
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+        
+    }else if(empresa>99){
         barra.classList.add('color-3');
-        alert(empresa+'color-3');
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+        
     }
 }
 
 let progresso = document.querySelectorAll('#porcentagem');
 progresso.forEach(corProgresso);
+
+});
