@@ -18,12 +18,16 @@ class FornecaInformacoesController extends Controller
             $oportunidades = $_SESSION['oportunidades'];
             
             $empresa=Empresa::find($idEmpresa);
+
+            $perguntas=Pergunta::all();
+            //$pergunta = $perguntas->where('id',341);
+            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
         }
 
-        return view('forneca-informacoes',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont]]);
+        return view('forneca-informacoes.ramo-de-atuacao.ramo-de-atuacao',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+        'oportunidades'=>$oportunidades[$cont],'perguntas'=>$perguntas]);
     }
 }

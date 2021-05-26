@@ -1542,9 +1542,10 @@ footer .info{
 
 .forneca .dropdown-menu.menu-1{
     position:absolute !important;
+    display: block !important;
     top: -23px !important;
     left: 45px !important;
-    padding-left: 0px !important;
+    padding: 20px 40px 25px 45px !important;
     min-width: 43rem;
     height: 611px !important;
     box-shadow: none !important;
@@ -1560,6 +1561,51 @@ footer .info{
     margin-left: 0px;
     margin-right: 20px;
  }
+
+ .forneca .menu-1 h4{
+    color: #2C2858;
+ }
+    
+.forneca .menu-1 .num-progresso {
+    width: 28px;
+    height: 25px;
+    margin-top: -10px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-1 .row .checkbox-ramo{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 75px;
+}
+
+.forneca .menu-1 .check-option{
+    width: 330px;
+    height: 35px;
+    margin-bottom: 15px;
+    padding: 6px 0px 0px 11px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    border-radius: 5px;
+}
+
+ input[type=checkbox]{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 1px;
+}
+
+.forneca .menu-1 .check-option span{
+    margin-left: 40px;
+}
 
 
     /*MENU-2*/
@@ -2390,8 +2436,12 @@ input[type="file"]{
     background-color:  #FBC866;
 }
 
- .progress-bar.color-3{
+.progress-bar.color-3{
     background-color:  #00B976;
+}
+
+.progress-bar.color-perguntas{
+    background-color:  #6694FB;
 }
 
 .ver-empresas .empresas .cartao .oportunidades .progress{

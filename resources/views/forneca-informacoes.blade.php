@@ -47,8 +47,7 @@
                 <div class="dropdown dropright mar-1">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />Ramo de Atuação</a>
                     <div class="dropdown-menu menu-1">
-                        <h3></h3>
-
+                        @yield('ramo-de-atuacao')
                     </div>
                 </div>
             </div>
