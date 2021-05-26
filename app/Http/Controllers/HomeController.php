@@ -36,6 +36,8 @@ class HomeController extends Controller
             $porcentageminformacoes = ($numRespostas*100)/$contadorPergunta;
             array_push($porcentagemConcluido,$porcentageminformacoes);
         }
+
+        $_SESSION['porcentagem'] = $porcentagemConcluido;
            
         //Oportunidades
         if($qtEmpresas > 0){
@@ -83,6 +85,8 @@ class HomeController extends Controller
                 $totalOportunidades= $totalOportunidades + $listaOportunidade[$k];
             }
         }
+        
+        $_SESSION['oportunidades'] = $listaOportunidade;
 
         return view('home',['dadosEmpresa'=>$dadosEmpresa,'noticias'=>$noticias,'qtEmpresas'=>$qtEmpresas,
             'porcentagemConcluido'=>$porcentagemConcluido,'oportunidades'=>$listaOportunidade,

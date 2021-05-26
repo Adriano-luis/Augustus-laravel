@@ -10,27 +10,27 @@
                      tanto jurídicas como administrativas, que a sua empresa possui.</p>
 
                 <p class="nome"><span>Informações da empresa:</span></p>
-                <div class="empresa">Empresa</div>
+                <div class="empresa">{{$empresa->nome}}</div>
                 <div class="row deg-fundo"></div>
                 <div class="row teste2">
                     <div class="col-sm-5 info">
                         <div class="row dados">
                             <div class="porcentagem-info">
-                                <h3>10%</h3>
+                                <h3 id="porcentagem">{{round($porcentagem)}}%</h3>
                             </div>
                             <div class="info-texto">
                                 DAS INFORMAÇÕES<br/> FORNECIDAS
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar color" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div id="barra-0" class="progress-bar " role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-sm-4 oportunidades">
                         <div class="row dados">
                             <img src="{{asset('/images/icon-Oportunidades.svg')}}">
                             <div class="porcentagem-opo">
-                                <h3>02</h3>
+                                <h3>{{$oportunidades}}</h3>
                             </div>
                             <div class="opo-texto">
                                 OPORTUNIDADES<br/> GERADAS
@@ -47,6 +47,7 @@
                 <div class="dropdown dropright mar-1">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />Ramo de Atuação</a>
                     <div class="dropdown-menu menu-1">
+                        <h3></h3>
 
                     </div>
                 </div>
