@@ -86,7 +86,7 @@
     margin-bottom: 20px;
 }
 
-.form input[type="checkbox"]{
+.form .check-login{
     margin-right: 15px;
 }
 
@@ -1516,15 +1516,12 @@ footer .info{
     background-color: #faf8f8;
 }
 
-.forneca .dropdown.dropright a{
+.forneca .text{
     text-decoration: none;
     color: #2C2858;
     font-weight: 500;
 }
 
-.dropright .dropdown-toggle::after {
-    display: none;
-}
 
     /*MENU-1*/
 .forneca .topico-1{
@@ -1532,27 +1529,30 @@ footer .info{
     top: 460px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-1{
-    position:absolute !important;
-    top: -23px !important;
-    left: 45px !important;
-    padding: 20px 40px 25px 45px !important;
+    position: absolute !important;
+    display: block;
+    top: -2px !important;
+    left: 230px !important;
+    padding: 20px 21px 25px 25px !important;
     min-width: 43rem;
     height: 611px !important;
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-1 {
+.forneca .mar-1 {
     margin-top: 13px;
 }
 
@@ -1594,7 +1594,7 @@ footer .info{
     border-radius: 5px;
 }
 
- input[type=checkbox]{
+ .forneca .menu-1 .check-option-{
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1621,6 +1621,23 @@ footer .info{
     background: #6694FB;
     border-radius: 8px 8px 20px 8px;
 }
+.forneca .menu-1 .proxima-submit{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 559px;
+    right: 56px;
+    padding-top: 0px;
+    padding-left: 32px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+    border: none;
+    outline: none;
+}
 .forneca .menu-1 .anterior{
     position: relative;
     width: 100%;
@@ -1637,6 +1654,18 @@ footer .info{
     border-radius: 8px 8px 20px 8px;
 }
 
+.forneca .menu-1 .topo-ramo-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-1 .row.ramo-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
 
     /*MENU-2*/
 .forneca .topico-2{
@@ -1644,16 +1673,18 @@ footer .info{
     top: 548px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-2{
     position:absolute !important;
+    display: hidden;
     top: -109px !important;
     left: 71px !important;
     padding-left: 0px !important;
@@ -1662,9 +1693,10 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-2 {
+.forneca .mar-2 {
     margin-top: 13px;
 }
 
@@ -1679,16 +1711,19 @@ footer .info{
     top: 640px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    line-height: 0px;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-3{
     position:absolute !important;
+    display: hidden;
     top: -156px !important;
     left: 62px !important;
     padding-left: 0px !important;
@@ -1697,13 +1732,14 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
 .forneca .dropdown-toggle.drop-3 {
     line-height: 0px !important;
 }
 
-.forneca .dropdown.dropright.mar-3 {
+.forneca .mar-3 {
     margin-top: 8px;
 }
 
@@ -1718,16 +1754,18 @@ footer .info{
     top: 730px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-4{
     position:absolute !important;
+    display: hidden;
     top: -156px !important;
     left: 68px !important;
     padding-left: 0px !important;
@@ -1736,9 +1774,10 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-4 {
+.forneca .mar-4 {
     margin-top: 18px;
 }
 
@@ -1750,15 +1789,17 @@ footer .info{
     /*MENU-5*/
 .forneca .topico-5{
     position:absolute;
+    display: hidden;
     top: 820px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-5{
@@ -1771,9 +1812,10 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-5 {
+.forneca .mar-5 {
     margin-top: 13px;
 }
 
@@ -1784,16 +1826,18 @@ footer .info{
     top: 910px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-6{
     position:absolute !important;
+    display: hidden;
     top: -156px !important;
     left: 51px !important;
     padding-left: 0px !important;
@@ -1802,9 +1846,10 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-6 {
+.forneca .mar-6 {
     margin-top: 13px;
 }
 
@@ -1815,16 +1860,18 @@ footer .info{
     top: 1000px;
     left: 16vw;
     padding-left: 0px;
-    width: 240px;
+    width: 215px;
     height: 70px;
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
     background-color: #E9E9E9;
     text-align: center;
+    cursor: pointer;
 }
 
 .forneca .dropdown-menu.menu-7{
     position:absolute !important;
+    display: hidden;
     top: -156px !important;
     left: 85px !important;
     padding-left: 0px !important;
@@ -1833,9 +1880,10 @@ footer .info{
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
+    cursor:default;
 }
 
-.forneca .dropdown.dropright.mar-7{
+.forneca .mar-7{
     margin-top: 13px;
 }
 

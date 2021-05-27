@@ -28,10 +28,15 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
     Route::get('/ver-empresas', 'VerEmpresasController@index')->name('ver-empresas');
 
+    Route::prefix('/forneca-informacoes')->group(function (){
+    Route::get('/', 'FornecaInformacoesController@index')->name('forneca-informacoes');
+    Route::post('/', 'FornecaInformacoesController@indexPost')->name('indexPost');
+    Route::get('/tributacao', 'FornecaInformacoesController@tributacao')->name('tributacao');
+    });
 
     //Noticias
     Route::get('/noticias', 'NoticiaController@index')->name('noticias');
-    Route::get('/forneca-informacoes', 'FornecaInformacoesController@index')->name('forneca-informacoes');
+   
 
     //Oportunidades
 

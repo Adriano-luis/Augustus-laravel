@@ -18,7 +18,7 @@
                                     <input type="email" name="emaiLogin" id="email-login" autocomplete="off" placeholder="Seu email"/>
                                     <input type="password" name="passwordLogin" id="password-login" autocomplete="off" placeholder="Senha"/><br/>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="termos" required/>Aceito os <a href="/termos"> Termos de uso</a>
+                                        <input type="checkbox" name="termos" required class="check-login"/>Aceito os <a href="/termos"> Termos de uso</a>
                                     </div>
                                     <input type="submit"  value="Entrar"/>
                                     <label class="esqueceu">Esqueceu sua senha?</label>

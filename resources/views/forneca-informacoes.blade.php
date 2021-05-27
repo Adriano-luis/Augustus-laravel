@@ -44,55 +44,63 @@
                 <img src="{{asset('/images/img-Informacoes.png')}}" class="img-informacoes">
             </div>
             <div class="topico-1">
-                <div class="dropdown dropright mar-1">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />Ramo de Atuação</a>
+                <div class="drop-1 mar-1">
+                    <img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />
+                    <span class='text'>Ramo de Atuação</span>
                     <div class="dropdown-menu menu-1">
                         @yield('ramo-de-atuacao')
                     </div>
                 </div>
             </div>
             <div class="topico-2">
-                <div class="dropdown dropright mar-2">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />Tributação</a>
+                <div class="drop-2 mar-2">
+                    <img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />
+                    <span class='text'>Tributação</span>
                     <div class="dropdown-menu menu-2">
 
                     </div>
                 </div>
             </div>
             <div class="topico-3">
-                <div class="dropdown dropright mar-3">
-                    <a href="#" class="dropdown-toggle drop-3" data-toggle="dropdown"><img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />Número de<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;funcionários</a>
+                <div class="drop-3 mar-3">
+                    <img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />
+                    <span class='text'>Número de<br>&nbsp; &nbsp; &nbsp; &nbsp;funcionários</a></span>
                     <div class="dropdown-menu menu-3">
+
                     </div>
                 </div>
             </div>
             <div class="topico-4">
-                <div class="dropdown dropright mar-4">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Previdencia.svg')}}" />Previdencia</a>
+                <div class="drop-4 mar-4">
+                    <img src="{{asset('/images/icon-Previdencia.svg')}}" />
+                    <span class='text'>Previdencia</span>
                     <div class="dropdown-menu menu-4">
                 
                     </div>
                 </div>
             </div>
             <div class="topico-5">
-                <div class="dropdown dropright mar-5">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />Comércio Exterior</a>
+                <div class="drop-5 mar-5">
+                    <img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />
+                    <span class='text'>Comércio Exterior</span>
                     <div class="dropdown-menu menu-5">
                         
                     </div>
                 </div>
             </div>
             <div class="topico-6">
-                <div class="dropdown dropright mar-6">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Relacionamento.svg')}}" />Relacionamento</a>
+                <div class="drop-6 mar-6">
+                    <img src="{{asset('/images/icon-Relacionamento.svg')}}" />
+                    <span class='text'>Relacionamento</span>
                     <div class="dropdown-menu menu-6">
                         
                     </div>
                 </div>
             </div>
             <div class="topico-7">
-                <div class="dropdown dropright mar-7">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/images/icon-Outros.svg')}}" />Outros</a>
+                <div class="drop-7 mar-7">
+                    <img src="{{asset('/images/icon-Outros.svg')}}" />
+                    <span class='text'>Outros</span>
                     <div class="dropdown-menu menu-7">
                         
                     </div>
