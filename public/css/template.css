@@ -1542,7 +1542,6 @@ footer .info{
 
 .forneca .dropdown-menu.menu-1{
     position:absolute !important;
-    display: block !important;
     top: -23px !important;
     left: 45px !important;
     padding: 20px 40px 25px 45px !important;
@@ -1605,6 +1604,37 @@ footer .info{
 
 .forneca .menu-1 .check-option span{
     margin-left: 40px;
+}
+
+.forneca .menu-1 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+.forneca .menu-1 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
 }
 
 

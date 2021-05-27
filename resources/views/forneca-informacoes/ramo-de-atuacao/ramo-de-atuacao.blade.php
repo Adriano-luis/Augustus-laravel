@@ -2,7 +2,7 @@
 
 @section('ramo-de-atuacao')
     <!-- TELA 1 -->
-    <section class="ramo-tela-1">
+    <section id="ramo-tela-1">
         <?php $pergunta = $perguntas->where('id',329)?>
         <h4>{{$pergunta[8]->post_title}}</h4>   
         <p>Passo 1 de 4</p>
@@ -37,11 +37,13 @@
                 </div>
             </div>
         </form>
+
+        <div class="proxima next-1">Próxima</div>
     </section>
 
 
     <!-- TELA 2 -->
-    <section class="ramo-tela-1">
+    <section id="ramo-tela-2">
         <?php $pergunta = $perguntas->where('id',313) ?>
         <h4>{{$pergunta[7]->post_title}}</h4>   
         <p>Passo 2 de 4</p>
@@ -76,11 +78,12 @@
                 </div>
             </div>
         </form>
+        <div class="anterior previous-2">Voltar</div><div class="proxima next-2">Próxima</div>
     </section>
 
 
     <!-- TELA 3 -->
-    <section class="ramo-tela-3">
+    <section id="ramo-tela-3">
         <?php $pergunta = $perguntas->where('id',302) ?>
         <h4>{{$pergunta[6]->post_title}}</h4>   
         <p>Passo 3 de 4</p>
@@ -115,11 +118,12 @@
                 </div>
             </div>
         </form>
+        <div class="anterior previous-3">Voltar</div><div class="proxima next-3">Próxima</div>
     </section>
 
 
     <!-- TELA 4 -->
-    <section class="ramo-tela-4">
+    <section id="ramo-tela-4">
         <?php $pergunta = $perguntas->where('id',341) ?>
         <h4>{{$pergunta[9]->post_title}}</h4>   
         <p>Passo 4 de 4</p>
@@ -154,5 +158,6 @@
                 </div>
             </div>
         </form>
+        <div class="anterior previous-4">Voltar</div><div class="proxima next-4">Próxima</div>
     </section>
 @endsection
