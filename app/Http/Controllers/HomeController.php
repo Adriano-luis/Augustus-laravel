@@ -37,8 +37,9 @@ class HomeController extends Controller
             array_push($porcentagemConcluido,$porcentageminformacoes);
         }
 
-        $_SESSION['porcentagem'] = $porcentagemConcluido;
-           
+        if(isset($porcentagemConcluido) && $porcentagemConcluido != ''){
+            $_SESSION['porcentagem'] = $porcentagemConcluido;
+        }
         //Oportunidades
         if($qtEmpresas > 0){
             $j=0;
@@ -86,7 +87,13 @@ class HomeController extends Controller
             }
         }
         
-        $_SESSION['oportunidades'] = $listaOportunidade;
+        if(isset($listaOportunidade) && $listaOportunidade != ''){
+            $_SESSION['oportunidades'] = $listaOportunidade;
+        } else{
+            $listaOportunidade ='';
+            $totalOportunidades = '0';
+        }
+        
 
         return view('home',['dadosEmpresa'=>$dadosEmpresa,'noticias'=>$noticias,'qtEmpresas'=>$qtEmpresas,
             'porcentagemConcluido'=>$porcentagemConcluido,'oportunidades'=>$listaOportunidade,

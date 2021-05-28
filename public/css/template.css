@@ -1523,6 +1523,7 @@ footer .info{
 }
 
 
+
     /*MENU-1*/
 .forneca .topico-1{
     position:absolute;
@@ -1565,15 +1566,84 @@ footer .info{
     color: #2C2858;
  }
     
-.forneca .menu-1 .num-progresso {
-    width: 28px;
+.forneca  .num-progresso-1 {
+    position: absolute;
+    width: 24px;
     height: 25px;
-    margin-top: -10px;
+    top: 110px;
+    left: 18px;
     padding-top: 11px;
     padding-left: 9px;
     color: #FFFFFF;
     background-color: #6694FB;
     border-radius: 15px;
+}
+
+.forneca .num-progresso-2 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 110px;
+    left: 237px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .num-progresso-3 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 110px;
+    left:482px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .num-progresso-4 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 110px;
+    left: 720px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .progress .img-progresso-1{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 110px;
+    left: 18px;
+    background-color: #FFFFFF;
+}
+.forneca .progress .img-progresso-2{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 110px;
+    left: 236px;
+    background-color: #FFFFFF;
+}
+.forneca .progress .img-progresso-3{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 110px;
+    left: 481px;
+    background-color: #FFFFFF;
 }
 
 .forneca .menu-1 .row .checkbox-ramo{
@@ -1595,6 +1665,13 @@ footer .info{
 }
 
  .forneca .menu-1 .check-option-{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 1px;
+}
+.forneca .menu-1 .check-option-{
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1664,6 +1741,32 @@ footer .info{
     max-width: 927px;
     margin: auto;
     padding-top: 15px;
+}
+
+.forneca .menu-1 .ramo-final .ramo-final-resposta{
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-1 .topo-ramo-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-1 .ramo-final .col p{
+    color: #2C2858;
+    margin-bottom: 1px;
+}
+.forneca .menu-1 .ramo-final .ramo-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
 }
 
 
@@ -2520,6 +2623,10 @@ input[type="file"]{
 
 .progress-bar.color-perguntas{
     background-color:  #6694FB;
+}
+
+.progress-bar.color-perguntas-verde{
+    background-color:  #00B976;
 }
 
 .ver-empresas .empresas .cartao .oportunidades .progress{

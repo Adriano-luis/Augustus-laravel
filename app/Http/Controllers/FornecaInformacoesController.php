@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Empresa;
 use App\Pergunta;
 use App\Resposta;
+use App\Resposta_formulario;
 
 class FornecaInformacoesController extends Controller
 {
@@ -20,8 +21,10 @@ class FornecaInformacoesController extends Controller
             
             $empresa=Empresa::find($idEmpresa);
             $respostas=Resposta::all();
+            $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
+            ->where('id_formulario',$idEmpresa)->get(['id_resposta','respostas.post_title']);
             //$resposta = $respostas->where('id',311);
-            //dd($resposta);
+            //dd($respostasEmpresa);
 
             $perguntas=Pergunta::all();
             //$pergunta = $perguntas->where('id',341);
@@ -32,7 +35,8 @@ class FornecaInformacoesController extends Controller
         }
 
         return view('forneca-informacoes.ramo-de-atuacao',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont],'perguntas'=>$perguntas,'respostas'=>$respostas]);
+        'oportunidades'=>$oportunidades[$cont],'perguntas'=>$perguntas,'respostas'=>$respostas,
+        'respostasEmpresa'=>$respostasEmpresa]);
     }
 
     public function indexPost(Request $request){

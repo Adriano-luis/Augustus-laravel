@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
     //DROP DE TALAS LATERAIS
+
+        //selecionas as abas
     let drop1 = document.querySelector('.menu-1');
     let drop2 = document.querySelector('.menu-2');
     let drop3 = document.querySelector('.menu-3');
@@ -8,6 +10,84 @@ $(document).ready(function(){
     let drop5 = document.querySelector('.menu-5');
     let drop6 = document.querySelector('.menu-6');
     let drop7 = document.querySelector('.menu-7');
+
+    //esconde as abas
+    if(drop2){
+        $(drop2).css('display', 'none');
+    }
+    if(drop3){
+        $(drop3).css('display', 'none');
+    }
+    if(drop4){
+        $(drop4).css('display', 'none');
+    }
+    if(drop5){
+        $(drop5).css('display', 'none');
+    }
+    if(drop6){
+        $(drop6).css('display', 'none');
+    }
+    if(drop7){
+        $(drop7).css('display', 'none');
+    }
+
+
+        //mostra as abas
+    $('.topico-1').click(function (){
+        mostrarAba(drop1);
+        
+    });
+    $('.topico-2').click(function (){
+        mostrarAba(drop2);
+        
+    });
+    $('.topico-3').click(function (){
+        mostrarAba(drop3);
+        
+    });
+    $('.topico-4').click(function (){
+        mostrarAba(drop4);
+        
+    });
+    $('.topico-5').click(function (){
+        mostrarAba(drop5);
+        
+    });
+    $('.topico-6').click(function (){
+        mostrarAba(drop6);
+        
+    });
+    $('.topico-7').click(function (){
+        mostrarAba(drop7);
+        
+    });
+
+        //funçao de mostrar aba
+    function mostrarAba(drop){
+        if(drop == drop1){
+            $(drop1).css('display', 'block');
+
+        }else if(drop == drop2){
+            $(drop2).css('display', 'block');
+
+        }else if(drop == drop3){
+            $(drop3).css('display', 'block');
+
+        }else if(drop == drop4){
+            $(drop4).css('display', 'block');
+
+        }else if(drop == drop5){
+            $(drop5).css('display', 'block');
+
+        }else if(drop == drop6){
+            $(drop6).css('display', 'block');
+
+        }else if(drop == drop7){
+            $(drop7).css('display', 'block');
+
+        }
+        
+    }
 
 
 
@@ -37,12 +117,14 @@ $(document).ready(function(){
 
 
     $('.next-1').click(function (){
+        salvaInfo(ramo1);
         nextRamo(ramo2);
         
     });
 
 
     $('.next-2').click(function (){
+        salvaInfo(ramo2);
         nextRamo(ramo3);
         
     });
@@ -53,6 +135,7 @@ $(document).ready(function(){
 
 
     $('.next-3').click(function (){
+        salvaInfo(ramo3);
         nextRamo(ramo4);
         
     });
@@ -63,7 +146,8 @@ $(document).ready(function(){
 
 
     $('.next-4').click(function (){
-        nextRamo(ramoFinal);
+        salvaInfo(ramo4);
+        
 
     });
     $('.previous-4').click(function (){
@@ -113,6 +197,39 @@ $(document).ready(function(){
             $(ramo4).css('display', 'block');
         }
     }  
+
+
+
+    //Salva as informações entre as telas
+    function salvaInfo(ramo){
+        if(ramo == ramo1){
+            var respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            });   
+        } else if(ramo == ramo2){
+            var respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            });  
+        } else if(ramo == ramo3) {
+            var respostasPage3 = $('input[name="check-3"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            });  
+        } else {
+            var respostasPage4 = $('input[name="check-4"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            });  
+            respostasPageFinal = [respostasPage1,respostasPage2,respostasPage3,respostasPage4]; 
+
+            $.ajax({
+                type:'POST',
+                url:'http://localhost/Augustus/public/forneca-informacoes',
+                data:respostasPageFinal,
+                success:function(data){
+                    nextRamo(ramoFinal);
+                }
+            });
+        }
+    }
     
     
     
