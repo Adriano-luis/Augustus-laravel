@@ -210,7 +210,9 @@
             <div class="num-progresso-4">4</div>
         </div>
 
-        <form action="{{route('indexPost')}}">
+        <form action="{{route('indexPost')}}" type="POST">
+            @csrf
+            <input type="text" cvalue>
             <div class="row checkbox-ramo">
                 <div class="col">
                     <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[137]->id}}"><span>{{$respostas[137]->post_title}}</span></div>

@@ -203,31 +203,34 @@ $(document).ready(function(){
     //Salva as informações entre as telas
     function salvaInfo(ramo){
         if(ramo == ramo1){
-            var respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
+            respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
-            });   
+            }); 
+            console.log(respostasPage1);
         } else if(ramo == ramo2){
-            var respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
+            respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
+            console.log(respostasPage2);
         } else if(ramo == ramo3) {
-            var respostasPage3 = $('input[name="check-3"]:checked').toArray().map(function(check) { 
+            respostasPage3 = $('input[name="check-3"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
+            console.log(respostasPage3);
         } else {
-            var respostasPage4 = $('input[name="check-4"]:checked').toArray().map(function(check) { 
+             respostasPage4 = $('input[name="check-4"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
-            });  
-            respostasPageFinal = [respostasPage1,respostasPage2,respostasPage3,respostasPage4]; 
+            });
 
-            $.ajax({
+             $.ajax({
                 type:'POST',
-                url:'http://localhost/Augustus/public/forneca-informacoes',
-                data:respostasPageFinal,
+                url:'/Augustus/public/forneca-informacoes',
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
                 success:function(data){
                     nextRamo(ramoFinal);
                 }
             });
+            
         }
     }
     

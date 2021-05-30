@@ -40,7 +40,39 @@ class FornecaInformacoesController extends Controller
     }
 
     public function indexPost(Request $request){
-        dd($request);
+            $idEmpresa = $request->get('id');
+            $salva = new Resposta_formulario();
+            $ramo1 = $request->respostasPage1;
+            $ramo2 = $request->respostasPage2;
+            $ramo3 = $request->respostasPage3;
+            $ramo4 = $request->respostasPage4;
+
+            foreach($ramo1 as $registro){
+                $salva->id_formulario = $idEmpresa;
+                $salva->id_pergunta = 329;
+                $salva->id_resposta = $registro;
+                $salva->save();
+            }
+            foreach($ramo2 as $registro){
+                $salva->id_formulario  = $idEmpresa;
+                $salva->id_pergunta = 313;
+                $$salva->id_resposta = $registro;
+                $salva->save();
+            }
+            foreach($ramo3 as $registro){
+                $salva->id_formulario = $idEmpresa;
+                $salva->id_pergunta = 302;
+                $salva->id_resposta = $registro;
+                $salva->save();
+            }
+            foreach($ramo4 as $registro){
+                $salva->id_formulario = $idEmpresa;
+                $salva->id_pergunta = 341;
+                $salva->id_resposta = $registro;
+                $salva->save();
+            }
+                        
+        }
     }
 
     public function tributacao(Request $request){
