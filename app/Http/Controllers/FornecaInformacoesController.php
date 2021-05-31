@@ -12,17 +12,20 @@ class FornecaInformacoesController extends Controller
 {
     public function index(Request $request){
         if($request->get('id') != ''){
-            $idEmpresa = $request->get('id');
-            $cont = $request->get('cont');
+            $_SESSION['idEmpresa'] = $request->get('id');
+            $_SESSION['cont'] = $request->get('cont');
+
+            $idEmpresa = $_SESSION['idEmpresa'];
+            $cont = $_SESSION['cont'];
 
             //procentagem e Oportunidades
             $porcentagem = $_SESSION['porcentagem'];
             $oportunidades = $_SESSION['oportunidades'];
             
-            $empresa=Empresa::find($idEmpresa);
+            $empresa=Empresa::find($_SESSION['idEmpresa']);
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
-            ->where('id_formulario',$idEmpresa)->get(['id_resposta','respostas.post_title']);
+            ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
             //$resposta = $respostas->where('id',311);
             //dd($respostasEmpresa);
 
@@ -40,7 +43,7 @@ class FornecaInformacoesController extends Controller
     }
 
     public function indexPost(Request $request){
-            $idEmpresa = $request->empresa;
+            $idEmpresa = $_SESSION['idEmpresa'];
             $ramo1 = $request->respostasPage1;
             $ramo2 = $request->respostasPage2;
             $ramo3 = $request->respostasPage3;
@@ -83,8 +86,8 @@ class FornecaInformacoesController extends Controller
 
     public function tributacao(Request $request){
         if($request->get('id') != ''){
-            $idEmpresa = $request->get('id');
-            $cont = $request->get('cont');
+            $idEmpresa = $_SESSION['idEmpresa'];
+            $cont = $_SESSION['cont'];
 
             //procentagem e Oportunidades
             $porcentagem = $_SESSION['porcentagem'];
@@ -93,8 +96,8 @@ class FornecaInformacoesController extends Controller
             $empresa=Empresa::find($idEmpresa);
 
             $perguntas=Pergunta::all();
-            $pergunta = $perguntas->where('id',242);
-            dd($pergunta);
+            //$pergunta = $perguntas->where('id',785);
+            //dd($pergunta);
             
         }else{
             return redirect()->route('home');

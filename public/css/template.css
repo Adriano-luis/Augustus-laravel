@@ -1572,7 +1572,7 @@ footer .info{
 .forneca #ramo-tela-final{
     display: none;
 }
-.forneca  .num-progresso-1 {
+.forneca .menu-1 .num-progresso-1 {
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1585,7 +1585,7 @@ footer .info{
     border-radius: 15px;
 }
 
-.forneca .num-progresso-2 {
+.forneca .menu-1 .num-progresso-2 {
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1598,7 +1598,7 @@ footer .info{
     border-radius: 15px;
 }
 
-.forneca .num-progresso-3 {
+.forneca .menu-1 .num-progresso-3 {
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1611,7 +1611,7 @@ footer .info{
     border-radius: 15px;
 }
 
-.forneca .num-progresso-4 {
+.forneca .menu-1 .num-progresso-4 {
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1793,9 +1793,8 @@ footer .info{
 
 .forneca .dropdown-menu.menu-2{
     position:absolute !important;
-    display: hidden;
-    top: -109px !important;
-    left: 71px !important;
+    top: -90px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;
@@ -1813,6 +1812,95 @@ footer .info{
     margin-left: -42px;
  }
 
+.forneca .menu-2 h6{
+color: #2C2858;
+}
+
+.forneca #tributacao-tela-2,
+.forneca #tributacao-tela-final{
+    display: none;
+}
+
+.forneca .menu-2 .num-progresso-1 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 18px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-2 .num-progresso-2 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 618px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-2 .row.radio-tributacao{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.forneca .menu-2 .select{
+    width: 285px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.forneca .menu-2 .row.radio{
+    width: 400px;
+    margin: 0;
+    padding-top: 0px;
+
+}
+
+.forneca .menu-2 .col.radio{
+    height: 40px;
+    margin-right: 20px;
+    padding-top: 8px;
+    background: #F9F9F9;
+    border-radius: 10px;
+}
+
+.forneca .menu-2 input[type="radio"]{
+    margin-right: 25px;
+}
+
+.forneca .menu-2 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
 
     /*MENU-3*/
 .forneca .topico-3{

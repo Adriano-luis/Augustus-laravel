@@ -3,6 +3,8 @@
 @section('ramo-de-atuacao')
     <!-- TELA 1 -->
     <section id="ramo-tela-1">
+        <input type="hidden" name="idEmpresa" value="{{$_SESSION['idEmpresa']}}">
+        <input type="hidden" name="cont" value="{{$_SESSION['cont']}}">
         <?php 
             $pergunta = $perguntas->where('id',329);
             
@@ -82,11 +84,6 @@
             $respostas[34]->id,$respostas[45]->id,$respostas[47]->id,$respostas[44]->id,$respostas[30]->id,
             $respostas[43]->id,$respostas[40]->id,$respostas[49]->id];
 
-            foreach ($respostasEmpresa as $value) {
-                if (in_array($value->id,$listaRespostas2)) {
-                    echo 'foi';
-                }
-            }
         ?>
         <h4>{{$pergunta[7]->post_title}}</h4>   
         <p>Passo 2 de 4</p>
@@ -212,7 +209,6 @@
 
         
             @csrf
-            <input type="hidden" name="idEmpresa" value="{{$empresa->id}}">
             <div class="row checkbox-ramo">
                 <div class="col">
                     <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[137]->id}}"><span>{{$respostas[137]->post_title}}</span></div>
