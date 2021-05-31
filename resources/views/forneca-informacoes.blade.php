@@ -57,7 +57,7 @@
                     <img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />
                     <span class='text'>Tributação</span>
                     <div class="dropdown-menu menu-2">
-
+                        @yield('tributacao')
                     </div>
                 </div>
             </div>

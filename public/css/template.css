@@ -1425,7 +1425,7 @@ footer .info{
 .forneca .opo-texto,
 .forneca .info .titulo,
 .forneca .porcentagem-opo h3{
-    color: #00B976;
+    color: #00B976 !important;
 }
 
 .forneca .porcentagem-info h3,
@@ -1565,7 +1565,13 @@ footer .info{
  .forneca .menu-1 h4{
     color: #2C2858;
  }
-    
+
+.forneca #ramo-tela-2,
+.forneca #ramo-tela-3,
+.forneca #ramo-tela-4,
+.forneca #ramo-tela-final{
+    display: none;
+}
 .forneca  .num-progresso-1 {
     position: absolute;
     width: 24px;

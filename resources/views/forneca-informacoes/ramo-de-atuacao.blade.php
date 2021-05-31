@@ -61,7 +61,7 @@
 
 
     <!-- TELA 2 -->
-    <section id="ramo-tela-2" style="display:hidden;">
+    <section id="ramo-tela-2">
         <?php
             $pergunta = $perguntas->where('id',313); 
             
@@ -123,7 +123,7 @@
 
 
     <!-- TELA 3 -->
-    <section id="ramo-tela-3" style="display:hidden;">
+    <section id="ramo-tela-3">
         <?php 
             $pergunta = $perguntas->where('id',302); 
 
@@ -177,7 +177,7 @@
 
 
     <!-- TELA 4 -->
-    <section id="ramo-tela-4" style="display:hidden;">
+    <section id="ramo-tela-4" >
         <?php 
             $pergunta = $perguntas->where('id',341);
 
@@ -210,9 +210,9 @@
             <div class="num-progresso-4">4</div>
         </div>
 
-        <form action="{{route('indexPost')}}" type="POST">
+        
             @csrf
-            <input type="text" cvalue>
+            <input type="hidden" name="idEmpresa" value="{{$empresa->id}}">
             <div class="row checkbox-ramo">
                 <div class="col">
                     <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[137]->id}}"><span>{{$respostas[137]->post_title}}</span></div>
@@ -234,13 +234,13 @@
             </div>
             <div class="anterior previous-4" style="margin-top:11px !important">Voltar</div>
             <input class="proxima-submit next-4" value="Próxima">
-        </form>
+        
    
     </section>
    
 
     <!-- TELA Final -->
-    <section id="ramo-tela-final" style="display:hidden;">
+    <section id="ramo-tela-final">
         <div class="topo-ramo-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>

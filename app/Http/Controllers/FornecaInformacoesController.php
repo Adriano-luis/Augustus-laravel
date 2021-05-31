@@ -40,39 +40,45 @@ class FornecaInformacoesController extends Controller
     }
 
     public function indexPost(Request $request){
-            $idEmpresa = $request->get('id');
-            $salva = new Resposta_formulario();
+            $idEmpresa = $request->empresa;
             $ramo1 = $request->respostasPage1;
             $ramo2 = $request->respostasPage2;
             $ramo3 = $request->respostasPage3;
             $ramo4 = $request->respostasPage4;
 
-            foreach($ramo1 as $registro){
-                $salva->id_formulario = $idEmpresa;
-                $salva->id_pergunta = 329;
-                $salva->id_resposta = $registro;
-                $salva->save();
+            if($ramo1 != ''){
+                foreach($ramo1 as $registro){
+                    Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>329,
+                    'id_resposta'=>$registro]);    
+    
+                }
             }
-            foreach($ramo2 as $registro){
-                $salva->id_formulario  = $idEmpresa;
-                $salva->id_pergunta = 313;
-                $$salva->id_resposta = $registro;
-                $salva->save();
+            
+            if($ramo2 != ''){
+                foreach($ramo2 as $registro){
+                    Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>313,
+                    'id_resposta'=>$registro]);  
+    
+                }
             }
-            foreach($ramo3 as $registro){
-                $salva->id_formulario = $idEmpresa;
-                $salva->id_pergunta = 302;
-                $salva->id_resposta = $registro;
-                $salva->save();
+            
+            if($ramo3 != ''){
+                foreach($ramo3 as $registro){
+                    Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>302,
+                    'id_resposta'=>$registro]); 
+    
+                }
             }
-            foreach($ramo4 as $registro){
-                $salva->id_formulario = $idEmpresa;
-                $salva->id_pergunta = 341;
-                $salva->id_resposta = $registro;
-                $salva->save();
+            
+            if($ramo4 != ''){
+                foreach($ramo4 as $registro){
+                    Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>341,
+                    'id_resposta'=>$registro]); 
+    
+                }
             }
+            
                         
-        }
     }
 
     public function tributacao(Request $request){
@@ -87,8 +93,8 @@ class FornecaInformacoesController extends Controller
             $empresa=Empresa::find($idEmpresa);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',341);
-            //dd($pergunta);
+            $pergunta = $perguntas->where('id',242);
+            dd($pergunta);
             
         }else{
             return redirect()->route('home');

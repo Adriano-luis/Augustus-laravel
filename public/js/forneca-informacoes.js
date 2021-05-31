@@ -98,23 +98,15 @@ $(document).ready(function(){
     let ramo3 = document.querySelector('#ramo-tela-3');
     let ramo4 = document.querySelector('#ramo-tela-4');
     let ramoFinal = document.querySelector('#ramo-tela-final');
-    if(ramo1){
-        $(ramo1).css('display', 'block');
-    }
-    if(ramo2){
-        $(ramo2).css('display', 'none');
-    }
-    if(ramo3){
-        $(ramo3).css('display', 'none');
-    }
-    if(ramo4){
-        $(ramo4).css('display', 'none');
-    }
-    if(ramoFinal){
-        $(ramoFinal).css('display', 'none');
-    }
 
-
+    window.onload = function() {
+        var reloading = sessionStorage.getItem("reloading");
+        if (reloading) {
+            sessionStorage.removeItem("reloading");
+            $(ramo1).css('display', 'none');
+            nextRamo(ramoFinal);
+        }
+    }
 
     $('.next-1').click(function (){
         salvaInfo(ramo1);
@@ -222,12 +214,17 @@ $(document).ready(function(){
                 return $(check).val(); 
             });
 
+            empresa = $('input[name="idEmpresa"]').val();
+
              $.ajax({
                 type:'POST',
                 url:'/Augustus/public/forneca-informacoes',
-                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4,
+                        empresa},
                 success:function(data){
-                    nextRamo(ramoFinal);
+                    sessionStorage.setItem("reloading", "true");    
+                    window.location.reload(true);
+                    
                 }
             });
             
