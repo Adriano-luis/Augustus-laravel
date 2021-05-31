@@ -42,6 +42,8 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
+    Route::get('/cadastrar-usuario', 'PerfilUsuarioController@cadastrar')->name('cadastrar-usuario');
+    Route::post('/cadastrar-usuario', 'PerfilUsuarioController@salvar')->name('cadastrar-usuario');
 
     /*
     Route::get('/dashboard', 'HomeController@index');

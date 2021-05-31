@@ -2268,6 +2268,19 @@ footer .info{
     border-radius: 5px;
 }
 
+.perfil-usuario .info-total input[name="nome"],
+.perfil-usuario .info-total input[name="email"]{
+    width: 100%;
+    max-width: 280px;
+    height: 35px;
+    margin-top: 15px;
+    padding-top:3px;
+    padding-left: 15px;
+    font-size:13px ;
+    border:1px solid  #89879E;
+    border-radius: 5px;
+}
+
 .perfil-usuario .info-total input[type="submit"]{
     width: 100%;
     max-width: 280px;

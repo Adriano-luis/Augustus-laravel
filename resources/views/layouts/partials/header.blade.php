@@ -35,6 +35,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="dado" src="{{asset('/images/icon-Arow.svg')}}" /></a>
                             <div class="dropdown-menu sub-menu">
                                 <a href="{{route('perfil-usuario')}}"><li class="primeiro"><img src="{{asset('/images/icon-Profile.svg')}}" />Perfil</li></a>
+                                <a href="{{route('cadastrar-usuario')}}"><li><img src="{{asset('/images/icon-Profile.svg')}}" />Cadastrar Usuário</li></a>
                                 <a href="{{ route('logout')}}"><li><img src="{{asset('/images/icon-Logout.svg')}}" />Sair</li></a>
                             </div>
                         </div>
