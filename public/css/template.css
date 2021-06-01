@@ -1629,8 +1629,8 @@ footer .info{
     width: 24px;
     height: 25px;
     margin-right: 0px !important;
-    top: 110px;
-    left: 18px;
+    top: 63px;
+    left: 59px;
     background-color: #FFFFFF;
 }
 .forneca .progress .img-progresso-2{
@@ -1797,7 +1797,8 @@ footer .info{
     left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
-    height: 611px !important;
+    height: 100%;
+    min-height: 611px;
     box-shadow: none !important;
     border-radius: 10px 10px 10px 10px !important;
     border: none;
@@ -1901,6 +1902,77 @@ color: #2C2858;
     background: #6694FB;
     border-radius: 8px 8px 20px 8px;
 }
+.forneca .menu-2 #tributacao-tela-final .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 630px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-2 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-2 .topo-tributacao-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-2 .row.tributacao-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.forneca .menu-2 .tributacao-final .tributacao-final-resposta{
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-2 .topo-tributacao-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-2 .tributacao-final .col p{
+    color: #2C2858;
+    margin-bottom: 1px;
+}
+
+.forneca .menu-2 .tributacao-final .tributacao-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
 
     /*MENU-3*/
 .forneca .topico-3{
@@ -1920,9 +1992,8 @@ color: #2C2858;
 
 .forneca .dropdown-menu.menu-3{
     position:absolute !important;
-    display: hidden;
-    top: -156px !important;
-    left: 62px !important;
+    top: -182px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;
@@ -1962,9 +2033,8 @@ color: #2C2858;
 
 .forneca .dropdown-menu.menu-4{
     position:absolute !important;
-    display: hidden;
-    top: -156px !important;
-    left: 68px !important;
+    top: -272px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;
@@ -2001,8 +2071,8 @@ color: #2C2858;
 
 .forneca .dropdown-menu.menu-5{
     position:absolute !important;
-    top: -156px !important;
-    left: 45px !important;
+    top: -362px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;
@@ -2034,9 +2104,8 @@ color: #2C2858;
 
 .forneca .dropdown-menu.menu-6{
     position:absolute !important;
-    display: hidden;
-    top: -156px !important;
-    left: 51px !important;
+    top: -452px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;
@@ -2068,9 +2137,8 @@ color: #2C2858;
 
 .forneca .dropdown-menu.menu-7{
     position:absolute !important;
-    display: hidden;
-    top: -156px !important;
-    left: 85px !important;
+    top: -542px !important;
+    left: 230px !important;
     padding-left: 0px !important;
     min-width: 43rem;
     height: 611px !important;

@@ -97,11 +97,11 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',362);
+            //$resposta = $respostas->where('id',243);
             //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',387);
+            //$pergunta = $perguntas->where('id',416);
             //dd($pergunta);
             
         }else{

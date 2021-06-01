@@ -189,6 +189,8 @@ $(document).ready(function(){
             $(ramo2).css('display', 'block');
         } else{
             $(ramo2).css('display', 'none');
+            $('.menu-2').css('min-height', '700');
+            $('.fundo').css('min-height', '720');
             $(ramoFinal).css('display', 'block');
         }
     }  
@@ -197,8 +199,10 @@ $(document).ready(function(){
         if(ramo == ramo1){
             $(ramo2).css('display', 'none');
             $(ramo1).css('display', 'block');
-        } else {
+        } else if(ramo == ramo2) {
             $(ramoFinal).css('display', 'none');
+            $('.menu-2').css('min-height', '611');
+            $('.fundo').css('min-height', '650');
             $(ramo2).css('display', 'block');
         }
     }  
@@ -207,7 +211,15 @@ $(document).ready(function(){
      //Salva as informações entre as telas
      function salvaInfo(ramo){
         if(ramo == ramo1){
-            respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
+            respostas1Page1 = $("input[name='regime'] option:selected").val();
+
+            respostas1Page1 = $("input[name='5anos'] option:selected").val();
+
+            if($("input[type='radio'].recuperacao").is(':checked')){
+                respostas3Page1 = $("input[type='radio'].recuperacao").val();
+            }
+            
+            respostas4Page1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             }); 
             console.log(respostasPage1);
