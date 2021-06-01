@@ -177,7 +177,7 @@ $(document).ready(function(){
 
     $('.next-3').click(function (){
         salvaInfo(ramo3);
-        nextRamo(ramo4);
+        nextRamo(ramoFinal);
         
     });
     $('.previous-3').click(function (){
@@ -186,24 +186,13 @@ $(document).ready(function(){
     });
 
 
-    $('.next-4').click(function (){
-        salvaInfo(ramo4);
-        
-
-    });
-    $('.previous-4').click(function (){
-        previousRamo(ramo3);
-        
-    });
-
-
     $('.next-final').click(function (){
         empresa = $('input[name="idEmpresa"]').val();
         cont = $('input[name="cont"]').val();
-        window.location.href= '/Augustus/public/forneca-informacoes/tributacao?id='+empresa+'&cont='+cont;
+        window.location.href= '/Augustus/public/forneca-informacoes?id='+empresa+'&cont='+cont;
     });
     $('.previous-final').click(function (){
-        previousRamo(ramo4);
+        previousRamo(ramo3);
         
     });  
 
@@ -216,11 +205,8 @@ $(document).ready(function(){
         } else if(ramo == ramo3){
             $(ramo2).css('display', 'none');
             $(ramo3).css('display', 'block');
-        } else if(ramo == ramo4) {
-            $(ramo3).css('display', 'none');
-            $(ramo4).css('display', 'block');
         } else{
-            $(ramo4).css('display', 'none');
+            $(ramo3).css('display', 'none');
             $(ramoFinal).css('display', 'block');
         }
     }  
@@ -232,16 +218,12 @@ $(document).ready(function(){
         } else if(ramo == ramo2){
             $(ramo3).css('display', 'none');
             $(ramo2).css('display', 'block');
-        } else if(ramo == ramo3) {
-            $(ramo4).css('display', 'none');
-            $(ramo3).css('display', 'block');
         } else {
             $(ramoFinal).css('display', 'none');
-            $(ramo4).css('display', 'block');
+            $(ramo3).css('display', 'block');
         }
-    }  
 
-
+    }
 
     //Salva as informações entre as telas
     function salvaInfo(ramo){
@@ -249,27 +231,19 @@ $(document).ready(function(){
             respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             }); 
-            console.log(respostasPage1);
         } else if(ramo == ramo2){
             respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
-            console.log(respostasPage2);
         } else if(ramo == ramo3) {
             respostasPage3 = $('input[name="check-3"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
-            console.log(respostasPage3);
-        } else {
-             respostasPage4 = $('input[name="check-4"]:checked').toArray().map(function(check) { 
-                return $(check).val(); 
-            });
-
             
              $.ajax({
                 type:'POST',
                 url:'/Augustus/public/forneca-informacoes',
-                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3},
                 success:function(data){
                     sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);
@@ -280,9 +254,4 @@ $(document).ready(function(){
         }
     }
     
-    
-    
-
-
-
 });

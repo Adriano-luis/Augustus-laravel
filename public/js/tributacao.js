@@ -143,20 +143,27 @@ $(document).ready(function(){
     let ramo2 = document.querySelector('#tributacao-tela-2');
     let ramoFinal = document.querySelector('#tributacao-tela-final');
 
-    window.onload = function() {
-        
+    if(abaNome == 'tributacao'){
+        window.onload = function() {
+            var reloading = sessionStorage.getItem("reloading");
+            if (reloading) {
+                sessionStorage.removeItem("reloading");
+                $(ramo1).css('display', 'none');
+                nextRamo(ramoFinal);
+            }
+        }
     }
 
     $('.next-tributacao-1').click(function (){
-        //salvaInfo(ramo1);
+        salvaInfo(ramo1);
         nextRamo(ramo2);
         
     });
 
 
     $('.next-tributacao-2').click(function (){
-        //salvaInfo(ramo2);
-        nextRamo(ramo3);
+        salvaInfo(ramo2);
+        nextRamo(ramoFinal);
         
     });
     $('.previous-tributacao-2').click(function (){
@@ -169,8 +176,8 @@ $(document).ready(function(){
         cont = $('input[name="cont"]').val();
         window.location.href= '/Augustus/public/forneca-informacoes/numero-de-funcionarios?id='+empresa+'&cont='+cont;
     });
-    $('.previous-final').click(function (){
-        previousRamo(ramo4);
+    $('.previous-tributacao-final').click(function (){
+        previousRamo(ramo2);
         
     });  
 
@@ -195,6 +202,34 @@ $(document).ready(function(){
             $(ramo2).css('display', 'block');
         }
     }  
+
+
+     //Salva as informações entre as telas
+     function salvaInfo(ramo){
+        if(ramo == ramo1){
+            respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            }); 
+            console.log(respostasPage1);
+        } else if(ramo == ramo2){
+            respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
+                return $(check).val(); 
+            });  
+            console.log(respostasPage2);
+            
+             $.ajax({
+                type:'POST',
+                url:'/Augustus/public/forneca-informacoes',
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2},
+                success:function(data){
+                    sessionStorage.setItem("reloading", "true");    
+                    window.location.reload(true);
+                    
+                }
+            });
+            
+        }
+    }
 
 
 });

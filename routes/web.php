@@ -32,6 +32,18 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/', 'FornecaInformacoesController@index')->name('forneca-informacoes');
     Route::post('/', 'FornecaInformacoesController@indexPost')->name('indexPost');
     Route::get('/tributacao', 'FornecaInformacoesController@tributacao')->name('tributacao');
+    Route::post('/tributacao', 'FornecaInformacoesController@tributacaoPost')->name('tributacao');
+    Route::get('/numero-de-funcionarios', 'FornecaInformacoesController@numeroDeFuncionarios')->name('numero-de-funcionarios');
+    Route::post('/numero-de-funcionarios', 'FornecaInformacoesController@numeroDeFuncionariosPost')->name('numero-de-funcionarios');
+    Route::get('/previdencia', 'FornecaInformacoesController@previdencia')->name('previdencia');
+    Route::post('/previdencia', 'FornecaInformacoesController@previdenciaPost')->name('previdencia');
+    Route::get('/comercio-exterior', 'FornecaInformacoesController@comercioExterior')->name('comercio-exterior');
+    Route::post('/comercio-exterior', 'FornecaInformacoesController@comercioExteriorPost')->name('comercio-exterior');
+    Route::get('/relacionamento', 'FornecaInformacoesController@relacionamento')->name('relacionamento');
+    Route::post('/relacionamento', 'FornecaInformacoesController@relacionamentoPost')->name('relacionamento');
+    Route::get('/outros', 'FornecaInformacoesController@outros')->name('outros');
+    Route::post('/outros', 'FornecaInformacoesController@outrosPost')->name('outros');
+    
     });
 
     //Noticias
