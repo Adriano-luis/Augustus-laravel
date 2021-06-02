@@ -154,12 +154,36 @@ $(document).ready(function(){
         }
     }
 
+    selected1Tela1 ='';
+    selected2Tela1 ='';
+    selected1Tela2 ='';
+    selected2Tela2 ='';
+    selected3Tela2 ='';
+    //INPUT RADIO DA TELA 1
+    $('.radio1-tela1 input:radio').change(function() {
+        selected1Tela1 = $(".radio1-tela1 input:radio:checked").val();
+      });
+    $('.radio2-tela1 input:radio').change(function() {
+        selected2Tela1 = $(".radio2-tela1 input:radio:checked").val();
+    });
+
+    //INPUT RADIO DA TELA 2
+    $('.radio1-tela2 input:radio').change(function() {
+        selected1Tela2 = $(".radio1-tela2 input:radio:checked").val();
+      });
+    $('.radio2-tela2 input:radio').change(function() {
+        selected2Tela2 = $(".radio2-tela2 input:radio:checked").val();
+    });
+    $('.radio3-tela2 input:radio').change(function() {
+        selected2Tela2 = $(".radio3-tela2 input:radio:checked").val();
+    });
+
+
     $('.next-tributacao-1').click(function (){
         salvaInfo(ramo1);
         nextRamo(ramo2);
         
     });
-
 
     $('.next-tributacao-2').click(function (){
         salvaInfo(ramo2);
@@ -211,33 +235,52 @@ $(document).ready(function(){
      //Salva as informações entre as telas
      function salvaInfo(ramo){
         if(ramo == ramo1){
-            respostas1Page1 = $("input[name='regime'] option:selected").val();
+            respostas1Page1 = $("#regime option:selected").val();
 
-            respostas1Page1 = $("input[name='5anos'] option:selected").val();
+            respostas2Page1 = $("#5anos option:selected").val();
 
-            if($("input[type='radio'].recuperacao").is(':checked')){
-                respostas3Page1 = $("input[type='radio'].recuperacao").val();
+            if(selected1Tela1 !=''){
+                respostas3Page1 = selected1Tela1;
+            }else {
+                respostas3Page1 ='';
+            }
+
+            if(selected2Tela1 != ''){
+                respostas4Page1= selected2Tela1;
+            }else{
+                respostas4Page1 ='';
             }
             
-            respostas4Page1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
-                return $(check).val(); 
-            }); 
-            console.log(respostasPage1);
         } else if(ramo == ramo2){
-            respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
-                return $(check).val(); 
-            });  
-            console.log(respostasPage2);
-            
-             $.ajax({
-                type:'POST',
-                url:'/Augustus/public/forneca-informacoes',
-                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2},
-                success:function(data){
-                    sessionStorage.setItem("reloading", "true");    
-                    window.location.reload(true);
-                    
-                }
+            if(selected1Tela2 != ''){
+                respostas1Page2= selected1Tela2;
+            }else{
+                respostas1Page2 ='';
+            }
+
+            if(selected2Tela2 != ''){
+                respostas2Page2= selected2Tela2;
+            }else{
+                respostas2Page2 ='';
+            }
+
+            if(selected3Tela2 != ''){
+                respostas3Page2= selected3Tela2;
+            }else{
+                respostas3Page2 ='';
+            }
+
+
+            $.ajax({
+            type:'POST',
+            url:'/Augustus/public/forneca-informacoes/tributacao',
+            data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1,
+                respostas3Page1,respostas4Page1,respostas1Page2,respostas2Page2,respostas3Page2},
+            success:function(data){
+                sessionStorage.setItem("reloading", "true");    
+                window.location.reload(true);
+                
+            }
             });
             
         }

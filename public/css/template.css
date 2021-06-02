@@ -2013,7 +2013,123 @@ color: #2C2858;
 
 .forneca .topico-3 img{
     margin-left: -34px;
- }
+}
+
+.forneca .menu-3 h6{
+    color: #2C2858;
+}
+    
+.forneca #funcionarios-tela-final{
+    display: none;
+}
+
+.forneca .menu-3 .row.radio-funcionarios{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.forneca .menu-3 .col.radio{
+    width: 400px;
+    margin: 0;
+    padding-top: 0px;
+
+}
+
+.forneca .menu-3 .row.radio{
+    height: 40px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-top: 19px;
+    background-color: #F9F9F9;
+    color: #89879E;
+    border-radius: 10px;
+}
+
+.forneca .menu-3 input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin-top: -9px;
+    margin-left: 10px;
+    margin-right: 25px;
+    
+    
+}
+
+.forneca .menu-3 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 19px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-3 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 19px;
+    padding-left: 37px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-3 .topo-funcionarios-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-3 .row.funcionarios-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.forneca .menu-3 .funcionarios-final .funcionarios-final-resposta{
+    width: 290px;
+    height: 61px;
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-3 .topo-funcionarios-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-3 .funcionarios-final .col-4 p{
+    color: #2C2858;
+    margin-bottom: 20px;
+}
+
+.forneca .menu-3 .funcionarios-final .funcionarios-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
 
 
     /*MENU-4*/

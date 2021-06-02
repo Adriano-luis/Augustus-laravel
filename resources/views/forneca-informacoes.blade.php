@@ -66,7 +66,7 @@
                     <img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />
                     <span class='text'>Número de<br>&nbsp; &nbsp; &nbsp; &nbsp;funcionários</a></span>
                     <div class="dropdown-menu menu-3">
-
+                        @yield('numero-de-funcionarios')
                     </div>
                 </div>
             </div>

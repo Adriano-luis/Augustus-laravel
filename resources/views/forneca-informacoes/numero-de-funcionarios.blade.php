@@ -7,52 +7,45 @@
     <input type="hidden" name="cont" value="{{$_SESSION['cont']}}">
     <section id="funcionarios-tela-1">
         <?php 
-            $pergunta1 = $perguntas->where('id',357);
+            $pergunta = $perguntas->where('id',357);
 
 
             
-            $resposta=$respostas->where('id',1244);
-            $resposta=$respostas->where('id',358);
-            $resposta=$respostas->where('id',359);
-            $resposta=$respostas->where('id',360);
-            $resposta=$respostas->where('id',361);
-            $resposta=$respostas->where('id',362);
+            $resposta1=$respostas->where('id',1244);
+            $resposta2=$respostas->where('id',358);
+            $resposta3=$respostas->where('id',359);
+            $resposta4=$respostas->where('id',360);
+            $resposta5=$respostas->where('id',361);
+            $resposta6=$respostas->where('id',362);
 
-            /*
-            $listaRespostas1 = [$respostas[138]->id,$respostas[37]->id,$respostas[27]->id,$respostas[29]->id,
-            $respostas[23]->id,$respostas[33]->id,$respostas[36]->id,$respostas[32]->id,$respostas[22]->id,
-            $respostas[31]->id,$respostas[28]->id,$respostas[38]->id];*/
-           
+            
+            $listaRespostas1 = [$resposta1[158]->id,$resposta2[64]->id,$resposta3[65]->id,$resposta4[66]->id,
+            $resposta5[67]->id,$resposta6[68]->id];
             
         ?>
-        <div class="progress" style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
-            <div class="num-progresso-1">1</div>
-            <div class="progress-bar color-perguntas" role="progressbar" style="width: 6.33%" aria-valuenow="4.33" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="num-progresso-2">2</div>
-        </div>
 
         <div class="col checkbox-funcionarios">
             <div class="row radio-funcionarios">
                 <div class="col">
-                    <h6>{{$pergunta3[11]->post_title}}</h6>
-                    <div class="row radio">
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[158]->id}}">Sim
+                    <h6>{{$pergunta[11]->post_title}}</h6>
+                    <div class="col radio radio-tela">
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta1[158]->id}}">{{$resposta1[158]->post_title}}
                         </div>
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[64]->id}}">Não
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta2[64]->id}}">{{$resposta2[64]->post_title}}
                         </div>
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[65]->id}}">sim
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta3[65]->id}}">{{$resposta3[65]->post_title}}
                         </div>
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[66]->id}}">não
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta4[66]->id}}">{{$resposta4[66]->post_title}}
                         </div>
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[67]->id}}">sim
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta5[67]->id}}">{{$resposta5[67]->post_title}}
                         </div>
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta[68]->id}}">Não
+                        <div class=" row radio">
+                            <input type="radio" value="{{$resposta6[68]->id}}">{{$resposta6[68]->post_title}}
                         </div>
                     </div>    
                 </div>
@@ -63,25 +56,23 @@
     </section>
 
       <!-- TELA Final -->
-    <section id="tributacao-tela-final">
-        <div class="topo-tributacao-final">
+    <section id="funcionarios-tela-final">
+        <div class="topo-funcionarios-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre tributacao</p>
+            <p>Sobre funcionarios</p>
         </div>
-        <div class="row tributacao-final">
-            <div class="col">
+        <div class="row funcionarios-final">
+            <div class="col-4">
                 <?php $pergunta = $perguntas->where('id',357)?>
-                <div class="tributacao-final-resposta">
+                <div class="funcionarios-final-resposta">
                     <p>{{$pergunta[11]->post_title}}</p>
-                    <?php /* 
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $listaRespostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    */?>
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <img src="{{asset('images/icon-Editar.svg')}}" class="funcionarios-final-img">
                 </div> 
             </div>
         </div>   

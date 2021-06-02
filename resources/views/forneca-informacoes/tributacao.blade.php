@@ -48,7 +48,7 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta1[0]->post_title}}</h6>
-                    <select class="select" name="regime">
+                    <select class="select" id="regime">
                         <option value=""></option>
                         <option value="">Escolha uma opção</option>
                         <option value="{{$resposta1[1]->id}}">{{$resposta1[1]->post_title}}</option>
@@ -60,7 +60,7 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta2[10]->post_title}}</h6>
-                    <select name="5anos" class="select">
+                    <select id="5anos" class="select">
                         <option value="">Escolha uma opção</option>
                         <option value="{{$resposta4[9]->id}}">{{$resposta4[9]->post_title}}</option>
                         <option value="{{$resposta5[62]->id}}">{{$resposta5[62]->post_title}}</option>
@@ -72,7 +72,7 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta3[32]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio1-tela1">
                         <div class=" col radio">
                             <input type="radio" class="recuperacao" value="{{$resposta8[16]->id}}">Sim
                         </div>
@@ -85,7 +85,7 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta4[33]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio2-tela1">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta10[69]->id}}">{{$resposta10[69]->post_title}}
                         </div>
@@ -130,10 +130,10 @@
             <div class="num-progresso-2">2</div>
         </div>
 
-        <div class="row radio-tributacao">
+        <div class="row radio-tributacao ">
             <div class="col">
                 <h6>{{$pergunta1[37]->post_title}}</h6>
-                <div class="row radio">
+                <div class="row radio radio1-tela2">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta1[74]->id}}">{{$resposta1[74]->post_title}}
                     </div>
@@ -146,7 +146,7 @@
         <div class="row radio-tributacao">
             <div class="col">
                 <h6>{{$pergunta2[35]->post_title}}</h6>
-                <div class="row radio">
+                <div class="row radio radio2-tela2">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta3[87]->id}}">{{$resposta3[87]->post_title}}
                     </div>
@@ -159,7 +159,7 @@
         <div class="row radio-tributacao">
             <div class="col">
                 <h6>{{$pergunta3[22]->post_title}}</h6>
-                <div class="row radio">
+                <div class="row radio radio3-tela2">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta5[93]->id}}">{{$resposta5[93]->post_title}}
                     </div>

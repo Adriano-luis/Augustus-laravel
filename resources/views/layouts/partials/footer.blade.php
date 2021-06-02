@@ -30,5 +30,6 @@
     <script type="text/javascript" src="{{asset('/js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/forneca-informacoes.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/tributacao.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/numero-de-funcionarios.js')}}"></script>
     
 </footer>

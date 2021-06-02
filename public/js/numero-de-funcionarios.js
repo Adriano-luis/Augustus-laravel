@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     //esconde as abas
     if(drop2){
-        $(drop).css('display', 'none');
+        $(drop2).css('display', 'none');
     }
     if(abaNome == 'funcionarios'){
         $(drop1).css('display', 'none');
@@ -153,6 +153,12 @@ $(document).ready(function(){
         }
     }
 
+    selected1Tela1='';
+
+    $('.radio-tela input:radio').change(function() {
+        selected1Tela1 = $(".radio-tela input:radio:checked").val();
+      });
+
     $('.next-funcionarios-1').click(function (){
         salvaInfo(ramo1);
         nextRamo(ramoFinal);
@@ -190,15 +196,18 @@ $(document).ready(function(){
     function salvaInfo(ramo){
 
         if(ramo == ramo1){
-            respostasPage1 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
-                return $(check).val(); 
-            });  
-            console.log(respostasPage1);
+            
+
+            if(selected1Tela1 !=''){
+                respostasPage = selected1Tela1;
+            }else {
+                respostasPage ='';
+            }
             
              $.ajax({
                 type:'POST',
-                url:'/Augustus/public/forneca-informacoes',
-                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1},
+                url:'/Augustus/public/forneca-informacoes/numero-de-funcionarios',
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage},
                 success:function(data){
                     sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);
