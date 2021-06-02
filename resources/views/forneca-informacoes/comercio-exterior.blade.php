@@ -7,8 +7,8 @@
     <input type="hidden" name="cont" value="{{$_SESSION['cont']}}">
     <section id="comercio-tela-1">
         <?php 
-            $pergunta = $perguntas->where('id',382);
-            $pergunta = $perguntas->where('id',281);
+            $pergunta1 = $perguntas->where('id',382);
+            $pergunta2 = $perguntas->where('id',281);
 
 
             
@@ -35,32 +35,26 @@
             
         ?>
 
-        <div class="progress" style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
-            <div class="num-progresso-1">1</div>
-            <div class="progress-bar color-perguntas" role="progressbar" style="width: 6.33%" aria-valuenow="4.33" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="num-progresso-2">2</div>
-        </div>
-
         <div class="col checkbox-comercio">
             <div class="row radio-comercio">
                 <div class="col">
-                    <h6>{{$pergunta[15]->post_title}}</h6>
-                    <select name="regime" class="select">
-                        <option value="{{$resposta[]->id}}">Escolha uma opção</option>
-                        <option value="{{$resposta[]->id}}">Lucro Real</option>
-                        <option value="{{$resposta[]->id}}">Lucro Presumido</option>
-                        <option value="{{$resposta[]->id}}">Simples Nacional</option>
+                    <h6>{{$pergunta1[15]->post_title}}</h6>
+                    <select id="exportacoes" class="select">
+                        <option value="">Escolha uma opção</option>
+                        <option value="">Lucro Real</option>
+                        <option value="">Lucro Presumido</option>
+                        <option value="">Simples Nacional</option>
                     </select>
                 </div>
             </div>
             <div class="row radio-comercio">
                 <div class="col">
-                    <h6>{{$pergunta[4]->post_title}}</h6>
-                    <select name="5anos" class="select">
-                        <option value="{{$resposta[]->id}}">Escolha uma opção</option>
-                        <option value="{{$resposta[]->id}}">Lucro Real</option>
-                        <option value="{{$resposta[]->id}}">Lucro Presumido</option>
-                        <option value="{{$resposta[]->id}}">Simples Nacional</option>
+                    <h6>{{$pergunta2[4]->post_title}}</h6>
+                    <select id="inportacoes" class="select">
+                        <option value="">Escolha uma opção</option>
+                        <option value="">Lucro Real</option>
+                        <option value="">Lucro Presumido</option>
+                        <option value="">Simples Nacional</option>
                     </select>
                 </div>
             </div>
@@ -70,17 +64,17 @@
     </section>
 
       <!-- TELA Final -->
-    <section id="tributacao-tela-final">
-        <div class="topo-tributacao-final">
+    <section id="comercio-tela-final">
+        <div class="topo-comercio-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre tributacao</p>
+            <p>Sobre comercio</p>
         </div>
-        <div class="row tributacao-final">
+        <div class="row comercio-final">
             <div class="col">
-                <?php $pergunta = $perguntas->where('id',382)?>
-                <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[15]->post_title}}</p>
+                <?php $pergunta1 = $perguntas->where('id',382)?>
+                <div class="comercio-final-resposta">
+                    <p>{{$pergunta1[15]->post_title}}</p>
                     <?php /* 
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $listaRespostas1))
@@ -88,13 +82,13 @@
                         @endif
                     @endforeach
                     */?>
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
                 </div> 
             </div>
             <div class="col">
-                <?php $pergunta = $perguntas->where('id',281) ?>
-                <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[4]->post_title}}</p>   
+                <?php $pergunta2 = $perguntas->where('id',281) ?>
+                <div class="comercio-final-resposta">
+                    <p>{{$pergunta2[4]->post_title}}</p>   
                     <?php /* 
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $listaRespostas3))
@@ -102,11 +96,11 @@
                         @endif
                     @endforeach
                     */?>
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
                 </div>
             </div>
         </div>   
 
-        <div class="anterior previous-final">Voltar</div><div class="proxima next-final">Próxima</div>
+        <div class="anterior previous-comercio-final">Voltar</div><div class="proxima next-comercio-final">Próxima</div>
     </section>
 @endsection

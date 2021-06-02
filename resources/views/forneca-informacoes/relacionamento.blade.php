@@ -7,10 +7,10 @@
     <input type="hidden" name="cont" value="{{$_SESSION['cont']}}">
     <section id="relacionamento-tela-1">
         <?php 
-            $pergunta = $perguntas->where('id',246);
-            $pergunta = $perguntas->where('id',404);
-            $pergunta = $perguntas->where('id',401);
-            $pergunta = $perguntas->where('id',398);
+            $pergunta1 = $perguntas->where('id',246);
+            $pergunta2 = $perguntas->where('id',404);
+            $pergunta3 = $perguntas->where('id',401);
+            $pergunta4 = $perguntas->where('id',398);
 
             
             /*$resposta=$respostas->where('id',243);
@@ -46,52 +46,52 @@
         <div class="col checkbox-relacionamento">
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[1]->post_title}}</h6>
+                    <h6>{{$pergunta1[1]->post_title}}</h6>
                     <div class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Sim
+                            <input type="radio" value="">Sim
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Não
+                            <input type="radio" value="">Não
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[20]->post_title}}</h6>
+                    <h6>{{$pergunta2[20]->post_title}}</h6>
                     <div class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Sim
+                            <input type="radio" value="">Sim
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Não
+                            <input type="radio" value="">Não
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[19]->post_title}}</h6>
+                    <h6>{{$pergunta3[19]->post_title}}</h6>
                     <div class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Sim
+                            <input type="radio" value="">Sim
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Não
+                            <input type="radio" value="">Não
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[18]->post_title}}</h6>
+                    <h6>{{$pergunta4[18]->post_title}}</h6>
                     <div class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Sim
+                            <input type="radio" value="">Sim
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Não
+                            <input type="radio" value="">Não
                         </div>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
     <!-- TELA 2 -->
     <section id="relacionamento-tela-2">
         <?php 
-            $pergunta = $perguntas->where('id',407); 
-            $pergunta = $perguntas->where('id',393); 
+            $pergunta1 = $perguntas->where('id',407); 
+            $pergunta2 = $perguntas->where('id',393); 
             
             /*$resposta=$respostas->where('id',372);
             $resposta=$respostas->where('id',389);
@@ -136,25 +136,25 @@
         <div class="col checkbox-relacionamento">
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[21]->post_title}}</h6>
+                    <h6>{{$pergunta1[21]->post_title}}</h6>
                     <div class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Sim
+                            <input type="radio" value="">Sim
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta[]->id}}">Não
+                            <input type="radio" value="">Não
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row radio-relacionamento">
                 <div class="col">
-                    <h6>{{$pergunta[19]->post_title}}</h6>
+                    <h6>{{$pergunta2[19]->post_title}}</h6>
                     <select name="5anos" class="select">
-                        <option value="{{$resposta[]->id}}">Escolha uma opção</option>
-                        <option value="{{$resposta[]->id}}">Lucro Real</option>
-                        <option value="{{$resposta[]->id}}">Lucro Presumido</option>
-                        <option value="{{$resposta[]->id}}">Simples Nacional</option>
+                        <option value="">Escolha uma opção</option>
+                        <option value="">Lucro Real</option>
+                        <option value="">Lucro Presumido</option>
+                        <option value="">Simples Nacional</option>
                     </select>
                 </div>
             </div>

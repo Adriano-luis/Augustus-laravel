@@ -115,8 +115,8 @@ class FornecaInformacoesController extends Controller
         $ramo1_3 = $request->respostas3Page1;
         $ramo1_4 = $request->respostas4Page1;
         $ramo2_1 = $request->respostas1Page2;
-        $ramo2_2 = $request->respostas2Page3;
-        $ramo2_3 = $request->respostas3Page4;
+        $ramo2_2 = $request->respostas2Page2;
+        $ramo2_3 = $request->respostas3Page2;
 
         if($ramo1_1 != ''){
             Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>242,
@@ -211,12 +211,10 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',243);
+            //$resposta = $respostas->where('id',374);
             //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',785);
-            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
@@ -229,25 +227,54 @@ class FornecaInformacoesController extends Controller
 
     public function previdenciaPost(Request $request){
         $idEmpresa = $_SESSION['idEmpresa'];
-        $ramo1 = $request->respostasPage1;
-        $ramo2 = $request->respostasPage2;
-        $ramo3 = $request->respostasPage3;
-        $ramo4 = $request->respostasPage4;
+        $ramo1_1 = $request->respostas1Page1;
+        $ramo1_2 = $request->respostas2Page1;
+        $ramo1_3 = $request->respostas3Page1;
+        $ramo1_4 = $request->respostas4Page1;
+        $ramo2_1 = $request->respostas1Page2;
+        $ramo2_2 = $request->respostas2Page2;
+        $ramo2_3 = $request->respostas3Page2;
+        $ramo2_4 = $request->respostas4Page2;
 
-        if($ramo1 != ''){
-            foreach($ramo1 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>329,
-                'id_resposta'=>$registro]);    
+        if($ramo1_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>374,
+            'id_resposta'=>$ramo1_1]);
+        }
 
-            }
+        if($ramo1_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>268,
+            'id_resposta'=>$ramo1_2]);    
+        }
+
+        if($ramo1_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>836,
+            'id_resposta'=>$ramo1_3]);
+        }
+
+        if($ramo1_4 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>794,
+            'id_resposta'=>$ramo1_4]);
         }
         
-        if($ramo2 != ''){
-            foreach($ramo2 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>313,
-                'id_resposta'=>$registro]);  
-            }
-        }
+        if($ramo2_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>251,
+            'id_resposta'=>$ramo2_1]);  
+        }  
+
+        if($ramo2_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>370,
+            'id_resposta'=>$ramo2_2]);  
+        }  
+
+        if($ramo2_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>365,
+            'id_resposta'=>$ramo2_3]);  
+        }  
+
+        if($ramo2_4 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>297,
+            'id_resposta'=>$ramo2_4]);  
+        }  
     
                 
     }
@@ -269,8 +296,6 @@ class FornecaInformacoesController extends Controller
             //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',785);
-            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
@@ -283,24 +308,17 @@ class FornecaInformacoesController extends Controller
 
     public function comercioExteriorPost(Request $request){
         $idEmpresa = $_SESSION['idEmpresa'];
-        $ramo1 = $request->respostasPage1;
-        $ramo2 = $request->respostasPage2;
-        $ramo3 = $request->respostasPage3;
-        $ramo4 = $request->respostasPage4;
+        $ramo1_1 = $request->respostas1Page1;
+        $ramo1_2 = $request->respostas2Page1;
 
-        if($ramo1 != ''){
-            foreach($ramo1 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>329,
-                'id_resposta'=>$registro]);    
-
-            }
+        if($ramo1_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>382,
+            'id_resposta'=>$ramo1_1]);
         }
-        
-        if($ramo2 != ''){
-            foreach($ramo2 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>313,
-                'id_resposta'=>$registro]);  
-            }
+
+        if($ramo1_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>281,
+            'id_resposta'=>$ramo1_2]);    
         }
     
                 

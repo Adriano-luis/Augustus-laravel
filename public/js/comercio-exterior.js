@@ -13,7 +13,7 @@ $(document).ready(function(){
     //esconde as abas
     
     if(drop2){
-        $(drop).css('display', 'none');
+        $(drop2).css('display', 'none');
     }
     if(drop3){
         $(drop3).css('display', 'none');
@@ -191,15 +191,16 @@ $(document).ready(function(){
     function salvaInfo(ramo){
 
         if(ramo == ramo1){
-            respostasPage1 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
-                return $(check).val(); 
-            });  
-            console.log(respostasPage1);
+            respostas1Page1 = $("#exportacoes option:selected").val();
+            console.log(respostas1Page1);
+
+            respostas2Page1 =$("#inportacoes option:selected").val();
+            console.log(respostas2Page1);
             
              $.ajax({
                 type:'POST',
-                url:'/Augustus/public/forneca-informacoes',
-                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1},
+                url:'/Augustus/public/forneca-informacoes/comercio-exterior',
+                data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1},
                 success:function(data){
                     sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);

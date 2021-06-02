@@ -77,6 +77,6 @@
             </div>
         </div>   
 
-        <div class="anterior previous-final">Voltar</div><div class="proxima next-final">Próxima</div>
+        <div class="anterior previous-funcionarios-final">Voltar</div><div class="proxima next-funcionarios-final">Próxima</div>
     </section>
 @endsection

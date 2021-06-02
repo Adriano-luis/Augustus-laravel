@@ -75,7 +75,7 @@
                     <img src="{{asset('/images/icon-Previdencia.svg')}}" />
                     <span class='text'>Previdencia</span>
                     <div class="dropdown-menu menu-4">
-                
+                        @yield('previdencia')
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />
                     <span class='text'>Comércio Exterior</span>
                     <div class="dropdown-menu menu-5">
-                        
+                        @yield('comercio')
                     </div>
                 </div>
             </div>

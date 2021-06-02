@@ -2166,7 +2166,152 @@ color: #2C2858;
 
 .forneca .topico-4 img{
     margin-left: -42px;
- }
+}
+
+.forneca .menu-4 h6{
+    color: #2C2858;
+}
+    
+.forneca #previdencia-tela-2,
+.forneca #previdencia-tela-final{
+    display: none;
+}
+
+.forneca .menu-4 .num-progresso-1 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 18px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-4 .num-progresso-2 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 618px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-4 .row.radio-previdencia{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.forneca .menu-4 .select{
+    width: 285px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.forneca .menu-4 .row.radio{
+    width: 400px;
+    margin: 0;
+    padding-top: 0px;
+
+}
+
+.forneca .menu-4 .col.radio{
+    height: 40px;
+    margin-right: 20px;
+    padding-top: 8px;
+    background: #F9F9F9;
+    border-radius: 10px;
+}
+
+.forneca .menu-4 input[type="radio"]{
+    margin-right: 25px;
+}
+
+.forneca .menu-4 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-4 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 9px;
+    padding-left: 37px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-4 .topo-previdencia-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-4 .row.previdencia-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.forneca .menu-4 .previdencia-final .previdencia-final-resposta{
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-4 .topo-previdencia-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-4 .previdencia-final .col p{
+    color: #2C2858;
+    margin-bottom: 1px;
+}
+
+.forneca .menu-4 .previdencia-final .previdencia-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
 
 
     /*MENU-5*/
@@ -2200,6 +2345,109 @@ color: #2C2858;
 
 .forneca .mar-5 {
     margin-top: 13px;
+}
+
+.forneca .topico-5 img{
+    margin-left: -42px;
+}
+
+.forneca .menu-5 h6{
+    color: #2C2858;
+}
+    
+.forneca #comercio-tela-final{
+    display: none;
+}
+
+.forneca .menu-5 .row.radio-comercio{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.forneca .menu-5 .select{
+    width: 285px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.forneca .menu-5 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-5 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 9px;
+    padding-left: 37px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-5 .topo-comercio-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-5 .row.comercio-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.forneca .menu-5 .comercio-final .comercio-final-resposta{
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-5 .topo-comercio-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-5 .comercio-final .col p{
+    color: #2C2858;
+    margin-bottom: 1px;
+}
+
+.forneca .menu-5 .comercio-final .comercio-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
 }
 
 

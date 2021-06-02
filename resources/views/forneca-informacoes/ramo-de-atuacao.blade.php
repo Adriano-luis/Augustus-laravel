@@ -38,25 +38,24 @@
             <div class="num-progresso-4">4</div>
         </div>
 
-        <form action="{{route('indexPost')}}">
-            <div class="row checkbox-ramo">
-                <div class="col">
-                    <div class="check-option"><input name="check-1" name="check-1" class="check-option-" type="checkbox"value="{{$respostas[138]->id}}"><span>{{$respostas[138]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[37]->id}}"><span>{{$respostas[37]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[27]->id}}"><span>{{$respostas[27]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[29]->id}}"><span>{{$respostas[29]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox" value="{{$respostas[23]->id}}"><span>{{$respostas[23]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[33]->id}}"><span>{{$respostas[33]->post_title}}</span></div>
-                </div>
-                <div class="col">
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[36]->id}}"><span>{{$respostas[36]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[32]->id}}"><span>{{$respostas[32]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[22]->id}}"><span>{{$respostas[22]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[31]->id}}"><span>{{$respostas[31]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[28]->id}}"><span>{{$respostas[28]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[38]->id}}"><span>{{$respostas[38]->post_title}}</span></div>
-                </div>
+        <div class="row checkbox-ramo">
+            <div class="col">
+                <div class="check-option"><input name="check-1" name="check-1" class="check-option-" type="checkbox"value="{{$respostas[138]->id}}"><span>{{$respostas[138]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[37]->id}}"><span>{{$respostas[37]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[27]->id}}"><span>{{$respostas[27]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[29]->id}}"><span>{{$respostas[29]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox" value="{{$respostas[23]->id}}"><span>{{$respostas[23]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[33]->id}}"><span>{{$respostas[33]->post_title}}</span></div>
             </div>
+            <div class="col">
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[36]->id}}"><span>{{$respostas[36]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[32]->id}}"><span>{{$respostas[32]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[22]->id}}"><span>{{$respostas[22]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[31]->id}}"><span>{{$respostas[31]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[28]->id}}"><span>{{$respostas[28]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[38]->id}}"><span>{{$respostas[38]->post_title}}</span></div>
+            </div>
+        </div>
 
         <div class="proxima next-1">Próxima</div>
     </section>
