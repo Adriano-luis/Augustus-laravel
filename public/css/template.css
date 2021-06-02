@@ -1376,6 +1376,10 @@ footer .info{
     background: linear-gradient(90.13deg, #2C2858, #615BA3);
 }
 
+.forneca  a{  
+    text-decoration: none;
+}
+
 .forneca .row{
     width: 100%;
     max-width: 927px;

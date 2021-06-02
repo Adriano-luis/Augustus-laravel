@@ -3,6 +3,7 @@
 @section('ramo-de-atuacao')
     <!-- TELA 1 -->
     <section id="ramo-tela-1">
+        <input type="hidden" name="aba-nome" value="ramo-de-atuacao">
         <input type="hidden" name="idEmpresa" value="{{$_SESSION['idEmpresa']}}">
         <input type="hidden" name="cont" value="{{$_SESSION['cont']}}">
         <?php 

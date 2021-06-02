@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
     //DROP DE TALAS LATERAIS
+    abaNome = $('input[name="aba-nome"]').val();
+    empresa = $('input[name="idEmpresa"]').val();
+    cont = $('input[name="cont"]').val();
 
         //selecionas as abas
     let drop1 = document.querySelector('.menu-1');
@@ -12,134 +15,16 @@ $(document).ready(function(){
     let drop7 = document.querySelector('.menu-7');
 
     //esconde as abas
-    if(drop2){
+    if(abaNome == 'ramo-de-atuacao'){
+        $(drop1).css('display', 'block');
+
         $(drop2).css('display', 'none');
-    }
-    if(drop3){
         $(drop3).css('display', 'none');
-    }
-    if(drop4){
         $(drop4).css('display', 'none');
-    }
-    if(drop5){
         $(drop5).css('display', 'none');
-    }
-    if(drop6){
         $(drop6).css('display', 'none');
-    }
-    if(drop7){
         $(drop7).css('display', 'none');
     }
-
-
-        //mostra as abas
-    $('.topico-1').click(function (){
-        mostrarAba(drop1);
-        
-    });
-    $('.topico-2').click(function (){
-        mostrarAba(drop2);
-        
-    });
-    $('.topico-3').click(function (){
-        mostrarAba(drop3);
-        
-    });
-    $('.topico-4').click(function (){
-        mostrarAba(drop4);
-        
-    });
-    $('.topico-5').click(function (){
-        mostrarAba(drop5);
-        
-    });
-    $('.topico-6').click(function (){
-        mostrarAba(drop6);
-        
-    });
-    $('.topico-7').click(function (){
-        mostrarAba(drop7);
-        
-    });
-
-        //funçao de mostrar aba
-    function mostrarAba(drop){
-        if(drop == drop1){
-            $(drop2).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop6).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop1).css('display', 'block');
-
-        }else if(drop == drop2){
-            $(drop1).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop6).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop2).css('display', 'block');
-
-        }else if(drop == drop3){
-            $(drop1).css('display', 'none');
-            $(drop2).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop6).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop3).css('display', 'block');
-
-        }else if(drop == drop4){
-            $(drop1).css('display', 'none');
-            $(drop2).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop6).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop4).css('display', 'block');
-
-        }else if(drop == drop5){
-            $(drop1).css('display', 'none');
-            $(drop2).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop6).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop5).css('display', 'block');
-
-        }else if(drop == drop6){
-            $(drop1).css('display', 'none');
-            $(drop2).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop7).css('display', 'none');
-
-            $(drop6).css('display', 'block');
-
-        }else if(drop == drop7){
-            $(drop1).css('display', 'none');
-            $(drop2).css('display', 'none');
-            $(drop3).css('display', 'none');
-            $(drop4).css('display', 'none');
-            $(drop5).css('display', 'none');
-            $(drop6).css('display', 'none');
-
-            $(drop7).css('display', 'block');
-
-        }
-        
-    }
-
-
-
 
     //RAMO DE ATUAÇÃO
     let ramo1 = document.querySelector('#ramo-tela-1');
@@ -198,8 +83,6 @@ $(document).ready(function(){
 
 
     $('.next-final').click(function (){
-        empresa = $('input[name="idEmpresa"]').val();
-        cont = $('input[name="cont"]').val();
         window.location.href= '/Augustus/public/forneca-informacoes/tributacao?id='+empresa+'&cont='+cont;
     });
     $('.previous-final').click(function (){

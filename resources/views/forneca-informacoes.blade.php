@@ -43,69 +43,83 @@
             <div class="col-sm-4">
                 <img src="{{asset('/images/img-Informacoes.png')}}" class="img-informacoes">
             </div>
-            <div class="topico-1">
-                <div class="drop-1 mar-1">
-                    <img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />
-                    <span class='text'>Ramo de Atuação</span>
-                    <div class="dropdown-menu menu-1">
-                        @yield('ramo-de-atuacao')
+            <a href="{{route('forneca-informacoes')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-1">
+                    <div class="drop-1 mar-1">
+                        <img src="{{asset('/images/icon-Ramo-de-Atuacao.svg')}}" />
+                        <span class='text'>Ramo de Atuação</span>
+                        <div class="dropdown-menu menu-1">
+                            @yield('ramo-de-atuacao')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-2">
-                <div class="drop-2 mar-2">
-                    <img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />
-                    <span class='text'>Tributação</span>
-                    <div class="dropdown-menu menu-2">
-                        @yield('tributacao')
+            </a>
+            <a href="{{route('tributacao')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-2">
+                    <div class="drop-2 mar-2">
+                        <img src="{{asset('/images/icon-Tributacao-HOVER.svg')}}" />
+                        <span class='text'>Tributação</span>
+                        <div class="dropdown-menu menu-2">
+                            @yield('tributacao')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-3">
-                <div class="drop-3 mar-3">
-                    <img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />
-                    <span class='text'>Número de<br>&nbsp; &nbsp; &nbsp; &nbsp;funcionários</a></span>
-                    <div class="dropdown-menu menu-3">
-                        @yield('numero-de-funcionarios')
+            </a>
+            <a href="{{route('numero-de-funcionarios')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-3">
+                    <div class="drop-3 mar-3">
+                        <img src="{{asset('/images/icon-Num-Funcionarios.svg')}}" />
+                        <span class='text'>Número de<br>&nbsp; &nbsp; &nbsp; &nbsp;funcionários</a></span>
+                        <div class="dropdown-menu menu-3">
+                            @yield('numero-de-funcionarios')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-4">
-                <div class="drop-4 mar-4">
-                    <img src="{{asset('/images/icon-Previdencia.svg')}}" />
-                    <span class='text'>Previdencia</span>
-                    <div class="dropdown-menu menu-4">
-                        @yield('previdencia')
+            </a>
+            <a href="{{route('previdencia')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-4">
+                    <div class="drop-4 mar-4">
+                        <img src="{{asset('/images/icon-Previdencia.svg')}}" />
+                        <span class='text'>Previdencia</span>
+                        <div class="dropdown-menu menu-4">
+                            @yield('previdencia')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-5">
-                <div class="drop-5 mar-5">
-                    <img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />
-                    <span class='text'>Comércio Exterior</span>
-                    <div class="dropdown-menu menu-5">
-                        @yield('comercio')
+            </a>
+            <a href="{{route('comercio-exterior')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-5">
+                    <div class="drop-5 mar-5">
+                        <img src="{{asset('/images/icon-Comercio-Exterior.svg')}}" />
+                        <span class='text'>Comércio Exterior</span>
+                        <div class="dropdown-menu menu-5">
+                            @yield('comercio')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-6">
-                <div class="drop-6 mar-6">
-                    <img src="{{asset('/images/icon-Relacionamento.svg')}}" />
-                    <span class='text'>Relacionamento</span>
-                    <div class="dropdown-menu menu-6">
-                        
+            </a>
+            <a href="{{route('relacionamento')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-6">
+                    <div class="drop-6 mar-6">
+                        <img src="{{asset('/images/icon-Relacionamento.svg')}}" />
+                        <span class='text'>Relacionamento</span>
+                        <div class="dropdown-menu menu-6">
+                            @yield('relacionamento')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="topico-7">
-                <div class="drop-7 mar-7">
-                    <img src="{{asset('/images/icon-Outros.svg')}}" />
-                    <span class='text'>Outros</span>
-                    <div class="dropdown-menu menu-7">
-                        
+            </a>
+            <a href="{{route('outros')."?id=".$_SESSION['idEmpresa']."&cont=".$_SESSION['cont']}}">
+                <div class="topico-7">
+                    <div class="drop-7 mar-7">
+                        <img src="{{asset('/images/icon-Outros.svg')}}" />
+                        <span class='text'>Outros</span>
+                        <div class="dropdown-menu menu-7">
+                            @yield('outros')
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="fundo">
