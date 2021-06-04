@@ -33,13 +33,14 @@ $(document).ready(function(){
     let ramo4 = document.querySelector('#ramo-tela-4');
     let ramoFinal = document.querySelector('#ramo-tela-final');
 
-    
-    window.onload = function() {
-        var reloading = sessionStorage.getItem("reloading");
-        if (reloading) {
-            sessionStorage.removeItem("reloading");
-            $(ramo1).css('display', 'none');
-            nextRamo(ramoFinal);
+    if(abaNome == 'ramo-de-atuacao'){
+        window.onload = function() {
+            var reloading = sessionStorage.getItem("reloading");
+            if (reloading) {
+                sessionStorage.removeItem("reloading");
+                $(ramo1).css('display', 'none');
+                nextRamo(ramoFinal);
+            }
         }
     }
 
@@ -105,6 +106,9 @@ $(document).ready(function(){
             $(ramo4).css('display', 'block');
         } else{
             $(ramo4).css('display', 'none');
+            $('.menu-1').css('min-height', '675');
+            $('.fundo').css('min-height', '695');
+            $('.next-final').css('top', '616');
             $(ramoFinal).css('display', 'block');
         }
     }  
@@ -121,6 +125,9 @@ $(document).ready(function(){
             $(ramo3).css('display', 'block');
         } else {
             $(ramoFinal).css('display', 'none');
+            $('.menu-1').css('min-height', '611');
+            $('.fundo').css('min-height', '650');
+            $('.next-final').css('top', '529');
             $(ramo4).css('display', 'block');
         }
     }  
@@ -155,7 +162,7 @@ $(document).ready(function(){
                 url:'/Augustus/public/forneca-informacoes',
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
                 success:function(data){
-                    sessionStorage.setItem("reloading", "true");    
+                    window.sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);
                     
                 }

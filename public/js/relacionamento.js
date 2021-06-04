@@ -100,6 +100,9 @@ $(document).ready(function(){
             $(ramo2).css('display', 'block');
         } else{
             $(ramo2).css('display', 'none');
+            $('.menu-6').css('min-height', '675');
+            $('.fundo').css('min-height', '695');
+            $('.next-relacionamento-final').css('top', '616');
             $(ramoFinal).css('display', 'block');
         }
     }  
@@ -110,6 +113,9 @@ $(document).ready(function(){
             $(ramo1).css('display', 'block');
         } else {
             $(ramoFinal).css('display', 'none');
+            $('.menu-6').css('min-height', '611');
+            $('.fundo').css('min-height', '650');
+            $('.next-tributacao-final').css('top', '529');
             $(ramo2).css('display', 'block');
         }
     }  

@@ -31,7 +31,6 @@ $(document).ready(function(){
 
     if(abaNome == 'previdencia'){
         window.onload = function() {
-            console.log(sessionStorage);
             var reloading = sessionStorage.getItem("reloading");
             if (reloading) {
                 sessionStorage.removeItem("reloading");
@@ -93,9 +92,9 @@ $(document).ready(function(){
             $(ramo2).css('display', 'block');
         } else{
             $(ramo2).css('display', 'none');
-            $('.menu-4').css('min-height', '800');
-            $('.fundo').css('min-height', '820');
-            $('.next-previdencia-final').css('top', '736');
+            $('.menu-4').css('min-height', '880');
+            $('.fundo').css('min-height', '885');
+            $('.next-previdencia-final').css('top', '828');
             $(ramoFinal).css('display', 'block');
         }
     }  

@@ -30,12 +30,14 @@ $(document).ready(function(){
     let ramo3 = document.querySelector('#outros-tela-3');
     let ramoFinal = document.querySelector('#outros-tela-final');
 
-    window.onload = function() {
-        var reloading = sessionStorage.getItem("reloading");
-        if (reloading) {
-            sessionStorage.removeItem("reloading");
-            $(ramo1).css('display', 'none');
-            nextRamo(ramoFinal);
+    if(abaNome == 'outros'){
+        window.onload = function() {
+            var reloading = sessionStorage.getItem("reloading");
+            if (reloading) {
+                sessionStorage.removeItem("reloading");
+                $(ramo1).css('display', 'none');
+                nextRamo(ramoFinal);
+            }
         }
     }
 

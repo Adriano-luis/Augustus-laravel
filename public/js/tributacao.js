@@ -101,8 +101,9 @@ $(document).ready(function(){
             $(ramo2).css('display', 'block');
         } else{
             $(ramo2).css('display', 'none');
-            $('.menu-2').css('min-height', '700');
-            $('.fundo').css('min-height', '720');
+            $('.menu-2').css('min-height', '741');
+            $('.fundo').css('min-height', '760');
+            $('.next-tributacao-final').css('top', '685');
             $(ramoFinal).css('display', 'block');
         }
     }  
@@ -115,6 +116,7 @@ $(document).ready(function(){
             $(ramoFinal).css('display', 'none');
             $('.menu-2').css('min-height', '611');
             $('.fundo').css('min-height', '650');
+            $('.next-tributacao-final').css('top', '529');
             $(ramo2).css('display', 'block');
         }
     }  
