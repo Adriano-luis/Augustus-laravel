@@ -211,7 +211,7 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',374);
+            //$resposta = $respostas->where('id',298);
             //dd($resposta);
 
             $perguntas=Pergunta::all();
@@ -292,7 +292,7 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',243);
+            //$resposta = $respostas->where('id',282);
             //dd($resposta);
 
             $perguntas=Pergunta::all();
@@ -337,11 +337,11 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',243);
+            //$resposta = $respostas->where('id',394);
             //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',785);
+            //$pergunta = $perguntas->where('id',393);
             //dd($pergunta);
             
         }else{

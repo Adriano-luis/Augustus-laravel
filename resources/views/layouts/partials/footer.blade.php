@@ -33,5 +33,6 @@
     <script type="text/javascript" src="{{asset('/js/numero-de-funcionarios.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/previdencia.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/comercio-exterior.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/relacionamento.js')}}"></script>
     
 </footer>

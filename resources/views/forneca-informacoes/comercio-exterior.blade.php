@@ -12,25 +12,20 @@
 
 
             
-            /*$resposta=$respostas->where('id',243);
-            $resposta=$respostas->where('id',244);
-            $resposta=$respostas->where('id',0);
+            $resposta1=$respostas->where('id',383);
+            $resposta2=$respostas->where('id',384);
+            $resposta3=$respostas->where('id',385);
+            $resposta4=$respostas->where('id',386);
 
-            $resposta=$respostas->where('id',272);
-            $resposta=$respostas->where('id',355);
-            $resposta=$respostas->where('id',354);
-            $resposta=$respostas->where('id',353);
-
-            $resposta=$respostas->where('id',298);
-            $resposta=$respostas->where('id',299);
-
-            $resposta=$respostas->where('id',364);
-            $resposta=$respostas->where('id',373);
+            $resposta5=$respostas->where('id',282);
+            $resposta6=$respostas->where('id',283);
+            $resposta7=$respostas->where('id',284);
+            $resposta8=$respostas->where('id',285);
 
 
-            $listaRespostas1 = [$respostas[138]->id,$respostas[37]->id,$respostas[27]->id,$respostas[29]->id,
-            $respostas[23]->id,$respostas[33]->id,$respostas[36]->id,$respostas[32]->id,$respostas[22]->id,
-            $respostas[31]->id,$respostas[28]->id,$respostas[38]->id];*/
+
+            $lista1Respostas1 = [$resposta1[83]->id,$resposta2[84]->id,$resposta3[85]->id,$resposta4[86]->id];
+            $lista2Respostas1 = [$resposta5[10]->id,$resposta6[11]->id,$resposta7[12]->id,$resposta8[13]->id];
            
             
         ?>
@@ -41,9 +36,10 @@
                     <h6>{{$pergunta1[15]->post_title}}</h6>
                     <select id="exportacoes" class="select">
                         <option value="">Escolha uma opção</option>
-                        <option value="">Lucro Real</option>
-                        <option value="">Lucro Presumido</option>
-                        <option value="">Simples Nacional</option>
+                        <option value="{{$resposta1[83]->id}}">{{$resposta1[83]->post_title}}</option>
+                        <option value="{{$resposta2[84]->id}}">{{$resposta2[84]->post_title}}</option>
+                        <option value="{{$resposta3[85]->id}}">{{$resposta3[85]->post_title}}</option>
+                        <option value="{{$resposta4[86]->id}}">{{$resposta4[86]->post_title}}</option>
                     </select>
                 </div>
             </div>
@@ -51,10 +47,10 @@
                 <div class="col">
                     <h6>{{$pergunta2[4]->post_title}}</h6>
                     <select id="inportacoes" class="select">
-                        <option value="">Escolha uma opção</option>
-                        <option value="">Lucro Real</option>
-                        <option value="">Lucro Presumido</option>
-                        <option value="">Simples Nacional</option>
+                        <option value="{{$resposta5[10]->id}}">{{$resposta5[10]->post_title}}</option>
+                        <option value="{{$resposta6[11]->id}}">{{$resposta6[11]->post_title}}</option>
+                        <option value="{{$resposta7[12]->id}}">{{$resposta7[12]->post_title}}</option>
+                        <option value="{{$resposta8[13]->id}}">{{$resposta8[13]->post_title}}</option>
                     </select>
                 </div>
             </div>
@@ -74,14 +70,12 @@
             <div class="col">
                 <?php $pergunta1 = $perguntas->where('id',382)?>
                 <div class="comercio-final-resposta">
-                    <p>{{$pergunta1[15]->post_title}}</p>
-                    <?php /* 
+                    <p>{{$pergunta1[15]->post_title}}</p> 
                     @foreach ($respostasEmpresa as $resp)
-                        @if (in_array($resp->id_resposta, $listaRespostas1))
+                        @if (in_array($resp->id_resposta, $lista1Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    */?>
                     <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
                 </div> 
             </div>
@@ -89,13 +83,11 @@
                 <?php $pergunta2 = $perguntas->where('id',281) ?>
                 <div class="comercio-final-resposta">
                     <p>{{$pergunta2[4]->post_title}}</p>   
-                    <?php /* 
                     @foreach ($respostasEmpresa as $resp)
-                        @if (in_array($resp->id_resposta, $listaRespostas3))
+                        @if (in_array($resp->id_resposta, $lista2Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    */?>
                     <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
                 </div>
             </div>
