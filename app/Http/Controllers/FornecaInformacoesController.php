@@ -170,12 +170,8 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',243);
-            //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',785);
-            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
@@ -211,8 +207,6 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',298);
-            //dd($resposta);
 
             $perguntas=Pergunta::all();
             
@@ -292,8 +286,6 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',282);
-            //dd($resposta);
 
             $perguntas=Pergunta::all();
             
@@ -337,12 +329,8 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',394);
-            //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',393);
-            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
@@ -355,25 +343,42 @@ class FornecaInformacoesController extends Controller
 
     public function relacionamentoPost(Request $request){
         $idEmpresa = $_SESSION['idEmpresa'];
-        $ramo1 = $request->respostasPage1;
-        $ramo2 = $request->respostasPage2;
-        $ramo3 = $request->respostasPage3;
-        $ramo4 = $request->respostasPage4;
+        $ramo1_1 = $request->respostas1Page1;
+        $ramo1_2 = $request->respostas2Page1;
+        $ramo1_3 = $request->respostas3Page1;
+        $ramo1_4 = $request->respostas4Page1;
+        $ramo2_1 = $request->respostas1Page2;
+        $ramo2_2 = $request->respostas2Page2;
 
-        if($ramo1 != ''){
-            foreach($ramo1 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>329,
-                'id_resposta'=>$registro]);    
+        if($ramo1_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>246,
+            'id_resposta'=>$ramo1_1]);
+        }
 
-            }
+        if($ramo1_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>404,
+            'id_resposta'=>$ramo1_2]);    
+        }
+
+        if($ramo1_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>401,
+            'id_resposta'=>$ramo1_3]);
+        }
+
+        if($ramo1_4 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>398,
+            'id_resposta'=>$ramo1_4]);
         }
         
-        if($ramo2 != ''){
-            foreach($ramo2 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>313,
-                'id_resposta'=>$registro]);  
-            }
-        }
+        if($ramo2_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>407,
+            'id_resposta'=>$ramo2_1]);  
+        }  
+
+        if($ramo2_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>393,
+            'id_resposta'=>$ramo2_2]);  
+        }  
     
                 
     }
@@ -391,12 +396,8 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',243);
-            //dd($resposta);
 
             $perguntas=Pergunta::all();
-            //$pergunta = $perguntas->where('id',785);
-            //dd($pergunta);
             
         }else{
             return redirect()->route('home');
@@ -409,25 +410,73 @@ class FornecaInformacoesController extends Controller
 
     public function outrosPost(Request $request){
         $idEmpresa = $_SESSION['idEmpresa'];
-        $ramo1 = $request->respostasPage1;
-        $ramo2 = $request->respostasPage2;
-        $ramo3 = $request->respostasPage3;
-        $ramo4 = $request->respostasPage4;
+        $ramo1_1 = $request->respostas1Page1;
+        $ramo1_2 = $request->respostas2Page1;
+        $ramo1_3 = $request->respostas3Page1;
+        $ramo1_4 = $request->respostas4Page1;
+        $ramo2_1 = $request->respostas1Page2;
+        $ramo2_2 = $request->respostas2Page2;
+        $ramo2_3 = $request->respostas3Page2;
+        $ramo2_4 = $request->respostas4Page2;
+        $ramo3_1 = $request->respostas1Page3;
+        $ramo3_2 = $request->respostas2Page3;
+        $ramo3_3 = $request->respostas3Page3;
 
-        if($ramo1 != ''){
-            foreach($ramo1 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>329,
-                'id_resposta'=>$registro]);    
+        if($ramo1_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>825,
+            'id_resposta'=>$ramo1_1]);
+        }
 
-            }
+        if($ramo1_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>452,
+            'id_resposta'=>$ramo1_2]);    
+        }
+
+        if($ramo1_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>446,
+            'id_resposta'=>$ramo1_3]);
+        }
+
+        if($ramo1_4 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>440,
+            'id_resposta'=>$ramo1_4]);
         }
         
-        if($ramo2 != ''){
-            foreach($ramo2 as $registro){
-                Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>313,
-                'id_resposta'=>$registro]);  
-            }
+        if($ramo2_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>437,
+            'id_resposta'=>$ramo2_1]);  
+        }  
+
+        if($ramo2_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>434,
+            'id_resposta'=>$ramo2_2]);  
+        }  
+
+        if($ramo2_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>431,
+            'id_resposta'=>$ramo2_3]);  
         }
+
+        if($ramo2_4 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>424,
+            'id_resposta'=>$ramo2_4]);  
+        }
+
+        if($ramo3_1 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>428,
+            'id_resposta'=>$ramo3_1]);  
+        }  
+
+        if($ramo3_2 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>421,
+            'id_resposta'=>$ramo3_2]);  
+        }  
+
+        if($ramo3_3 != ''){
+            Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>387,
+            'id_resposta'=>$ramo3_3]);  
+        }  
+    
     
                 
     }

@@ -43,7 +43,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta1[1]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio1-tela1">
                         <div class=" col radio">
                             <input type="radio" value="">Sim
                         </div>
@@ -56,7 +56,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta2[20]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio2-tela1">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta3[97]->id}}">{{$resposta3[97]->post_title}}
                         </div>
@@ -69,7 +69,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta3[19]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio3-tela1">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta5[95]->id}}">{{$resposta5[95]->post_title}}
                         </div>
@@ -82,7 +82,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta4[18]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio4-tela1">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta7[93]->id}}">{{$resposta7[93]->post_title}}
                         </div>
@@ -129,7 +129,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta1[21]->post_title}}</h6>
-                    <div class="row radio">
+                    <div class="row radio radio1-tela2">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta1[99]->id}}">{{$resposta1[99]->post_title}}
                         </div>
@@ -142,7 +142,8 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta2[17]->post_title}}</h6>
-                    <select name="5anos" class="select">
+                    <select id="terrestres" class="select">
+                        <option value="">Escolha uma opção</option>
                         <option value="{{$resposta3[89]->id}}">{{$resposta3[89]->post_title}}</option>
                         <option value="{{$resposta4[90]->id}}">{{$resposta4[90]->post_title}}</option>
                         <option value="{{$resposta5[91]->id}}">{{$resposta5[91]->post_title}}</option>

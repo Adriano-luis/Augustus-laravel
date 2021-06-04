@@ -31,6 +31,7 @@ $(document).ready(function(){
 
     if(abaNome == 'previdencia'){
         window.onload = function() {
+            console.log(sessionStorage);
             var reloading = sessionStorage.getItem("reloading");
             if (reloading) {
                 sessionStorage.removeItem("reloading");
@@ -41,6 +42,8 @@ $(document).ready(function(){
     }
 
     selected1Tela1 ='';
+    selected1Tela2 = '';
+    selected2Tela2 = '';
     //INPUT RADIO DA TELA 1
     $('.radio1-tela1 input:radio').change(function() {
     selected1Tela1 = $(".radio1-tela1 input:radio:checked").val();
@@ -92,7 +95,7 @@ $(document).ready(function(){
             $(ramo2).css('display', 'none');
             $('.menu-4').css('min-height', '800');
             $('.fundo').css('min-height', '820');
-            $('.next-final').css('top', '736');
+            $('.next-previdencia-final').css('top', '736');
             $(ramoFinal).css('display', 'block');
         }
     }  

@@ -33,6 +33,7 @@ $(document).ready(function(){
     let ramo4 = document.querySelector('#ramo-tela-4');
     let ramoFinal = document.querySelector('#ramo-tela-final');
 
+    
     window.onload = function() {
         var reloading = sessionStorage.getItem("reloading");
         if (reloading) {

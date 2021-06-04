@@ -34,5 +34,6 @@
     <script type="text/javascript" src="{{asset('/js/previdencia.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/comercio-exterior.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/relacionamento.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/outros.js')}}"></script>
     
 </footer>

@@ -1628,16 +1628,16 @@ footer .info{
     border-radius: 15px;
 }
 
-.forneca .progress .img-progresso-1{
+.forneca .menu-1 .progress  .img-progresso-1{
     position: absolute;
     width: 24px;
     height: 25px;
     margin-right: 0px !important;
-    top: 61px;
-    left: 59px;
+    top: 109px;
+    left: 15px;
     background-color: #FFFFFF;
 }
-.forneca .progress .img-progresso-2{
+.forneca .menu-1 .progress .img-progresso-2{
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1646,7 +1646,7 @@ footer .info{
     left: 236px;
     background-color: #FFFFFF;
 }
-.forneca .progress .img-progresso-3{
+.forneca .menu-1 .progress .img-progresso-3{
     position: absolute;
     width: 24px;
     height: 25px;
@@ -1850,6 +1850,16 @@ color: #2C2858;
     color: #FFFFFF;
     background-color: #6694FB;
     border-radius: 15px;
+}
+
+.forneca .menu-2 .progress  .img-progresso-1{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 61px;
+    left: 59px;
+    background-color: #FFFFFF;
 }
 
 .forneca .menu-2 .row.radio-tributacao{
@@ -2207,6 +2217,16 @@ color: #2C2858;
     border-radius: 15px;
 }
 
+.forneca .menu-4 .progress  .img-progresso-1{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 61px;
+    left: 59px;
+    background-color: #FFFFFF;
+}
+
 .forneca .menu-4 .row.radio-previdencia{
     width: 100%;
     max-width: 927px;
@@ -2522,6 +2542,16 @@ color: #2C2858;
     border-radius: 15px;
 }
 
+.forneca .menu-6 .progress  .img-progresso-1{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 61px;
+    left: 32px;
+    background-color: #FFFFFF;
+}
+
 .forneca .menu-6 .row.radio-relacionamento{
     width: 100%;
     max-width: 927px;
@@ -2667,6 +2697,183 @@ color: #2C2858;
 
 .forneca .topico-7 img{
    margin-left: -70px;
+}
+
+.forneca .menu-7 h6{
+    color: #2C2858;
+}
+
+.forneca #outros-tela-2,
+.forneca #outros-tela-3,
+.forneca #outros-tela-final{
+    display: none;
+}
+
+.forneca .menu-7 .num-progresso-1 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 31;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-7 .num-progresso-2 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 313px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+.forneca .menu-7 .num-progresso-3 {
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    top: 62px;
+    left: 606px;
+    padding-top: 11px;
+    padding-left: 9px;
+    color: #FFFFFF;
+    background-color: #6694FB;
+    border-radius: 15px;
+}
+
+.forneca .menu-7 .progress  .img-progresso-1{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 61px;
+    left: 95px;
+    background-color: #FFFFFF;
+}
+.forneca .menu-7 .progress .img-progresso-2{
+    position: absolute;
+    width: 24px;
+    height: 25px;
+    margin-right: 0px !important;
+    top: 61px;
+    left: 382px;
+    background-color: #FFFFFF;
+}
+
+.forneca .menu-7 .row.radio-outros{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.forneca .menu-7 .select{
+    width: 285px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.forneca .menu-7 .row.radio{
+    width: 400px;
+    margin: 0;
+    padding-top: 0px;
+
+}
+
+.forneca .menu-7 .col.radio{
+    height: 40px;
+    margin-right: 20px;
+    padding-top: 8px;
+    background: #F9F9F9;
+    border-radius: 10px;
+}
+
+.forneca .menu-7 input[type="radio"]{
+    margin-right: 25px;
+}
+
+.forneca .menu-7 .proxima{
+    position: absolute;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    top: 529px;
+    right: 56px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-7 .anterior{
+    position: relative;
+    width: 100%;
+    max-width: 115px;
+    height: 40px;
+    right: 0px;
+    margin: 30px 15px 30px 14px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #89879E;
+    background-color: #F9F9F9;
+    cursor: pointer;
+    border-radius: 8px 8px 20px 8px;
+}
+
+.forneca .menu-7 .topo-outros-final{
+    margin:5px 0px 0px 2px;
+    text-align: center;
+}
+
+.forneca .menu-7 .row.outros-final{
+    width: 100%;
+    max-width: 927px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.forneca .menu-7 .outros-final .outros-final-resposta{
+    background-color:#F9F9F9;
+    color: #89879E;
+    margin-bottom: 21px;
+    padding: 15px 0px 0px 15px;
+    border-radius: 5px;
+}
+
+.forneca .menu-7 .topo-outros-final h3{
+    color: #00B976;
+}
+
+.forneca .menu-7 .outros-final .col p{
+    color: #2C2858;
+    margin-bottom: 1px;
+}
+
+.forneca .menu-7 .outros-final .outros-final-img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin-left: 232px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
 }
 
 
