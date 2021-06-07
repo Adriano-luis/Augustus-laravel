@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="teste"><span class="title">{{$noticia->post_title}}</span><br/></div>
-                                    <span><a href="">Leia mais</a></span>
+                                    <span><a href="{{route('noticia',['id'=>$noticia->ID])}}">Leia mais</a></span>
                                 </div>
                             </div>
                         @endforeach

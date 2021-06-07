@@ -29,7 +29,7 @@
             
         ?>
         <h4>{{$pergunta[8]->post_title}}</h4>   
-        <p>Passo 1 de 4</p>
+        <p class="passos">Passo 1 de 4</p>
 
         <div class="progress" style="height: 4px; overflow:visible;margin-top:40px">
             <div class="num-progresso-1">1</div>
@@ -86,7 +86,7 @@
 
         ?>
         <h4>{{$pergunta[7]->post_title}}</h4>   
-        <p>Passo 2 de 4</p>
+        <p class="passos">Passo 2 de 4</p>
 
         <div class="progress" style="height: 4px; overflow:visible;margin-top:40px">
             <div><img src="{{asset('images/tick-mark.svg')}}" class="img-progresso-1" ></div>
@@ -142,7 +142,7 @@
             $respostas[21]->id,$respostas[26]->id];
         ?>
         <h4>{{$pergunta[6]->post_title}}</h4>   
-        <p>Passo 3 de 4</p>
+        <p class="passos">Passo 3 de 4</p>
 
         <div class="progress" style="height: 4px; overflow:visible;margin-top:40px">
             <div><img src="{{asset('images/tick-mark.svg')}}" class="img-progresso-1" ></div>
@@ -197,7 +197,7 @@
             $respostas[53]->id,$respostas[54]->id,$respostas[156]->id,$respostas[59]->id];
         ?>
         <h4>{{$pergunta[9]->post_title}}</h4>   
-        <p>Passo 4 de 4</p>
+        <p class="passos">Passo 4 de 4</p>
 
         <div class="progress" style="height: 4px; overflow:visible;margin-top:40px">
             <div><img src="{{asset('images/tick-mark.svg')}}" class="img-progresso-1" ></div>

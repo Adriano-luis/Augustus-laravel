@@ -36,7 +36,7 @@
            
             
         ?>
-        <p>Passo 1 de 2</p>
+        <p class="passos">Passo 1 de 2</p>
 
         <div class="progress" style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
             <div class="num-progresso-1">1</div>
@@ -122,7 +122,7 @@
             $lista2Respostas2 = [$resposta3[87]->id,$resposta4[94]->id];
             $lista3Respostas2 = [$resposta5[93]->id,$resposta6[96]->id];
         ?> 
-        <p>Passo 2 de 2</p>
+        <p class="passos">Passo 2 de 2</p>
 
         <div class="progress"style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
             <div><img src="{{asset('images/tick-mark.svg')}}" class="img-progresso-1" ></div>

@@ -5,64 +5,24 @@
     <div class="banner">
         <div class="row area">
             <div class="col-sm-1 icone">
-                <img src="{{asset('/images/icon-Noticias.png')}}" />
+                <img src="{{asset('/images/icon-Noticias.svg')}}" />
             </div>
             <div class="col-sm-10 info">
                 <h2>Notícias</h2>
             </div>
             <div class="form desc">
                 <div class="row">
+                    @foreach ($Noticias as $item)
                     <div class="col-sm-4">
                         <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Covid-19: Ministério da Economia amplia lista de contribuições previdenciárias sujeitas à prorrogação</h4>
-                        <span><a href="">Leia mais</a></span>
+                        <h4>{{$item->post_title}}</h4>
+                        <span><a href="{{route('noticia',['id'=>$item->ID])}}">Leia mais</a></span>
                     </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Medidas Econômico-Tributárias referentes à pandemia de Corona Vírus/Covid-19</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Covid-19: Ministério da Economia amplia lista de contribuições previdenciárias sujeitas à prorrogação</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Medidas Econômico-Tributárias referentes à pandemia de Corona Vírus/Covid-19</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
+                <div class="paginacao">
+                    {{$Noticias->links()}}
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Covid-19: Ministério da Economia amplia lista de contribuições previdenciárias sujeitas à prorrogação</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>MP reduz as alíquotas das contribuições aos serviços sociais autônomos</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
-                        <h4>Medidas Econômico-Tributárias referentes à pandemia de Corona Vírus/Covid-19</h4>
-                        <span><a href="">Leia mais</a></span>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </div>

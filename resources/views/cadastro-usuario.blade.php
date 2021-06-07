@@ -1,13 +1,17 @@
-@extends('layouts.basico')
+@extends('layouts.basico-login')
 
 @section('conteudo')
 <section class="perfil-usuario">
     <div class="container">
         <div class="row title">
-            <h2>Cadastrar Usuário</h2>
+            <h2>Cadastrar Usuário</h2> <a href="{{route('login')}}">- Fazer Login</a>
         </div>
         <form action="{{route('cadastrar-usuario')}}" method="POST">
             @csrf
+            {{isset($cadastrado) && $cadastrado != '' ? $cadastrado : ''}}
+            {{$errors->has('nome') ? $errors->first('nome') : ''}}<br>
+            {{$errors->has('email') ? $errors->first('email') : ''}}<br>
+            {{$errors->has('senha') ? $errors->first('senha') : ''}}<br>
             <div class="row info-total">
                 <div class="col-sm-4 info">
                     <span>Nome:</span>
@@ -19,9 +23,6 @@
                     <span>Senha:</span>
                     <input type="password" name="senha" placeholder="Senha">
                     <input type="submit" class="btn" value="Salvar"><br/>
-                    <div class="sair">
-                        <img src="{{asset('/images/icon-Logout.svg')}}" class="img-sair"><a class="link-sair" href="{{ route('logout')}}">Sair</a>
-                    </div>
                 </div>
             </div>
         </form>

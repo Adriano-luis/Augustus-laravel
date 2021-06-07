@@ -1568,7 +1568,16 @@ footer .info{
 
  .forneca .menu-1 h4{
     color: #2C2858;
- }
+}
+
+.forneca .menu-1 .passos{
+    width: 115px;
+    margin-left: 15px;
+    padding-left:10px ;
+    color: #89879E;
+    background-color:#F8F8F8;
+    border-radius: 10px;
+}
 
 .forneca #ramo-tela-2,
 .forneca #ramo-tela-3,
@@ -1818,7 +1827,16 @@ footer .info{
  }
 
 .forneca .menu-2 h6{
-color: #2C2858;
+    color: #2C2858;
+}
+
+.forneca .menu-2 .passos{
+    width: 115px;
+    margin-left: 15px;
+    padding-left:10px ;
+    color: #89879E;
+    background-color:#F8F8F8;
+    border-radius: 10px;
 }
 
 .forneca #tributacao-tela-2,
@@ -2185,6 +2203,15 @@ color: #2C2858;
 .forneca .menu-4 h6{
     color: #2C2858;
 }
+
+.forneca .menu-4 .passos{
+    width: 115px;
+    margin-left: 15px;
+    padding-left:10px ;
+    color: #89879E;
+    background-color:#F8F8F8;
+    border-radius: 10px;
+}
     
 .forneca #previdencia-tela-2,
 .forneca #previdencia-tela-final{
@@ -2511,6 +2538,15 @@ color: #2C2858;
     color: #2C2858;
 }
 
+.forneca .menu-6 .passos{
+    width: 115px;
+    margin-left: 15px;
+    padding-left:10px ;
+    color: #89879E;
+    background-color:#F8F8F8;
+    border-radius: 10px;
+}
+
 .forneca #relacionamento-tela-2,
 .forneca #relacionamento-tela-final{
     display: none;
@@ -2701,6 +2737,15 @@ color: #2C2858;
 
 .forneca .menu-7 h6{
     color: #2C2858;
+}
+
+.forneca .menu-7 .passos{
+    width: 115px;
+    margin-left: 15px;
+    padding-left:10px ;
+    color: #89879E;
+    background-color:#F8F8F8;
+    border-radius: 10px;
 }
 
 .forneca #outros-tela-2,
@@ -2927,7 +2972,7 @@ color: #2C2858;
 }
 
 .noticias .fundo{
-    height: 1185px;
+    height: 1250px;
 }
 
 .noticias .form.desc{
@@ -2956,6 +3001,51 @@ color: #2C2858;
 }
 .noticias .form.desc .col-sm-4:first-child{
     margin-left: 25px;
+}
+
+.noticias .paginacao{
+    width: 100%;
+    max-width: 940px;
+    margin-left: -182px;
+    margin-top: -13px;
+}
+
+.noticias .pagination{
+    padding-left: 570px;
+}
+
+.noticias .pagination .page-item.active .page-link{
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    background-color: #6694FB;
+    border-radius: 5px 5px 10px 5px;
+    border-color: rgba(0, 0, 0, 0.0);
+    color: #FFFFFF;
+}
+
+.noticias .pagination .page-item .page-link{
+    margin: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 5px 0px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #89879E;
+    border: 0;
+
+}
+
+.noticias .pagination .page-item:first-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
+}
+
+.noticias .pagination .page-item:last-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
 }
 
 .noticias .marca{
@@ -2995,7 +3085,7 @@ color: #2C2858;
     position: absolute;
     width: 100%;
     max-width: 990px;
-    padding-top: 48px;
+    margin-top: 48px;
     padding-left: 186px;
     padding-right: 155px;
 }
@@ -3004,8 +3094,8 @@ color: #2C2858;
     position: absolute;
     width: 100%;
     max-width: 990px;
-    padding-top: 158px;
-    padding-left: 500px;
+    margin-top: 158px;
+    padding-left: 503px;
     padding-right: 155px;
     color: #89879E;
     font-size: 15px;
@@ -3019,7 +3109,7 @@ color: #2C2858;
 }
 
 .noticia .fundo{
-    height: 1600px;
+    height: 100%;
 }
 
 .noticia .form.desc{
@@ -3030,7 +3120,6 @@ color: #2C2858;
     padding-right: 155px;
     width: 100%;
     max-width: 990px;
-    height: 1225px;
     background-color: rgba(0, 0, 0, 0.0);
     box-shadow: none;
     border-radius: 10px 10px 10px 10px;
@@ -3076,6 +3165,11 @@ color: #2C2858;
     background-color: #FFFFFF;
 }
 
+.noticia .botao-noticias a{
+    color: #89879E;
+    text-decoration: none;
+}
+
 
 
 
@@ -3086,6 +3180,13 @@ color: #2C2858;
     background-color: #E6E9F1;
     height: 100%;
 } 
+
+.perfil-usuario a{
+    margin-top: 38px;
+    margin-left: 10px;
+    color: #000000;
+    text-decoration: none ;
+}
 
 .perfil-usuario .container{
     padding-top: 20px;
@@ -3142,6 +3243,7 @@ color: #2C2858;
     font-size:13px ;
     border:1px solid  #89879E;
     border-radius: 5px;
+    outline: none;
 }
 
 .perfil-usuario .info-total input[name="nome"],
@@ -3155,6 +3257,7 @@ color: #2C2858;
     font-size:13px ;
     border:1px solid  #89879E;
     border-radius: 5px;
+    outline: none;
 }
 
 .perfil-usuario .info-total input[type="submit"]{
@@ -3551,23 +3654,49 @@ input[type="file"]{
     margin-top: 45px;
 }
 
-.ver-empresas .paginacao .page-numbers{
-    margin: 5px;
-    color: #89879E;
+.ver-empresas .paginacao{
+    width: 100%;
+    max-width: 940px;
+    text-align: center;
+    margin-top: 45px;
 }
 
-.ver-empresas .paginacao .page-numbers.current{
+.ver-empresas .pagination{
+    padding-left: 570px;
+}
+
+.ver-empresas .pagination .page-item.active .page-link{
     margin: 5px;
     padding: 5px 10px 5px 10px;
     background-color: #6694FB;
     border-radius: 5px 5px 10px 5px;
+    border-color: rgba(0, 0, 0, 0.0);
     color: #FFFFFF;
 }
 
-.ver-empresas .paginacao .prev,
-.ver-empresas .paginacao .next{
-    color: #6694FB;
-    font-weight: 700;
+.ver-empresas .pagination .page-item .page-link{
+    margin: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 5px 0px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #89879E;
+    border: 0;
+
+}
+
+.ver-empresas .pagination .page-item:first-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
+}
+
+.ver-empresas .pagination .page-item:last-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
 }
 
 .ver-empresas .marca img{
@@ -3879,27 +4008,45 @@ input[type="file"]{
 .empresa-relatorio .paginacao{
     width: 100%;
     max-width: 940px;
-    margin-left: 203px;
     text-align: center;
     margin-top: 45px;
 }
 
-.empresa-relatorio .paginacao .page-numbers{
-    margin: 5px;
-    color: #89879E;
+.empresa-relatorio .pagination{
+    padding-left: 570px;
 }
 
-.empresa-relatorio .paginacao .page-numbers.current{
+.empresa-relatorio .pagination .page-item.active .page-link{
     margin: 5px;
     padding: 5px 10px 5px 10px;
     background-color: #6694FB;
     border-radius: 5px 5px 10px 5px;
+    border-color: rgba(0, 0, 0, 0.0);
     color: #FFFFFF;
 }
 
-.empresa-relatorio .paginacao .prev,
-.empresa-relatorio .paginacao .next{
-    color: #6694FB;
-    font-weight: 700;
+.empresa-relatorio .pagination .page-item .page-link{
+    margin: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 5px 0px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #89879E;
+    border: 0;
+
+}
+
+.empresa-relatorio .pagination .page-item:first-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
+}
+
+.empresa-relatorio .pagination .page-item:last-child .page-link {
+    padding-top: 0px;
+    font-size: 22px;
+    color: #6694FB !important;
+    font-weight: 600 !important;
 }
         

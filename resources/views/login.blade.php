@@ -12,7 +12,7 @@
                             <div class="form">
                                 <form action="{{route('login')}}" method="POST">
                                     @csrf
-                                    <label><h5>Seja bem-vindo</h5></label>
+                                    <label><h5>Seja bem-vindo</h5> <a href="{{route('cadastrar-usuario')}}">Cadastrar Usuário</a></label>
                                     <label><p>Informe seus dados de login para continuar</p></label><br>
                                     {{isset($erro) && $erro != '' ? $erro : ''}}
                                     <input type="email" name="emaiLogin" id="email-login" autocomplete="off" placeholder="Seu email"/>

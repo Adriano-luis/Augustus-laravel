@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Noticia;
+use App\Noticia_Cliente;
 use App\Empresa;
 use App\Resposta;
 use App\Pergunta;
@@ -15,9 +16,6 @@ use App\Relatorio;
 class HomeController extends Controller
 {
     public function index(){
-        //Noticias
-        $noticias=Noticia::orderBy('post_date')->paginate(3);
-
         //Empresas
         $empresa = new Empresa();
         $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
@@ -25,6 +23,14 @@ class HomeController extends Controller
         
         //Dados das empresas
         $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->paginate(3);
+
+        //Noticias
+        $cliente_noticia = $empresa->Where('id_cliente',$_SESSION['id'])->first();
+        $noticias = Noticia_Cliente::join('noticias', 'noticia_cliente.id_noticia', '=', 'noticias.id')
+        ->where('noticia_cliente.id_cliente',$cliente_noticia->id)->get(['id_noticia','noticias.post_title']);
+        if(sizeOf($noticias) <1){
+            $noticias=Noticia::orderBy('post_date')->paginate(3);
+        }
         
         //Porcentagem das Informações fornecidas
         $porcentagemConcluido = [];

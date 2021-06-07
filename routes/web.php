@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login/{erro?}', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@autenticar')->name('login');
 
+Route::get('/cadastrar-usuario', 'PerfilUsuarioController@cadastrar')->name('cadastrar-usuario');
+Route::post('/cadastrar-usuario', 'PerfilUsuarioController@salvar')->name('cadastrar-usuario');
+
 
 
 Route::middleware('login')->prefix('')->group(function (){
@@ -26,6 +29,7 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Empresas
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
+    Route::post('/cadastrar', 'CadastrarController@salvar')->name('nova-empresa');
     Route::get('/ver-empresas', 'VerEmpresasController@index')->name('ver-empresas');
 
     Route::prefix('/forneca-informacoes')->group(function (){
@@ -48,21 +52,19 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Noticias
     Route::get('/noticias', 'NoticiaController@index')->name('noticias');
+    Route::get('/noticia', 'NoticiaController@single')->name('noticia');
    
 
     //Oportunidades
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
-    Route::get('/cadastrar-usuario', 'PerfilUsuarioController@cadastrar')->name('cadastrar-usuario');
-    Route::post('/cadastrar-usuario', 'PerfilUsuarioController@salvar')->name('cadastrar-usuario');
 
     /*
     Route::get('/dashboard', 'HomeController@index');
     Route::get('/sobre', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
    
-    Route::get('/noticia', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');

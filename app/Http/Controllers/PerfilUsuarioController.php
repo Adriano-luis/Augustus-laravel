@@ -17,6 +17,17 @@ class PerfilUsuarioController extends Controller
 
     public function salvar(Request $request){
          
+        $regras = [
+            'email' => 'email',
+            'nome'  => 'required',
+            'senha' => 'required'
+        ];
+        $retorno =[
+            'required' => 'Você esqueceu de preencher! (Campo :attribute)',
+            'email' => 'Digite um email válido!'
+        ];
+
+        $request->validate($regras,$retorno);
 
         //Recuperando os paramêtros
         $nome = $request->get('nome');
@@ -29,15 +40,15 @@ class PerfilUsuarioController extends Controller
         $user = new User();
         $usuario = $user->where('user_email',$email)->get()->first();
         if(isset($usuario->user_login)){
+            return view('cadastro-usuario',['cadastrado'=>'Usuário já cadastrado']);
 
-            return redirect()->route('home');
         }else{
             $user->user_login = $nome;
             $user->user_email = $email;
             $user->user_pass = $senha;
             $user->user_status = 0;
             $user->save();
-            return redirect()->route('cadastrar-usuario');
+            return redirect()->route('login');
         }
     }
 }

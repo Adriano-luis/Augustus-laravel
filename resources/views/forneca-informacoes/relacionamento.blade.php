@@ -12,7 +12,9 @@
             $pergunta3 = $perguntas->where('id',401);
             $pergunta4 = $perguntas->where('id',398);
 
-            
+            $resposta1 = $respostas->where('id',1246);
+            $resposta2 = $respostas->where('id',1247);
+
             $resposta3=$respostas->where('id',405);
             $resposta4=$respostas->where('id',406);
 
@@ -24,14 +26,14 @@
 
 
 
-            $lista1Respostas1 = [];
+            $lista1Respostas1 = [$resposta1[160]->id,$resposta1[161]->id];
             $lista2Respostas1 = [$resposta3[97]->id,$resposta4[98]->id];
             $lista3Respostas1 = [$resposta5[95]->id,$resposta6[96]->id];
             $lista4Respostas1 = [$resposta7[93]->id,$resposta8[94]->id];
            
             
         ?>
-        <p>Passo 1 de 2</p>
+        <p class="passos">Passo 1 de 2</p>
 
         <div class="progress" style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
             <div class="num-progresso-1">1</div>
@@ -45,10 +47,10 @@
                     <h6>{{$pergunta1[1]->post_title}}</h6>
                     <div class="row radio radio1-tela1">
                         <div class=" col radio">
-                            <input type="radio" value="">Sim
+                            <input type="radio" value="{{$resposta1[160]->id}}">{{$resposta1[160]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="">Não
+                            <input type="radio" value="{{$resposta2[161]->id}}">{{$resposta2[161]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -117,7 +119,7 @@
             $lista2Respostas2 = [$resposta3[89]->id,$resposta4[90]->id,$resposta5[91]->id,$resposta6[92]->id];
 
         ?>
-        <p>Passo 2 de 2</p>
+        <p class="passos">Passo 2 de 2</p>
 
         <div class="progress"style="height: 4px;overflow:visible;margin-top:40px;margin-left:40px;margin-bottom:40px;width: 580px;">
             <div><img src="{{asset('images/tick-mark.svg')}}" class="img-progresso-1" ></div>

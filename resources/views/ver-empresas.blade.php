@@ -93,7 +93,7 @@
                         <div class="progress">
                             <div id="barra-{{$cont}}"class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <div class="atualizar"><a href="">Atualizar informações</a></div>
+                        <div class="atualizar"><a href="{{route('forneca-informacoes',['id'=>$dado->id,'cont'=>$cont])}}">Atualizar informações</a></div>
                     </div>
                     <div class="col-sm-4 oportunidades">
                         <div class="row dados">
