@@ -31,7 +31,9 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
     Route::post('/cadastrar', 'CadastrarController@salvar')->name('nova-empresa');
     Route::get('/ver-empresas', 'VerEmpresasController@index')->name('ver-empresas');
+    Route::get('/empresa-visualizar', 'VerEmpresasController@visualizar')->name('visualizar');
 
+    //Perguntas e Respostas
     Route::prefix('/forneca-informacoes')->group(function (){
     Route::get('/', 'FornecaInformacoesController@index')->name('forneca-informacoes');
     Route::post('/', 'FornecaInformacoesController@indexPost')->name('indexPost');
@@ -59,10 +61,10 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
+    Route::post('/contato', 'PerfilUsuarioController@contato')->name('contato');
 
     /*
     Route::get('/dashboard', 'HomeController@index');
-    Route::get('/sobre', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
    
     Route::get('/home', 'HomeController@index');

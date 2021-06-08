@@ -83,4 +83,10 @@ class VerEmpresasController extends Controller
         'porcentagemConcluido'=>$porcentagemConcluido,'oportunidades'=>$listaOportunidade,
         'totalOportunidades'=>$totalOportunidades]);
     }
+
+
+
+    public function visualizar(){
+        return view('empresa-visualizar');
+    }
 }

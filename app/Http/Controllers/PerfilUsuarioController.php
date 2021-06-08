@@ -51,4 +51,33 @@ class PerfilUsuarioController extends Controller
             return redirect()->route('login');
         }
     }
+
+
+    public function contato(Request $request){
+        $regras = [
+            'emailcontato' => 'email',
+            'nonomecontatome'  => 'required',
+            'mensagemcontato' => 'required'
+        ];
+        $retorno =[
+            'required' => 'Você esqueceu de preencher! (Campo :attribute)',
+            'email' => 'Digite um email válido!'
+        ];
+
+        $request->validate($regras,$retorno);
+
+        $nome = $request->get('nonomecontatome');
+        $email = $request->get('emailcontato');
+        $mensagem = $request->get('mensagemcontato');
+        $assunto = $request->get('assuntocontato');
+
+        $para = "contato@augustus.digital.com.br";
+        $corpo = "Nome:".$nome." - E-mail:".$email."\r\n".$mensagem;
+        $cabecalho = "From:contato@augustus.digital.com.br"."\r\n".
+                    "Reply-To:".$email."\r\n".
+                    "X-Mailer: PHP/".phpversion();
+
+        mail($para,$assunto,$corpo,$cabecalho);
+        echo "Enviado";
+    }
 }
