@@ -3720,18 +3720,24 @@ input[type="file"]{
 
 
 
-       /* Oportunidades */
+       /* oportunidades-geradas */
 
-.oportunidades .banner{
+.oportunidades-geradas{
+    height:max-content;
+    background-color: #faf8f8;
+    margin-bottom: 50px;
+}
+
+.oportunidades-geradas .banner{
     height: 430px;
     background: linear-gradient(90.13deg, #2C2858, #615BA3);
 }
 
-.oportunidades  a{  
+.oportunidades-geradas  a{  
     text-decoration: none;
 }
 
-.oportunidades .row{
+.oportunidades-geradas .row{
     width: 100%;
     max-width: 927px;
     flex-wrap: nowrap;
@@ -3739,7 +3745,7 @@ input[type="file"]{
     padding-top: 75px;
 }
 
-.oportunidades .row.deg-fundo{
+.oportunidades-geradas .row.deg-fundo{
     width: 557px;
     height: 110px;
     flex-wrap: nowrap;
@@ -3750,7 +3756,7 @@ input[type="file"]{
     border-radius: 10px;
 }
 
-.oportunidades .row.teste2{
+.oportunidades-geradas .row.teste2{
     position: absolute;
     top: 155px;
     width: 100%;
@@ -3760,7 +3766,7 @@ input[type="file"]{
     padding-top: 0px;
 }
 
-.oportunidades .row.dados{
+.oportunidades-geradas .row.dados{
     width: 100%;
     max-width: 800px;
     flex-wrap: nowrap;
@@ -3769,63 +3775,63 @@ input[type="file"]{
     padding-top: 30px;
 }
 
-.oportunidades .row img{
+.oportunidades-geradas .row img{
     width:45px;
     margin-right: 15;
 }
 
-.oportunidades .row .marca{
+.oportunidades-geradas .row .marca{
     width:210px;
     width: 210px;
     position: absolute;
     right: -79px;
 }
 
-.oportunidades  .info{
+.oportunidades-geradas  .info{
     color: #FFFFFF;
 }
 
-.oportunidades .opo-texto,
-.oportunidades .info .titulo,
-.oportunidades .porcentagem-opo h3{
+.oportunidades-geradas .opo-texto,
+.oportunidades-geradas .info .titulo,
+.oportunidades-geradas .porcentagem-opo h3{
     color: #00B976 !important;
 }
 
-.oportunidades .porcentagem-info h3,
-.oportunidades .porcentagem-opo h3{
+.oportunidades-geradas .porcentagem-info h3,
+.oportunidades-geradas .porcentagem-opo h3{
     font-size: 35px;
 }
 
-.oportunidades .info-texto,
-.oportunidades .opo-texto {
+.oportunidades-geradas .info-texto,
+.oportunidades-geradas .opo-texto {
     margin-left: 10px;
     font-size: 11px;
     font-weight: 700;
 }
 
-.oportunidades .info-texto,
-.oportunidades .porcentagem-info h3{
+.oportunidades-geradas .info-texto,
+.oportunidades-geradas .porcentagem-info h3{
     color: #6694FB;
 }
 
-.oportunidades .oportunidades a{  
+.oportunidades-geradas .oportunidades a{  
     font-size: 11px;
     text-decoration: none;
     color: #FFFFFF;
 }
 
-.oportunidades .info .progress{
+.oportunidades-geradas .info .progress{
     height: 7px;
     margin-top: 8px;
     margin-left: 4px;
     max-width: 197px;
 }
 
-.oportunidades .info .progress-bar.color{
+.oportunidades-geradas .info .progress-bar.color{
     background-color:  #FA8D6B;
 }
 
-.oportunidades .row.segunda{
+.oportunidades-geradas .row.segunda{
     width: 100%;
     max-width: 935px;
     flex-wrap: nowrap;
@@ -3833,56 +3839,107 @@ input[type="file"]{
     padding-top: 20px;
 }
 
-.oportunidades .icone{
+.oportunidades-geradas .icone{
     width: 115px;
     height: 115px;
     margin-right: 44px;
 }
 
-.oportunidades .icone img{
+.oportunidades-geradas .icone img{
     width: 115px;
     height: 115px;
     margin-top: 15px;
     margin-left: 3px;
 }
 
-.oportunidades  .row .img-informacoes{
+.oportunidades-geradas  .row .img-informacoes{
     width: 320px;
     
 }
 
-.oportunidades .info h2{
+.oportunidades-geradas .info h2{
     margin-bottom: 13px;
     font-weight: 500;
     color: #FFFFFF;
 }
 
-.oportunidades .info p{
+.oportunidades-geradas .info p{
     max-width: 500px;
     color: #FFFFFF;
     font-size: 13px;    
 }
-.oportunidades .info .nome{
+.oportunidades-geradas .info .nome{
     margin-bottom: 0px;
 }
 
-.oportunidades .info .empresa{
+.oportunidades-geradas .info .empresa{
     margin-bottom: 19px;
 }
 
-.oportunidades .info span{
+.oportunidades-geradas .info span{
     color: #6694FB !important;
 }
 
-.oportunidades .fundo{
-    height: 650px;
-    background-color: #faf8f8;
-}
-
-.oportunidades .text{
+.oportunidades-geradas .text{
     text-decoration: none;
     color: #2C2858;
     font-weight: 500;
+}
+
+.oportunidades-geradas .lista-oportunidades-topo{
+    position: absolute;
+    width: 100%;
+    max-width: 976px;
+    height: 25px;
+    top: 476px;
+    margin-left: 13px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #FFFFFF;
+}
+
+.oportunidades-geradas .lista-oportunidades{
+    width: 100%;
+    max-width: 976px;
+    height: 100%;
+    min-height: 800px;
+    margin-left: 224px;
+    margin-bottom: 50px;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #FFFFFF;
+}
+
+.oportunidades-geradas .lista-oportunidades .qt-titulo{
+    color: #00B976 !important;
+}
+
+.oportunidades-geradas .lista-oportunidades .qt-oportunidades{
+    padding-top: 0px;
+}
+
+.oportunidades-geradas .lista-oportunidades .qt-oportunidades img{
+    width: 33px;
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+.oportunidades-geradas .lista-oportunidades hr{
+    width: 930px;
+
+}
+
+.oportunidades-geradas .lista-oportunidades .titulo-ralatorio{
+    width: 253px;
+    height: 110px;
+    padding: 10px 40px 10px 11px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    color: #89879E;
+    border-radius: 5px;
+    border: 1px solid #E7E7E7;
+}
+
+.oportunidades-geradas .lista-oportunidades .titulo-ralatorio h6{
+    font-size: 13px;
 }
 
 

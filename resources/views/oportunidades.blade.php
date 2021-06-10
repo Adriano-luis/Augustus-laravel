@@ -1,7 +1,7 @@
 @extends('layouts.basico')
 
 @section('conteudo')
-<section class="oportunidades">
+<section class="oportunidades-geradas">
     <div class="banner">
         <div class="row">
             <div class="col-sm-8 info">
@@ -37,10 +37,23 @@
             <div class="col-sm-4">
                 <img class="marca" src="{{asset('/images/img-augustus-fundo.png')}}">
             </div>
+            <div class="lista-oportunidades-topo">
+
+            </div>
         </div>
     </div>
-    <div class="fundo">
-        
+    <div class="lista-oportunidades">
+        <?php $qt=sizeof($relatorios) ?>
+        <div class="row qt-oportunidades">
+            <img src="{{asset('/images/icon-Estrela-Oportunidade.svg')}}">
+            <h2><span class="qt-titulo">{{$qt}} Oportunidades Geradas</span></h2>
+        </div>
+        <hr>
+        @foreach ($relatorios as $relatorio)
+            <div class="titulo-ralatorio">
+                <h6>{{$relatorio->post_title}}</h6>
+            </div>
+        @endforeach
     </div>
 </section>
 @endsection
