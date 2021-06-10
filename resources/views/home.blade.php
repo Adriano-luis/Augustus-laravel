@@ -137,7 +137,7 @@
                             <div class="opo-texto">
                                 OPORTUNIDADES<br/> GERADAS
                             </div>
-                            <div class="ver"><a href="">Ver oportunidades</a></div>
+                            <div class="ver"><a href="{{route('oportunidades',['id'=>$dado->id,'cont'=>$cont])}}">Ver oportunidades</a></div>
                         </div>
                     </div>
                 </div>

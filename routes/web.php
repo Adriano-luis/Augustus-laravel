@@ -58,6 +58,7 @@ Route::middleware('login')->prefix('')->group(function (){
    
 
     //Oportunidades
+    Route::get('/oportunidades', 'OportunidadesController@index')->name('oportunidades');
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
@@ -67,7 +68,6 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/dashboard', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
    
-    Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');

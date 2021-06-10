@@ -18,7 +18,15 @@
                         </div>
                         <div class="row" style="max-width: 1052px;margin-left:144px;">
                             <div class="col-sm-8">
-                                ...
+                                <div class="row titulo">
+                                    <h6>Dados da empresa:</h6>
+                                </div>
+                                <div class="row dados-1">
+                                    ...
+                                </div>
+                                <div class="row dados-2">
+                                    ...
+                                </div>
                             </div>
                             <div class="col-sm-4">
                                 ...
@@ -37,47 +45,6 @@
                     ...
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="modal-editar" class="modal-container editr">
-        <div class="m-editar">
-            <button class="fechar">x</button>
-            <h2>Entre em contato conosco</h2>
-            <form>
-                <div class="row">
-                    <input type="text" name="nome" placeholder="Nome">
-                </div>
-                <div class="row">
-                    <input type="email" name="email" placeholder="E-mail">
-                </div>
-                <div class="row">
-                    <input type="text" name="assunto" placeholder="Assunto">
-                </div>
-                <div class="row">
-                    <textarea name="mensagem"  cols="30" rows="10" placeholder="Mensagem"></textarea>
-                </div>
-                <div class="row">
-                    <input type="submit" value="Enviar">
-                </div>
-                <div class="row">
-                    <span>Ou nos envie um email:<br/> contato@revisefacil.com.br</span>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div id="modal-excluir" class="modal-container excluir">
-        <div class="m-excluir">
-            <button class="fechar" id="fechar">x</button>
-            <div class="row title">
-                Você esta prestes a excluir a empresa:
-                <h5>Empresa fictícia 001</h5>
-            </div>
-            <form>
-                <div class="row">
-                    <label for="fechar"><div class="cancelar">Não</div></label>
-                    <div class="excluir">Excluir</div>
-                </div>
-            </form>
         </div>
     </div>
 </section>
