@@ -3942,6 +3942,78 @@ input[type="file"]{
     font-size: 13px;
 }
 
+.oportunidades-geradas .lista-oportunidades .relatorio{
+    position: absolute;
+    width: 100%;
+    max-width: 623px;
+    height: 660px;
+    margin-top: -129px;
+    margin-left: 330px;
+    background-color: #c8c8ce;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .status{
+    width: 100%;
+    padding-top: 0px;
+
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .status p{
+    width: 529px;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #2C2858;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .status .proxima{
+    width: 100%;
+    max-width: 159px;
+    height: 40px;
+    padding-top: 9px;
+    padding-left: 29px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 5px 5px 14px 5px;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .radios{
+   margin-left: 20px;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .radios .linha{
+    position: absolute;
+    width: 623px;
+    height: 2px;
+    top: 34px;
+    left: 0px;
+    background: #6694FB;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .classi-1 {
+    margin-left: 0px !important;
+    margin-right: 46px;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .radio-classi {
+    margin-left: 46px;
+    margin-right: 46px;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .textos,
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .marcar-classificacao,
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .radios {
+    padding-top: 0px    ;
+}
+
+.oportunidades-geradas .lista-oportunidades .relatorio .classificacao .textos p{
+    padding-top: 10px;
+    font-size: 13px;
+    color: #89879E;
+}
+
+
 
 
 
@@ -4310,9 +4382,15 @@ input[type="file"]{
     background-color: #E6E9F1;
 }
 
-.empresa-visualizar .mix .row{
+.empresa-visualizar .mix .titulo{
+    margin-top: 25px;
+    margin-bottom: 25px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.empresa-visualizar .mix .titulo h6{
+    background-color: #6694FB;
 }
 
 .empresa-visualizar .mix .col-sm-7{

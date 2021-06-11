@@ -49,6 +49,7 @@ class HomeController extends Controller
         //Oportunidades
         if($qtEmpresas > 0){
             $j=0;
+            $totalOportunidades=0;
             foreach($listaEmpresa as $empresaOp){
                 
                 //Busca relatórios
@@ -57,12 +58,12 @@ class HomeController extends Controller
                 $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
                 if (sizeof($mysqli) > 0){
                     foreach ($mysqli as $value){
-                        $auxListaRelatorio[] = $value->id_relatorio;
+                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
                     }
                 }
 
                 //Conta Oportunidades e qual o Relatório
-                $listaRelatorio[$empresaOp->nome]=$auxListaRelatorio;
+                $listaRelatorio[$empresaOp->nome]=$auxListaRelatorio[$empresaOp->nome];
                 $auxContRelatorio = sizeof($listaRelatorio[$empresaOp->nome]);
                 $auxContOportunidade = 0;
                 if($auxContRelatorio > 0){
@@ -84,12 +85,9 @@ class HomeController extends Controller
                 } 
                 if(isset($auxContOportunidade)){
                     $listaOportunidade[$j] = $auxContOportunidade;
+                    $totalOportunidades= $totalOportunidades + $auxContOportunidade;
                 }
                 $j++;
-            }
-            $totalOportunidades=0;
-            for($k=0;$k<sizeof($listaOportunidade);$k++){
-                $totalOportunidades= $totalOportunidades + $listaOportunidade[$k];
             }
         }
         

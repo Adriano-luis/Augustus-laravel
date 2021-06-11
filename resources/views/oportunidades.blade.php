@@ -53,6 +53,41 @@
             <div class="titulo-ralatorio">
                 <h6>{{$relatorio->post_title}}</h6>
             </div>
+            <div class="relatorio">
+                <div class=" classificacao">
+                    <div class="row status">
+                        <p>Classifique o status da Oportunidade:</p>
+                        <div class="proxima">Salvar Alterações</div>
+                    </div>
+                    <div class="row marcar-classificacao">
+                    <div class=" row radios">
+                        <hr class="linha">
+                        <input type="radio" class="radio-classi classi-1" value="1">
+                        <input type="radio" class="radio-classi" value="0">
+                        <input type="radio" class="radio-classi" value="2">
+                        <input type="radio" class="radio-classi" value="3">
+                        <input type="radio" class="radio-classi" value="4">
+                        <input type="radio" class="radio-classi" value="5">
+                        <input type="radio" class="radio-classi" value="6">
+                    </div>
+                    </div>
+                    <div class="row textos">
+                        <p>Sem classificação</p>
+                        <p>Descartada</p>
+                        <p>Enviada</p>
+                        <p>Em espera</p>
+                        <p>Em análise</p>
+                        <p>Implementar</p>
+                        <p>Implementada</p>
+                    </div>
+                </div>
+                <div class="row geral">
+
+                </div>
+                <div class="row quadro">
+
+                </div>
+            </div>
         @endforeach
     </div>
 </section>

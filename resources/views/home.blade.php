@@ -104,7 +104,7 @@
                         <hr>
                         <div class="row menus">
                         <div class="col par-1">
-                            <div class="visualizar"><a href=""><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
+                            <div class="visualizar"><a href="{{route('visualizar',['id'=>$dado->id,'cont'=>$cont])}}"><img src="{{asset('/images/icon-Visualizar.svg')}}">Visualizar</a></div>
                             <div class="relatorios"><a href=""><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
                         </div>
                         <div class="col par-2">
