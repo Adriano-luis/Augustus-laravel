@@ -62,6 +62,7 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
+    Route::post('/perfil-usuario', 'PerfilUsuarioController@atualizarInfo')->name('perfil-usuario');
     Route::post('/contato', 'PerfilUsuarioController@contato')->name('contato');
 
     /*

@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="usuario">
-                        <img src="{{asset('/images/user.png')}}" class="avatar">
+                        <img src="{{asset($_SESSION['img'])}}" class="avatar">
                         <div class="info">
                             <span>Seja bem-vindo</span><br/>
                             <p>{{$_SESSION['nome']}}</p>

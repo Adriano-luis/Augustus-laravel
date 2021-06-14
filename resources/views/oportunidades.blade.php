@@ -52,10 +52,10 @@
         <hr>
         <?php $aux = 0; ?>
         @foreach ($relatorios as $relatorio)
-            <div class="titulo-ralatorio indice-{{$aux}}">
+            <div class="titulo-ralatorio">
                 <h6>{{$relatorio->post_title}}</h6>
             </div>
-            <div class="relatorio">
+            <div class="relatorio indice-{{$aux}}">
                 <div class=" classificacao">
                     <div class="row status">
                         <p>Classifique o status da Oportunidade:</p>

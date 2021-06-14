@@ -3,12 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class PerfilUsuarioController extends Controller
 {
     public function index(){
         return view('perfil-usuario');
+    }
+
+    public function atualizarInfo(Request $request){
+        $email = $_SESSION['email'];
+        $antigaSenha =$request->get('antiga');
+        $novaSenha = Hash::make($request->get('nova'));
+        
+        $tabela = new User();
+        $usuario = $tabela->Where('user_email',$email)->get()->first();
+        if(Hash::check($antigaSenha,$usuario->user_pass)){
+            $usuario->user_pass = $novaSenha;
+        }else{
+            $erroSenha = 'Senha Antiga está inválida!';
+        }
+
+        $imgPerfil = $usuario->user_url;
+        if($request->file('imagem')){
+            $nome =strtolower($usuario->user_login).$usuario->id;
+            $extensao = $request->file('imagem')->extension();
+            $fileName = "{$nome}.{$extensao}";
+            
+            $imgPerfil =$fileName;
+            $usuario->user_url = $imgPerfil;
+
+            $upload = $request->file('imagem')->storeAs('usersImg',$fileName);
+            $_SESSION['img'] = '/storage/usersImg/'.$fileName;
+        }
+
+        $usuario->save();
+
+        if($erroSenha != ''){
+            return redirect()->back()->with(['erro' =>$erroSenha]);
+        }
+        
+        return redirect()->route('home');
+       
     }
 
     public function cadastrar(){

@@ -6,15 +6,16 @@
         <div class="row title">
             <h2>Perfil Usuário</h2>
         </div>
+        {{isset($erro) && $erro != '' ? $erro : ''}}
         <div class="row info-total">
             <div class="col-sm-4 foto">
                 <img  class="img-perfil" src="{{asset('/images/foto3.jpg')}}">
                 <div class="row importar">
                     <span>Selecionar foto:</span>
-                    <form action="">
+                    <form action="{{route('perfil-usuario')}}" method="POST" enctype="multipart/form-data" accept=".jpg,.png,.svg">
+                        @csrf
                         <label for="enviar">Escolher arquivo</label>
-                        <input id="enviar" type="file" enctype="multipart/form-data" accept=".jpg,.png,.svg">
-                    </form>
+                        <input id="enviar" type="file" name="imagem">
                 </div>
             </div>
             <div class="col-sm-4 info">
@@ -26,7 +27,6 @@
                 <p></p>
             </div>
             <div class="col-sm-4 senha">
-                <form action="" method="POST">
                     <span>Alterar senha:</span>
                     <input type="password" name="antiga" placeholder="Senha antiga">
                     <input type="password" name="nova" placeholder="Nova senha">
