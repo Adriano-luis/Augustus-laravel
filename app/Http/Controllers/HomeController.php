@@ -109,5 +109,9 @@ class HomeController extends Controller
         return view('sobre');
     }
 
+    public function dashboard(){
+        return view('dashboard');
+    }
+
     
 }

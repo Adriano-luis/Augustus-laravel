@@ -32,9 +32,11 @@
                                         <h2>{{$totalOportunidades}}</h2>
                                         Oportunidades geradas
                                     </div>
-                                    <div class="col botao-geradas">
-                                        Ver oportunidades
-                                    </div>
+                                    <a href="{{ route('dashboard')}}">
+                                        <div class="col botao-geradas">
+                                            Ver oportunidades
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

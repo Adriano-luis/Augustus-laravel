@@ -26,6 +26,7 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sair', 'LoginController@sair')->name('logout');
     Route::get('/sobre', 'HomeController@sobre')->name('sobre');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
     //Empresas
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');
@@ -66,7 +67,6 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::post('/contato', 'PerfilUsuarioController@contato')->name('contato');
 
     /*
-    Route::get('/dashboard', 'HomeController@index');
     Route::get('/termos', 'HomeController@index');
    
     Route::get('/home', 'HomeController@index');

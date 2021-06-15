@@ -16,7 +16,7 @@
                                         <a href="{{route('ver-empresas')}}"><li><img src="{{asset('/images/icon-Visualizar.svg')}}" />Ver empresas</li></a>
                                     </div>
                                 </div>
-                                <li><a href="">Dashboard</a></li>
+                                <li><a href="{{route('dashboard')}}">Dashboard</a></li>
                                 <li><a href="{{route('noticias')}}">Notícias</a></li>
                                 <li><a href="{{route('sobre')}}">Sobre</a></li>
                                 <li><a href="" id="menu-item">Fale conosco</a></li>
