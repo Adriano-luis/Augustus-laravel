@@ -25,7 +25,10 @@ class OportunidadesController extends Controller
             foreach ($mysqli as $value){
                 $auxListaRelatorio[] = $value->id_relatorio;
             }
+        }else{
+            $auxListaRelatorio = array();
         }
+
         //Conta Oportunidades e qual o Relatório
         $listaRelatorio[$empresa->nome]=$auxListaRelatorio;
         $auxContRelatorio = sizeof($listaRelatorio[$empresa->nome]);
@@ -44,9 +47,13 @@ class OportunidadesController extends Controller
                     }
                 }
             }
+
+            return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio]);
         } 
 
         return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio]);
+        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
+        
     }
 }

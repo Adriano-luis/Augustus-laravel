@@ -36,7 +36,7 @@
                                 OPORTUNIDADES<br/> GERADAS
                             </div>
                         </div>
-                        <div class="ver"><a href="">Ver oportunidades geradas</a></div>
+                        <div class="ver"><a href="{{route('oportunidades',['id'=>$_SESSION['idEmpresa'],'cont'=>$_SESSION['cont']])}}">Ver oportunidades geradas</a></div>
                     </div>
                 </div>
             </div>
