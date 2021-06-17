@@ -60,6 +60,8 @@ class HomeController extends Controller
                     foreach ($mysqli as $value){
                         $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
                     }
+                }else{
+                    $auxListaRelatorio[$empresaOp->nome][] = '';
                 }
 
                 //Conta Oportunidades e qual o Relatório

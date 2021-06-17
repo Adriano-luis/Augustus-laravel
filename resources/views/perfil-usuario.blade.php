@@ -9,7 +9,7 @@
         {{isset($erro) && $erro != '' ? $erro : ''}}
         <div class="row info-total">
             <div class="col-sm-4 foto">
-                <img  class="img-perfil" src="{{asset('/images/foto3.jpg')}}">
+                <img  class="img-perfil" src="{{asset($_SESSION['img'])}}">
                 <div class="row importar">
                     <span>Selecionar foto:</span>
                     <form action="{{route('perfil-usuario')}}" method="POST" enctype="multipart/form-data" accept=".jpg,.png,.svg">
