@@ -78,17 +78,15 @@ $(document).ready(function(){
 
         if(ramo == ramo1){
             respostas1Page1 = $("#exportacoes option:selected").val();
-            console.log(respostas1Page1);
 
             respostas2Page1 =$("#inportacoes option:selected").val();
-            console.log(respostas2Page1);
             
              $.ajax({
                 type:'POST',
                 url:'/Augustus/public/forneca-informacoes/comercio-exterior',
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1},
                 success:function(data){
-                    sessionStorage.setItem("reloading", "true");    
+                    window.sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);
                     
                 }

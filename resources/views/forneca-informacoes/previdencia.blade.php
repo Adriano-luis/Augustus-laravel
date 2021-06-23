@@ -84,7 +84,7 @@
             <div class="row radio-previdencia">
                 <div class="col">
                     <h6>{{$pergunta3[38]->post_title}}</h6>
-                    <div class="row radio radio1-tela1">
+                    <div id="radio1-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta12[153]->id}}">{{$resposta12[153]->post_title}}
                         </div>
@@ -167,7 +167,7 @@
             <div class="row radio-previdencia">
                 <div class="col">
                     <h6>{{$pergunta2[13]->post_title}}</h6>
-                    <div class="row radio radio1-tela2">
+                    <div id="radio1-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta4[74]->id}}">{{$resposta4[74]->post_title}}
                         </div>
@@ -192,7 +192,7 @@
             <div class="row radio-previdencia">
                 <div class="col">
                     <h6>{{$pergunta4[5]->post_title}}</h6>
-                    <div class="row radio radio2-tela2">
+                    <div id="radio2-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta10[16]->id}}">{{$resposta10[16]->post_title}}
                         </div>
@@ -224,7 +224,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta2 = $perguntas->where('id',268) ?>
@@ -235,7 +237,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta3 = $perguntas->where('id',836) ?>
@@ -246,7 +250,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta4 = $perguntas->where('id',794) ?>
@@ -257,7 +263,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
             </div>
             <div class="col">
@@ -269,7 +277,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-previdencia-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div>
 
                 <?php $pergunta6 = $perguntas->where('id',370) ?>
@@ -280,7 +290,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-previdencia-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta7 = $perguntas->where('id',365) ?>
@@ -291,7 +303,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-previdencia-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta8 = $perguntas->where('id',297) ?>
@@ -302,7 +316,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    <div class="previous-previdencia-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="previdencia-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   

@@ -50,22 +50,22 @@ $(document).ready(function(){
     selected2Tela2 ='';
     selected3Tela2 ='';
     //INPUT RADIO DA TELA 1
-    $('.radio1-tela1 input:radio').change(function() {
-        selected1Tela1 = $(".radio1-tela1 input:radio:checked").val();
+    $('#radio1-tela1 input:radio').change(function() {
+        selected1Tela1 = $("#radio1-tela1 input:radio:checked").val();
       });
-    $('.radio2-tela1 input:radio').change(function() {
-        selected2Tela1 = $(".radio2-tela1 input:radio:checked").val();
+    $('#radio2-tela1 input:radio').change(function() {
+        selected2Tela1 = $("#radio2-tela1 input:radio:checked").val();
     });
-
+    
     //INPUT RADIO DA TELA 2
-    $('.radio1-tela2 input:radio').change(function() {
-        selected1Tela2 = $(".radio1-tela2 input:radio:checked").val();
+    $('#radio1-tela2 input:radio').change(function() {
+        selected1Tela2 = $("#radio1-tela2 input:radio:checked").val();
       });
-    $('.radio2-tela2 input:radio').change(function() {
-        selected2Tela2 = $(".radio2-tela2 input:radio:checked").val();
+    $('#radio2-tela2 input:radio').change(function() {
+        selected2Tela2 = $("#radio2-tela2 input:radio:checked").val();
     });
-    $('.radio3-tela2 input:radio').change(function() {
-        selected2Tela2 = $(".radio3-tela2 input:radio:checked").val();
+    $('#radio3-tela2 input:radio').change(function() {
+        selected3Tela2 = $("#radio3-tela2 input:radio:checked").val();
     });
 
 
@@ -111,6 +111,7 @@ $(document).ready(function(){
     function previousRamo(ramo){
         if(ramo == ramo1){
             $(ramo2).css('display', 'none');
+            $(ramoFinal).css('display', 'none');
             $(ramo1).css('display', 'block');
         } else if(ramo == ramo2) {
             $(ramoFinal).css('display', 'none');
@@ -123,6 +124,13 @@ $(document).ready(function(){
 
 
      //Salva as informações entre as telas
+     respostas1Page1 = '';
+     respostas2Page1 = '';
+     respostas3Page1 = '';
+     respostas4Page1 = '';
+     respostas1Page2 = '';
+     respostas2Page2 = '';
+     respostas3Page2 = '';
      function salvaInfo(ramo){
         if(ramo == ramo1){
             respostas1Page1 = $("#regime option:selected").val();
@@ -167,7 +175,7 @@ $(document).ready(function(){
             data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1,
                 respostas3Page1,respostas4Page1,respostas1Page2,respostas2Page2,respostas3Page2},
             success:function(data){
-                sessionStorage.setItem("reloading", "true");    
+                window.sessionStorage.setItem("reloading", "true");    
                 window.location.reload(true);
                 
             }

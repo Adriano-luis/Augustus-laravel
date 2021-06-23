@@ -253,7 +253,9 @@
                         @endif
                     @endforeach
 
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta = $perguntas->where('id',313) ?>
@@ -264,7 +266,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    <div class="previous-3">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    </div>
                 </div> 
             </div>
             <div class="col">
@@ -276,7 +280,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                     <div class="previous-4">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    </div>
                 </div>
                 <?php $pergunta = $perguntas->where('id',341) ?>
                 <div class="ramo-final-resposta"> 
@@ -286,7 +292,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    <div class="previous-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   

@@ -117,12 +117,15 @@ $(document).ready(function(){
         if(ramo == ramo1){
             $(ramo2).css('display', 'none');
             $(ramo1).css('display', 'block');
+            $(ramoFinal).css('display', 'none');
         } else if(ramo == ramo2){
             $(ramo3).css('display', 'none');
             $(ramo2).css('display', 'block');
+            $(ramoFinal).css('display', 'none');
         } else if(ramo == ramo3) {
             $(ramo4).css('display', 'none');
             $(ramo3).css('display', 'block');
+            $(ramoFinal).css('display', 'none');
         } else {
             $(ramoFinal).css('display', 'none');
             $('.menu-1').css('min-height', '611');
@@ -135,22 +138,27 @@ $(document).ready(function(){
 
 
     //Salva as informações entre as telas
+    respostasPage1 = '';
+    respostasPage2 = '';
+    respostasPage3 = '';
+    respostasPage4 = '';
+
     function salvaInfo(ramo){
         if(ramo == ramo1){
             respostasPage1 = $('input[name="check-1"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             }); 
-            console.log(respostasPage1);
+
         } else if(ramo == ramo2){
             respostasPage2 = $('input[name="check-2"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
-            console.log(respostasPage2);
+
         } else if(ramo == ramo3) {
             respostasPage3 = $('input[name="check-3"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 
             });  
-            console.log(respostasPage3);
+
         } else {
              respostasPage4 = $('input[name="check-4"]:checked').toArray().map(function(check) { 
                 return $(check).val(); 

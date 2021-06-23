@@ -49,7 +49,6 @@
                 <div class="col">
                     <h6>{{$pergunta1[0]->post_title}}</h6>
                     <select class="select" id="regime">
-                        <option value=""></option>
                         <option value="">Escolha uma opção</option>
                         <option value="{{$resposta1[1]->id}}">{{$resposta1[1]->post_title}}</option>
                         <option value="{{$resposta2[2]->id}}">{{$resposta2[2]->post_title}}</option>
@@ -72,12 +71,12 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta3[32]->post_title}}</h6>
-                    <div class="row radio radio1-tela1">
+                    <div id="radio1-tela1" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" class="recuperacao" value="{{$resposta8[16]->id}}">Sim
+                            <input type="radio" class="recuperacao" value="{{$resposta8[16]->id}}">{{$resposta8[16]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" class="recuperacao" value="{{$resposta9[17]->id}}">Não
+                            <input type="radio" class="recuperacao" value="{{$resposta9[17]->id}}">{{$resposta9[17]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -85,7 +84,7 @@
             <div class="row radio-tributacao">
                 <div class="col">
                     <h6>{{$pergunta4[33]->post_title}}</h6>
-                    <div class="row radio radio2-tela1">
+                    <div id="radio2-tela1" class="row radio ">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta10[69]->id}}">{{$resposta10[69]->post_title}}
                         </div>
@@ -133,7 +132,7 @@
         <div class="row radio-tributacao ">
             <div class="col">
                 <h6>{{$pergunta1[37]->post_title}}</h6>
-                <div class="row radio radio1-tela2">
+                <div id="radio1-tela2" class="row radio ">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta1[74]->id}}">{{$resposta1[74]->post_title}}
                     </div>
@@ -146,7 +145,7 @@
         <div class="row radio-tributacao">
             <div class="col">
                 <h6>{{$pergunta2[35]->post_title}}</h6>
-                <div class="row radio radio2-tela2">
+                <div id="radio2-tela2" class="row radio">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta3[87]->id}}">{{$resposta3[87]->post_title}}
                     </div>
@@ -159,7 +158,7 @@
         <div class="row radio-tributacao">
             <div class="col">
                 <h6>{{$pergunta3[22]->post_title}}</h6>
-                <div class="row radio radio3-tela2">
+                <div id="radio3-tela2" class="row radio">
                     <div class=" col radio">
                         <input type="radio" value="{{$resposta5[93]->id}}">{{$resposta5[93]->post_title}}
                     </div>
@@ -182,85 +181,99 @@
         </div>
         <div class="row tributacao-final">
             <div class="col">
-                <?php $pergunta = $perguntas->where('id',242)?>
+                <?php $pergunta1 = $perguntas->where('id',242)?>
                 <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[0]->post_title}}</p>
+                    <p>{{$pergunta1[0]->post_title}}</p>
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista1Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
 
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
 
-                <?php $pergunta = $perguntas->where('id',352) ?>
+                <?php $pergunta2 = $perguntas->where('id',352) ?>
                 <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[10]->post_title}}</p> 
+                    <p>{{$pergunta2[10]->post_title}}</p> 
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista2Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
 
-                <?php $pergunta = $perguntas->where('id',455)?>
+                <?php $pergunta3 = $perguntas->where('id',455)?>
                 <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[32]->post_title}}</p>
+                    <p>{{$pergunta3[32]->post_title}}</p>
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista3Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
 
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
 
-                <?php $pergunta = $perguntas->where('id',785)?>
+                <?php $pergunta4 = $perguntas->where('id',785)?>
                 <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[33]->post_title}}</p>
+                    <p>{{$pergunta4[33]->post_title}}</p>
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista4Respostas1))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
 
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
             </div>
             <div class="col">
-                <?php $pergunta = $perguntas->where('id',830) ?>
+                <?php $pergunta5 = $perguntas->where('id',830) ?>
                 <div class="tributacao-final-resposta">
-                    <p>{{$pergunta[37]->post_title}}</p>   
+                    <p>{{$pergunta5[37]->post_title}}</p>   
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista1Respostas2))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-tributacao-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div>
 
-                <?php $pergunta = $perguntas->where('id',821) ?>
+                <?php $pergunta6 = $perguntas->where('id',821) ?>
                 <div class="tributacao-final-resposta"> 
-                    <p>{{$pergunta[35]->post_title}}</p>
+                    <p>{{$pergunta6[35]->post_title}}</p>
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista2Respostas2))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-tributacao-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
 
-                <?php $pergunta = $perguntas->where('id',416) ?>
+                <?php $pergunta7 = $perguntas->where('id',416) ?>
                 <div class="tributacao-final-resposta"> 
-                    <p>{{$pergunta[22]->post_title}}</p>
+                    <p>{{$pergunta7[22]->post_title}}</p>
                     @foreach ($respostasEmpresa as $resp)
                         @if (in_array($resp->id_resposta, $lista3Respostas2))
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    <div class="previous-tributacao-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="tributacao-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   

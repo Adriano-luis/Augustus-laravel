@@ -47,6 +47,7 @@
                 <div class="col">
                     <h6>{{$pergunta2[4]->post_title}}</h6>
                     <select id="inportacoes" class="select">
+                        <option value="">Escolha uma opção</option>
                         <option value="{{$resposta5[10]->id}}">{{$resposta5[10]->post_title}}</option>
                         <option value="{{$resposta6[11]->id}}">{{$resposta6[11]->post_title}}</option>
                         <option value="{{$resposta7[12]->id}}">{{$resposta7[12]->post_title}}</option>
@@ -76,7 +77,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
+                    <div class="previous-comercio-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="ramo-final-img">
+                    </div>
                 </div> 
             </div>
             <div class="col">
@@ -88,7 +91,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
+                    <div class="previous-comercio-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="comercio-final-img">
+                    </div>
                 </div>
             </div>
         </div>   

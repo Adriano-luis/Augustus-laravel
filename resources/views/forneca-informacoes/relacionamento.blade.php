@@ -26,7 +26,7 @@
 
 
 
-            $lista1Respostas1 = [$resposta1[160]->id,$resposta1[161]->id];
+            $lista1Respostas1 = [$resposta1[160]->id,$resposta1[160]->id];
             $lista2Respostas1 = [$resposta3[97]->id,$resposta4[98]->id];
             $lista3Respostas1 = [$resposta5[95]->id,$resposta6[96]->id];
             $lista4Respostas1 = [$resposta7[93]->id,$resposta8[94]->id];
@@ -45,7 +45,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta1[1]->post_title}}</h6>
-                    <div class="row radio radio1-tela1">
+                    <div id="radio1-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta1[160]->id}}">{{$resposta1[160]->post_title}}
                         </div>
@@ -58,7 +58,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta2[20]->post_title}}</h6>
-                    <div class="row radio radio2-tela1">
+                    <div id="radio2-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta3[97]->id}}">{{$resposta3[97]->post_title}}
                         </div>
@@ -71,7 +71,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta3[19]->post_title}}</h6>
-                    <div class="row radio radio3-tela1">
+                    <div id="radio3-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta5[95]->id}}">{{$resposta5[95]->post_title}}
                         </div>
@@ -84,7 +84,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta4[18]->post_title}}</h6>
-                    <div class="row radio radio4-tela1">
+                    <div id="radio4-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta7[93]->id}}">{{$resposta7[93]->post_title}}
                         </div>
@@ -131,7 +131,7 @@
             <div class="row radio-relacionamento">
                 <div class="col">
                     <h6>{{$pergunta1[21]->post_title}}</h6>
-                    <div class="row radio radio1-tela2">
+                    <div id="radio1-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta1[99]->id}}">{{$resposta1[99]->post_title}}
                         </div>
@@ -176,7 +176,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta2 = $perguntas->where('id',404) ?>
                 <div class="relacionamento-final-resposta">
@@ -186,7 +188,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta3 = $perguntas->where('id',401) ?>
                 <div class="relacionamento-final-resposta">
@@ -196,7 +200,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div> 
             </div>
             <div class="col">
@@ -208,7 +214,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div>
                 <?php $pergunta5 = $perguntas->where('id',407) ?>
                 <div class="relacionamento-final-resposta"> 
@@ -218,7 +226,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-relacionamento-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta6 = $perguntas->where('id',393) ?>
                 <div class="relacionamento-final-resposta"> 
@@ -228,7 +238,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    <div class="previous-relacionamento-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   

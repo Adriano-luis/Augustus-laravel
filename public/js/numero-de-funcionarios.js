@@ -95,7 +95,7 @@ $(document).ready(function(){
                 url:'/Augustus/public/forneca-informacoes/numero-de-funcionarios',
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage},
                 success:function(data){
-                    sessionStorage.setItem("reloading", "true");    
+                    window.sessionStorage.setItem("reloading", "true");    
                     window.location.reload(true);
                     
                 }

@@ -72,7 +72,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="funcionarios-final-img">
+                    <div class="previous-funcionarios-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="funcionarios-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   

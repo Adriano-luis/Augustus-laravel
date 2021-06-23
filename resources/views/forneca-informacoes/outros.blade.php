@@ -53,7 +53,7 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta1[36]->post_title}}</h6>
-                    <div class="row radio radio1-tela1">
+                    <div id="radio1-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta1[149]->id}}">{{$resposta1[149]->post_title}}
                         </div>
@@ -66,7 +66,7 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta2[31]->post_title}}</h6>
-                    <div class="row radio radio2-tela1">
+                    <div id="radio2-tela1" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta3[125]->id}}">{{$resposta3[125]->post_title}}
                         </div>
@@ -148,7 +148,7 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta1[28]->post_title}}</h6>
-                    <div class="row radio radio1-tela2">
+                    <div id="radio1-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta1[114]->id}}">{{$resposta1[114]->post_title}}
                         </div>
@@ -161,7 +161,7 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta2[27]->post_title}}</h6>
-                    <div class="row radio radio2-tela2">
+                    <div id="radio2-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta3[112]->id}}">{{$resposta3[112]->post_title}}
                         </div>
@@ -174,7 +174,7 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta3[26]->post_title}}</h6>
-                    <div class="row radio radio3-tela2">
+                    <div id="radio3-tela2" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta5[110]->id}}">{{$resposta5[110]->post_title}}
                         </div>
@@ -240,12 +240,12 @@
             <div class="row radio-outros">
                 <div class="col">
                     <h6>{{$pergunta1[25]->post_title}}</h6>
-                    <div class="row radio radio1-tela3">
-                        <div class=" col radio">
-                            <input type="radio" value="{{$resposta1[108]->id}}">{{$resposta1[108]->post_title}}
-                        </div>
+                    <div id="radio1-tela3" class="row radio">
                         <div class=" col radio">
                             <input type="radio" value="{{$resposta2[109]->id}}">{{$resposta2[109]->post_title}}
+                        </div>
+                        <div class=" col radio">
+                            <input type="radio" value="{{$resposta1[108]->id}}">{{$resposta1[108]->post_title}} 
                         </div>
                     </div> 
                 </div>
@@ -253,7 +253,7 @@
            <div class="row radio-outros">
                <div class="col">
                    <h6>{{$pergunta2[23]->post_title}}</h6>
-                   <div class="row radio radio2-tela3">
+                   <div id="radio2-tela3" class="row radio">
                        <div class=" col radio">
                            <input type="radio" value="{{$resposta3[103]->id}}">{{$resposta3[103]->post_title}}
                        </div>
@@ -266,7 +266,7 @@
            <div class="row radio-outros">
                <div class="col">
                    <h6>{{$pergunta3[16]->post_title}}</h6>
-                   <div class="row radio radio3-tela3">
+                   <div id="radio3-tela3" class="row radio">
                        <div class=" col radio">
                            <input type="radio" value="{{$resposta5[87]->id}}">{{$resposta5[87]->post_title}}
                        </div>
@@ -298,7 +298,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta2 = $perguntas->where('id',452) ?>
@@ -309,7 +311,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta3 = $perguntas->where('id',446)?>
                 <div class="outros-final-resposta">
@@ -319,7 +323,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta4 = $perguntas->where('id',440) ?>
@@ -330,7 +336,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-2">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div>
                 <?php $pergunta5 = $perguntas->where('id',437)?>
                 <div class="outros-final-resposta">
@@ -341,7 +349,9 @@
                         @endif
                     @endforeach
 
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-3">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
 
                 <?php $pergunta6 = $perguntas->where('id',434) ?>
@@ -352,7 +362,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-3">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div>
             </div>
             <div class="col">
@@ -364,7 +376,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-3">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div>
                 <?php $pergunta8 = $perguntas->where('id',424) ?>
                 <div class="outros-final-resposta"> 
@@ -374,7 +388,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-3">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta9 = $perguntas->where('id',428) ?>
                 <div class="outros-final-resposta">
@@ -384,7 +400,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-outros-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div>
                 <?php $pergunta10 = $perguntas->where('id',421) ?>
                 <div class="outros-final-resposta"> 
@@ -394,7 +412,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-outros-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
                 <?php $pergunta11 = $perguntas->where('id',387) ?>
                 <div class="outros-final-resposta"> 
@@ -404,7 +424,9 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    <div class="previous-outros-final">
+                        <img src="{{asset('images/icon-Editar.svg')}}" class="outros-final-img">
+                    </div>
                 </div> 
             </div>
         </div>   
