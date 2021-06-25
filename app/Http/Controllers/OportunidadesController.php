@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Empresa;
 use App\Relatorio;
+use App\classifica_relatorio;
 
 class OportunidadesController extends Controller
 {
@@ -48,12 +49,31 @@ class OportunidadesController extends Controller
                 }
             }
 
+            $status = classifica_relatorio::all();
+
             return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio]);
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio,'status'=>$status]);
         } 
 
         return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
+        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'','status'=>'']);
         
+    }
+
+    public function indexPost(Request $request){
+        if($request->status != ''){
+            $empresa = $request->empresa_id;
+            $relatorio = $request->relatorio_id;
+            $classificacao = $request->status; 
+
+            $existe = classifica_relatorio::Where('id_empresa',$empresa)->Where('id_relatorio',$relatorio)->Where('classificacao',$classificacao);
+
+            if(!empty($existe)){
+                classifica_relatorio::Where('id_empresa',$empresa)->Where('id_relatorio',$relatorio)
+                ->update(['classificacao'=>$classificacao]);
+            }else{
+                classifica_relatorio::create(['id_empresa'=>$empresa,'id_relatorio'=>$relatorio,'classificacao'=>$classificacao]);
+            }
+        }
     }
 }

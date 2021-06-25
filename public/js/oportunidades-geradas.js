@@ -97,4 +97,46 @@ $(document).ready(function(){
         }, 500);
     });
 
+    //Carrega com o status
+    function carregaStatus(){
+
+        valor = $('#valor').val();
+
+        if(valor==0){
+            $('.radio-classi-0').checked = true;
+        }else if(valor==1){
+            $('.radio-classi-1').checked = true;
+        }else if(valor==2){
+            $('.radio-classi-2').checked = true;
+        }else if(valor==3){
+            $('.radio-classi-3').checked = true;
+        }else if(valor==4){
+            $('.radio-classi-4').checked = true;
+        }else if(valor==5){
+            $('.radio-classi-5').checked = true;
+        }else if(valor==6){
+            $('.radio-classi-6').checked = true;
+        }
+    };
+    
+
+
+
+
+    //Salva status
+    $('#status-oportunidade input:radio').change(function() {
+        status = $("#status-oportunidade input:radio:checked").val();
+        relatorio_id = $('#relatorio-id').val();
+        empresa_id = $('#empresa-id').val();
+
+        $.ajax({
+            type:'POST',
+            url:'/Augustus/public/oportunidades',
+            data: {"_token": $('meta[name="csrf-token"]').attr('content'),status,relatorio_id,empresa_id},
+            success:function(data){   
+                $(".radio-classi"+status).checked = true;
+            }
+        });
+    });
+
 });

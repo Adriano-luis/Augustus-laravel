@@ -60,6 +60,7 @@ Route::middleware('login')->prefix('')->group(function (){
 
     //Oportunidades
     Route::get('/oportunidades', 'OportunidadesController@index')->name('oportunidades');
+    Route::post('/oportunidades', 'OportunidadesController@indexPost')->name('oportunidades');
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');
