@@ -96,29 +96,12 @@ $(document).ready(function(){
             }
         }, 500);
     });
-
-    //Carrega com o status
-    function carregaStatus(){
-
-        valor = $('#valor').val();
-
-        if(valor==0){
-            $('.radio-classi-0').checked = true;
-        }else if(valor==1){
-            $('.radio-classi-1').checked = true;
-        }else if(valor==2){
-            $('.radio-classi-2').checked = true;
-        }else if(valor==3){
-            $('.radio-classi-3').checked = true;
-        }else if(valor==4){
-            $('.radio-classi-4').checked = true;
-        }else if(valor==5){
-            $('.radio-classi-5').checked = true;
-        }else if(valor==6){
-            $('.radio-classi-6').checked = true;
-        }
-    };
     
+
+    $('.titulo-ralatorio').click(function () {
+        $('.lista-oportunidades').find('div').removeClass('active');
+        $(this).addClass('active');
+    });
 
 
 

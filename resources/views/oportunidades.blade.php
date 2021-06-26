@@ -64,24 +64,26 @@
                         </div>
                         <div class="row marcar-classificacao">
                         <div id="status-oportunidade" class=" row radios">
-                            <?php if($status[$aux]->id_relatorio == $relatorio->id && $status[$aux]->classificacao != ''){
-                               $valorStatus = $status[$aux]->classificacao;
-                            } else{
-                                $valorStatus = '';
-                            }
+                            <?php
+                                foreach ($status as $x) {
+                                    if($x->id_relatorio == $relatorio->id && $x->id_empresa == $empresa->id
+                                    && $x->classificacao != ''){
+                                        $valorStatus = $x->classificacao;
+                                    }
+                                }
                             ?>
                             <input id="valor" type="hidden" value="{{$valorStatus}}">
-                            @csrf
-                            <hr class="linha" onload="carregaStatus()">
+                            <hr class="linha">
                             <input id="relatorio-id" type="hidden" value="{{$relatorio->id}}">
                             <input id="empresa-id" type="hidden" value="{{$empresa->id}}">
-                            <input type="radio" class="radio-classi-0" value="0">
-                            <input type="radio" class="radio-classi-1" value="1">
-                            <input type="radio" class="radio-classi-2" value="2">
-                            <input type="radio" class="radio-classi-3" value="3">
-                            <input type="radio" class="radio-classi-4" value="4">
-                            <input type="radio" class="radio-classi-5" value="5">
-                            <input type="radio" class="radio-classi-6" value="6">
+                            <input type="radio" class="radio-classi-0" value="7" {{$valorStatus == 7 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-1" value="1" {{$valorStatus == 1 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-2" value="2" {{$valorStatus == 2 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-3" value="3" {{$valorStatus == 3 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-4" value="4" {{$valorStatus == 4 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-5" value="5" {{$valorStatus == 5 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-6" value="6" {{$valorStatus == 6 ? 'checked' : '' }}>
+                            <?php $valorStatus = ''; ?>
                         </div>
                         </div>
                         <div class="row textos">
@@ -98,22 +100,58 @@
                         <div class="col ">
                             <p>Forma de Recuperação</p>
                             <div class="administrativo">
-                                <img src="">
-                                <span>{{$relatorio->forma}}</span>
+                                @if ($relatorio->forma == 1)
+                                <img src="{{asset('/images/icon-Administrativo.svg')}}">
+                                <span>Administrativo</span>
+                                @endif
+                                @if ($relatorio->forma == 2)
+                                <img src="{{asset('/images/icon-Judicial.svg')}}">
+                                <span>Judicial</span>
+                                @endif
+                                @if ($relatorio->forma == 3)
+                                <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}">
+                                <span>Administrativo / Judicial</span> 
+                                @endif
+                                
                             </div>
                         </div>
                         <div class="col">
                             <p>Tributação</p>
                             <div class="tributacao">
-                                <img src="">
-                                <span>{{$relatorio->tributacao}}</span>
+                                @if ($relatorio->tributacao == 1)
+                                <img src="{{asset('/images/icon-Municipal.svg')}}">
+                                <span>Municipal</span>
+                                @endif
+
+                                @if ($relatorio->tributacao == 2)
+                                <img src="{{asset('/images/icon-Estadual.svg')}}">
+                                <span>Estadual</span>
+                                @endif
+
+                                @if ($relatorio->tributacao == 3)
+                                <img src="{{asset('/images/icon-Federal.svg')}}">
+                                <span>Federal</span>
+                                @endif
+                                
                             </div>
                         </div>
                         <div class="col">
                             <p>Probabilidade de Êxito</p>
                             <div class="exito">
-                                <img src="">
-                                <span>{{$relatorio->probabilidade}}</span>
+                                @if ($relatorio->probabilidade == 1)
+                                <img src="{{asset('/images/icon-Remota.svg')}}">
+                                <span>Remota</span>
+                                @endif
+
+                                @if ($relatorio->probabilidade == 2)
+                                <img src="{{asset('/images/icon-Provavel.svg')}}">
+                                <span>Provável</span>
+                                @endif
+
+                                @if ($relatorio->probabilidade == 3)
+                                <img src="{{asset('/images/icon-Possivel.svg')}}">
+                                <span>Possível</span>
+                                @endif
                             </div>
                         </div>
                     </div>
