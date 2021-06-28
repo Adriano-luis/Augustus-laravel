@@ -16,7 +16,7 @@
                             <div class="col-sm-6 cadastradas empresas">
                                 <div class="row">
                                     <img class="img-cadastradas" src="{{asset('/images/icon-Empresa.svg')}}">
-                                    <h1>10</h1>
+                                    <h1>{{$qt}}</h1>
                                     <div class="info-cadastradas">
                                         Empresas cadastradas
                                     </div>
@@ -25,7 +25,7 @@
                             <div class="col-sm-6 cadastradas oportunidades">
                                 <div class="row">
                                     <img class="img-geradas" src="{{asset('/images/icon-Estrela-Oportunidade.svg')}}">
-                                    <h1>10</h1>
+                                    <h1>{{$_SESSION['totOpt']}}</h1>
                                     <div class="info-cadastradas">
                                         Oportunidades Geradas
                                     </div>
@@ -86,35 +86,45 @@
                     </form>
                 </div>
             </div>
-                @foreach ($empresa as $empresaOp)
+                
                     <?php $i = 0; ?>
-                    @foreach ($relatorios as $relatorio)
+                    @foreach ($relatorios as $v)
+                    @if ($v != '')
+                    @foreach ($v as $relatorio)
                     <div class="cartoes">
                         <div class="row cartao">
                             <div class="col-sm-5 opcoes">
                                 <div class="nome">
-                                    <h1>{{$relatorio[$i]->post_title}}</h1>
-                                    <h2>{{$empresaOp->nome}}</h2>
-                                    <h2>{{$relatorio[$i]->post_excerpt}}</h2>
+                                    <h1>{{$relatorio->post_title}}</h1>
+                                    <h2>{{key($relatorios)}}</h2>
+                                    <h2>{{$relatorio->post_excerpt}}</h2>
                                 </div>
                                 <div class="row estagio">
-                                    Estágio:<div class="estagio-info">{{$status}}</div>
+                                    <?php
+                                       /* foreach ($status as $x) {
+                                            $empresa = DB::table('empresas')->Where('nome',key($relatorios))->get(['id']);
+                                            $valorStatus = DB::table('classifica_relatorio')->join('relatorio', 'classifica_relatorio.id_relatorio', '=', ' relatorios.id')
+                                            ->where('classifica_relatorio.id_empresa',$empresa)
+                                            ->get(['classificacao']);
+                                        }*/
+                                    ?>
+                                    Estágio:<div class="estagio-info"></div>
                                 </div>
                             </div>
                             <div class="row categorias">
                                 <div class="forma">
                                     <p>Forma de Recuperação</p>
                                     <div class="administrativo">
-                                        @if ($relatorio[$i]->forma == 1)
-                                        <img src="{{asset('/images/icon-Administrativo.svg')}}">
+                                        @if ($relatorio->forma == 1)
+                                        <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
                                         <span>Administrativo</span>
                                         @endif
-                                        @if ($relatorio[$i]->forma == 2)
-                                        <img src="{{asset('/images/icon-Judicial.svg')}}">
+                                        @if ($relatorio->forma == 2)
+                                        <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
                                         <span>Judicial</span>
                                         @endif
-                                        @if ($relatorio[$i]->forma == 3)
-                                        <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}">
+                                        @if ($relatorio->forma == 3)
+                                        <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
                                         <span>Administrativo / Judicial</span> 
                                         @endif
                                     </div>
@@ -122,18 +132,18 @@
                                 <div class="tributacao">
                                     <p>Tributação</p>
                                     <div class="tributacao">
-                                        @if ($relatorio[$i]->tributacao == 1)
-                                        <img src="{{asset('/images/icon-Municipal.svg')}}">
+                                        @if ($relatorio->tributacao == 1)
+                                        <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
                                         <span>Municipal</span>
                                         @endif
 
-                                        @if ($relatorio[$i]->tributacao == 2)
-                                        <img src="{{asset('/images/icon-Estadual.svg')}}">
+                                        @if ($relatorio->tributacao == 2)
+                                        <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
                                         <span>Estadual</span>
                                         @endif
 
-                                        @if ($relatorio[$i]->tributacao == 3)
-                                        <img src="{{asset('/images/icon-Federal.svg')}}">
+                                        @if ($relatorio->tributacao == 3)
+                                        <img src="{{asset('/images/icon-Federal.svg')}}"><br>
                                         <span>Federal</span>
                                         @endif
                                     </div>
@@ -141,18 +151,18 @@
                                 <div class="exito">
                                     <p>Probabilidade de Êxito</p>
                                     <div class="exito">
-                                        @if ($relatorio[$i]->probabilidade == 1)
-                                        <img src="{{asset('/images/icon-Remota.svg')}}">
+                                        @if ($relatorio->probabilidade == 1)
+                                        <img src="{{asset('/images/icon-Remota.svg')}}"><br>
                                         <span>Remota</span>
                                         @endif
 
-                                        @if ($relatorio[$i]->probabilidade == 2)
-                                        <img src="{{asset('/images/icon-Provavel.svg')}}">
+                                        @if ($relatorio->probabilidade == 2)
+                                        <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
                                         <span>Provável</span>
                                         @endif
 
-                                        @if ($relatorio[$i]->probabilidade == 3)
-                                        <img src="{{asset('/images/icon-Possivel.svg')}}">
+                                        @if ($relatorio->probabilidade == 3)
+                                        <img src="{{asset('/images/icon-Possivel.svg')}}"><br>
                                         <span>Possível</span>
                                         @endif
                                     </div>
@@ -160,9 +170,11 @@
                             </div>
                         </div>
                     </div>
-                        <?php $i++ ?>
                     @endforeach
-                @endforeach
+                    @endif
+                    <?php $i++; ?>
+                    @endforeach
+                
         </div>
         <div class="paginacao">
         

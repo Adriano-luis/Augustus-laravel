@@ -12,6 +12,7 @@ use App\Resposta;
 use App\Pergunta;
 use App\Resposta_formulario;
 use App\Relatorio;
+use App\classifica_relatorio;
 
 class HomeController extends Controller
 {
@@ -29,10 +30,9 @@ class HomeController extends Controller
         if($cliente_noticia){
             $noticias = Noticia_Cliente::join('noticias', 'noticia_cliente.id_noticia', '=', 'noticias.id')
             ->where('noticia_cliente.id_cliente',$cliente_noticia->id)->get(['id_noticia','noticias.post_title']);
-        }else{
-            if(sizeOf($noticias) <1){
-                $noticias=Noticia::orderBy('post_date')->paginate(3);
-            }
+        }
+        if(sizeOf($noticias) <1){
+            $noticias=Noticia::orderBy('post_date')->paginate(3);
         }
         
         
@@ -92,6 +92,7 @@ class HomeController extends Controller
                 if(isset($auxContOportunidade)){
                     $listaOportunidade[$j] = $auxContOportunidade;
                     $totalOportunidades= $totalOportunidades + $auxContOportunidade;
+                    $_SESSION['totOpt'] = $totalOportunidades;
                 }
                 $j++;
             }
@@ -161,7 +162,9 @@ class HomeController extends Controller
                     } 
                 }
             }
-            return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>'']);
+            $status = classifica_relatorio::all();
+            return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
+                    'qt'=>$qtEmpresas]);
          }
 
         return view('dashboard',['empresa'=>$empresa,'relatorios'=>'','status'=>'']);
