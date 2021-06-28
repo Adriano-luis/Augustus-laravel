@@ -86,9 +86,83 @@
                     </form>
                 </div>
             </div>
-            <div class="cartoes">
-                
-            </div>
+                @foreach ($empresa as $empresaOp)
+                    <?php $i = 0; ?>
+                    @foreach ($relatorios as $relatorio)
+                    <div class="cartoes">
+                        <div class="row cartao">
+                            <div class="col-sm-5 opcoes">
+                                <div class="nome">
+                                    <h1>{{$relatorio[$i]->post_title}}</h1>
+                                    <h2>{{$empresaOp->nome}}</h2>
+                                    <h2>{{$relatorio[$i]->post_excerpt}}</h2>
+                                </div>
+                                <div class="row estagio">
+                                    Estágio:<div class="estagio-info">{{$status}}</div>
+                                </div>
+                            </div>
+                            <div class="row categorias">
+                                <div class="forma">
+                                    <p>Forma de Recuperação</p>
+                                    <div class="administrativo">
+                                        @if ($relatorio[$i]->forma == 1)
+                                        <img src="{{asset('/images/icon-Administrativo.svg')}}">
+                                        <span>Administrativo</span>
+                                        @endif
+                                        @if ($relatorio[$i]->forma == 2)
+                                        <img src="{{asset('/images/icon-Judicial.svg')}}">
+                                        <span>Judicial</span>
+                                        @endif
+                                        @if ($relatorio[$i]->forma == 3)
+                                        <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}">
+                                        <span>Administrativo / Judicial</span> 
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="tributacao">
+                                    <p>Tributação</p>
+                                    <div class="tributacao">
+                                        @if ($relatorio[$i]->tributacao == 1)
+                                        <img src="{{asset('/images/icon-Municipal.svg')}}">
+                                        <span>Municipal</span>
+                                        @endif
+
+                                        @if ($relatorio[$i]->tributacao == 2)
+                                        <img src="{{asset('/images/icon-Estadual.svg')}}">
+                                        <span>Estadual</span>
+                                        @endif
+
+                                        @if ($relatorio[$i]->tributacao == 3)
+                                        <img src="{{asset('/images/icon-Federal.svg')}}">
+                                        <span>Federal</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="exito">
+                                    <p>Probabilidade de Êxito</p>
+                                    <div class="exito">
+                                        @if ($relatorio[$i]->probabilidade == 1)
+                                        <img src="{{asset('/images/icon-Remota.svg')}}">
+                                        <span>Remota</span>
+                                        @endif
+
+                                        @if ($relatorio[$i]->probabilidade == 2)
+                                        <img src="{{asset('/images/icon-Provavel.svg')}}">
+                                        <span>Provável</span>
+                                        @endif
+
+                                        @if ($relatorio[$i]->probabilidade == 3)
+                                        <img src="{{asset('/images/icon-Possivel.svg')}}">
+                                        <span>Possível</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <?php $i++ ?>
+                    @endforeach
+                @endforeach
         </div>
         <div class="paginacao">
         

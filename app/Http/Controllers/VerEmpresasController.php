@@ -35,6 +35,7 @@ class VerEmpresasController extends Controller
         //Oportunidades
         if($qtEmpresas > 0){
             $j=0;
+            $totalOportunidades=0;
             foreach($listaEmpresa as $empresaOp){
                 
                 //Busca relatórios
@@ -43,40 +44,46 @@ class VerEmpresasController extends Controller
                 $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
                 if (sizeof($mysqli) > 0){
                     foreach ($mysqli as $value){
-                        $auxListaRelatorio[] = $value->id_relatorio;
+                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
                     }
+                }else{
+                    $auxListaRelatorio[$empresaOp->nome][] = '';
                 }
 
-                //Conta Oportunidades e qual o Relatório
-                $listaRelatorio[$empresaOp->nome]=$auxListaRelatorio;
-                $auxContRelatorio = sizeof($listaRelatorio[$empresaOp->nome]);
-                $auxContOportunidade = 0;
-                if($auxContRelatorio > 0){
-                    for ( $i = 0; $i < $auxContRelatorio;$i++) {
-                        $idRelatorio = $listaRelatorio[$empresaOp->nome][$i];
-                        $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
-
-                        if($dadosRelatorio != ""){
-                            if($dadosRelatorio->post_title != ""){
-                                if(!in_array($dadosRelatorio->post_title, $arrRelatorioDuplicado)){
-                                    $auxContOportunidade++;
-                                }
-                                array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title);
-                            } else {
-                                $auxContOportunidade = 0;
-                            }
-                        }
-                    }
-                } 
+                 //Conta Oportunidades e qual o Relatório
+                 $listaRelatorio[$empresaOp->nome]=$auxListaRelatorio[$empresaOp->nome];
+                 $auxContRelatorio = sizeof($listaRelatorio[$empresaOp->nome]);
+                 $auxContOportunidade = 0;
+                 if($auxContRelatorio > 0){
+                     for ( $i = 0; $i < $auxContRelatorio;$i++) {
+                         $idRelatorio = $listaRelatorio[$empresaOp->nome][$i];
+                         $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
+ 
+                         if($dadosRelatorio != ""){
+                             if($dadosRelatorio->post_title != ""){
+                                 if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
+                                     $auxContOportunidade++;
+                                 }
+                                 array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
+                             } else {
+                                 $auxContOportunidade = 0;
+                             }
+                         }
+                     }
+                 } 
                 if(isset($auxContOportunidade)){
                     $listaOportunidade[$j] = $auxContOportunidade;
+                    $totalOportunidades= $totalOportunidades + $auxContOportunidade;
                 }
                 $j++;
             }
-            $totalOportunidades=0;
-            for($k=0;$k<sizeof($listaOportunidade);$k++){
-                $totalOportunidades= $totalOportunidades + $listaOportunidade[$k];
-            }
+        }
+        
+        if(isset($listaOportunidade) && $listaOportunidade != ''){
+            $_SESSION['oportunidades'] = $listaOportunidade;
+        } else{
+            $listaOportunidade ='';
+            $totalOportunidades = '0';
         }
 
         return view('ver-empresas',['dadosEmpresa'=>$dadosEmpresa,'qtEmpresas'=>$qtEmpresas,

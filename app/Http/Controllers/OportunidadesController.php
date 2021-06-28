@@ -41,10 +41,10 @@ class OportunidadesController extends Controller
 
                 if($dadosRelatorio != ""){
                     if($dadosRelatorio->post_title != ""){
-                        if(!in_array($dadosRelatorio->post_title, $arrRelatorioDuplicado)){
+                        if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
                             $relatorio[] = $dadosRelatorio;
                         }
-                        array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title);
+                        array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
                     }
                 }
             }

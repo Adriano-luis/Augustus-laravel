@@ -99,8 +99,8 @@ $(document).ready(function(){
     
 
     $('.titulo-ralatorio').click(function () {
-        $('.lista-oportunidades').find('div').removeClass('active');
-        $(this).addClass('active');
+        $('.lista-oportunidades').find('div').removeClass('ativo');
+        $(this).addClass('ativo');
     });
 
 

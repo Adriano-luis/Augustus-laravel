@@ -54,7 +54,8 @@
         @if ($relatorios >0)
             @foreach ($relatorios as $relatorio)
                 <div class="titulo-ralatorio">
-                    <h6>{{$relatorio->post_title}}</h6>
+                    <h3>{{$relatorio->post_title}}</h3>
+                    <h2>{{$relatorio->post_excerpt}}</h2>
                 </div>
                 <div class="relatorio indice-{{$aux}}">
                     <div class=" classificacao">
@@ -112,7 +113,6 @@
                                 <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}">
                                 <span>Administrativo / Judicial</span> 
                                 @endif
-                                
                             </div>
                         </div>
                         <div class="col">
@@ -132,7 +132,6 @@
                                 <img src="{{asset('/images/icon-Federal.svg')}}">
                                 <span>Federal</span>
                                 @endif
-                                
                             </div>
                         </div>
                         <div class="col">

@@ -3876,7 +3876,8 @@ input[type="file"]{
     color: #89879E;
     border: none;
     border-radius: 5px;
-    background-color: #E6E9F1;
+    background-color: #F8F8F8;
+    ;
 
 }
 
@@ -3906,6 +3907,126 @@ input[type="file"]{
     background: #6694FB;
     border: none;
     border-radius: 5px 5px 20px 5px;
+}
+
+.dashboard .relatorios .cartoes{
+    max-width: 929px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #E7E7E7;
+    border-radius: 8px;
+}
+
+.dashboard .relatorios .cartoes .opcoes{
+    min-width: 100px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-bottom: 15px;
+}
+
+.dashboard .relatorios .cartoes .nome h1{
+    color: #2C2858;
+    font-size: 20px;
+}
+
+.dashboard .relatorios .cartoes .nome h2{
+    color: #89879E;
+    font-size: 12px;
+}
+
+.dashboard .relatorios .cartoes .estagio{
+    margin-left: 0px;
+    color: #2C2858;
+    font-size: 14px;
+}
+
+.dashboard .relatorios .cartoes .estagio .estagio-info{
+    width: 130px;
+    height: 16px;
+    margin-top: 4px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 11px;
+    background-color: #F8F8F8;
+}
+
+.dashboard .relatorios .cartoes .categorias{
+    margin-left: 70px;
+    padding-top: 11px;
+}
+
+.dashboard .relatorios .cartoes .categorias .forma {
+    margin-right: 10px;
+}
+
+.dashboard .relatorios .cartoes .categorias .forma p {
+    color: #2C2858;
+    font-size: 14px;
+}
+
+.dashboard .relatorios .cartoes .categorias .forma img{
+    width: 40px;
+    margin-left: 48px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #00B976;
+    border-radius: 5px;
+}
+
+.dashboard .relatorios .cartoes .categorias .forma span{
+    margin-left: 30px;
+    color: #89879E;
+    font-size: 12px;
+}
+
+.dashboard .relatorios .cartoes .categorias .tributacao {
+    min-width: 132px;
+    margin-right: 10px;
+}
+
+.dashboard .relatorios .cartoes .categorias .tributacao p {
+    color: #2C2858;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.dashboard .relatorios .cartoes .categorias .tributacao img{
+    width: 40px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #00B976;
+    border-radius: 5px;
+}
+
+.dashboard .relatorios .cartoes .categorias .tributacao span{
+    margin-left: 44px;
+    color: #89879E;
+    font-size: 12px;
+}
+
+.dashboard .relatorios .cartoes .categorias .exito {
+    margin-right: 10px;
+}
+
+.dashboard .relatorios .cartoes .categorias .exito p {
+    color: #2C2858;
+    font-size: 14px;
+}
+
+.dashboard .relatorios .cartoes .categorias .exito img{
+    width: 40px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #00B976;
+    border-radius: 5px;
+}
+
+.dashboard .relatorios .cartoes .categorias .exito span{
+    margin-left: 50px;
+    color: #89879E;
+    font-size: 12px;
 }
 
 .dashboard .paginacao{
@@ -4203,11 +4324,16 @@ input[type="file"]{
     border: 1px solid #E7E7E7;
 }
 
-.oportunidades-geradas .lista-oportunidades .titulo-ralatorio h6{
-    font-size: 13px;
+.oportunidades-geradas .lista-oportunidades .titulo-ralatorio h3{
+    color: #2C2858;
+    font-size: 20px;
 }
 
-.oportunidades-geradas .lista-oportunidades .titulo-ralatorio.active {
+.oportunidades-geradas .lista-oportunidades .titulo-ralatorio h2{
+    font-size: 12px;
+}
+
+.oportunidades-geradas .lista-oportunidades .titulo-ralatorio.ativo {
     width: 253px;
     height: 110px;
     padding: 10px 40px 10px 11px;
