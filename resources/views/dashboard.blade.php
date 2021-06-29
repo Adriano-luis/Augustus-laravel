@@ -51,7 +51,7 @@
                 </div>
                 <div class="imprimir">
                     <div class="btn-imprimir">
-                        <div><img src="{{asset('/images/icon-Print.svg')}}">Imprimir</div>
+                        <div onClick="window.print()" style="cursor: pointer;"><img src="{{asset('/images/icon-Print.svg')}}">Imprimir</div>
                     </div>
                 </div>
             </div>

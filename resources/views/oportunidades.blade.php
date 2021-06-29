@@ -61,7 +61,7 @@
                     <div class=" classificacao">
                         <div class="row status">
                             <p>Classifique o status da Oportunidade:</p>
-                            <div class="proxima">Salvar Alterações</div>
+                            <div id="salvaAlteracoes" class="proxima">Salvar Alterações</div>
                         </div>
                         <div class="row marcar-classificacao">
                         <div id="status-oportunidade" class=" row radios">

@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 
     //Salva status
-    $('#status-oportunidade input:radio').change(function() {
+    $('#salvaAlteracoes').click(function() {
         status = $("#status-oportunidade input:radio:checked").val();
         relatorio_id = $('#relatorio-id').val();
         empresa_id = $('#empresa-id').val();

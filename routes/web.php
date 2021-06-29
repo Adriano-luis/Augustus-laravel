@@ -33,6 +33,7 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::post('/cadastrar', 'CadastrarController@salvar')->name('nova-empresa');
     Route::get('/ver-empresas', 'VerEmpresasController@index')->name('ver-empresas');
     Route::get('/empresa-visualizar', 'VerEmpresasController@visualizar')->name('visualizar');
+    Route::get('/empresa-relatorios', 'VerEmpresasController@relatorios')->name('relatorios');
 
     //Perguntas e Respostas
     Route::prefix('/forneca-informacoes')->group(function (){
