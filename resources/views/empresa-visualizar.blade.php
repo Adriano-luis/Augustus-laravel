@@ -90,7 +90,7 @@
                                 <?php $resposta1 = $respostas->where('id_pergunta',242) ?>
                                 @foreach ($resposta1 as $item)
                                     @if ($item != '')
-                                        {{$item[0]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -104,7 +104,7 @@
                                 <?php $resposta2 = $respostas->where('id_pergunta',302) ?>
                                 @foreach ($resposta2 as $item)
                                     @if ($item != '')
-                                        {{$item[5]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -121,7 +121,7 @@
                                 <?php $resposta3 = $respostas->where('id_pergunta',313) ?>
                                 @foreach ($resposta3 as $item)
                                     @if ($item != '')
-                                        {{$item[8]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -135,7 +135,7 @@
                                 <?php $resposta4 = $respostas->where('id_pergunta',329) ?>
                                 @foreach ($resposta4 as $item)
                                     @if ($item != '')
-                                        {{$item[13]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -152,7 +152,7 @@
                                 <?php $resposta5 = $respostas->where('id_pergunta',341) ?>
                                 @foreach ($resposta5 as $item)
                                     @if ($item != '')
-                                        {{$item[17]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -166,7 +166,7 @@
                                 <?php $resposta6 = $respostas->where('id_pergunta',352) ?>
                                 @foreach ($resposta6 as $item)
                                     @if ($item != '')
-                                        {{$item[19]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -183,7 +183,7 @@
                                 <?php $resposta7 = $respostas->where('id_pergunta',455) ?>
                                 @foreach ($resposta7 as $item)
                                     @if ($item != '')
-                                        {{$item[40]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -197,7 +197,7 @@
                                 <?php $resposta8 = $respostas->where('id_pergunta',785) ?>
                                 @foreach ($resposta8 as $item)
                                     @if ($item != '')
-                                        {{$item[41]->post_title}}
+                                        {{$item->post_title}}
                                     @endif
                                 @endforeach
                             </div>
@@ -209,14 +209,14 @@
                         <div class="row">
                             <img src="{{asset('/images/icon-informacoes.svg')}}">
                             <div class="porcentagem-info">
-                                <h3>{{round($porcentagem)}}%</h3>
+                                <h3 id="porcentagem">{{round($porcentagem)}}%</h3>
                             </div>
                         </div>
                         <div class="info-texto">
                             DAS INFORMAÇÕES<br/> FORNECIDAS
                         </div>
                         <div class="progress">
-                            <div id="barra-"class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div id="barra-0" class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <a href="{{route('forneca-informacoes',['id'=>$empresa->id,'cont'=>$cont])}}"><div class="proxima">Editar informações</div></a>
                     </div>

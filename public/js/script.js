@@ -93,4 +93,35 @@ let progressoForneca = document.querySelector('#porcentagem');
 Num = parseInt(progressoForneca.innerHTML,10);
 corProgressoForneca(Num);
 
+
+
+
+
+
+
+
+
+//PROGRESSO BARRA EMPRESA - VISUALIZAR
+function corProgressoVisualizar(empresa){
+    let barra = document.querySelector('#barra-0');
+    
+    if(empresa<32){
+        barra.classList.add('color');
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+       
+    }else if(empresa > 32 && empresa<99){
+        barra.classList.add('color-2');
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+        
+    }else if(empresa>99){
+        barra.classList.add('color-3');
+        $(barra).attr('aria-valuenow', empresa).css('width', empresa+'%');
+        
+    }
+}
+
+let progressoVisualizar = document.querySelector('#porcentagem');
+Num = parseInt(progressoVisualizar.innerHTML,10);
+corProgressoVisualizar(Num);
+
 });

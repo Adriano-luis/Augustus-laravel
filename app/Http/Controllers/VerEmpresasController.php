@@ -105,8 +105,6 @@ class VerEmpresasController extends Controller
         $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
         ->join('perguntas', 'resposta_formulario.id_pergunta', '=', 'perguntas.id')
         ->where('id_formulario',$idEmpresa)->get(['respostas.post_title','id_pergunta']);
-        //$resposta = $respostasEmpresa->where('id',242);
-        //dd($resposta);
         $perguntas=Pergunta::all();
 
         //Busca relatórios
