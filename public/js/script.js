@@ -22,24 +22,6 @@ const fale = document.querySelector('#menu-item');
     }
     
 
-const editar = document.querySelector('#link-editar');
-    if(editar){
-        editar.addEventListener('click',function(e){
-            iniciamodal('modal-editar');
-            e.preventDefault();
-        });
-    }
-    
-
-const excluir = document.querySelector('#link-excluir');
-    if(excluir){
-        excluir.addEventListener('click',function(e){
-            iniciamodal('modal-excluir');
-            e.preventDefault();
-        });
-    }
-    
-
 
 
 

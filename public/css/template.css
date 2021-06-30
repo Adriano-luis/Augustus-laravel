@@ -557,6 +557,8 @@ footer .info{
     position: fixed;
     width: 100vw;
     height: 100vh;
+    padding-top: 160px;
+    padding-left: 515px;
     top:0px;
     left: 0px;
     background: rgba(0, 0, 0, 0.5);
@@ -611,6 +613,14 @@ footer .info{
     border-radius: 5px;
 }
 
+.m-excluir #dadoTitulo{
+    border: none;
+    outline: none;
+    background-color: #6694fb;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
 .m-excluir label{
     margin-left: 50px;
     margin-top: 25px;
@@ -630,10 +640,11 @@ footer .info{
     width: 100%;
     max-width: 120px;
     height: 40px;
-    padding-top: 8px;
     background-color: #f8f8f8;
     font-size: 14px;
     border-radius: 5px 5px 20px 5px;
+    border: none;
+    outline: none;
 }
 
 
@@ -4027,6 +4038,16 @@ input[type="file"]{
     margin-left: 50px;
     color: #89879E;
     font-size: 12px;
+}
+
+.dashboard .marca img{
+    width: 188px;
+}
+
+.dashboard .marca{
+    position: absolute;
+    top:75px;
+    right:150px;
 }
 
 

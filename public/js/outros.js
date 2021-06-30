@@ -41,6 +41,18 @@ $(document).ready(function(){
         }
     }
 
+    $('input[type="radio"]').change(function() {
+        var $that = $(this),
+            $div = $that.closest('.radio');
+       
+           if ($that.is(':checked')) {
+                $div.css('background-color', '#00B976'); 
+                $div.css('color', '#2C2858');   
+           } else {
+               $div.css('background-color', '');
+           }
+       });
+
 
     selected1Tela1 ='';
     selected2Tela1 = '';

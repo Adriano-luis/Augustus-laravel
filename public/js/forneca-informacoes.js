@@ -43,6 +43,19 @@ $(document).ready(function(){
             }
         }
     }
+    
+    $('input[type="checkbox"]').change(function() {
+        var $that = $(this),
+            $div = $that.closest('.check-option');
+       
+           if ($that.is(':checked')) {
+                $div.css('background-color', '#00B976'); 
+                $div.css('color', '#2C2858');   
+           } else {
+               $div.css('background-color', '');
+           }
+       });
+   
 
     $('.next-1').click(function (){
         salvaInfo(ramo1);

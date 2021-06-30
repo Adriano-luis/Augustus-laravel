@@ -97,6 +97,7 @@
             <div class="cartoes">
                 <?php $cont = 0; ?>
                 @foreach ($dadosEmpresa as $dado)
+                <input type="hidden" id="dad" value="{{$dado}}">
                 <div class="row cartao">
                     <div class="col-sm-4 opcoes">
                         <div class="nome">
@@ -110,8 +111,8 @@
                             <div class="relatorios"><a href="{{route('relatorios',['id'=>$dado->id,'cont'=>$cont])}}"><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a></div>
                         </div>
                         <div class="col par-2">
-                            <div class="editar"><a href="" id="link-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
-                            <div class="excluir"><a href="" id="link-excluir"><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
+                            <div class="editar"><a href="" data-toggle="modal" data-target="#modal-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a></div>
+                            <div class="excluir"><a href="" data-toggle="modal" data-target="#modal-excluir" onclick="setDadosExcluir('{{$dado->nome}}')"><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a></div>
                         </div>
                         </div>
                     </div>
@@ -151,7 +152,55 @@
             {{$dadosEmpresa->links()}}
         </div><br/><br/>
         <div class="marca">
-        <img src="{{asset('/images/img-augustus-fundo.png')}}">
+            <img src="{{asset('/images/img-augustus-fundo.png')}}">
+        </div>
     </div>
+    <div id="modal-editar" class="modal-container editar">
+        <div class="m-editar">
+            <h2>Entre em contato conosco</h2>
+            <form>
+                <div class="row">
+                    <input type="text" name="nome" placeholder="Nome">
+                </div>
+                <div class="row">
+                    <input type="email" name="email" placeholder="E-mail">
+                </div>
+                <div class="row">
+                    <input type="text" name="assunto" placeholder="Assunto">
+                </div>
+                <div class="row">
+                    <textarea name="mensagem"  cols="30" rows="10" placeholder="Mensagem"></textarea>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Enviar">
+                </div>
+                <div class="row">
+                    <span>Ou nos envie um email:<br/> contato@revisefacil.com.br</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="modal-excluir" class="modal-container excluir">
+        <div class="m-excluir">
+            <div class="row title">
+                Você esta prestes a excluir a empresa:
+                <form action="">
+                    <input type="text" id="dadoTitulo" value=""disabled>
+            </div>
+            <form>
+                <div class="row">
+                    <label for="fechar"><div class="cancelar">Não</div></label>
+                    <input type="submit" class="excluir" value="Excluir">
+                </form>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function setDadosExcluir(nome){
+            document.getElementById("dadoTitulo").value = nome;
+        } 
+    </script>
+       
 </section>
 @endsection
