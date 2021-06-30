@@ -94,61 +94,118 @@ class VerEmpresasController extends Controller
 
 
 
-    public function visualizar(){
-        return view('empresa-visualizar');
-    }
+    public function visualizar(Request $request){
+        $idEmpresa = $request->get('id');
+        $cont = $request->get('cont');
 
-    public function relatorios(){
-        //Empresas
-        $empresa = new Empresa();
-        $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
-        $qtEmpresas = sizeof($listaEmpresa);
-        
-        //Dados das empresas
-        $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
+        $empresa=Empresa::find($idEmpresa);
+        $porcentagem = $_SESSION['porcentagem'];
+        $oportunidades = $_SESSION['oportunidades'];
 
-         //Oportunidades
-         if($qtEmpresas > 0){
-            $j=0;
-            foreach($listaEmpresa as $empresaOp){
-                
-                //Busca relatórios
-                $listaRelatorio = array();
-                $arrRelatorioDuplicado = array();
-                $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
-                if (sizeof($mysqli) > 0){
-                    foreach ($mysqli as $value){
-                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
-                    }
-                }else{
-                    $auxListaRelatorio[$empresaOp->nome][] = '';
-                }
+        $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
+        ->join('perguntas', 'resposta_formulario.id_pergunta', '=', 'perguntas.id')
+        ->where('id_formulario',$idEmpresa)->get(['respostas.post_title','id_pergunta']);
+        //$resposta = $respostasEmpresa->where('id',242);
+        //dd($resposta);
+        $perguntas=Pergunta::all();
 
-                //Conta Oportunidades e qual o Relatório
-                $listaRelatorio[$empresaOp->nome]=$auxListaRelatorio[$empresaOp->nome];
-                $auxContRelatorio = sizeof($listaRelatorio[$empresaOp->nome]);
-                $auxContOportunidade = 0;
-                if($auxContRelatorio > 0){
-                    for ( $i = 0; $i < $auxContRelatorio;$i++) {
-                        $idRelatorio = $listaRelatorio[$empresaOp->nome][$i];
-                        $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
-        
-                        if($dadosRelatorio != ""){
-                            if($dadosRelatorio->post_title != ""){
-                                if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
-                                    $relatorio[$empresaOp->nome][] = $dadosRelatorio;
-                                }
-                                array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
-                            }
+        //Busca relatórios
+        $listaRelatorio = array();
+        $arrRelatorioDuplicado = array();
+        $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresa->id]);
+        if (sizeof($mysqli) > 0){
+            foreach ($mysqli as $value){
+                $auxListaRelatorio[] = $value->id_relatorio;
+            }
+        }else{
+            $auxListaRelatorio = array();
+        }
+
+        //Conta Oportunidades e qual o Relatório
+        $listaRelatorio[$empresa->nome]=$auxListaRelatorio;
+        $auxContRelatorio = sizeof($listaRelatorio[$empresa->nome]);
+        $auxContOportunidade = 0;
+        if($auxContRelatorio > 0){
+            for ( $i = 0; $i < $auxContRelatorio;$i++) {
+                $idRelatorio = $listaRelatorio[$empresa->nome][$i];
+                $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
+
+                if($dadosRelatorio != ""){
+                    if($dadosRelatorio->post_title != ""){
+                        if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
+                            $relatorio[] = $dadosRelatorio;
                         }
-                    } 
+                        array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
+                    }
                 }
             }
-            $status = classifica_relatorio::all();
-            return view('empresa-relatorios',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
-                    'qt'=>$qtEmpresas]);
-         }
 
-        return view('empresa-relatorios',['empresa'=>$empresa,'relatorios'=>'','status'=>'']);
+            return view('empresa-visualizar',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio,
+            'perguntas'=>$perguntas,'respostas'=>$respostasEmpresa]);
+        } 
+
+        return view('empresa-visualizar',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'',
+        'perguntas'=>$perguntas,'respostas'=>$respostasEmpresa]);
+        
+    }
+
+    public function relatorios(Request $request){
+        $idEmpresa = $request->get('id');
+        $cont = $request->get('cont');
+
+        $empresa=Empresa::find($idEmpresa);
+        $porcentagem = $_SESSION['porcentagem'];
+        $oportunidades = $_SESSION['oportunidades'];
+
+         //Oportunidades
+         if($idEmpresa){
+            $j=0;
+             
+            //Busca relatórios
+            $listaRelatorio = array();
+            $arrRelatorioDuplicado = array();
+            $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresa->id]);
+            if (sizeof($mysqli) > 0){
+                foreach ($mysqli as $value){
+                    $auxListaRelatorio[$empresa->nome][]= $value->id_relatorio;
+                }
+            }else{
+                $auxListaRelatorio[$empresa->nome][] = '';
+            }
+
+            //Conta Oportunidades e qual o Relatório
+            $listaRelatorio[$empresa->nome]=$auxListaRelatorio[$empresa->nome];
+            $auxContRelatorio = sizeof($listaRelatorio[$empresa->nome]);
+            $auxContOportunidade = 0;
+            if($auxContRelatorio > 0){
+                for ( $i = 0; $i < $auxContRelatorio;$i++) {
+                    $idRelatorio = $listaRelatorio[$empresa->nome][$i];
+                    $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
+    
+                    if($dadosRelatorio != ""){
+                        if($dadosRelatorio->post_title != ""){
+                            if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
+                                $relatorio[$empresa->nome][] = $dadosRelatorio;
+                            }
+                            array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
+                        }
+                    }
+                }
+                if(isset($relatorio)){
+                    return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+                    'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio]);
+                }else{
+                    return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+                    'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
+                }
+                
+            }
+        } 
+
+        return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
+        
     }
 }

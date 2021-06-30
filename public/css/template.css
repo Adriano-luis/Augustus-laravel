@@ -4840,6 +4840,10 @@ input[type="file"]{
 }
 
 .empresa-visualizar .mix  .titulo h6{
+    width: 180px;
+    height: 23px;
+    color: #FFFFFF;
+    border-radius: 10px;
     background-color: #6694FB;
 }
 
@@ -4867,7 +4871,7 @@ input[type="file"]{
 .empresa-visualizar .mix .empresas-visualizar  .visualizar{
     width: 100%;
     max-width: 1054px;
-    height: 85px;
+    height: 95px;
     margin-top: 20px;
     margin-left: 144px;
     margin-bottom: 30px;
@@ -4881,7 +4885,7 @@ input[type="file"]{
 .empresa-visualizar .mix .empresas-visualizar  .visualizar h2{
     margin-top: 14px;
     margin-left: -110px;
-    font-weight: 700;
+    color: #6694FB;
 }
 .empresa-visualizar .mix .empresas-visualizar  .visualizar p{
     font-size: 12px;
@@ -4889,6 +4893,7 @@ input[type="file"]{
 
 .empresa-visualizar .mix .empresas-visualizar  .visualizar .img-visualizar{
     width: 56px;
+    margin-left: 20px;
     margin-right: 35px;
     margin-top: -10px;
 }
@@ -4953,9 +4958,14 @@ input[type="file"]{
 }
 
 .empresa-visualizar .info-visualizar  .titulo h6{
-    background-color: #6694FB;
+    width: 200px;
+    height: 23px;
     margin-top: 35px;
     margin-bottom: 25px;
+    padding-left: 10px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #6694FB;
 }
 .empresa-visualizar .info-visualizar .infos{
     width: 100%;
@@ -4983,7 +4993,6 @@ input[type="file"]{
     width: 100%;
     max-width: 335px;
     height: 550px;
-    background-color: pink;
 }
 
 .empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas{
@@ -5013,9 +5022,45 @@ input[type="file"]{
     font-weight: 600;
 }
 
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .progress{
+    height: 5px;
+    margin-top: 30px;
+    margin-left: -13px;
+    margin-bottom: 15px;
+    max-width: 225px;
+}
+
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .progress-bar.color{
+    background-color:  #FA8D6B;
+}
+
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .progress-bar.color-2{
+    background-color:  #FBC866;
+}
+
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .progress-bar.color-3{
+    background-color:  #00B976;
+}
+
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .proxima{
+    width: 100%;
+    max-width: 225px;
+    height: 40px;
+    margin-left: -14px;
+    padding-top: 9px;
+    padding-left: 50px;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+}
+.empresa-visualizar .info-visualizar .infos-2 .informacoes-fornecidas .proxima a{
+    text-decoration: none;
+}
+
 .empresa-visualizar .info-visualizar .infos-2 .oportunidades-geradas{
     margin-top: 20px;
-    padding: 40px;
+    padding: 30px 40px 40px 40px;
     height: 200px;
     background: #93FBE2;
     border-radius: 10px 10px 50px 10px;
@@ -5049,55 +5094,23 @@ input[type="file"]{
     font-weight: 600;
 }
 
-.empresa-visualizar .paginacao{
+.empresa-visualizar .info-visualizar .infos-2 .oportunidades-geradas .proxima-opt{
     width: 100%;
-    max-width: 940px;
-    margin-left: 203px;
-    text-align: center;
-    margin-top: 45px;
+    max-width: 225px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: -14px;
+    padding-top: 9px;
+    padding-left: 27px;
+    font-size: 14px;
+    color: #00B976 ;
+    background: #FFFFFF;
+    border-radius: 8px 8px 20px 8px;
+}
+.empresa-visualizar .info-visualizar .infos-2 .oportunidades-geradas .proxima-opt a{
+    text-decoration: none;
 }
 
-.empresa-visualizar .pagination{
-    padding-left: 570px;
-}
-
-.empresa-visualizar .pagination .page-item.active .page-link{
-    margin: 5px;
-    padding: 5px 10px 5px 10px;
-    background-color: #6694FB;
-    border-radius: 5px 5px 10px 5px;
-    border-color: rgba(0, 0, 0, 0.0);
-    color: #FFFFFF;
-}
-
-.empresa-visualizar .pagination .page-item .page-link{
-    margin: 5px;
-    margin-right: 15px;
-    margin-left: 15px;
-    padding: 5px 0px 0px 0px;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: #89879E;
-    border: 0;
-
-}
-
-.empresa-visualizar .pagination .page-item:first-child .page-link {
-    padding-top: 0px;
-    font-size: 22px;
-    color: #6694FB !important;
-    font-weight: 600 !important;
-}
-
-.empresa-visualizar .pagination .page-item:last-child .page-link {
-    padding-top: 0px;
-    font-size: 22px;
-    color: #6694FB !important;
-    font-weight: 600 !important;
-}
-
-.empresa-visualizar .marca img{
-    width: 188px;
-}
 
 
 
@@ -5131,7 +5144,12 @@ input[type="file"]{
 }
 
 .empresa-relatorios .mix  .titulo h6{
-    background-color: #6694FB;
+    width: 170px;
+    height: 20px;
+    padding-left: 6px;
+    color: #2C2858;
+    border-radius: 10px;
+    background-color: #F8F8F8;
 }
 
 .empresa-relatorios .mix .titulo-info{
@@ -5158,7 +5176,7 @@ input[type="file"]{
 .empresa-relatorios .mix .empresas-visualizar  .visualizar{
     width: 100%;
     max-width: 1054px;
-    height: 85px;
+    height: 95px;
     margin-top: 20px;
     margin-left: 144px;
     margin-bottom: 30px;
@@ -5172,7 +5190,7 @@ input[type="file"]{
 .empresa-relatorios .mix .empresas-visualizar  .visualizar h2{
     margin-top: 14px;
     margin-left: -110px;
-    font-weight: 700;
+    color: #6694FB;
 }
 .empresa-relatorios .mix .empresas-visualizar  .visualizar p{
     font-size: 12px;
@@ -5180,6 +5198,7 @@ input[type="file"]{
 
 .empresa-relatorios .mix .empresas-visualizar  .visualizar .img-visualizar{
     width: 56px;
+    margin-left: 20px;
     margin-right: 35px;
     margin-top: -10px;
 }

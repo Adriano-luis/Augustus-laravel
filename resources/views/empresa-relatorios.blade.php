@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <img class="img-visualizar" src="{{asset('/images/icon-Empresa.svg')}}">
                                     <p>PERFIL DA EMPRESA</p>
-                                    <h2>nome</h2>
+                                    <h2>{{$empresa->nome}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -24,23 +24,23 @@
                                 <div class="row dados-1">
                                     <div class="col titulo-info">
                                         <div>CNPJ:</div>
-                                        <div class="conteudo-info">info</div>
+                                        <div class="conteudo-info">{{$empresa->cnpj}}</div>
                                     </div>
                                     <div class="col titulo-info">
                                         <div>Ano de Constituição:</div>
-                                        <div class="conteudo-info">info</div>
+                                        <div class="conteudo-info">{{$empresa->ano}}</div>
                                     </div>
                                     <div class="col titulo-info">
                                         <div>Cidade Sede:</div>
-                                        <div class="conteudo-info">info</div>
+                                        <div class="conteudo-info">{{$empresa->cidade}}</div>
                                     </div>
                                     <div class="col titulo-info">
                                         <div>Estados com Filiais</div>
-                                        <div class="conteudo-info">info</div>
+                                        <div class="conteudo-info">{{$empresa->estado}}</div>
                                     </div>
                                     <div class="col titulo-info">
                                         <div>Tipo Societário:</div>
-                                        <div class="conteudo-info">info</div>
+                                        <div class="conteudo-info">{{$empresa->tipo}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -92,92 +92,94 @@
                 </div>
             </div>
             <?php $i = 0; ?>
-            @foreach ($relatorios as $v)
-            @if ($v != '')
-            @foreach ($v as $relatorio)
-            <div class="cartoes">
-                <div class="row cartao">
-                    <div class="col-sm-5 opcoes">
-                        <div class="nome">
-                            <h1>{{$relatorio->post_title}}</h1>
-                            <h2>{{key($relatorios)}}</h2>
-                            <h2>{{$relatorio->post_excerpt}}</h2>
-                        </div>
-                        <div class="row estagio">
-                            <?php
-                                /* foreach ($status as $x) {
-                                    $empresa = DB::table('empresas')->Where('nome',key($relatorios))->get(['id']);
-                                    $valorStatus = DB::table('classifica_relatorio')->join('relatorio', 'classifica_relatorio.id_relatorio', '=', ' relatorios.id')
-                                    ->where('classifica_relatorio.id_empresa',$empresa)
-                                    ->get(['classificacao']);
-                                }*/
-                            ?>
-                            Estágio:<div class="estagio-info"></div>
-                        </div>
-                    </div>
-                    <div class="row categorias">
-                        <div class="forma">
-                            <p>Forma de Recuperação</p>
-                            <div class="administrativo">
-                                @if ($relatorio->forma == 1)
-                                <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
-                                <span>Administrativo</span>
-                                @endif
-                                @if ($relatorio->forma == 2)
-                                <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
-                                <span>Judicial</span>
-                                @endif
-                                @if ($relatorio->forma == 3)
-                                <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
-                                <span>Administrativo / Judicial</span> 
-                                @endif
+            @if ($relatorios != '')
+                @foreach ($relatorios as $v)
+                    @if ($v != '')
+                        @foreach ($v as $relatorio)
+                            <div class="cartoes">
+                                <div class="row cartao">
+                                    <div class="col-sm-5 opcoes">
+                                        <div class="nome">
+                                            <h1>{{$relatorio->post_title}}</h1>
+                                            <h2>{{key($relatorios)}}</h2>
+                                            <h2>{{$relatorio->post_excerpt}}</h2>
+                                        </div>
+                                        <div class="row estagio">
+                                            <?php
+                                                /* foreach ($status as $x) {
+                                                    $empresa = DB::table('empresas')->Where('nome',key($relatorios))->get(['id']);
+                                                    $valorStatus = DB::table('classifica_relatorio')->join('relatorio', 'classifica_relatorio.id_relatorio', '=', ' relatorios.id')
+                                                    ->where('classifica_relatorio.id_empresa',$empresa)
+                                                    ->get(['classificacao']);
+                                                }*/
+                                            ?>
+                                            Estágio:<div class="estagio-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row categorias">
+                                        <div class="forma">
+                                            <p>Forma de Recuperação</p>
+                                            <div class="administrativo">
+                                                @if ($relatorio->forma == 1)
+                                                <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
+                                                <span>Administrativo</span>
+                                                @endif
+                                                @if ($relatorio->forma == 2)
+                                                <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
+                                                <span>Judicial</span>
+                                                @endif
+                                                @if ($relatorio->forma == 3)
+                                                <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
+                                                <span>Administrativo / Judicial</span> 
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="tributacao">
+                                            <p>Tributação</p>
+                                            <div class="tributacao">
+                                                @if ($relatorio->tributacao == 1)
+                                                <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
+                                                <span>Municipal</span>
+                                                @endif
+
+                                                @if ($relatorio->tributacao == 2)
+                                                <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
+                                                <span>Estadual</span>
+                                                @endif
+
+                                                @if ($relatorio->tributacao == 3)
+                                                <img src="{{asset('/images/icon-Federal.svg')}}"><br>
+                                                <span>Federal</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="exito">
+                                            <p>Probabilidade de Êxito</p>
+                                            <div class="exito">
+                                                @if ($relatorio->probabilidade == 1)
+                                                <img src="{{asset('/images/icon-Remota.svg')}}"><br>
+                                                <span>Remota</span>
+                                                @endif
+
+                                                @if ($relatorio->probabilidade == 2)
+                                                <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
+                                                <span>Provável</span>
+                                                @endif
+
+                                                @if ($relatorio->probabilidade == 3)
+                                                <img src="{{asset('/images/icon-Possivel.svg')}}"><br>
+                                                <span>Possível</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tributacao">
-                            <p>Tributação</p>
-                            <div class="tributacao">
-                                @if ($relatorio->tributacao == 1)
-                                <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
-                                <span>Municipal</span>
-                                @endif
-
-                                @if ($relatorio->tributacao == 2)
-                                <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
-                                <span>Estadual</span>
-                                @endif
-
-                                @if ($relatorio->tributacao == 3)
-                                <img src="{{asset('/images/icon-Federal.svg')}}"><br>
-                                <span>Federal</span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="exito">
-                            <p>Probabilidade de Êxito</p>
-                            <div class="exito">
-                                @if ($relatorio->probabilidade == 1)
-                                <img src="{{asset('/images/icon-Remota.svg')}}"><br>
-                                <span>Remota</span>
-                                @endif
-
-                                @if ($relatorio->probabilidade == 2)
-                                <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
-                                <span>Provável</span>
-                                @endif
-
-                                @if ($relatorio->probabilidade == 3)
-                                <img src="{{asset('/images/icon-Possivel.svg')}}"><br>
-                                <span>Possível</span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+                        @endforeach
+                    @endif
+                    <?php $i++; ?>
+                @endforeach
             @endif
-            <?php $i++; ?>
-            @endforeach
         </div>
     </div>
 </section>
