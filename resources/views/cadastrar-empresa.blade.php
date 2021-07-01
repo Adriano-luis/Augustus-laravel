@@ -14,7 +14,7 @@
                 <div class="form" >
                     <form action="{{route('nova-empresa')}}" method="POST" >
                         @csrf
-                        <label>Cadastrar uma nova empresa</label>
+                        <label>Editar dados da Empresa</label>
                         <div class="row">
                             <input type="text" name="razao" placeholder="Razão Social"/>
                         </div>
@@ -68,7 +68,7 @@
                                 <option value="EIRELI">EIRELI</option>
                             </select>
                         </div>
-                        <input type="submit"  value="Cadastrar Empresa"/>
+                        <input type="submit"  value="Salvar alterações"/>
                     </form>
                 </div>
             </div>

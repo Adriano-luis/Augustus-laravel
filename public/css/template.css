@@ -465,12 +465,19 @@ footer .info{
 }
 
 .m-editar{
+    width: 100%;
+    max-width: 700px;
+    margin-left: 330px;
+}
+
+.m-editar .form{
     position: relative;
     width: 100%;
     max-width: 700px;
     height: 100%;
-    max-height: 355px;
-    padding-left: 32px;
+    max-height: 385px;
+    margin-top: 80px;
+    padding-left: 153px;
     background-color:#FFFFFF;
     border-radius: 5px 5px 5px 5px;
     text-align: center;
@@ -479,74 +486,83 @@ footer .info{
 .editar .m-contato{
     animation: modal 0.4s;
 }
-.m-editar .fechar{
-    position: absolute;
-    top: -2px;
-    right: 10px;
-    background-color:rgba(0, 0, 0, 0.0);
-    border: none;
-    font-size: 25px;
-    font-family: monospace ;
-    color:#2C2858 ;
+
+.m-editar .row{
+    padding-top: 20px;
 }
 
-.m-editar h6{
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-weight: 600;
+.m-editar .form label{
+    margin-top: 20px;
+    margin-left: -155px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
     color: #2C2858;
 }
 
-.m-editar ::-webkit-input-placeholder {
-    color: #c8c8ce;
+.m-editar .form .esqueceu{
+    margin-left: 100px;
+    color: #89879E;
+}
+
+.m-editar .form input[type="text"]{
+    width: 100%;
+    max-width: 435px;
+    height: 30px;
+    padding-left: 12px;
+    font-size: 13px;
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 6px;
+    outline: none;
+}
+
+.m-editar .form .mini input[type="text"]{
+    max-width: 203px;
+    padding-left: 9px;
+}
+
+.m-editar .form .mini input[type="text"]:first-child{
+    margin-right: 30px;
+}
+
+.m-editar .form select{
+    width: 100%;
+    max-width: 203px;
+    height: 30px;
+    padding-left: 9px;
+    font-size: 13px;
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 6px;
+    outline: none;
+}
+
+.m-editar .form select:first-child{
+    margin-right: 30px;
+}
+
+::-webkit-input-placeholder,
+.m-editar select {
+    color: #89879E;
  }
 
-.m-editar .input-longo{
-    margin-left: 100px;
+.m-editar .form input[type="submit"]{
     width: 100%;
-    max-width: 485px;
-    height: 33px;
-    padding: 13px;
-    border: 1px solid #dedee4;
-    outline: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    font-size: 15px;
-}
-
-.m-editar .curto{
-    margin-left:80px ;
-}
-
-.m-editar .input-curto{
-    margin: 0px 5px 0px 5px; 
-    width: 100%;
-    max-width: 236px;
-    height: 33px;
-    padding: 13px;
-    border: 1px solid #dedee4;
-    outline: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    font-size: 15px;
-}
-
-.m-editar .input-curto.select{
-    padding: 6px;
-    color: #c8c8ce;
-}
-
-.m-editar input[type="submit"]{
-    margin-left: 218px;
-    margin-top: 25px;
-    width: 240px;
+    max-width: 265px;
     height: 35px;
-    background-color: #00B976;
-    font-size: 14px;
-    font-weight: 500;
+    margin-top: 30px;
+    margin-left: -137px;
+    padding-top: 5px;
     color: #FFFFFF;
+    outline: none;
     border: none;
-    border-radius: 5px 5px 20px 5px;
+    background: #00B976;
+    border-radius: 10px 10px 25px 10px;
 }
 
 
