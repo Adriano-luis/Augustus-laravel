@@ -70,6 +70,8 @@
                                     if($x->id_relatorio == $relatorio->id && $x->id_empresa == $empresa->id
                                     && $x->classificacao != ''){
                                         $valorStatus = $x->classificacao;
+                                    }else{
+                                        $valorStatus = '';
                                     }
                                 }
                             ?>
@@ -187,11 +189,30 @@
                             {{$relatorio->estimativa_de_ganho}}
                         </div>
                         <div class="tab-pane fade" id="aproveitamento-{{$aux}}" role="tabpanel" aria-labelledby="aproveitamento-tab">...</div>
+                        <div class="row">
+                            <div class="proxima" ><a href="" data-toggle="modal" data-target="#modal-enviar">Enviar</a></div>
+                            <div class="proxima" onClick="window.print()">Imprimir</div>
+                        </div>
+                        
                     </div>
                 </div>
                 <?php $aux++; ?>
             @endforeach
         @endif
+    </div>
+    <div id="modal-enviar" class="modal-container enviar">
+        <div class="m-enviar">
+            <div class="row title">
+                Enviar por email
+                <form action="" method="POST">
+                    @csrf
+            </div>
+            <div class="row">
+                <input type="submit" id="modal-btn-enviar" class="enviar" value="Enviar">
+            </form>
+            </div>
+            </form>
+        </div>
     </div>
 </section>
 @endsection

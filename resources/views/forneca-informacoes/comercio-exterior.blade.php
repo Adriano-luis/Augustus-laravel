@@ -36,10 +36,21 @@
                     <h6>{{$pergunta1[15]->post_title}}</h6>
                     <select id="exportacoes" class="select">
                         <option value="">Escolha uma opção</option>
-                        <option value="{{$resposta1[83]->id}}">{{$resposta1[83]->post_title}}</option>
-                        <option value="{{$resposta2[84]->id}}">{{$resposta2[84]->post_title}}</option>
-                        <option value="{{$resposta3[85]->id}}">{{$resposta3[85]->post_title}}</option>
-                        <option value="{{$resposta4[86]->id}}">{{$resposta4[86]->post_title}}</option>
+                        <option value="{{$resposta1[83]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta1[83]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta1[83]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta2[84]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta2[84]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta2[84]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta3[85]->id}}"<?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta3[85]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta3[85]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta4[86]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta4[86]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta4[86]->post_title}}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -48,10 +59,21 @@
                     <h6>{{$pergunta2[4]->post_title}}</h6>
                     <select id="inportacoes" class="select">
                         <option value="">Escolha uma opção</option>
-                        <option value="{{$resposta5[10]->id}}">{{$resposta5[10]->post_title}}</option>
-                        <option value="{{$resposta6[11]->id}}">{{$resposta6[11]->post_title}}</option>
-                        <option value="{{$resposta7[12]->id}}">{{$resposta7[12]->post_title}}</option>
-                        <option value="{{$resposta8[13]->id}}">{{$resposta8[13]->post_title}}</option>
+                        <option value="{{$resposta5[10]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta5[10]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta5[10]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta6[11]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta6[11]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta6[11]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta7[12]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta7[12]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta7[12]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta8[13]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta8[13]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta8[13]->post_title}}
+                        </option>
                     </select>
                 </div>
             </div>

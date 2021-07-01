@@ -58,17 +58,17 @@
                             </select>
                             <select name="societario">
                                 <option>Tipo Societário</option>
-                                <option value="Sociedade limitada">Sociedade limitada</option>
-                                <option value="Sociedade anônima">Sociedade anônima</option>
-                                <option value="Sociedade em nome coletivo">Sociedade em nome coletivo</option>
+                                <option value="Sociedade Limitada">Sociedade Limitada</option>
+                                <option value="Sociedade Anônima">Sociedade Anônima</option>
+                                <option value="Sociedade em Nome Coletivo">Sociedade em Nome Coletivo</option>
                                 <option value="Sociedade em Comandita Simples">Sociedade em Comandita Simples</option>
-                                <option value="Sociedade em Comandita por ações">Sociedade em Comandita por ações</option>
+                                <option value="Sociedade em Comandita por Ações">Sociedade em Comandita por Ações</option>
                                 <option value="MEI">MEI</option>
-                                <option value="Empresário individual">Empresário individual</option>
+                                <option value="Empresário Individual">Empresário Individual</option>
                                 <option value="EIRELI">EIRELI</option>
                             </select>
                         </div>
-                        <input type="submit"  value="Salvar alterações"/>
+                        <input type="submit"  value="Cadastrar Empresa"/>
                     </form>
                 </div>
             </div>

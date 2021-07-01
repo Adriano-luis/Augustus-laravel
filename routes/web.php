@@ -26,6 +26,8 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sair', 'LoginController@sair')->name('logout');
     Route::get('/sobre', 'HomeController@sobre')->name('sobre');
+    Route::post('/editar', 'HomeController@editar')->name('editar');
+    Route::post('/excluir', 'HomeController@excluir')->name('excluir');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
     //Empresas
@@ -70,9 +72,6 @@ Route::middleware('login')->prefix('')->group(function (){
 
     /*
     Route::get('/termos', 'HomeController@index');
-   
-    Route::get('/home', 'HomeController@index');
-    Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     */

@@ -52,7 +52,8 @@ $(document).ready(function(){
                 $div.css('background-color', '#00B976'); 
                 $div.css('color', '#2C2858');   
            } else {
-               $div.css('background-color', '');
+               $div.css('background-color', '#F9F9F9');
+               $div.css('color', '#89879E');
            }
        });
 
@@ -63,20 +64,25 @@ $(document).ready(function(){
     selected3Tela2 ='';
     //INPUT RADIO DA TELA 1
     $('#radio1-tela1 input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected1Tela1 = $("#radio1-tela1 input:radio:checked").val();
       });
     $('#radio2-tela1 input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected2Tela1 = $("#radio2-tela1 input:radio:checked").val();
     });
     
     //INPUT RADIO DA TELA 2
     $('#radio1-tela2 input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected1Tela2 = $("#radio1-tela2 input:radio:checked").val();
       });
     $('#radio2-tela2 input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected2Tela2 = $("#radio2-tela2 input:radio:checked").val();
     });
     $('#radio3-tela2 input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected3Tela2 = $("#radio3-tela2 input:radio:checked").val();
     });
 

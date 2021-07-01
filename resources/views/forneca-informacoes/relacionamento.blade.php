@@ -47,10 +47,12 @@
                     <h6>{{$pergunta1[1]->post_title}}</h6>
                     <div id="radio1-tela1" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta1[160]->id}}">{{$resposta1[160]->post_title}}
+                            <input type="radio" value="{{$resposta1[160]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta1[160]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta1[160]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta2[161]->id}}">{{$resposta2[161]->post_title}}
+                            <input type="radio" value="{{$resposta2[161]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta2[161]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta2[161]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -60,10 +62,12 @@
                     <h6>{{$pergunta2[20]->post_title}}</h6>
                     <div id="radio2-tela1" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta3[97]->id}}">{{$resposta3[97]->post_title}}
+                            <input type="radio" value="{{$resposta3[97]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta3[97]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta3[97]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta4[98]->id}}">{{$resposta4[98]->post_title}}
+                            <input type="radio" value="{{$resposta4[98]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta4[98]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta4[98]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -73,10 +77,12 @@
                     <h6>{{$pergunta3[19]->post_title}}</h6>
                     <div id="radio3-tela1" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta5[95]->id}}">{{$resposta5[95]->post_title}}
+                            <input type="radio" value="{{$resposta5[95]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta5[95]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta5[95]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta6[96]->id}}">{{$resposta6[96]->post_title}}
+                            <input type="radio" value="{{$resposta6[96]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta6[96]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta6[96]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -86,10 +92,12 @@
                     <h6>{{$pergunta4[18]->post_title}}</h6>
                     <div id="radio4-tela1" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta7[93]->id}}">{{$resposta7[93]->post_title}}
+                            <input type="radio" value="{{$resposta7[93]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta7[93]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta7[93]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta8[94]->id}}">{{$resposta8[94]->post_title}}
+                            <input type="radio" value="{{$resposta8[94]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta8[94]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta8[94]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -133,10 +141,12 @@
                     <h6>{{$pergunta1[21]->post_title}}</h6>
                     <div id="radio1-tela2" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta1[99]->id}}">{{$resposta1[99]->post_title}}
+                            <input type="radio" value="{{$resposta1[99]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta1[99]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta1[99]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta2[100]->id}}">{{$resposta2[100]->post_title}}
+                            <input type="radio" value="{{$resposta2[100]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta2[100]->id){ echo 'checked="checked"';}} ?>>
+                            {{$resposta2[100]->post_title}}
                         </div>
                     </div>
                 </div>
@@ -146,10 +156,21 @@
                     <h6>{{$pergunta2[17]->post_title}}</h6>
                     <select id="terrestres" class="select">
                         <option value="">Escolha uma opção</option>
-                        <option value="{{$resposta3[89]->id}}">{{$resposta3[89]->post_title}}</option>
-                        <option value="{{$resposta4[90]->id}}">{{$resposta4[90]->post_title}}</option>
-                        <option value="{{$resposta5[91]->id}}">{{$resposta5[91]->post_title}}</option>
-                        <option value="{{$resposta6[92]->id}}">{{$resposta6[92]->post_title}}</option>
+                        <option value="{{$resposta3[89]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta3[89]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta3[89]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta4[90]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta4[90]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta4[90]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta5[91]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta5[91]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta5[91]->post_title}}
+                        </option>
+
+                        <option value="{{$resposta6[92]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta6[92]->id){ echo 'selected="selected"';}} ?>>
+                            {{$resposta6[92]->post_title}}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -226,7 +247,8 @@
                             {{$resp->post_title}}
                         @endif
                     @endforeach
-                    <div class="previous-relacionamento-final">
+                    <div class="previous-relacionamento-final
+                    ">
                         <img src="{{asset('images/icon-Editar.svg')}}" class="relacionamento-final-img">
                     </div>
                 </div> 

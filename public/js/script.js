@@ -106,4 +106,19 @@ let progressoVisualizar = document.querySelector('#porcentagem');
 Num = parseInt(progressoVisualizar.innerHTML,10);
 corProgressoVisualizar(Num);
 
+
+//Excluir empresas
+$('#modal-btn-excluir').click(function() {
+    empresa_nome = $('#dadoTitulo').val();
+
+    $.ajax({
+        type:'POST',
+        url:'/Augustus/public/excluir',
+        data: {"_token": $('meta[name="csrf-token"]').attr('content'),empresa_nome},
+        success:function(data){   
+            window.location.reload(true);
+        }
+    });
+});
+
 });

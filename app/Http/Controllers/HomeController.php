@@ -116,6 +116,32 @@ class HomeController extends Controller
         return view('sobre');
     }
 
+    public function editar(Request $request){
+        $id = $request->get('empresa');
+        $razaoSocial = $request->get('razao');
+        $CNPJ = $request->get('cnpj');
+        $ano = $request->get('ano');
+        $sede = $request->get('cidade');
+        $estados = $request->get('estado');
+        $tipo = $request->get('societario');
+
+        $empresa = new Empresa();
+        $atualizar = $empresa->Where('id',$id)->Where('id_cliente',$_SESSION['id'])
+        ->update(['nome'=>$razaoSocial,'cnpj'=>$CNPJ,'ano'=>$ano,
+                'cidade'=>$sede,'estado'=>$estados,'tipo'=>$tipo]);
+
+        return redirect()->route('home');
+    }
+
+    public function excluir(Request $request){
+        $nome = $request->empresa_nome;
+
+        $empresa = new Empresa();
+        $excluir = $empresa->Where('nome',$nome)->Where('id_cliente',$_SESSION['id'])->get()->first();
+        $empresa->destroy($excluir->id);
+
+    }
+
     public function dashboard(){
         //Empresas
         $empresa = new Empresa();

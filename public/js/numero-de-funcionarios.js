@@ -48,12 +48,14 @@ $(document).ready(function(){
                 $div.css('color', '#2C2858');   
            } else {
                $div.css('background-color', '');
+               $div.css('color', '#89879E');
            }
        });
 
     selected1Tela1='';
 
     $('.radio-tela input:radio').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
         selected1Tela1 = $(".radio-tela input:radio:checked").val();
       });
 

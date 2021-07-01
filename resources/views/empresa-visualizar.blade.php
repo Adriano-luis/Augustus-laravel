@@ -49,16 +49,20 @@
                                 </div>
                             </div>
                             <div class="col-sm-4 botoes">
-                                <div class="editar">
-                                    <a href="" id="link-editar"><img src="{{asset('/images/icon-Editar.svg')}}">Editar</a>
+                                <div class="editar"><a href="" data-toggle="modal" data-target="#modal-editar" onclick="setDadosAtualizar('{{$empresa->nome}},{{$empresa->cnpj}},{{$empresa->ano}},{{$empresa->cidade}},{{$empresa->estado}},{{$empresa->tipo}},{{$empresa->id}}')">
+                                    <img src="{{asset('/images/icon-Editar.svg')}}">Editar</a>
                                 </div>
                                 <hr>
                                 <div class="relatorios">
-                                    <a href="{{route('relatorios',['id'=>$empresa->id,'cont'=>$cont])}}"><img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios</a>
+                                    <a href="{{route('relatorios',['id'=>$empresa->id,'cont'=>$cont])}}">
+                                        <img src="{{asset('/images/icon-Relatorios.svg')}}">Relatórios
+                                    </a>
                                 </div>
                                 <hr>
                                 <div class="excluir">
-                                    <a href="" id="link-excluir"><img src="{{asset('/images/icon-Excluir.svg')}}">Excluir</a>
+                                    <a href="" data-toggle="modal" data-target="#modal-excluir" onclick="setDadosExcluir('{{$empresa->nome}}')">
+                                        <img src="{{asset('/images/icon-Excluir.svg')}}">Excluir
+                                    </a>
                                 </div>
                                 <hr>
                                 <div class="imprimir">
@@ -236,5 +240,126 @@
             </div>
         </div>
     </div>
+    <div id="modal-editar" class="modal-container editar">
+        <div class="m-editar">
+            <div class="form" >
+                <form action="{{route('editar')}}" method="POST">
+                    @csrf
+                    <input type="hidden" id="empresa" name="empresa" value=""/>
+                    <label>Cadastrar uma nova empresa</label>
+                    <div class="row">
+                        <input type="text" name="razao" value="" placeholder="Razão Social"/>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="cnpj" placeholder="CNPJ"/><br/>
+                    </div>
+                    <div class="row mini">
+                        <input type="text" name="ano" placeholder="Ano de constituição" />
+                        <input type="text" name="cidade" placeholder="Cidade sede" />
+                    </div>
+                    <div class="row">
+                        <select id="estado" name="estado">
+                            <option>Estado com filiais</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <select id="societario" name="societario">
+                            <option>Tipo Societário</option>
+                            <option value="Sociedade Limitada">Sociedade Limitada</option>
+                            <option value="Sociedade Anônima">Sociedade Anônima</option>
+                            <option value="Sociedade em Nome Coletivo">Sociedade em Nome Coletivo</option>
+                            <option value="Sociedade em Comandita Simples">Sociedade em Comandita Simples</option>
+                            <option value="Sociedade em Comandita por Ações">Sociedade em Comandita por Ações</option>
+                            <option value="MEI">MEI</option>
+                            <option value="Empresário Individual">Empresário Individual</option>
+                            <option value="EIRELI">EIRELI</option>
+                        </select>
+                    </div>
+                    <input type="submit"  value="Salvar Altereções"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="modal-excluir" class="modal-container excluir">
+        <div class="m-excluir">
+            <div class="row title">
+                Você esta prestes a excluir a empresa:
+                <form action="{{route('excluir')}}" method="POST">
+                    @csrf
+                    <input type="text" id="dadoTitulo" value="" disabled>
+            </div>
+            <div class="row">
+                <label for="fechar"><div class="cancelar">Não</div></label>
+                <input type="submit" id="modal-btn-excluir" class="excluir" value="Excluir">
+            </form>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function setDadosExcluir(nome){
+            document.getElementById("dadoTitulo").value = nome;
+            document.getElementById("dadonome").value = nome;
+        } 
+
+        function setDadosAtualizar(e){
+            dados = e.split(",");
+            if(dados[0]){
+                $('input[name="razao"]').val(dados[0]);
+            }
+
+            if(dados[1]){
+                $('input[name="cnpj"]').val(dados[1]);
+            }
+
+            if(dados[2]){
+                $('input[name="ano"]').val(dados[2]);
+            }
+
+            if(dados[3]){
+                $('input[name="cidade"]').val(dados[3]);
+            }
+
+            if(dados[4]){
+                dado = dados[4].split(" / ");
+                $('#estado').find("option[value='"+dado[0]+"']").attr("selected", true);
+            }
+            
+            if(dados[5]){
+                $('#societario').find("option[value='"+dados[5]+"']").attr("selected", true);
+            }
+
+            if(dados[6]){
+                $('#empresa').val(dados[6]);
+            }
+            
+        }
+        
+    </script>
 </section>
 @endsection

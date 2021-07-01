@@ -53,6 +53,7 @@ $(document).ready(function(){
                 $div.css('color', '#2C2858');   
            } else {
                $div.css('background-color', '');
+               $div.css('color', '#89879E');
            }
        });
    

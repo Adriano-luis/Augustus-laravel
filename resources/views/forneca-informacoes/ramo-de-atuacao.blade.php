@@ -41,20 +41,45 @@
 
         <div class="row checkbox-ramo">
             <div class="col">
-                <div class="check-option"><input name="check-1" name="check-1" class="check-option-" type="checkbox"value="{{$respostas[138]->id}}"><span>{{$respostas[138]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[37]->id}}"><span>{{$respostas[37]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[27]->id}}"><span>{{$respostas[27]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[29]->id}}"><span>{{$respostas[29]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox" value="{{$respostas[23]->id}}"><span>{{$respostas[23]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[33]->id}}"><span>{{$respostas[33]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" name="check-1" class="check-option-" type="checkbox" value="{{$respostas[138]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[138]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[138]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[37]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[37]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[37]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[27]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[27]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[27]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[29]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[29]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[29]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox" value="{{$respostas[23]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[23]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[23]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[33]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[33
+                    ]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[33]->post_title}}</span>
+                </div>
             </div>
             <div class="col">
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[36]->id}}"><span>{{$respostas[36]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[32]->id}}"><span>{{$respostas[32]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[22]->id}}"><span>{{$respostas[22]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[31]->id}}"><span>{{$respostas[31]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[28]->id}}"><span>{{$respostas[28]->post_title}}</span></div>
-                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[38]->id}}"><span>{{$respostas[38]->post_title}}</span></div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[36]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[36]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[36]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[32]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[32]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[32]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[22]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[22]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[22]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[31]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[31]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[31]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[28]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[28]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[28]->post_title}}</span>
+                </div>
+                <div class="check-option"><input name="check-1" class="check-option-" type="checkbox"value="{{$respostas[38]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[38]->id){ echo 'checked="checked"';}} ?>>
+                    <span>{{$respostas[38]->post_title}}</span>
+                </div>
             </div>
         </div>
 
@@ -98,20 +123,44 @@
 
             <div class="row checkbox-ramo">
                 <div class="col">
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[159]->id}}"><span>{{$respostas[159]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[48]->id}}"><span>{{$respostas[48]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[39]->id}}"><span>{{$respostas[39]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[41]->id}}"><span>{{$respostas[41]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[34]->id}}"><span>{{$respostas[34]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[45]->id}}"><span>{{$respostas[45]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[159]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[159]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[159]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[48]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[48]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[48]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[39]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[39]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[39]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[41]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[41]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[41]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[34]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[34]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[34]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[45]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[45]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[45]->post_title}}</span>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[47]->id}}"><span>{{$respostas[47]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[44]->id}}"><span>{{$respostas[44]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[30]->id}}"><span>{{$respostas[30]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[43]->id}}"><span>{{$respostas[43]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[40]->id}}"><span>{{$respostas[40]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[49]->id}}"><span>{{$respostas[49]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[47]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[47]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[47]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[44]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[44]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[44]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[30]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[30]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[30]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[43]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[43]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[43]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[40]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[40]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[40]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[49]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[49]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[49]->post_title}}</span>
+                    </div>
                 </div>
             </div>
         
@@ -154,19 +203,42 @@
 
             <div class="row checkbox-ramo">
                 <div class="col">
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[140]->id}}"><span>{{$respostas[140]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[25]->id}}"><span>{{$respostas[25]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[18]->id}}"><span>{{$respostas[18]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[24]->id}}"><span>{{$respostas[24]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox" value="{{$respostas[46]->id}}"><span>{{$respostas[46]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[20]->id}}"><span>{{$respostas[20]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[140]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[140]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[140]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[25]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[25]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[25]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[18]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[18]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[18]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[24]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[24]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[24]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox" value="{{$respostas[46]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[46]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[46]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[20]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[20]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[20]->post_title}}</span>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[42]->id}}"><span>{{$respostas[42]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[155]->id}}"><span>{{$respostas[155]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[19]->id}}"><span>{{$respostas[19]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[21]->id}}"><span>{{$respostas[21]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[26]->id}}"><span>{{$respostas[26]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[42]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[42]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[42]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[155]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[155]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[155]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[19]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[19]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[19]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[21]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[21]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[21]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-3" class="check-option-" type="checkbox"value="{{$respostas[26]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[26
+                        ]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[26]->post_title}}</span>
+                    </div>
                 </div>
             </div>
         <div class="anterior previous-3">Voltar</div><div class="proxima next-3">Próxima</div>
@@ -211,21 +283,40 @@
             @csrf
             <div class="row checkbox-ramo">
                 <div class="col">
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[137]->id}}"><span>{{$respostas[137]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[51]->id}}"><span>{{$respostas[51]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[157]->id}}"><span>{{$respostas[157]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[50]->id}}"><span>{{$respostas[50]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox" value="{{$respostas[57]->id}}"><span>{{$respostas[57]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[52]->id}}"><span>{{$respostas[52]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[58]->id}}"><span>{{$respostas[58]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[137]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[137]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[137]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[51]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[51]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[51]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[157]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[157]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[157]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[50]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[50]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[50]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox" value="{{$respostas[57]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[57]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[57]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[52]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[52]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[52]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[58]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[58]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[58]->post_title}}</span></div>
                 </div>
                 <div class="col">
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[55]->id}}"><span>{{$respostas[55]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[56]->id}}"><span>{{$respostas[56]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[53]->id}}"><span>{{$respostas[53]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[54]->id}}"><span>{{$respostas[54]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[156]->id}}"><span>{{$respostas[156]->post_title}}</span></div>
-                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[59]->id}}"><span>{{$respostas[59]->post_title}}</span></div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[55]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[55]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[55]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[56]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[56]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[56]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[53]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[53]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[53]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[54]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[54]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[54]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[156]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[156]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[156]->post_title}}</span>
+                    </div>
+                    <div class="check-option"><input name="check-4" class="check-option-" type="checkbox"value="{{$respostas[59]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[59]->id){ echo 'checked="checked"';}} ?>>
+                        <span>{{$respostas[59]->post_title}}</span>
+                    </div>
                 </div>
             </div>
             <div class="anterior previous-4" style="margin-top:11px !important">Voltar</div>
