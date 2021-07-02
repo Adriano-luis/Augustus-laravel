@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Login
 Route::get('/login/{erro?}', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@autenticar')->name('login');
+
+//Painel
+Route::get('/login-painel', 'PainelLoginController@index')->name('login-painel');
+Route::post('/login-painel', 'PainelLoginController@autenticar')->name('login-painel');
 
 Route::get('/cadastrar-usuario', 'PerfilUsuarioController@cadastrar')->name('cadastrar-usuario');
 Route::post('/cadastrar-usuario', 'PerfilUsuarioController@salvar')->name('cadastrar-usuario');
@@ -71,8 +76,18 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::post('/contato', 'PerfilUsuarioController@contato')->name('contato');
 
     /*
-    Route::get('/termos', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
     */
+});
+
+Route::middleware('loginPainel')->prefix('painel')->group(function (){
+    Route::get('/', 'PainelController@index')->name('home-painel');
+    Route::get('/ver-relatorio', 'PainelRelatorioController@index')->name('ver-relatorio-painel');
+    Route::get('/editar-relatorio', 'PainelRelatorioController@editar')->name('editar-relatorio-painel');
+    Route::get('/excluir-relatorio', 'PainelRelatorioController@excluir')->name('excluir-relatorio-painel');
+    
+    Route::get('/incluir-relatorio', 'PainelRelatorioController@novo')->name('incluir-relatorio-painel');
+    Route::post('/incluir-relatorio', 'PainelRelatorioController@novo')->name('incluir-relatorio-painel');
+    
 });

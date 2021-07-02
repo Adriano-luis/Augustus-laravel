@@ -16,7 +16,7 @@ return [
 
     'title' => 'Augustus',
     'title_prefix' => '',
-    'title_postfix' => 'Painel - ',
+    'title_postfix' => 'Painel ',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Painel</b>Augustus',
-    'logo_img' => asset('/images/logo.png'),//'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Augustus</b> Painel',
+    'logo_img' => '/images/logo-augustus-rodape.svg', //'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -188,11 +188,12 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
-    'logout_url' => 'logout',
-    'login_url' => 'login',
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
+    'dashboard_url' => 'painel/',
+    'logout_url' => 'logout-painel',
+    'login_url' => 'login-painel',
+    'register_url' => null,
+    'remember' => null,
+    'password_reset_url' => null,//'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
 
@@ -225,7 +226,7 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
+        /* Navbar items:
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
@@ -236,23 +237,72 @@ return [
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
+        /* Sidebar items:
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ],*/
+
+
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Dashboard',
+            'url'         => 'painel',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
+
+        ['header' => 'Menus'],
+        [
+            'text'       => 'Relatórios',
+            'icon_color' => 'red',
+            'icon'       => 'far fa-fw fa-file',
+            'submenu'    => [
+                [
+                    'text' => 'Ver Relatórios', 
+                    'url'  => 'painel/ver-relatorio',
+                ],
+                [
+                    'text' => 'Incluir Relatório', 
+                    'url'  => 'painel/incluir-relatorio',
+                ],
+            ]
+        ],
+        [
+            'text'       => 'Formas de Aproveitamento',
+            'icon_color' => 'yellow',
+            'icon'       => 'far fa-fw fa-file',
+            'submenu'    => [
+                [
+                    'text' => 'Ver Formas de Aproveitamento', 
+                    'url'  => 'painel/ver-aproveitamento',
+                ],
+                [
+                    'text' => 'Incluir Formas de Aproveitamento', 
+                    'url'  => 'painel/incluir-aproveitamento',
+                ],
+            ]
+        ],
+        [
+            'text'       => 'Notícias',
+            'icon_color' => 'cyan',
+            'icon'       => 'far fa-fw fa-file',
+            'submenu'    => [
+                [
+                    'text' => 'Ver Notícias', 
+                    'url'  => 'painel/ver-noticia',
+                ],
+                [
+                    'text' => 'Incluir Notícia', 
+                    'url'  => 'painel/incluir-noticia',
+                ],
+            ]
+        ],
+        
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -263,60 +313,6 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
         ],
     ],
 
