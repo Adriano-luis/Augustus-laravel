@@ -60,24 +60,25 @@ $(document).ready(function(){
     selected1Tela2 = '';
     //INPUT RADIO DA TELA 1
     $('#radio1-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-tela1 input:radio:checked').not(this).prop('checked', false);
         selected1Tela1 = $("#radio1-tela1 input:radio:checked").val();
     });
     $('#radio2-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-tela1 input:radio:checked').not(this).prop('checked', false);
         selected2Tela1 = $("#radio2-tela1 input:radio:checked").val();
     });
     $('#radio3-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio3-tela1 input:radio:checked').not(this).prop('checked', false);
         selected3Tela1 = $("#radio3-tela1 input:radio:checked").val();
     });
     $('#radio4-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio4-tela1 input:radio:checked').not(this).prop('checked', false);
         selected4Tela1 = $("#radio4-tela1 input:radio:checked").val();
     });
 
     //INPUT RADIO DA TELA 2
     $('#radio1-tela2 input:radio').change(function() {
+        $('#radio1-tela2 input:radio:checked').not(this).prop('checked', false);
         selected1Tela2 = $("#radio1-tela2 input:radio:checked").val();
       });
 

@@ -26,7 +26,7 @@
 
 
 
-            $lista1Respostas1 = [$resposta1[160]->id,$resposta1[160]->id];
+            $lista1Respostas1 = [$resposta1[160]->id,$resposta2[161]->id];
             $lista2Respostas1 = [$resposta3[97]->id,$resposta4[98]->id];
             $lista3Respostas1 = [$resposta5[95]->id,$resposta6[96]->id];
             $lista4Respostas1 = [$resposta7[93]->id,$resposta8[94]->id];

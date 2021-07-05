@@ -122,7 +122,7 @@
                             <div class="tributacao">
                                 @if ($relatorio->tributacao == 1)
                                 <img src="{{asset('/images/icon-Municipal.svg')}}">
-                                <span>Municipal</span>
+                                <span>Federal</span>
                                 @endif
 
                                 @if ($relatorio->tributacao == 2)
@@ -132,7 +132,7 @@
 
                                 @if ($relatorio->tributacao == 3)
                                 <img src="{{asset('/images/icon-Federal.svg')}}">
-                                <span>Federal</span>
+                                <span>Municipal</span>
                                 @endif
                             </div>
                         </div>
@@ -141,17 +141,17 @@
                             <div class="exito">
                                 @if ($relatorio->probabilidade == 1)
                                 <img src="{{asset('/images/icon-Remota.svg')}}">
-                                <span>Remota</span>
+                                <span>Provável</span>
                                 @endif
 
                                 @if ($relatorio->probabilidade == 2)
                                 <img src="{{asset('/images/icon-Provavel.svg')}}">
-                                <span>Provável</span>
+                                <span>Possível</span>
                                 @endif
 
                                 @if ($relatorio->probabilidade == 3)
                                 <img src="{{asset('/images/icon-Possivel.svg')}}">
-                                <span>Possível</span>
+                                <span>Remota</span>
                                 @endif
                             </div>
                         </div>

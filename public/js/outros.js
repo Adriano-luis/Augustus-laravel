@@ -67,39 +67,39 @@ $(document).ready(function(){
     selected3Tela3 = '';
     //INPUT RADIO DA TELA 1
     $('#radio1-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-tela1 input:radio:checked').not(this).prop('checked', false);
         selected1Tela1 = $("#radio1-tela1 input:radio:checked").val();
     });
     $('#radio2-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-tela1 input:radio:checked').not(this).prop('checked', false);
         selected2Tela1 = $("#radio2-tela1 input:radio:checked").val();
     });
 
     //INPUT RADIO DA TELA 2
     $('#radio1-tela2 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-tela2 input:radio:checked').not(this).prop('checked', false);
         selected1Tela2 = $("#radio1-tela2 input:radio:checked").val();
     });
     $('#radio2-tela2 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-tela2 input:radio').not(this).prop('checked', false);
         selected2Tela2 = $("#radio2-tela2 input:radio:checked").val();
     });
     $('#radio3-tela2 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio3-tela2 input:radio:checked').not(this).prop('checked', false);
         selected3Tela2 = $("#radio3-tela2 input:radio:checked").val();
     });
 
      //INPUT RADIO DA TELA 3
      $('#radio1-tela3 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+       $('#radio1-tela3 input:radio:checked').not(this).prop('checked', false);
         selected1Tela3 = $("#radio1-tela3 input:radio:checked").val();
     });
     $('#radio2-tela3 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-tela3 input:radio:checked').not(this).prop('checked', false);
         selected2Tela3 = $("#radio2-tela3 input:radio:checked").val();
     });
     $('#radio3-tela3 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio3-tela3 input:radio:checked').not(this).prop('checked', false);
         selected3Tela3 = $("#radio3-tela3 input:radio:checked").val();
     });
 

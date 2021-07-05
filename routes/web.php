@@ -88,6 +88,6 @@ Route::middleware('loginPainel')->prefix('painel')->group(function (){
     Route::get('/excluir-relatorio', 'PainelRelatorioController@excluir')->name('excluir-relatorio-painel');
     
     Route::get('/incluir-relatorio', 'PainelRelatorioController@novo')->name('incluir-relatorio-painel');
-    Route::post('/incluir-relatorio', 'PainelRelatorioController@novo')->name('incluir-relatorio-painel');
+    Route::post('/incluir-relatorio', 'PainelRelatorioController@salvarNovo')->name('incluir-relatorio-painel');
     
 });

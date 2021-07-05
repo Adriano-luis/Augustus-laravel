@@ -2,7 +2,14 @@
 @section('content')
     <section>
         <div class="ver-relatorio">
-            <table  class="table table-bordered table-striped">
+            <div class="col">
+                <h3 class="titulo-pagina">Ver Relatórios</h3>
+            </div>
+            <hr>
+            <div class="col">
+                <h3 class="quantidade">Relatórios {{sizeOf($relatorios)}}</h3>
+            </div>
+            <table  class="table table-bordered table-striped" style="padding-bottom: 20px">
                 @if ($relatorios)
                     @foreach ($relatorios as $relatorio)
                     <tr>
@@ -15,6 +22,7 @@
                     @endforeach
                 @endif
             </table>
+            <div class="espaco" style="padding-bottom: 50px"></div>
         </div>
     </section>
 @endsection

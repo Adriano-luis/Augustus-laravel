@@ -1,4 +1,12 @@
-    /*Dashboard*/
+.titulo-pagina{
+    padding-top: 10px;
+    text-decoration: underline;
+    color:#aaacb1;
+}
+
+
+
+/*Dashboard*/
 .icheck-primary{
     display: none;
 }
@@ -29,13 +37,110 @@
 
 
 
-/* Ver Relátorios*/
+            /* Ver Relátorios*/
 
 .ver-relatorio .table td,
 .ver-relatorio .table th{
     padding: 2px ;
     padding-left: 15px;
 }
+
+.ver-relatorio .quantidade{
+    margin-left: 875px;
+    color: #2C2858;
+}
+
+
+
+
+
+
+
+
+
+            /*INCLUIR RELATÓRIO*/
+
+.incluir-relatorio{
+    padding-left: 20px;
+}
+
+.incluir-relatorio .label-titulo {
+    padding-top: 20px;
+    color: #2C2858;
+}
+
+.incluir-relatorio .titulo {
+    width: 100%;
+    max-width: 150px;
+    outline: none;
+}
+
+.incluir-relatorio .label-subtitulo {
+    color: #2C2858;
+}
+
+.incluir-relatorio .subtitulo {
+    width: 100%;
+    max-width: 800px;
+    outline: none;
+}
+
+.incluir-relatorio hr{
+    width: 100%;
+    margin-left: -20px;
+}
+
+.incluir-relatorio .selecao-radios{
+    margin-bottom: 20px;
+}
+
+.incluir-relatorio input[type="radio"]{
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-right: 10px;
+}
+
+.incluir-relatorio .selecao-radios label{
+    color: #2C2858;
+}
+
+.incluir-relatorio .area-resumo,
+.incluir-relatorio .area-entendendo,
+.incluir-relatorio .area-posicao{
+    margin-bottom: 40px;
+}
+
+.incluir-relatorio .area-resumo label,
+.incluir-relatorio .area-entendendo label,
+.incluir-relatorio .area-posicao label,
+.incluir-relatorio .area-ganho label{
+    color: #2C2858;
+}
+
+.incluir-relatorio .area-ganho{
+    padding-bottom: 40px;
+}
+
+.incluir-relatorio .nicEdit-main{
+    outline: none;
+}
+
+.incluir-relatorio .proxima{
+    width: 100%;
+    max-width: 398px;
+    height: 40px;
+    margin-left: 260px;
+    margin-bottom: 34px;
+    padding-left: 165px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+    border: none;
+    outline: none;
+}
+
 
 
 

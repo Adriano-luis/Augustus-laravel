@@ -14,11 +14,11 @@ class PainelRelatorioController extends Controller
     }
 
     public function editar(Request $request){
-        $editar = Relatorio::find($request->id);
+        $editar = $request->id;
 
         return redirect()->route('incluir-relatorio-painel',['relatorio' => $editar]);
-
     }
+
     public function excluir(Request $request){
         $excluir = Relatorio::find($request->id);
         Relatorio::destroy($excluir);
@@ -28,7 +28,8 @@ class PainelRelatorioController extends Controller
 
     public function novo(Request $request){
         if($request->relatorio){
-            $dados = $request->relatorio;
+            $id = $request->relatorio;
+            $dados = Relatorio::Where('id',$id)->get()->first();
             return view('painel.incluir-relatorio-painel',['dados' => $dados]);
         }else{
             return view('painel.incluir-relatorio-painel');
@@ -36,7 +37,47 @@ class PainelRelatorioController extends Controller
     }
 
     public function salvarNovo(Request $request){
+        $id = $request->id;
+        $titulo = $request->titulo;
+        $subtitulo = $request->subtitulo;
+        $forma = $request->forma;
+        $probabilidade = $request->probabilidade;
+        $tributacao = $request->tributacao;
+        $resumo = $request->resumo;
+        $entendendo = $request->entendendo;
+        $posicao = $request->posicao;
+        $ganho = $request->ganho;
 
+        if($id != ''){
+            $verificar = Relatorio::Where('id',$id)->get()->first();
+        }   
+        
+        if($verificar != ''){
+            Relatorio::Where('id',$id)->update([
+                'post_title'                    => $titulo,
+                'post_excerpt'                  => $subtitulo,
+                'resumo'                        => $resumo,
+                'entendendo_a_opostunidade'     => $entendendo,
+                'posicoes_nos_tribunais'        => $posicao,
+                'estimativa_de_ganho'           => $ganho,
+                'forma'                         => $forma,
+                'probabilidade'                 => $probabilidade,
+                'tributacao'                    => $tributacao
+                
+            ]);
+        }else{
+            Relatorio::create([
+                'post_title'                    => $titulo,
+                'post_excerpt'                  => $subtitulo,
+                'resumo'                        => $resumo,
+                'entendendo_a_opostunidade'     => $entendendo,
+                'posicoes_nos_tribunais'        => $posicao,
+                'estimativa_de_ganho'           => $ganho,
+                'forma'                         => $forma,
+                'probabilidade'                 => $probabilidade,
+                'tributacao'                    => $tributacao
+            ]);
+        }
     }
 
 }

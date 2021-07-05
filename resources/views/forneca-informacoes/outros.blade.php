@@ -285,11 +285,11 @@
                     <h6>{{$pergunta1[25]->post_title}}</h6>
                     <div id="radio1-tela3" class="row radio">
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta2[109]->id}}">
+                            <input type="radio" value="{{$resposta2[109]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta2[109]->id){ echo 'checked="checked"';}} ?>>
                             {{$resposta2[109]->post_title}}
                         </div>
                         <div class=" col radio">
-                            <input type="radio" value="{{$resposta1[108]->id}}">
+                            <input type="radio" value="{{$resposta1[108]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $resposta1[108]->id){ echo 'checked="checked"';}} ?>>
                             {{$resposta1[108]->post_title}} 
                         </div>
                     </div> 

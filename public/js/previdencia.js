@@ -58,17 +58,17 @@ $(document).ready(function(){
     selected2Tela2 = '';
     //INPUT RADIO DA TELA 1
     $('#radio1-tela1 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-tela1 input:radio:checked').not(this).prop('checked', false);
         selected1Tela1 = $("#radio1-tela1 input:radio:checked").val();
     });
 
     //INPUT RADIO DA TELA 2
     $('#radio1-tela2 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-tela2 input:radio:checked').not(this).prop('checked', false);
         selected1Tela2 = $("#radio1-tela2 input:radio:checked").val();
       });
     $('#radio2-tela2 input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-tela2 input:radio').not(this).prop('checked', false);
         selected2Tela2 = $("#radio2-tela2 input:radio:checked").val();
     });
 

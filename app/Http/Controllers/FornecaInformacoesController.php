@@ -172,6 +172,8 @@ class FornecaInformacoesController extends Controller
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
             $perguntas=Pergunta::all();
+            //$resposta = $respostas->where('id',1247);
+            //dd($resposta);
             
         }else{
             return redirect()->route('home');

@@ -55,7 +55,7 @@ $(document).ready(function(){
     selected1Tela1='';
 
     $('.radio-tela input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('.radio-tela input:radio:checked').not(this).prop('checked', false);
         selected1Tela1 = $(".radio-tela input:radio:checked").val();
       });
 
