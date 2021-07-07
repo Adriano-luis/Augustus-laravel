@@ -1,23 +1,23 @@
 @extends('adminlte::page')
 @section('content')
     <section>
-        <div class="ver-relatorio">
+        <div class="ver-formas">
             <div class="col">
-                <h3 class="titulo-pagina">Ver Relatórios</h3>
+                <h3 class="titulo-pagina">Ver Formas de Aproveitamento</h3>
             </div>
             <h1>{{isset($mensagem) ? $mensagem : ''}}</h1>
             <hr>
             <div class="col">
-                <h3 class="quantidade">Relatórios {{sizeOf($relatorios)}}</h3>
+                <h3 class="quantidade">Formas de Aproveitamento {{sizeOf($formas)}}</h3>
             </div>
             <table  class="table table-bordered table-striped" style="padding-bottom: 20px">
-                @if ($relatorios)
-                    @foreach ($relatorios as $relatorio)
+                @if ($formas)
+                    @foreach ($formas as $forma)
                     <tr>
                         <td>
-                            {{$relatorio->post_title}} - {{$relatorio->post_excerpt}}<br>
-                            <a href="{{route('editar-relatorio-painel',['id'=>$relatorio->id])}}">Editar</a>
-                            - <a href="{{route('excluir-relatorio-painel',['id'=>$relatorio->id])}}" onclick="return confirm('Deseje mesmo excluir?')">Excluir</a>
+                            {{$forma->titulo}}<br>
+                            <a href="{{route('editar-formas-painel',['id'=>$forma->id])}}">Editar</a>
+                            - <a href="{{route('excluir-formas-painel',['id'=>$forma->id])}}" onclick="return confirm('Deseje mesmo excluir?')">Excluir</a>
                         </td>
                     </tr>
                     @endforeach

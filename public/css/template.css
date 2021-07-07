@@ -3235,6 +3235,7 @@ footer .info{
 
 .noticia .fundo{
     height: 100%;
+    margin-top: 1000px;
 }
 
 .noticia .form.desc{
@@ -3259,6 +3260,16 @@ footer .info{
 
 .noticia .form.desc span{
     color: #89879E;
+}
+
+.nicEdit-main{
+    outline: none;
+    border: none;
+    
+}
+
+.nicEdit-panelContain{
+    display: none;
 }
 
 .noticia .form.desc p{

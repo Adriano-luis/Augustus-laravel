@@ -27,6 +27,8 @@
     <script type="text/javascript" src="{{asset('/js/jquery-3.5.1.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
     <script type="text/javascript" src="{{asset('/js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/forneca-informacoes.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/tributacao.js')}}"></script>

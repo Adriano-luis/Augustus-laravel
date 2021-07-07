@@ -14,7 +14,7 @@
                 <div class="row">
                     @foreach ($Noticias as $item)
                     <div class="col-sm-4">
-                        <img src="{{asset('/images/foto3.jpg')}}">
+                        <img src="{{$item->guid != '' ? asset('/storage/noticias/'.$item->guid) : asset('/images/foto3.jpg')}}">
                         <h4>{{$item->post_title}}</h4>
                         <span><a href="{{route('noticia',['id'=>$item->ID])}}">Leia mais</a></span>
                     </div>

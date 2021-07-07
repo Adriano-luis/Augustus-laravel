@@ -65,6 +65,8 @@ class PainelRelatorioController extends Controller
                 'tributacao'                    => $tributacao
                 
             ]);
+
+            return redirect()->route('ver-relatorio-painel',['mensagem' => 'Atualizado!']);
         }else{
             Relatorio::create([
                 'post_title'                    => $titulo,
@@ -77,6 +79,8 @@ class PainelRelatorioController extends Controller
                 'probabilidade'                 => $probabilidade,
                 'tributacao'                    => $tributacao
             ]);
+
+            return redirect()->route('ver-relatorio-painel',['mensagem' => 'Atualizado!']);
         }
     }
 

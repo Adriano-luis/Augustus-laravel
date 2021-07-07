@@ -23,9 +23,9 @@
             <div class="form desc">
                 <div class="row">
                     <div class="col-sm-12">
-                        <img class="img-noticia" src="{{asset('/images/foto3.jpg')}}">
+                        <img class="img-noticia" src="{{$Noticia[0]->guid != '' ? asset('/storage/noticias/'.$Noticia[0]->guid) : asset('/images/foto3.jpg')}}">
                         <div style="max-width: 679px;">
-                            {{$Noticia[0]->post_excerpt}}
+                            {{$Noticia[0]->post_content}}
                         </div>
                     </div>
                 </div>

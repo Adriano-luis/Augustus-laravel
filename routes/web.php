@@ -82,12 +82,30 @@ Route::middleware('login')->prefix('')->group(function (){
 });
 
 Route::middleware('loginPainel')->prefix('painel')->group(function (){
+    //Home Painel
     Route::get('/', 'PainelController@index')->name('home-painel');
+    Route::get('/sair', 'PainelLoginController@sair');
+
+    //Relatorios
     Route::get('/ver-relatorio', 'PainelRelatorioController@index')->name('ver-relatorio-painel');
     Route::get('/editar-relatorio', 'PainelRelatorioController@editar')->name('editar-relatorio-painel');
     Route::get('/excluir-relatorio', 'PainelRelatorioController@excluir')->name('excluir-relatorio-painel');
-    
     Route::get('/incluir-relatorio', 'PainelRelatorioController@novo')->name('incluir-relatorio-painel');
     Route::post('/incluir-relatorio', 'PainelRelatorioController@salvarNovo')->name('incluir-relatorio-painel');
+
+    //Formas de Aproveitamento
+    Route::get('/ver-formas', 'PainelAproveitamentoController@index')->name('ver-formas-painel');
+    Route::get('/editar-formas', 'PainelAproveitamentoController@editar')->name('editar-formas-painel');
+    Route::get('/excluir-formas', 'PainelAproveitamentoController@excluir')->name('excluir-formas-painel');
+    Route::get('/incluir-formas', 'PainelAproveitamentoController@novo')->name('incluir-formas-painel');
+    Route::post('/incluir-formas', 'PainelAproveitamentoController@salvarNovo')->name('incluir-formas-painel');
+
+
+     //Noticías
+    Route::get('/ver-noticias', 'PainelNoticiasController@index')->name('ver-noticias-painel');
+    Route::get('/editar-noticias', 'PainelNoticiasController@editar')->name('editar-noticias-painel');
+    Route::get('/excluir-noticias', 'PainelNoticiasController@excluir')->name('excluir-noticias-painel');
+    Route::get('/incluir-noticias', 'PainelNoticiasController@novo')->name('incluir-noticias-painel');
+    Route::post('/incluir-noticias', 'PainelNoticiasController@salvarNovo')->name('incluir-noticias-painel');
     
 });

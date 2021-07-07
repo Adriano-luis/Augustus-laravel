@@ -279,11 +279,11 @@ return [
             'submenu'    => [
                 [
                     'text' => 'Ver Formas de Aproveitamento', 
-                    'url'  => 'painel/ver-aproveitamento',
+                    'url'  => 'painel/ver-formas',
                 ],
                 [
                     'text' => 'Incluir Formas de Aproveitamento', 
-                    'url'  => 'painel/incluir-aproveitamento',
+                    'url'  => 'painel/incluir-formas',
                 ],
             ]
         ],
@@ -294,26 +294,25 @@ return [
             'submenu'    => [
                 [
                     'text' => 'Ver Notícias', 
-                    'url'  => 'painel/ver-noticia',
+                    'url'  => 'painel/ver-noticias',
                 ],
                 [
                     'text' => 'Incluir Notícia', 
-                    'url'  => 'painel/incluir-noticia',
+                    'url'  => 'painel/incluir-noticias',
                 ],
             ]
         ],
         
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Sair',
+            'url'  => '/sair',
         ],
-        [
+        /*[
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
+        ],*/
     ],
 
     /*

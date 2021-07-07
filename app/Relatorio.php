@@ -15,6 +15,7 @@ class Relatorio extends Model
         'estimativa_de_ganho',
         'forma',        
         'probabilidade',    
-        'tributacao',
+        'tributacao'
     ];
+    public $timestamps = false;
 }
