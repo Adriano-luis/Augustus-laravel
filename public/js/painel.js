@@ -54,6 +54,7 @@ $(document).ready(function(){
 
     $('#enviarForma').click(function (){
         id =            $("[name=id]").val();
+        indice =        $("[name=indice]").val();  
         titulo =        $("[name=titulo]").val();
         relatorio =     $("[name=relatorio]").val();
         chance =        $("#radio1-chance input:radio:checked").val();
@@ -67,10 +68,10 @@ $(document).ready(function(){
         $.ajax({
             type:'POST',
             url:'/Augustus/public/painel/incluir-formas',
-            data: {"_token": $('meta[name="csrf-token"]').attr('content'),id,titulo,relatorio,chance,descricao,
+            data: {"_token": $('meta[name="csrf-token"]').attr('content'),id,indice,titulo,relatorio,chance,descricao,
             vantagens,desvantagens,risco,documentos},
             success:function(data){
-                window.location.url('/Augustus/public/painel/ver-formas');
+                window.location.href = "/Augustus/public/painel/ver-formas";
                 
             }
         });

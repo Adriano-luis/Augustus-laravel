@@ -188,7 +188,15 @@
                         <div class="tab-pane fade" id="estimativas-{{$aux}}" role="tabpanel" aria-labelledby="estimativas-tab">
                             {{$relatorio->estimativa_de_ganho}}
                         </div>
-                        <div class="tab-pane fade" id="aproveitamento-{{$aux}}" role="tabpanel" aria-labelledby="aproveitamento-tab">...</div>
+                        <div class="tab-pane fade" id="aproveitamento-{{$aux}}" role="tabpanel" aria-labelledby="aproveitamento-tab">
+                            <?php $formas = $aproveitamentos::join('relatorios','aproveitamentos.id_relatorio','=','relatorios.id')
+                            ->Where('relatorios.id',$relatorio->id)->get();?> 
+                            @foreach ($formas as $forma)
+                                <div class="forma">
+                                    {{$forma->titulo}}
+                                </div>
+                            @endforeach
+                        </div>
                         <div class="row">
                             <div class="proxima" ><a href="" data-toggle="modal" data-target="#modal-enviar">Enviar</a></div>
                             <div class="proxima" onClick="window.print()">Imprimir</div>

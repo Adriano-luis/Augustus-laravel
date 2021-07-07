@@ -198,6 +198,12 @@
     color: #2C2858;
 }
 
+.incluir-forma .indice {
+    width: 100%;
+    max-width: 40px;
+    outline: none;
+}
+
 .incluir-forma .titulo {
     width: 100%;
     max-width: 800px;
@@ -292,7 +298,7 @@
 
 
 
-        /* Ver Formas de Aproveitamento*/
+        /* Ver noticias*/
 
 .ver-noticias .table td,
 .ver-noticias .table th{
@@ -324,7 +330,7 @@
            
            
            
-        /*INCLUIR FORMAS DE APROVEITAMENTO*/
+        /*INCLUIR Noticias*/
            
 .incluir-noticias{
     padding-left: 20px;

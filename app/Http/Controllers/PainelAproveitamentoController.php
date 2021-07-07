@@ -43,6 +43,7 @@ class PainelAproveitamentoController extends Controller
 
     public function salvarNovo(Request $request){
         $id = $request->id;
+        $indice = $request->indice;
         $titulo = $request->titulo;
         $relatorio = $request->relatorio;
         $chance = $request->chance;
@@ -58,6 +59,7 @@ class PainelAproveitamentoController extends Controller
         
         if($verificar != ''){
             Aproveitamento::Where('id',$id)->update([
+                'indice'                    => $indice,
                 'titulo'                    => $titulo,
                 'id_relatorio'              => $relatorio,
                 'chance_de_exito'           => $chance,
@@ -69,9 +71,9 @@ class PainelAproveitamentoController extends Controller
                 
             ]);
 
-            return redirect()->route('ver-formas-painel',['mensagem' => 'Atualizado!']);
         }else{
             Aproveitamento::create([
+                'indice'                    => $indice,
                 'titulo'                    => $titulo,
                 'id_relatorio'              => $relatorio,
                 'chance_de_exito'           => $chance,
@@ -81,8 +83,6 @@ class PainelAproveitamentoController extends Controller
                 'risco'                     => $risco,
                 'documentos'                => $documentos
             ]);
-
-            return redirect()->route('ver-formas-painel',['mensagem' => 'Criado!']);
         }
     }
 }

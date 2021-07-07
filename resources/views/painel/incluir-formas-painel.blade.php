@@ -11,9 +11,13 @@
                 @csrf
                 <input type="hidden" name="id" value="{{isset($dados->id) ? $dados->id : ''}}">
                 <div class="col">
+                    <label class="row label-indice">Indice</label>
+                    <input type="text" name="indice" class="row indice"
+                    placeholder="Ex: 2" value="{{ isset($dados->indice) ? $dados->indice : ''}}"><br>
+
                     <label class="row label-titulo">Título</label>
                     <input type="text" name="titulo" class="row titulo"
-                    placeholder="Ex: 13 - Compensação Administrativa..." value="{{ isset($dados->titulo) ? $dados->titulo : ''}}"><br>
+                    placeholder="Ex:  Compensação Administrativa..." value="{{ isset($dados->titulo) ? $dados->titulo : ''}}"><br>
                 </div>
                 
                 <div class="col">

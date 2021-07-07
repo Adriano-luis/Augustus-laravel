@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Empresa;
 use App\Relatorio;
+use App\Aproveitamento;
 use App\classifica_relatorio;
 
 class OportunidadesController extends Controller
@@ -50,13 +51,16 @@ class OportunidadesController extends Controller
             }
 
             $status = classifica_relatorio::all();
+            $aproveitamentos = new Aproveitamento();
 
             return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio,'status'=>$status]);
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio,'status'=>$status,
+            'aproveitamentos' => $aproveitamentos]);
         } 
 
         return view('oportunidades',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'','status'=>'']);
+        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'','status'=>'',
+        'aproveitamentos' => '']);
         
     }
 
