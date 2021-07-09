@@ -27,75 +27,83 @@ $(document).ready(function(){
         });
     }
            
+        var valor = document.querySelectorAll('.valor');
+        valor.forEach(altura);
 
-
-    $('#resumo-tab').on('click',function(){
-        setInterval(function(){
-            var altura = $('.relatorio').height();
-            var alturaTot = $('.lista-oportunidades').height();
-            altura = altura + 150;
-            console.log(altura);
-            if(altura < alturaTot){
-                $('.lista-oportunidades').css('height', alturaTot+'px');
-            }else{
-                $('.lista-oportunidades').css('height', altura+'px');
-            }
-            
-        }, 500);
-    });
-    $('#entendendo-tab').on('click',function(){
-          setInterval(function(){
-                var altura = $('.relatorio').height();
+    function altura(a,valor){
+        $('#resumo-'+valor+'-tab').on('click',function(){
+            setInterval(function(){
+                var altura = $('.indice-'+valor).height();
                 var alturaTot = $('.lista-oportunidades').height();
                 altura = altura + 150;
-                console.log(altura);
+                if(altura < alturaTot){
+                    $('.lista-oportunidades').css('height', alturaTot+'px');
+                }else{
+                    $('.lista-oportunidades').css('height', altura+'px');
+                }
+                
+            }, 500);
+        });
+        $('#entendendo-'+valor+'-tab').on('click',function(){
+              setInterval(function(){
+                    var altura = $('.indice-'+valor).height();
+                    var alturaTot = $('.lista-oportunidades').height();
+                    altura = altura + 150;
+                    if(altura < alturaTot){
+                        $('.lista-oportunidades').css('height', alturaTot+'px');
+                    }else{
+                        $('.lista-oportunidades').css('height', altura+'px');
+                    }
+                }, 500);
+           
+        });
+        $('#posicao-'+valor+'-tab').on('click',function(){
+            setInterval(function(){
+                    var altura = $('.indice-'+valor).height();
+                    var alturaTot = $('.lista-oportunidades').height();
+                    altura = altura + 150;
+                    if(altura < alturaTot){
+                        $('.lista-oportunidades').css('height', alturaTot+'px');
+                    }else{
+                        $('.lista-oportunidades').css('height', altura+'px');
+                    }
+            }, 500);
+        });
+        $('#estimativas-'+valor+'-tab').on('click',function(){
+            setInterval(function(){
+                var altura = $('.indice-'+valor).height();
+                var alturaTot = $('.lista-oportunidades').height();
+                altura = altura + 150;
                 if(altura < alturaTot){
                     $('.lista-oportunidades').css('height', alturaTot+'px');
                 }else{
                     $('.lista-oportunidades').css('height', altura+'px');
                 }
             }, 500);
-       
-    });
-    $('#posicao-tab').on('click',function(){
-        setInterval(function(){
-                var altura = $('.relatorio').height();
+        });
+        $('#aproveitamento-'+valor+'-tab').on('click',function(){
+            setInterval(function(){
+                var altura = $('.indice-'+valor).height();
                 var alturaTot = $('.lista-oportunidades').height();
                 altura = altura + 150;
-                console.log(altura);
                 if(altura < alturaTot){
                     $('.lista-oportunidades').css('height', alturaTot+'px');
                 }else{
                     $('.lista-oportunidades').css('height', altura+'px');
                 }
-        }, 500);
-    });
-    $('#estimativas-tab').on('click',function(){
-        setInterval(function(){
-            var altura = $('.relatorio').height();
-            var alturaTot = $('.lista-oportunidades').height();
-            altura = altura + 150;
-            console.log(altura);
-            if(altura < alturaTot){
-                $('.lista-oportunidades').css('height', alturaTot+'px');
-            }else{
-                $('.lista-oportunidades').css('height', altura+'px');
-            }
-        }, 500);
-    });
-    $('#aproveitamento-tab').on('click',function(){
-        setInterval(function(){
-            var altura = $('.relatorio').height();
-            var alturaTot = $('.lista-oportunidades').height();
-            altura = altura + 150;
-            console.log(altura);
-            if(altura < alturaTot){
-                $('.lista-oportunidades').css('height', alturaTot+'px');
-            }else{
-                $('.lista-oportunidades').css('height', altura+'px');
-            }
-        }, 500);
-    });
+            }, 500);
+
+            $('.ver-formas').on('click',function(){
+                $('.indice-'+valor).css('display','none');
+                $('.link-ver-page').css('display','block');
+            });
+            $('.voltar-aproveitamento').on('click',function(){
+                $('.indice-'+valor).css('display','block');
+                $('.link-ver-page').css('display','none');
+            });
+        });
+    }
+    
     
 
     $('.titulo-ralatorio').click(function () {

@@ -59,6 +59,7 @@
                 </div>
                 <div class="relatorio indice-{{$aux}}">
                     <div class=" classificacao">
+                        <input type="hidden" class="valor" value="{{$aux}}">
                         <div class="row status">
                             <p>Classifique o status da Oportunidade:</p>
                             <div id="salvaAlteracoes" class="proxima">Salvar Alterações</div>
@@ -190,12 +191,81 @@
                         </div>
                         <div class="tab-pane fade" id="aproveitamento-{{$aux}}" role="tabpanel" aria-labelledby="aproveitamento-tab">
                             <?php $formas = $aproveitamentos::join('relatorios','aproveitamentos.id_relatorio','=','relatorios.id')
-                            ->Where('relatorios.id',$relatorio->id)->get();?> 
-                            @foreach ($formas as $forma)
-                                <div class="forma">
-                                    {{$forma->titulo}}
-                                </div>
-                            @endforeach
+                            ->Where('relatorios.id',$relatorio->id)->get();
+                            
+                            ?>
+                            <?php $j = 0; $k = 1; ?>
+                            @for ($i = 0; $i < sizeOf($formas); $i++)
+                                <div class="row">
+                                    @if (isset($formas[$i+$j]))
+                                        <div class=" col-sm-5 formas">
+                                            <div class="ind">{{$formas[$i+$j]->indice}}</div>{{$formas[$i+$j]->titulo}}
+                                            <div class="chance">
+                                                <div class="chance-0" style="{{$formas[$i+$j]->chance_de_exito == 1 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$j]->chance_de_exito == 1)
+                                                        <span>Chance de Êxito: Baixa</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-1" style="{{$formas[$i+$j]->chance_de_exito == 2 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$j]->chance_de_exito == 2)
+                                                        <span>Chance de Êxito: Média</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-2" style="{{$formas[$i+$j]->chance_de_exito == 3 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$j]->chance_de_exito == 3)
+                                                        <span>Chance de Êxito: Alta</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-3" style="{{$formas[$i+$j]->chance_de_exito == 4 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$j]->chance_de_exito == 4)
+                                                        <span>Chance de Êxito: Muito Alta</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <?php $titulo =$formas[$i+$j]->titulo; $chance = $formas[$i+$j]->chance_de_exito; $desc = $formas[$i+$j]->descricao; $vant = $formas[$i+$j]->vantagens; $desvant = $formas[$i+$j]->desvantagens; $risco = $formas[$i+$j]->risco; $doc = $formas[$i+$j]->documentos ;  ?>
+                                            <input type="hidden" id="e-{{$aux}}-1" value="{{$titulo}}*{{$chance}}*{{$desc}}*{{$vant}}*{{$desvant}}*{{$risco}}*{{$doc}}">
+                                            <a onclick="setLink()" class="ver-formas">Ver</a>
+                                        </div>
+                                    @endif
+                                    @if (isset($formas[$i+$k]))
+                                        <div class=" col-sm-5 formas">
+                                            <div class="ind">{{$formas[$i+$k]->indice}}</div>{{$formas[$i+$k]->titulo}}
+                                            <div class="chance">
+                                                <div class="chance-0" style="{{$formas[$i+$k]->chance_de_exito == 1 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$k]->chance_de_exito == 1)
+                                                        <span>Chance de Êxito: Baixa</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-1" style="{{$formas[$i+$k]->chance_de_exito == 2 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$k]->chance_de_exito == 2)
+                                                        <span>Chance de Êxito: Média</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-2" style="{{$formas[$i+$k]->chance_de_exito == 3 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$k]->chance_de_exito == 3)
+                                                        <span>Chance de Êxito: Alta</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="chance-3" style="{{$formas[$i+$k]->chance_de_exito == 4 ? '' : 'display: none'}}">
+                                                    @if ($formas[$i+$k]->chance_de_exito == 4)
+                                                        <span>Chance de Êxito: Muito Alta</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <?php $titulo =$formas[$i+$k]->titulo; $chance = $formas[$i+$k]->chance_de_exito; $desc = $formas[$i+$k]->descricao; $vant = $formas[$i+$k]->vantagens; $desvant = $formas[$i+$k]->desvantagens; $risco = $formas[$i+$k]->risco; $doc = $formas[$i+$k]->documentos ;  ?>
+                                            <input type="hidden" id="e-{{$aux}}-2" value="{{$titulo}}*{{$chance}}*{{$desc}}*{{$vant}}*{{$desvant}}*{{$risco}}*{{$doc}}">
+                                            <a onclick="setLink()" class="ver-formas">Ver</a>
+                                        </div>
+                                    @endif
+                                    <?php $j++; $k++; ?>
+                            </div>
+                            @endfor  
                         </div>
                         <div class="row">
                             <div class="proxima" ><a href="" data-toggle="modal" data-target="#modal-enviar">Enviar</a></div>
@@ -206,8 +276,104 @@
                 </div>
                 <?php $aux++; ?>
             @endforeach
+            <div class="link-ver-page">
+                <h3>Formas de Aproveitamento</h3>
+                <div class="descricao-link"></div>
+                <div class="ver-chance">
+                    <div class="ver-chance-0">
+                        <span>Chance de Êxito: Baixa</span>
+                    </div>
+
+                    <div class="ver-chance-1">
+                        <span>Chance de Êxito: Média</span>
+                    </div>
+
+                    <div class="ver-chance-2">
+                        <span>Chance de Êxito: Alta</span>
+                    </div>
+
+                    <div class="ver-chance-3">
+                        <span>Chance de Êxito: Muito Alta</span>
+                    </div>
+                </div>
+                <div class="descricao-aproveitamento"></div>
+                <label>VANTAGENS:</label>
+                <div class="vantagens-aproveitamento"></div>
+                <label>DESVANTAGENS:</label>
+                <div class="desvantagens-aproveitamento"></div>
+                <label>ANÁLISE DE RISCO:</label>
+                <div class="riscos-aproveitamento"></div>
+                <label>DOCUMENTOS:</label>
+                <div class="documentos-aproveitamento"></div>
+                <div class="voltar-aproveitamento">Voltar</div>
+            </div>
         @endif
     </div>
+    <script>
+        function setLink(){
+            var valor = document.querySelectorAll('.valor');
+            valor.forEach(rodaDados);
+
+            function rodaDados(i,valor){
+
+                e = $('#e-'+valor+'-1').val();
+                dados = e.split("*");
+                if(dados[0]){
+                    $('.descricao-link').html(dados[0]);
+                }
+
+                if(dados[1]){
+                    if(dados[1] == "1"){
+                        console.log(dados[1]);
+                        $('.ver-chance-0').css('display','block');
+                        $('.ver-chance-1').css('display','none');
+                        $('.ver-chance-2').css('display','none');
+                        $('.ver-chance-3').css('display','none');
+                    }
+                    if(dados[1] == "2"){
+                        $('.ver-chance-0').css('display','none');
+                        $('.ver-chance-1').css('display','block');
+                        $('.ver-chance-2').css('display','none');
+                        $('.ver-chance-3').css('display','none');
+                    }
+                    if(dados[1] == "3"){
+                        $('.ver-chance-0').css('display','none');
+                        $('.ver-chance-2').css('display','block');
+                        $('.ver-chance-1').css('display','none');
+                        $('.ver-chance-3').css('display','none');
+                    }
+                    if(dados[1] == "4"){
+                        $('.ver-chance-0').css('display','none');
+                        $('.ver-chance-1').css('display','none');
+                        $('.ver-chance-2').css('display','none');
+                        $('.ver-chance-2').css('display','block');
+                    }
+                }
+
+                if(dados[2]){
+                    $('.descricao-aproveitamento').html(dados[2]);
+                }
+
+                if(dados[3]){
+                    $('.vantagens-aproveitamento').html(dados[3]);
+                }
+
+                if(dados[4]){
+                    $('.desvantagens-aproveitamento').html(dados[4]);
+                }
+                
+                if(dados[5]){
+                    $('.riscos-aproveitamento').html(dados[5]);
+                }
+
+                if(dados[6]){
+                    $('.documentos-aproveitamento').html(dados[6]);
+                }
+            }
+            
+            
+        }
+    </script>
     <div id="modal-enviar" class="modal-container enviar">
         <div class="m-enviar">
             <div class="row title">
