@@ -87,7 +87,9 @@ $(document).ready(function(){
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1},
                 success:function(data){
                     window.sessionStorage.setItem("reloading", "true");    
-                    window.location.reload(true);
+                    setInterval(function(){
+                        window.location.reload(true);
+                    }, 3000); 
                     
                 }
             });

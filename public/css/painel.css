@@ -378,3 +378,81 @@
     border: none;
     outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+        /*Incluir usuário*/
+.incluir-usuario .proxima{
+    width: 100%;
+    max-width: 255px;
+    height: 40px;
+    margin-top: 50px;
+    margin-bottom: 34px;
+    padding-left: 13px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Alterar Senha*/
+.alterar-senha .proxima{
+    width: 100%;
+    max-width: 255px;
+    height: 40px;
+    margin-top: 50px;
+    margin-bottom: 34px;
+    padding-left: 13px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: #6694FB;
+    border-radius: 8px 8px 20px 8px;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Empresas*/
+.empresas .table td,
+.empresas .table th{
+    padding: 2px ;
+    padding-left: 15px;
+}
+
+.empresas .quantidade{
+    margin-left: 850px;
+    color: #2C2858;
+}

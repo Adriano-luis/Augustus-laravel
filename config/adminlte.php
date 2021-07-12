@@ -258,6 +258,11 @@ return [
 
         ['header' => 'Menus'],
         [
+            'text' => 'Empresas',
+            'url'  => 'painel/empresas',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
             'text'       => 'Relatórios',
             'icon_color' => 'red',
             'icon'       => 'far fa-fw fa-file',
@@ -305,14 +310,18 @@ return [
         
         ['header' => 'account_settings'],
         [
+            'text' => 'Adicionar novo',
+            'url'  => 'painel/novo-usuario',
+        ],
+        [
+            'text' => 'Alterar senha',
+            'url'  => 'painel/alterar-senha',
+        ],
+        [
             'text' => 'Sair',
             'url'  => '/sair',
         ],
-        /*[
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],*/
+        
     ],
 
     /*

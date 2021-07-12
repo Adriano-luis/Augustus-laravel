@@ -194,7 +194,9 @@ $(document).ready(function(){
                 respostas3Page1,respostas4Page1,respostas1Page2,respostas2Page2,respostas3Page2},
             success:function(data){
                 window.sessionStorage.setItem("reloading", "true");    
-                window.location.reload(true);
+                setInterval(function(){
+                    window.location.reload(true);
+                }, 3000); 
                 
             }
             });

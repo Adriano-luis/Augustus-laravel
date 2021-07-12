@@ -22,7 +22,7 @@ class PainelNoticiasController extends Controller
 
     public function excluir(Request $request){
         $excluir = Noticia::find($request->id);
-        Noticia::destroy($excluir);
+        Noticia::destroy($excluir->id);
 
         return redirect()->route('ver-noticias-painel');
     }

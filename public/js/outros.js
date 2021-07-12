@@ -253,7 +253,9 @@ $(document).ready(function(){
                         respostas4Page2,respostas1Page3,respostas2Page3,respostas3Page3},
                 success:function(data){
                     window.sessionStorage.setItem("reloading", "true");
-                    window.location.reload(true);
+                    setInterval(function(){
+                        window.location.reload(true);
+                    }, 3000); 
                     
                 }
             });

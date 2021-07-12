@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\ContatoMensagemMail;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +87,21 @@ Route::middleware('loginPainel')->prefix('painel')->group(function (){
     //Home Painel
     Route::get('/', 'PainelController@index')->name('home-painel');
     Route::get('/sair', 'PainelLoginController@sair');
+    Route::get('/email',function(){
+        $emails = User::get('user_email');
+        foreach($emails as $email){
+            Mail::to($email->user_email)->send(new ContatoMensagemMail());
+        }
+    })->name('email-painel');
+    Route::get('/novo-usuario', 'PainelController@novo')->name('novo-usuario-painel');
+    Route::post('/novo-usuario', 'PainelController@novoPost')->name('novo-usuario-painel');
+    Route::get('/alterar-senha', 'PainelController@alterarSenha')->name('alterar-senha-painel');
+    Route::post('/alterar-senha', 'PainelController@alterarSenhaPost')->name('alterar-senha-painel');
+    
+
+    //Empresas
+    Route::get('/empresas', 'PainelEmpresasController@index')->name('empresas-painel');
+    Route::get('/empresas-excluir', 'PainelEmpresasController@excluir')->name('excluir-empresas-painel');
 
     //Relatorios
     Route::get('/ver-relatorio', 'PainelRelatorioController@index')->name('ver-relatorio-painel');

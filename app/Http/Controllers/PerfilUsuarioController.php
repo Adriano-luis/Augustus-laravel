@@ -69,7 +69,7 @@ class PerfilUsuarioController extends Controller
         //Recuperando os paramêtros
         $nome = $request->get('nome');
         $email = $request->get('email');
-        $senha = $request->get('senha');
+        $senha = Hash::make($request->get('senha'));
 
 
 
@@ -103,7 +103,7 @@ class PerfilUsuarioController extends Controller
 
         $request->validate($regras,$retorno);
 
-        $nome = $request->get('nonomecontatome');
+        $nome = $request->get('nomecontato');
         $email = $request->get('emailcontato');
         $mensagem = $request->get('mensagemcontato');
         $assunto = $request->get('assuntocontato');

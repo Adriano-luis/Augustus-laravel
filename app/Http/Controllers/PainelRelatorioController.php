@@ -21,7 +21,7 @@ class PainelRelatorioController extends Controller
 
     public function excluir(Request $request){
         $excluir = Relatorio::find($request->id);
-        Relatorio::destroy($excluir);
+        Relatorio::destroy($excluir->id);
 
         return redirect()->route('ver-relatorio-painel');
     }
@@ -50,7 +50,9 @@ class PainelRelatorioController extends Controller
 
         if($id != ''){
             $verificar = Relatorio::Where('id',$id)->get()->first();
-        }   
+        } else{
+            $verificar = '';
+        }
         
         if($verificar != ''){
             Relatorio::Where('id',$id)->update([
@@ -77,10 +79,11 @@ class PainelRelatorioController extends Controller
                 'estimativa_de_ganho'           => $ganho,
                 'forma'                         => $forma,
                 'probabilidade'                 => $probabilidade,
-                'tributacao'                    => $tributacao
+                'tributacao'                    => $tributacao,
+                'post_type'                     => 'relatorio'
             ]);
 
-            return redirect()->route('ver-relatorio-painel',['mensagem' => 'Atualizado!']);
+            return redirect()->route('email-painel');
         }
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\User;
+use App\User_Painel;
 
 class PainelLoginController extends Controller
 {
@@ -29,15 +29,15 @@ class PainelLoginController extends Controller
         $senha = $request->get('password');
 
         //Consultando no DB
-        $user = new User();
-        $usuario = $user->where('user_email',$email)->get()->first();
-        if (Hash::check($senha, $usuario->user_pass)) {
-            if(isset($usuario->user_nicename)){
+        $user = new User_Painel();
+        $usuario = $user->where('email',$email)->get()->first();
+        if (Hash::check($senha, $usuario->senha)) {
+            if(isset($usuario->nome)){
 
                 session_start();
                 $_SESSION['id'] = $usuario->id;
-                $_SESSION['nome'] = $usuario->user_login;
-                $_SESSION['email'] = $usuario->user_email;
+                $_SESSION['nome'] = $usuario->nome;
+                $_SESSION['email'] = $usuario->email;
                 
     
                 return redirect()->route('home-painel');

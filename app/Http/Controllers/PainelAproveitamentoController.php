@@ -22,7 +22,7 @@ class PainelAproveitamentoController extends Controller
 
     public function excluir(Request $request){
         $excluir = Aproveitamento::find($request->id);
-        Aproveitamento::destroy($excluir);
+        Aproveitamento::destroy($excluir->id);
 
         return redirect()->route('ver-formas-painel');
     }

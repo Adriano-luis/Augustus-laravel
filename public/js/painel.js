@@ -1,19 +1,18 @@
 $(document).ready(function(){
     $('#radio1-forma input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio1-forma input:radio:checked').not(this).prop('checked', false);
         selected1 = $("#radio1-forma input:radio:checked").val();
     });
 
     $('#radio2-probabilidade input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio2-probabilidade input:radio:checked').not(this).prop('checked', false);
         selected2 = $("#radio2-probabilidade input:radio:checked").val();
     });
 
     $('#radio3-tributacao input:radio').change(function() {
-        $('input[type=radio]:checked').not(this).prop('checked', false);
+        $('#radio3-tributacao input:radio:checked').not(this).prop('checked', false);
         selected3 = $("#radio3-tributacao input:radio:checked").val();
     });
-
 
 
     $('#enviarRelatorio').click(function (){
@@ -23,10 +22,10 @@ $(document).ready(function(){
         forma =         $("#radio1-forma input:radio:checked").val();
         probabilidade = $("#radio2-probabilidade input:radio:checked").val();
         tributacao =    $("#radio3-tributacao input:radio:checked").val();
-        resumo =        $("[name=resumo]").val();
-        entendendo =    $("[name=entendendo]").val();
-        posicao =       $("[name=posicao]").val();
-        ganho =         $("[name=ganho]").val();
+        resumo =        $('.area-resumo').find('.nicEdit-main').html();
+        entendendo =    $('.area-entendendo').find('.nicEdit-main').html();
+        posicao =       $('.area-posicao').find('.nicEdit-main').html();
+        ganho =         $('.area-ganho').find('.nicEdit-main').html();
 
 
         $.ajax({
@@ -35,7 +34,7 @@ $(document).ready(function(){
             data: {"_token": $('meta[name="csrf-token"]').attr('content'),id,titulo,subtitulo,forma,probabilidade,
                   tributacao,resumo,entendendo,posicao,ganho},
             success:function(data){
-                window.location.url('/Augustus/public/painel/ver-relatorio');
+                window.location.href = '/Augustus/public/painel/ver-relatorio';
                 
             }
         });

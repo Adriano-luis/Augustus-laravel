@@ -184,8 +184,11 @@ $(document).ready(function(){
                 url:'/Augustus/public/forneca-informacoes',
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
                 success:function(data){
-                    window.sessionStorage.setItem("reloading", "true");    
-                    window.location.reload(true);
+                    window.sessionStorage.setItem("reloading", "true");  
+                    setInterval(function(){
+                        window.location.reload(true);
+                    }, 3000);  
+                    
                     
                 }
             });
