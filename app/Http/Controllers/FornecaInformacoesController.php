@@ -720,7 +720,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',825)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>825,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>825,
                 'id_resposta'=>$ramo1_1]);
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>825,
@@ -733,7 +734,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',452)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>452,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>452,
                 'id_resposta'=>$ramo1_2]);    
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>452,
@@ -746,7 +748,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',446)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>446,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>446,
                 'id_resposta'=>$ramo1_3]);
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>446,
@@ -759,7 +762,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',440)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>440,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>440,
                 'id_resposta'=>$ramo1_4]);
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>440,
@@ -772,7 +776,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',437)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>437,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>437,
                 'id_resposta'=>$ramo2_1]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>437,
@@ -785,7 +790,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',434)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>434,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>434,
                 'id_resposta'=>$ramo2_2]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>434,
@@ -798,7 +804,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',431)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>431,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>431,
                 'id_resposta'=>$ramo2_3]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>431,
@@ -811,7 +818,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',424)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>424,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>424,
                 'id_resposta'=>$ramo2_4]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>424,
@@ -824,7 +832,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',428)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>428,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>428,
                 'id_resposta'=>$ramo3_1]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>428,
@@ -837,7 +846,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',421)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>421,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>421,
                 'id_resposta'=>$ramo3_2]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>421,
@@ -850,7 +860,8 @@ class FornecaInformacoesController extends Controller
                 ->Where('id_pergunta',387)->get()->first();
                 
             if($respostasAnterior != ''){
-                Resposta_formulario::update(['id_formulario' =>$idEmpresa,'id_pergunta'=>387,
+                Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior->id_resposta_formulario)
+                ->update(['id_formulario' =>$idEmpresa,'id_pergunta'=>387,
                 'id_resposta'=>$ramo3_3]);  
             }else{
                 Resposta_formulario::create(['id_formulario' =>$idEmpresa,'id_pergunta'=>387,
