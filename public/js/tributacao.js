@@ -34,13 +34,11 @@ $(document).ready(function(){
     let ramoFinal = document.querySelector('#tributacao-tela-final');
 
     if(abaNome == 'tributacao'){
-        window.onload = function() {
-            var reloading = sessionStorage.getItem("reloading");
-            if (reloading) {
-                sessionStorage.removeItem("reloading");
-                $(ramo1).css('display', 'none');
-                nextRamo(ramoFinal);
-            }
+        var reloading = sessionStorage.getItem("reloading");
+        if (reloading) {
+            sessionStorage.removeItem("reloading");
+            $(ramo1).css('display', 'none');
+            nextRamo(ramoFinal);
         }
     }
 
@@ -194,9 +192,7 @@ $(document).ready(function(){
                 respostas3Page1,respostas4Page1,respostas1Page2,respostas2Page2,respostas3Page2},
             success:function(data){
                 window.sessionStorage.setItem("reloading", "true");    
-                setInterval(function(){
-                    window.location.reload(true);
-                }, 3000); 
+                window.location.reload(true);
                 
             }
             });

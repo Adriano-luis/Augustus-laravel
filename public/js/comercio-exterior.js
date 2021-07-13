@@ -30,13 +30,11 @@ $(document).ready(function(){
     let ramoFinal = document.querySelector('#comercio-tela-final');
 
     if(abaNome == 'comercio'){
-        window.onload = function() {
-            var reloading = sessionStorage.getItem("reloading");
-            if (reloading) {
-                sessionStorage.removeItem("reloading");
-                $(ramo1).css('display', 'none');
-                nextRamo(ramoFinal);
-            }
+        var reloading = sessionStorage.getItem("reloading");
+        if (reloading) {
+            sessionStorage.removeItem("reloading");
+            $(ramo1).css('display', 'none');
+            nextRamo(ramoFinal);
         }
     }
 
@@ -87,9 +85,7 @@ $(document).ready(function(){
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostas1Page1,respostas2Page1},
                 success:function(data){
                     window.sessionStorage.setItem("reloading", "true");    
-                    setInterval(function(){
-                        window.location.reload(true);
-                    }, 3000); 
+                    window.location.reload(true);
                     
                 }
             });

@@ -34,13 +34,11 @@ $(document).ready(function(){
     let ramoFinal = document.querySelector('#ramo-tela-final');
 
     if(abaNome == 'ramo-de-atuacao'){
-        window.onload = function() {
-            var reloading = sessionStorage.getItem("reloading");
-            if (reloading) {
-                sessionStorage.removeItem("reloading");
-                $(ramo1).css('display', 'none');
-                nextRamo(ramoFinal);
-            }
+        var reloading = sessionStorage.getItem("reloading");
+        if (reloading) {
+            sessionStorage.removeItem("reloading");
+            $(ramo1).css('display', 'none');
+            nextRamo(ramoFinal);
         }
     }
     
@@ -185,10 +183,7 @@ $(document).ready(function(){
                 data: {"_token": $('meta[name="csrf-token"]').attr('content'),respostasPage1,respostasPage2,respostasPage3,respostasPage4},
                 success:function(data){
                     window.sessionStorage.setItem("reloading", "true");  
-                    setInterval(function(){
-                        window.location.reload(true);
-                    }, 3000);  
-                    
+                    window.location.reload(true); 
                     
                 }
             });

@@ -31,13 +31,11 @@ $(document).ready(function(){
     let ramoFinal = document.querySelector('#outros-tela-final');
 
     if(abaNome == 'outros'){
-        window.onload = function() {
-            var reloading = sessionStorage.getItem("reloading");
-            if (reloading) {
-                sessionStorage.removeItem("reloading");
-                $(ramo1).css('display', 'none');
-                nextRamo(ramoFinal);
-            }
+        var reloading = sessionStorage.getItem("reloading");
+        if (reloading) {
+            sessionStorage.removeItem("reloading");
+            $(ramo1).css('display', 'none');
+            nextRamo(ramoFinal);
         }
     }
 
@@ -253,9 +251,7 @@ $(document).ready(function(){
                         respostas4Page2,respostas1Page3,respostas2Page3,respostas3Page3},
                 success:function(data){
                     window.sessionStorage.setItem("reloading", "true");
-                    setInterval(function(){
-                        window.location.reload(true);
-                    }, 3000); 
+                    window.location.reload(true);
                     
                 }
             });
