@@ -80,4 +80,31 @@ class OportunidadesController extends Controller
             }
         }
     }
+
+    public function enviar(Request $request){
+        $regras = [
+            'enviarEmail' => 'email',
+        ];
+        $retorno =[
+            'email' => 'Digite um email válido!'
+        ];
+
+        $request->validate($regras,$retorno);
+
+        $email = $request->get('enviarEmail');
+        $resumo = $request->get('enviaResumo');
+        $entendendo = $request->get('enviaEntendendo');
+        $posicao = $request->get('enviaPosicao');
+        $estimativas = $request->get('enviaestimativas');
+
+        $para = $email;
+        $corpo = "Nome:".$nome." - E-mail:".$email."\r\n"."Resumo:".$resumo."Entendendo a oportunidade:".$entendendo
+        ."Posição nos Tribunais:".$posicao."Estimativas de ganho:".$estimativas;
+        $cabecalho = "From:contato@augustus.digital.com.br"."\r\n".
+                    "Reply-To:".$email."\r\n".
+                    "X-Mailer: PHP/".phpversion();
+
+        mail($para,$assunto,$corpo,$cabecalho);
+        echo "Enviado";
+    }
 }

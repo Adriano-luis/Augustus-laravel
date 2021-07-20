@@ -268,7 +268,7 @@
                             @endfor  
                         </div>
                         <div class="row">
-                            <div class="proxima" ><a href="" data-toggle="modal" data-target="#modal-enviar">Enviar</a></div>
+                            <div class="proxima" ><a href="" data-toggle="modal" data-target="#modal-enviar" onclick="enviaEmail('{{$aux}}')">Enviar</a></div>
                             <div class="proxima" onClick="window.print()">Imprimir</div>
                         </div>
                         
@@ -308,6 +308,22 @@
                 <div class="voltar-aproveitamento">Voltar</div>
             </div>
         @endif
+    </div>
+    <div id="modal-enviar" class="modal-container enviar">
+        <div class="m-enviar">
+            <div class="row title">
+                <h3>Enviar por email</h3>
+            </div>
+            <form action="{{route('enviar-oportunidade')}}" method="POST">
+                @csrf
+                <input type="text" class="enviarEmail" name="enviarEmail" placeholder="Informe um Email"><br>
+                <input type="submit" id="modal-btn-enviar" class="enviar" value="Enviar">
+                <input type="hidden" id="enviaResumo" value="">
+                <input type="hidden" id="enviaEntendendo" value="">
+                <input type="hidden" id="enviaPosicao" value="">
+                <input type="hidden" id="enviaestimativas" value="">
+            </form>
+        </div>
     </div>
     <script>
         function setLink(){
@@ -370,23 +386,19 @@
                     $('.documentos-aproveitamento').html(dados[6]);
                 }
             }
-            
-            
         }
+
+        function enviaEmail(i){
+                resumo = $('#resumo-'+i).html();
+                entendendo = $('#entendendo-'+i).html();
+                posicao = $('#posicao-'+i).html();
+                estimativa = $('#estimativas-'+i).html();
+
+                $('#enviaResumo').val(resumo); 
+                $('#enviaEntendendo').val(entendendo); 
+                $('#enviaPosicao').val(posicao); 
+                $('#enviaestimativas').val(estimativa); 
+            }
     </script>
-    <div id="modal-enviar" class="modal-container enviar">
-        <div class="m-enviar">
-            <div class="row title">
-                Enviar por email
-                <form action="" method="POST">
-                    @csrf
-            </div>
-            <div class="row">
-                <input type="submit" id="modal-btn-enviar" class="enviar" value="Enviar">
-            </form>
-            </div>
-            </form>
-        </div>
-    </div>
 </section>
 @endsection
