@@ -185,7 +185,7 @@
         <div class="topo-relacionamento-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre relacionamento</p>
+            <p>Relacionamento</p>
         </div>
         <div class="row relacionamento-final">
             <div class="col">

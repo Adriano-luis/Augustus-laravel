@@ -26,7 +26,7 @@ class FornecaInformacoesController extends Controller
             $respostas=Resposta::all();
             $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
             ->where('id_formulario',$_SESSION['idEmpresa'])->get(['id_resposta','respostas.post_title']);
-            //$resposta = $respostas->where('id',1247);
+            //$resposta = $respostas->where('id',792);
             //dd($resposta);
 
             $perguntas=Pergunta::all();

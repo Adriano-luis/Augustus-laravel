@@ -210,7 +210,7 @@
         <div class="topo-tributacao-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre tributacao</p>
+            <p>Tributacao</p>
         </div>
         <div class="row tributacao-final">
             <div class="col">

@@ -27,7 +27,7 @@
                                         <div class="conteudo-info">{{$empresa->cnpj}}</div>
                                     </div>
                                     <div class="col titulo-info">
-                                        <div>Ano de Constituição:</div>
+                                        <div>Ano de constituição:</div>
                                         <div class="conteudo-info">{{$empresa->ano}}</div>
                                     </div>
                                     <div class="col titulo-info">
@@ -38,7 +38,7 @@
                                 <hr>
                                 <div class="row dados-2">
                                     <div class="col titulo-info">
-                                        <div>Estados com Filiais</div>
+                                        <div>Estados com filiais</div>
                                         <div class="conteudo-info">{{$empresa->estado}}</div>
                                     </div>
                                     <div class="col titulo-info">

@@ -12,7 +12,7 @@
                             <div class="form">
                                 <form action="{{route('login')}}" method="POST">
                                     @csrf
-                                    <label><h5>Seja bem-vindo</h5> <a href="{{route('cadastrar-usuario')}}">Cadastrar Usuário</a></label>
+                                    <label><h5>Seja bem vindo(a)!</h5> <a href="{{route('cadastrar-usuario')}}">Cadastre-se</a></label>
                                     <label><p>Informe seus dados de login para continuar</p></label><br>
                                     {{isset($erro) && $erro != '' ? $erro : ''}}
                                     <input type="email" name="emaiLogin" id="email-login" autocomplete="off" placeholder="Seu email"/>
@@ -28,9 +28,7 @@
                     </div>
                 </div>
                 <div class="infologin">
-                    Através de informações que serão repassadas ao sistema, serão gerados, de forma automática,
-                    relatórios que vão lhe permitir conhecer quais <span>Oportunidades Tributárias</span>, tanto jurídicas
-                    como administrativas, que a sua empresa possui.
+                    Por meio de informações repassadas ao sistema, são gerados - de forma automática - relatórios de quais <span>Oportunidades Tributárias</span> a sua empresa possui.
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
             <div class="col-sm-8 info">
                 <h2><span class="titulo">Forneça informações</span> sobre a empresa</h2>
                 <p>Nosso sistema gera relatórios que vão lhe permitir conhecer quais Oportunidades Tributárias,
-                     tanto jurídicas como administrativas, que a sua empresa possui.</p>
+                     tanto jurídicas como administrativas, a sua empresa possui.</p>
 
                 <p class="nome"><span>Informações da empresa:</span></p>
                 <div class="empresa">{{$empresa->nome}}</div>

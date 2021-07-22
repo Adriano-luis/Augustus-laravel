@@ -59,7 +59,7 @@
                     <input type="text" name="assuntocontato" placeholder="Assunto">
                 </div>
                 <div class="row">
-                    <textarea name="mensagemcontato"  cols="30" rows="10" placeholder="Mensagem"></textarea>
+                    <input type="text" name="mensagemcontato"  cols="30" rows="10" placeholder="Mensagem">
                 </div>
                 <div class="row">
                     <input type="submit" value="Enviar">

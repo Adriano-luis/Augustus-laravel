@@ -8,8 +8,9 @@
                     <img src="{{asset('/images/icon-Outros.svg')}}" />
                 </div>
                 <div class="col-sm-10 info">
-                    <p>Cadastre sua empresa e descubra<br/> quais <span>oportunidades tributárias</span>,
-                        tanto<br/> juridicas como admistrativas sua empresa possui.</p>
+                    <p>Cadastre a empresa e descubra<br/> quais <span>oportunidades tributárias</span>,
+                    ela possui.</p>
+                        
                 </div>
                 <div class="form" >
                     <form action="{{route('nova-empresa')}}" method="POST" >

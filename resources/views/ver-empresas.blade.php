@@ -18,7 +18,7 @@
                                     <img class="img-cadastradas" src="{{asset('/images/icon-Empresa.svg')}}">
                                     <h1>{{$qtEmpresas}}</h1>
                                     <div class="info-cadastradas">
-                                        Empresas cadastradas
+                                        Empresas Cadastradas
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                                 </div>
                             </a>
                             <div class="col info">
-                                Cadastre sua empresa e descubra quais <span>oportunidades tributárias</span>, tanto juridicas como admistrativas sua empresa possui.
+                                Cadastre sua empresa e descubra quais <span>Oportunidades Tributárias</span>, tanto juridicas como admistrativas sua empresa possui.
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
         <div class="empresas">
             <div class="row topo">
                 <div class="col titulo">
-                    <h4>Empresas cadastradas</h4>
+                    <h4>Empresas Cadastradas</h4>
                 </div>
                 <div class="col pesquisa">
                     <form>

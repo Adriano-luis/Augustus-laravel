@@ -142,7 +142,15 @@ class HomeController extends Controller
 
     }
 
-    public function dashboard(){
+    public function dashboard(Request $request){
+        //Filtragem 
+        $filtro = $request->all();
+        $listaFiltros = array_filter($filtro);
+
+        if($listaFiltros == ''){
+            $listaFiltros = null;
+        }
+
         //Empresas
         $empresa = new Empresa();
         $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
@@ -175,12 +183,17 @@ class HomeController extends Controller
                 if($auxContRelatorio > 0){
                     for ( $i = 0; $i < $auxContRelatorio;$i++) {
                         $idRelatorio = $listaRelatorio[$empresaOp->nome][$i];
-                        $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();
-        
+
+                        $dadosRelatorio = Relatorio::Where('id',$idRelatorio)->get()->first();        
                         if($dadosRelatorio != ""){
                             if($dadosRelatorio->post_title != ""){
                                 if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
-                                    $relatorio[$empresaOp->nome][] = $dadosRelatorio;
+                                    //if($listaFiltros == null){
+                                        $relatorio[$empresaOp->nome][] = $dadosRelatorio;
+                                    //} else{
+                                
+                                    //}
+                                    
                                 }
                                 array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
                             }
@@ -188,6 +201,18 @@ class HomeController extends Controller
                     } 
                 }
             }
+            
+            /*for($i=0;$i<sizeof($listaFiltros);$i++){
+                for ($j=0; $j <sizeof($relatorio['Empreendedores Ltda']) ; $j++) {
+                    $chave = key($listaFiltros);
+                    if($relatorio['Empreendedores Ltda'][$j]->$chave == $listaFiltros[key($listaFiltros)]){
+                        $teste[] = $relatorio['Empreendedores Ltda'][$j];
+                    }
+                        
+                    
+                } 
+            }*/
+
             $status = classifica_relatorio::all();
             return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
                     'qt'=>$qtEmpresas]);

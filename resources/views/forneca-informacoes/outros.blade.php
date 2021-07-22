@@ -335,7 +335,7 @@
         <div class="topo-outros-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre outros</p>
+            <p>Outros</p>
         </div>
         <div class="row outros-final">
             <div class="col">

@@ -66,7 +66,7 @@
         <div class="topo-funcionarios-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre funcionarios</p>
+            <p>Funcionários</p>
         </div>
         <div class="row funcionarios-final">
             <div class="col-4">

@@ -285,7 +285,7 @@
         <div class="topo-previdencia-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre previdencia</p>
+            <p>Previdência</p>
         </div>
         <div class="row previdencia-final">
             <div class="col">

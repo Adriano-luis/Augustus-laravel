@@ -10,7 +10,7 @@
                         <div class="infos">
                             <div class="row">
                                 <div class="title">
-                                    <h4>Seja bem-vindo</h4>
+                                    <h4>Seja bem vindo(a)!</h4>
                                 </div>
                             </div>
                             <div class="row">
@@ -18,7 +18,7 @@
                                     <img class="img-cadastradas" src="{{asset('/images/icon-Empresa.svg')}}">
                                     <div class="info-cadastradas">
                                         <h2>{{$qtEmpresas}}</h2>
-                                        Empresas cadastradas
+                                        Empresas Cadastradas
                                     </div>
                                     <a href="{{ route('ver-empresas')}}">
                                         <div class="col botao-cadastradas">
@@ -30,7 +30,7 @@
                                     <img class="img-geradas" src="{{asset('/images/icon-Estrela-Oportunidade.svg')}}">
                                     <div class="info-geradas">
                                         <h2>{{$totalOportunidades}}</h2>
-                                        Oportunidades geradas
+                                        Oportunidades Geradas
                                     </div>
                                     <a href="{{ route('dashboard')}}">
                                         <div class="col botao-geradas">
@@ -49,7 +49,7 @@
                                 </div>
                             </a>
                             <div class="col info">
-                                Cadastre sua empresa e descubra quais <span>oportunidades tributárias</span>, tanto juridicas como admistrativas sua empresa possui.
+                                Cadastre sua empresa e descubra quais <span>Oportunidades Tributárias</span>, tanto juridicas como admistrativas sua empresa possui.
                             </div>
                         </div>
                     </div>

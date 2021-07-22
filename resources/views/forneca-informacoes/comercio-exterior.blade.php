@@ -87,7 +87,7 @@
         <div class="topo-comercio-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre comercio</p>
+            <p>Comércio</p>
         </div>
         <div class="row comercio-final">
             <div class="col">

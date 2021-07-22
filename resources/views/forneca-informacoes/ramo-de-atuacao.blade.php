@@ -92,7 +92,7 @@
         <?php
             $pergunta = $perguntas->where('id',313); 
             
-            $resposta=$respostas->where('id',1245);
+            $resposta=$respostas->where('id',792);
             $resposta=$respostas->where('id',339);
             $resposta=$respostas->where('id',330);
             $resposta=$respostas->where('id',332);
@@ -105,7 +105,7 @@
             $resposta=$respostas->where('id',331);
             $resposta=$respostas->where('id',340);
 
-            $listaRespostas2 = [$respostas[159]->id,$respostas[48]->id,$respostas[39]->id,$respostas[41]->id,
+            $listaRespostas2 = [$respostas[139]->id,$respostas[48]->id,$respostas[39]->id,$respostas[41]->id,
             $respostas[34]->id,$respostas[45]->id,$respostas[47]->id,$respostas[44]->id,$respostas[30]->id,
             $respostas[43]->id,$respostas[40]->id,$respostas[49]->id];
 
@@ -124,7 +124,7 @@
             <div class="row checkbox-ramo">
                 <div class="col">
                     <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[159]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[159]->id){ echo 'checked="checked"';}} ?>>
-                        <span>{{$respostas[159]->post_title}}</span>
+                        <span>{{$respostas[139]->post_title}}</span>
                     </div>
                     <div class="check-option"><input name="check-2" class="check-option-" type="checkbox"value="{{$respostas[48]->id}}" <?php foreach ($respostasEmpresa as $value) {if($value->id_resposta == $respostas[48]->id){ echo 'checked="checked"';}} ?>>
                         <span>{{$respostas[48]->post_title}}</span>
@@ -331,7 +331,7 @@
         <div class="topo-ramo-final">
             <img src="{{asset('images/icon-Info-Cadastradas.svg')}}">
             <h3>Informações cadastradas</h3>
-            <p>Sobre Ramo de atuação</p>
+            <p>Ramo de Atuação</p>
         </div>
         <div class="row ramo-final">
             <div class="col">

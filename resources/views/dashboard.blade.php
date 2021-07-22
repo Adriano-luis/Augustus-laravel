@@ -57,29 +57,58 @@
             </div>
             <div class="row topo">
                 <div class="col pesquisa">
-                    <form>
-                       <select class="filtro filtro-1"  name="">
-                           <option>Empresa</option>
+                    <form action="{{route('dashboard')}}" method="GET">
+                       <select class="filtro filtro-1"  name="empresa">
+                           <option value="">Empresa</option>
                        </select>
 
-                       <select class="filtro filtro-2" name="">
-                            <option>Oportunidade</option>
+                       <select class="filtro filtro-2" name="post_title">
+                            <option value="">Oportunidade</option>
+                            <option value="Cofins Importação">Cofins Importação</option>
+                            <option value="CIDE Royalties">CIDE Royalties</option>
+                            <option value="CIDE SEBRAE">CIDE SEBRAE</option>
+                            <option value="CSP">CSP</option>
+                            <option value="FGTS">FGTS</option>
+                            <option value="ICMS">ICMS</option>
+                            <option value="IRPJ, CSLL, PIS e COFINS">IRPJ, CSLL, PIS e COFINS</option>
+                            <option value="PIS/COFINS">PIS/COFINS</option>
+                            <option value="X PIS/COFINS-Importação">X PIS/COFINS-Importação</option>
+                            <option value="FUNRURAL">FUNRURAL</option>
+                            <option value="CPRB">CPRB</option>
+                            <option value="CDE">CDE</option>
+                            <option value="IOF">IOF</option>
                         </select>
 
-                        <select class="filtro filtro-3" name="">
-                            <option>Estágio</option>
+                        <select class="filtro filtro-3" name="estagio">
+                            <option value="">Estágio</option>
+                            <option value="7">Sem classificação</option>
+                            <option value="1">Descartada</option>
+                            <option value="2">Enviada</option>
+                            <option value="3">Em espera</option>
+                            <option value="4">Em análise</option>
+                            <option value="5">Implementar</option>
+                            <option value="6">Implementada</option>
                         </select>
 
-                        <select class="filtro filtro-4" name="">
-                            <option>Forma</option>
+                        <select class="filtro filtro-4" name="forma">
+                            <option value="">Forma</option>
+                            <option value="1">Administrativo</option>
+                            <option value="2">Judicial</option>
+                            <option value="3">Administrativo / Judicial</option>
                         </select>
 
-                        <select class="filtro filtro-5" name="">
-                            <option>Tributação</option>
+                        <select class="filtro filtro-5" name="tributacao">
+                            <option value="">Tributação</option>
+                            <option value="1">Federal</option>
+                            <option value="2">Estadual</option>
+                            <option value="3">Municipal</option>
                         </select>
 
-                        <select class="filtro filtro-6" name="">
-                            <option>Probabilidade de Êxito</option>
+                        <select class="filtro filtro-6" name="probabilidade">
+                            <option value="">Probabilidade de Êxito</option>
+                            <option value="1">Provável</option>
+                            <option value="2">Possível</option>
+                            <option value="3">Remota</option>
                         </select>
 
                         <input type="submit" value="Filtrar">
