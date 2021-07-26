@@ -254,6 +254,7 @@ class HomeController extends Controller
                 return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista1Filtro,'status'=>$status,
                 'qt'=>$qtEmpresas]);
             }
+            
             return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
                 'qt'=>$qtEmpresas]);
          }

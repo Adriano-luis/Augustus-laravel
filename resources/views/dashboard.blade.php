@@ -129,14 +129,18 @@
                                     <h2>{{$relatorio->post_excerpt}}</h2>
                                 </div>
                                 <div class="row estagio">
-                                    <!--
+                                    <?php 
                                         $empresa = DB::table('empresas')->Where('nome',$nome)->get(['id']);
+                                        
+                                        $str = substr($empresa,8);
+                                        $str = substr($str, 0,-3);
                                         $valorStatus = DB::table('classifica_relatorio')->join('relatorios', 'classifica_relatorio.id_relatorio', '=', 'relatorios.id')
-                                        ->where('classifica_relatorio.id_empresa',$empresa[$key]->id)
+                                        ->where('classifica_relatorio.id_empresa',$str)
                                         ->where('classifica_relatorio.id_relatorio',$relatorio->id)
-                                        ->get(['classificacao']);*/
-                                    
+                                        ->get(['classificacao']);
+                                    ?>
                                     Estágio:<div class="estagio-info">
+                                        <?php
                                         if ($valorStatus === 1) {
                                             echo 'Descartada';
                                         }elseif ($valorStatus === 2) {
@@ -153,10 +157,8 @@
                                             echo 'Sem classificação';
                                         }else {
                                             echo 'Não definido';
-                                        }
-                                            
-                                        
-                                        -->
+                                        }  
+                                        ?>
                                     </div>
                                 </div>
                             </div>
