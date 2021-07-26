@@ -47,7 +47,9 @@ function corProgressoHome(empresas,i){
 }
 
 let progresso = document.querySelectorAll('#porcentagem');
-progresso.forEach(corProgressoHome);
+if(progresso != null){
+    progresso.forEach(corProgressoHome);
+}
 
 
 
@@ -72,8 +74,10 @@ function corProgressoForneca(empresa){
 }
 
 let progressoForneca = document.querySelector('#porcentagem');
-Num = parseInt(progressoForneca.innerHTML,10);
-corProgressoForneca(Num);
+if(progressoForneca != null){
+    Num = parseInt(progressoForneca.innerHTML,10);
+    corProgressoForneca(Num);
+}
 
 
 
@@ -103,8 +107,11 @@ function corProgressoVisualizar(empresa){
 }
 
 let progressoVisualizar = document.querySelector('#porcentagem');
-Num = parseInt(progressoVisualizar.innerHTML,10);
-corProgressoVisualizar(Num);
+if(progressoVisualizar != null){
+    Num = parseInt(progressoVisualizar.innerHTML,10);
+    corProgressoVisualizar(Num);
+}
+
 
 
 //Excluir empresas
@@ -120,5 +127,24 @@ $('#modal-btn-excluir').click(function() {
         }
     });
 });
+
+
+//Popular com ajax filtro empresa
+$('.filtro-1').click(function() {
+    $.ajax({
+        type:'GET',
+        dataType: "json",
+        url:'/Augustus/public/dashboard-ajax',
+        success:function(json){
+            if (json) {
+                $.each(json, function(key,value){
+                    $('.filtro-1').append('<option>'+value['nome']+'</option>');
+                })
+            }
+
+        }
+    });
+});
+
 
 });

@@ -81,7 +81,8 @@
                 </div>
                 <div class="col pesquisa">
                     <form>
-                        <input  class="pesquisa" type="text" name="pesquisa" placeholder="Pesquise por uma empresa" /><a href=""><img  class="lupa" src="{{asset('/images/lupa.svg')}}"></a>
+                        <input  class="pesquisa" type="text" name="pesquisa" placeholder="Pesquise por uma empresa" />
+                        <img  class="lupa" type="submit" src="{{asset('/images/lupa.svg')}}">
                     </form>
                 </div>
                 <div class="col ordenar">

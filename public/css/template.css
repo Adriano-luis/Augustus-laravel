@@ -1291,7 +1291,7 @@ footer .info{
     font-style: normal;
     font-weight: normal;
     font-size: 28px;
-    line-height: 44px;
+    line-height: 33px;
 }
 
 .cadastro .info span{
@@ -1437,8 +1437,8 @@ footer .info{
     color: #FFFFFF;
     font-style:normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 15px;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .sobre .info span{
@@ -1447,6 +1447,7 @@ footer .info{
 
 .sobre .fundo{
     height: 405px;
+    background-color: #F8F8F8;
 }
 
 .sobre .form.desc{
@@ -3072,7 +3073,7 @@ footer .info{
 
 .noticias .banner{
     height: 400px;
-    background-color: #E6E9F1;
+    background: linear-gradient(90.13deg, #2C2858, #615BA3);
 }
 
 .noticias .row.area{
@@ -3101,7 +3102,7 @@ footer .info{
     margin-left: 10px;
     margin-bottom: 30px;
     font-weight: 600;
-    color:#2C2858;
+    color:#FFFFFF;
 }
 
 .noticias .fundo{
@@ -3196,7 +3197,7 @@ footer .info{
 
 .noticia .banner{
     height: 400px;
-    background-color: #E6E9F1;
+    background: linear-gradient(90.13deg, #2C2858, #615BA3);
 }
 
 .noticia .row.area{
@@ -3237,7 +3238,7 @@ footer .info{
 .noticia .info h4 {
     font-size: 27px;
     font-weight: 600;
-    color: #2C2858;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -3306,11 +3307,11 @@ footer .info{
     font-size: 14px;
     color: #89879E;
     border-radius: 15px;
-    background-color: #FFFFFF;
+    background-color: #89879E;
 }
 
 .noticia .botao-noticias a{
-    color: #89879E;
+    color: #FFFFFF;
     text-decoration: none;
 }
 

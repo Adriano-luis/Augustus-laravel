@@ -188,12 +188,7 @@ class HomeController extends Controller
                         if($dadosRelatorio != ""){
                             if($dadosRelatorio->post_title != ""){
                                 if(!in_array($dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt, $arrRelatorioDuplicado)){
-                                    //if($listaFiltros == null){
-                                        $relatorio[$empresaOp->nome][] = $dadosRelatorio;
-                                    //} else{
-                                
-                                    //}
-                                    
+                                    $relatorio[$empresaOp->nome][] = $dadosRelatorio;
                                 }
                                 array_push($arrRelatorioDuplicado,$dadosRelatorio->post_title."-".$dadosRelatorio->post_excerpt);
                             }
@@ -201,23 +196,82 @@ class HomeController extends Controller
                     } 
                 }
             }
-            
-            /*for($i=0;$i<sizeof($listaFiltros);$i++){
-                for ($j=0; $j <sizeof($relatorio['Empreendedores Ltda']) ; $j++) {
-                    $chave = key($listaFiltros);
-                    if($relatorio['Empreendedores Ltda'][$j]->$chave == $listaFiltros[key($listaFiltros)]){
-                        $teste[] = $relatorio['Empreendedores Ltda'][$j];
+            $chave = '';
+            if(isset($filtro->empresa) && $filtro->empresa != null){
+                foreach($listaFiltros as $key => $filtros){
+                    if($chave == ''){
+                        $chave = $key;
                     }
-                        
+    
+                    if($chave == $key){
+                        for ($j=0; $j <sizeof($relatorio[$filtro->empresa]) ; $j++) {
+                            if($relatorio[$filtro->empresa][$j]->$key == $filtros){
+                                $lista1Filtro[$filtro->empresa][] = $relatorio[$filtro->empresa][$j];
+                            }  
+                        } 
+                    }else{
+                        for ($j=0; $j <sizeof($lista1Filtro[$filtro->empresa]) ; $j++) {
+                            if($lista1Filtro[$filtro->empresa][$j]->$key == $filtros){
+                                $lista2Filtro[$filtro->empresa][] = $lista1Filtro[$filtro->empresa][$j];
+                            }  
+                        } 
+                    }
+                    $chave = $key;
                     
-                } 
-            }*/
+                }
+            } else{
+                foreach ($relatorio as $nomeEmpresa => $value) {
+                    foreach($listaFiltros as $key => $filtros){
+                        if($chave == ''){
+                            $chave = $key;
+                        }
+        
+                        if($chave == $key){
+                            for ($j=0; $j <sizeof($relatorio[$nomeEmpresa]) ; $j++) {
+                                if($relatorio[$nomeEmpresa][$j]->$key == $filtros){
+                                    $lista1Filtro[$nomeEmpresa][] = $relatorio[$nomeEmpresa][$j];
+                                }  
+                            } 
+                        }else{
+                            for ($j=0; $j <sizeof($lista1Filtro[$nomeEmpresa]) ; $j++) {
+                                if($lista1Filtro[$nomeEmpresa][$j]->$key == $filtros){
+                                    $lista2Filtro[$nomeEmpresa][] = $lista1Filtro[$nomeEmpresa][$j];
+                                }  
+                            } 
+                        }
+                        $chave = $key;
+                        
+                    }
+                }
+            }
+            
 
             $status = classifica_relatorio::all();
+            if(isset($lista2Filtro)){
+                return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista2Filtro,'status'=>$status,
+                'qt'=>$qtEmpresas]);
+            }else if(isset($lista1Filtro)){
+                return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista1Filtro,'status'=>$status,
+                'qt'=>$qtEmpresas]);
+            }
             return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
-                    'qt'=>$qtEmpresas]);
+                'qt'=>$qtEmpresas]);
          }
 
         return view('dashboard',['empresa'=>$empresa,'relatorios'=>'','status'=>'']);
+    }
+
+    public function dashboardPop(Request $request){
+
+            $cidades = [];
+            $json =[];
+            $empresa = new Empresa();
+            $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
+        
+            if (sizeof($listaEmpresa)> 0) {
+                return json_encode($listaEmpresa);
+            } else {
+                return "error";
+            } 
     }
 }

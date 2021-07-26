@@ -36,6 +36,7 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::post('/editar', 'HomeController@editar')->name('editar');
     Route::post('/excluir', 'HomeController@excluir')->name('excluir');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+    Route::get('/dashboard-ajax', 'HomeController@dashboardPop')->name('pop');
 
     //Empresas
     Route::get('/cadastrar', 'CadastrarController@index')->name('nova-empresa');

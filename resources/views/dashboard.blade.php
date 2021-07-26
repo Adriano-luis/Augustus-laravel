@@ -59,7 +59,7 @@
                 <div class="col pesquisa">
                     <form action="{{route('dashboard')}}" method="GET">
                        <select class="filtro filtro-1"  name="empresa">
-                           <option value="">Empresa</option>
+                           <option value="">Empresa - selecione a sua Empresa</option>
                        </select>
 
                        <select class="filtro filtro-2" name="post_title">
@@ -117,27 +117,47 @@
             </div>
                 
                     <?php $i = 0; ?>
-                    @foreach ($relatorios as $v)
+                    @foreach ($relatorios as $nome => $v)
                     @if ($v != '')
-                    @foreach ($v as $relatorio)
+                    @foreach ($v as $key => $relatorio)
                     <div class="cartoes">
                         <div class="row cartao">
                             <div class="col-sm-5 opcoes">
                                 <div class="nome">
                                     <h1>{{$relatorio->post_title}}</h1>
-                                    <h2>{{key($relatorios)}}</h2>
+                                    <h2>{{$nome}}</h2>
                                     <h2>{{$relatorio->post_excerpt}}</h2>
                                 </div>
                                 <div class="row estagio">
-                                    <?php
-                                       /* foreach ($status as $x) {
-                                            $empresa = DB::table('empresas')->Where('nome',key($relatorios))->get(['id']);
-                                            $valorStatus = DB::table('classifica_relatorio')->join('relatorio', 'classifica_relatorio.id_relatorio', '=', ' relatorios.id')
-                                            ->where('classifica_relatorio.id_empresa',$empresa)
-                                            ->get(['classificacao']);
-                                        }*/
-                                    ?>
-                                    Estágio:<div class="estagio-info"></div>
+                                    <!--
+                                        $empresa = DB::table('empresas')->Where('nome',$nome)->get(['id']);
+                                        $valorStatus = DB::table('classifica_relatorio')->join('relatorios', 'classifica_relatorio.id_relatorio', '=', 'relatorios.id')
+                                        ->where('classifica_relatorio.id_empresa',$empresa[$key]->id)
+                                        ->where('classifica_relatorio.id_relatorio',$relatorio->id)
+                                        ->get(['classificacao']);*/
+                                    
+                                    Estágio:<div class="estagio-info">
+                                        if ($valorStatus === 1) {
+                                            echo 'Descartada';
+                                        }elseif ($valorStatus === 2) {
+                                            echo 'Enviada';
+                                        } elseif ($valorStatus === 3) {
+                                            echo 'Em espera';
+                                        }elseif ($valorStatus === 4) {
+                                            echo 'Em análise';
+                                        }elseif ($valorStatus === 5) {
+                                            echo 'Implementar';
+                                        }elseif ($valorStatus === 6) {
+                                            echo 'Implementada';
+                                        }elseif ($valorStatus === 7) {
+                                            echo 'Sem classificação';
+                                        }else {
+                                            echo 'Não definido';
+                                        }
+                                            
+                                        
+                                        -->
+                                    </div>
                                 </div>
                             </div>
                             <div class="row categorias">
@@ -145,16 +165,16 @@
                                     <p>Forma de Recuperação</p>
                                     <div class="administrativo">
                                         @if ($relatorio->forma == 1)
-                                        <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
-                                        <span>Administrativo</span>
+                                            <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
+                                            <span>Administrativo</span>
                                         @endif
                                         @if ($relatorio->forma == 2)
-                                        <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
-                                        <span>Judicial</span>
+                                            <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
+                                            <span>Judicial</span>
                                         @endif
                                         @if ($relatorio->forma == 3)
-                                        <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
-                                        <span>Administrativo / Judicial</span> 
+                                            <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
+                                            <span>Administrativo / Judicial</span> 
                                         @endif
                                     </div>
                                 </div>
@@ -162,18 +182,18 @@
                                     <p>Tributação</p>
                                     <div class="tributacao">
                                         @if ($relatorio->tributacao == 1)
-                                        <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
-                                        <span>Federal</span>
+                                            <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
+                                            <span>Federal</span>
                                         @endif
 
                                         @if ($relatorio->tributacao == 2)
-                                        <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
-                                        <span>Estadual</span>
+                                            <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
+                                            <span>Estadual</span>
                                         @endif
 
                                         @if ($relatorio->tributacao == 3)
-                                        <img src="{{asset('/images/icon-Federal.svg')}}"><br>
-                                        <span>Municipal</span>
+                                            <img src="{{asset('/images/icon-Federal.svg')}}"><br>
+                                            <span>Municipal</span>
                                         @endif
                                     </div>
                                 </div>
@@ -181,18 +201,18 @@
                                     <p>Probabilidade de Êxito</p>
                                     <div class="exito">
                                         @if ($relatorio->probabilidade == 1)
-                                        <img src="{{asset('/images/icon-Remota.svg')}}"><br>
-                                        <span>Provável</span>
+                                            <img src="{{asset('/images/icon-Possivel.svg')}}"><br> 
+                                            <span>Provável</span>
                                         @endif
 
                                         @if ($relatorio->probabilidade == 2)
-                                        <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
-                                        <span>Possível</span>
+                                            <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
+                                            <span>Possível</span>
                                         @endif
 
                                         @if ($relatorio->probabilidade == 3)
-                                        <img src="{{asset('/images/icon-Possivel.svg')}}"><br>
-                                        <span>Remota</span>
+                                            <img src="{{asset('/images/icon-Remota.svg')}}"><br>
+                                            <span>Remota</span>
                                         @endif
                                     </div>
                                 </div>
