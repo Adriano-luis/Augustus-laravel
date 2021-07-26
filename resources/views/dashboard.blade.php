@@ -35,10 +35,22 @@
                     </div>
                     <div class="row cadastrar">
                         <div class="row graficos">
-                            <div class="col grafico">Estágio</div>
-                            <div class="col grafico">Forma de Recuperação</div>
-                            <div class="col grafico">Tributação</div>
-                            <div class="col grafico">Probabilidade de Êxito</div>
+                            <div class="col grafico">
+                                <p>Estágio</p>
+                                <canvas id="myChart" width="138" height="280"></canvas>
+                            </div>
+                            <div class="col grafico">
+                                <p>Forma de Recuperação</p>
+                                <canvas id="myChart2" width="138" height="280"></canvas>
+                            </div>
+                            <div class="col grafico">
+                                <p>Tributação</p>
+                                <canvas id="myChart3" width="138" height="280"></canvas>
+                            </div>
+                            <div class="col grafico">
+                                <p>Probabilidade de Êxito</p>
+                                <canvas id="myChart4" width="138" height="280"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +128,25 @@
                 </div>
             </div>
                 
-                    <?php $i = 0; ?>
+                    <?php 
+                        $i = 0;
+                        $formaAdmin = 0;
+                        $formaJud = 0;
+                        $formaAdminJud = 0;
+                        $tribFed = 0;
+                        $tribEst = 0;
+                        $tribMun = 0;
+                        $probPro = 0;
+                        $probPos = 0;
+                        $probRem = 0;
+                        $descartada = 0;
+                        $enviada = 0;
+                        $espera = 0;
+                        $analise = 0;
+                        $implementar = 0;
+                        $implementada = 0;
+                        $sem = 0;
+                     ?>
                     @foreach ($relatorios as $nome => $v)
                     @if ($v != '')
                     @foreach ($v as $key => $relatorio)
@@ -138,22 +168,31 @@
                                         ->where('classifica_relatorio.id_empresa',$str)
                                         ->where('classifica_relatorio.id_relatorio',$relatorio->id)
                                         ->get(['classificacao']);
+                                        $vsatus = substr($valorStatus,19);
+                                        $valorStatus = substr($vsatus, 0,-3);
                                     ?>
                                     Estágio:<div class="estagio-info">
                                         <?php
-                                        if ($valorStatus === 1) {
+                                        if ($valorStatus == "1") {
+                                            $descartada++;
                                             echo 'Descartada';
-                                        }elseif ($valorStatus === 2) {
+                                        }elseif ($valorStatus == "2") {
+                                            $enviada++;
                                             echo 'Enviada';
-                                        } elseif ($valorStatus === 3) {
+                                        } elseif ($valorStatus == "3") {
+                                            $espera++;
                                             echo 'Em espera';
-                                        }elseif ($valorStatus === 4) {
+                                        }elseif ($valorStatus == "4") {
+                                            $analise++;
                                             echo 'Em análise';
-                                        }elseif ($valorStatus === 5) {
+                                        }elseif ($valorStatus == "5") {
+                                            $implementar++;
                                             echo 'Implementar';
-                                        }elseif ($valorStatus === 6) {
+                                        }elseif ($valorStatus == "6") {
+                                            $implementada++;
                                             echo 'Implementada';
-                                        }elseif ($valorStatus === 7) {
+                                        }elseif ($valorStatus == "7") {
+                                            $sem++;
                                             echo 'Sem classificação';
                                         }else {
                                             echo 'Não definido';
@@ -169,14 +208,17 @@
                                         @if ($relatorio->forma == 1)
                                             <img src="{{asset('/images/icon-Administrativo.svg')}}"><br>
                                             <span>Administrativo</span>
+                                            <?php $formaAdmin++; ?>
                                         @endif
                                         @if ($relatorio->forma == 2)
                                             <img src="{{asset('/images/icon-Judicial.svg')}}"><br>
                                             <span>Judicial</span>
+                                            <?php $formaJud++; ?>
                                         @endif
                                         @if ($relatorio->forma == 3)
                                             <img src="{{asset('/images/icon-Administrativo-Judicial.svg')}}"><br>
                                             <span>Administrativo / Judicial</span> 
+                                            <?php $formaAdminJud++; ?>
                                         @endif
                                     </div>
                                 </div>
@@ -186,16 +228,19 @@
                                         @if ($relatorio->tributacao == 1)
                                             <img src="{{asset('/images/icon-Municipal.svg')}}"><br>
                                             <span>Federal</span>
+                                            <?php $tribFed++; ?>
                                         @endif
 
                                         @if ($relatorio->tributacao == 2)
                                             <img src="{{asset('/images/icon-Estadual.svg')}}"><br>
                                             <span>Estadual</span>
+                                            <?php $tribEst++; ?>
                                         @endif
 
                                         @if ($relatorio->tributacao == 3)
                                             <img src="{{asset('/images/icon-Federal.svg')}}"><br>
                                             <span>Municipal</span>
+                                            <?php $tribMun++; ?>
                                         @endif
                                     </div>
                                 </div>
@@ -205,16 +250,19 @@
                                         @if ($relatorio->probabilidade == 1)
                                             <img src="{{asset('/images/icon-Possivel.svg')}}"><br> 
                                             <span>Provável</span>
+                                            <?php $probPro++; ?>
                                         @endif
 
                                         @if ($relatorio->probabilidade == 2)
                                             <img src="{{asset('/images/icon-Provavel.svg')}}"><br>
                                             <span>Possível</span>
+                                            <?php $probPos++; ?>
                                         @endif
 
                                         @if ($relatorio->probabilidade == 3)
                                             <img src="{{asset('/images/icon-Remota.svg')}}"><br>
                                             <span>Remota</span>
+                                            <?php $probRem++; ?>
                                         @endif
                                     </div>
                                 </div>
@@ -228,7 +276,22 @@
                 
         </div>
         <div class="paginacao">
-        
+            <input type="hidden" id="adminGrafico" value="{{$formaAdmin}}">
+            <input type="hidden" id="judGrafico" value="{{$formaJud}}">
+            <input type="hidden" id="adminJudGrafico" value="{{$formaAdminJud}}">
+            <input type="hidden" id="fedGrafico" value="{{$tribFed}}">
+            <input type="hidden" id="estGrafico" value="{{$tribEst}}">
+            <input type="hidden" id="munGrafico" value="{{$tribMun}}">
+            <input type="hidden" id="proGrafico" value="{{$probPro}}">
+            <input type="hidden" id="posGrafico" value="{{$probPos}}">
+            <input type="hidden" id="rembGrafico" value="{{$probRem}}">
+            <input type="hidden" id="desGrafico" value="{{$descartada}}">
+            <input type="hidden" id="envGrafico" value="{{$enviada}}">
+            <input type="hidden" id="espGrafico" value="{{$espera}}">
+            <input type="hidden" id="anaGrafico" value="{{$analise}}">
+            <input type="hidden" id="imGrafico" value="{{$implementar}}">
+            <input type="hidden" id="impleGrafico" value="{{$implementada}}">
+            <input type="hidden" id="sembGrafico" value="{{$sem}}">
         </div><br/><br/>
         <div class="marca">
             <img src="{{asset('/images/img-augustus-fundo.png')}}">

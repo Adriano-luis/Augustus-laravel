@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <title>Augustus</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"></script>
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
     <link href = "https://fonts.googleapis.com/css2? family = Noto + Sans & display = swap" rel = "folha de estilo">
     <link href = "https://fonts.googleapis.com/css2? family = Noto + Sans: ital @ 1 & display = swap "rel =" stylesheet ">

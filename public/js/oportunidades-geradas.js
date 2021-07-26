@@ -115,7 +115,8 @@ $(document).ready(function(){
 
 
     //Salva status
-    $('#salvaAlteracoes').click(function() {
+    $('#salvaAlteracoes').click(function(event) {
+        event.preventDefault();
         status = $("#status-oportunidade input:radio:checked").val();
         relatorio_id = $('#relatorio-id').val();
         empresa_id = $('#empresa-id').val();

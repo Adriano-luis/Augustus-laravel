@@ -71,8 +71,6 @@
                                     if($x->id_relatorio == $relatorio->id && $x->id_empresa == $empresa->id
                                     && $x->classificacao != ''){
                                         $valorStatus = $x->classificacao;
-                                    }else{
-                                        $valorStatus = '';
                                     }
                                 }
                             ?>
@@ -80,13 +78,13 @@
                             <hr class="linha">
                             <input id="relatorio-id" type="hidden" value="{{$relatorio->id}}">
                             <input id="empresa-id" type="hidden" value="{{$empresa->id}}">
-                            <input type="radio" class="radio-classi-0" value="7" {{$valorStatus == 7 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-1" value="1" {{$valorStatus == 1 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-2" value="2" {{$valorStatus == 2 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-3" value="3" {{$valorStatus == 3 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-4" value="4" {{$valorStatus == 4 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-5" value="5" {{$valorStatus == 5 ? 'checked' : '' }}>
-                            <input type="radio" class="radio-classi-6" value="6" {{$valorStatus == 6 ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-0" value="7" {{$valorStatus == "7" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-1" value="1" {{$valorStatus == "1" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-2" value="2" {{$valorStatus == "2" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-3" value="3" {{$valorStatus == "3" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-4" value="4" {{$valorStatus == "4" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-5" value="5" {{$valorStatus == "5" ? 'checked' : '' }}>
+                            <input type="radio" class="radio-classi-6" value="6" {{$valorStatus == "6" ? 'checked' : '' }}>
                             <?php $valorStatus = ''; ?>
                         </div>
                         </div>

@@ -38,5 +38,6 @@
     <script type="text/javascript" src="{{asset('/js/relacionamento.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/outros.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/oportunidades-geradas.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/graficos.js')}}"></script>
     
 </footer>
