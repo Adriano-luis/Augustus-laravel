@@ -13,14 +13,29 @@ use App\classifica_relatorio;
 
 class VerEmpresasController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         //Empresas
         $empresa = new Empresa();
         $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
         $qtEmpresas = sizeof($listaEmpresa);
         
         //Dados das empresas
-        $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->paginate(3);
+        $ordem = $request->get('ordem');
+        $nomeEmp = $request->get('pesquisa');
+        if(isset($ordem) && $ordem != '' &&  isset($nomeEmp) && $nomeEmp != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->Where('nome','like','%'.$nomeEmp.'%')
+            ->orderBy('nome',$ordem)->paginate(3);
+        }else if(isset($ordem) && $ordem != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->orderBy('nome',$ordem)->paginate(3);
+        }elseif(isset($nomeEmp) && $nomeEmp != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->Where('nome','like','%'.$nomeEmp.'%')->paginate(3);
+        }else{
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->paginate(3);
+        }
+
         
         //Porcentagem das Informações fornecidas
         $porcentagemConcluido = [];
@@ -153,12 +168,23 @@ class VerEmpresasController extends Controller
         $idEmpresa = $request->get('id');
         $cont = $request->get('cont');
 
+        //Filtragem 
+        $filtro['estagio'] = $request->get('estagio');
+        $filtro['forma'] = $request->get('forma');
+        $filtro['probabilidade'] = $request->get('probabilidade');
+        $filtro['tributacao'] = $request->get('tributacao');
+        $listaFiltros = array_filter($filtro);
+
+        if($listaFiltros == ''){
+            $listaFiltros = null;
+        }
+
         $empresa=Empresa::find($idEmpresa);
         $porcentagem = $_SESSION['porcentagem'];
         $oportunidades = $_SESSION['oportunidades'];
 
          //Oportunidades
-         if($idEmpresa){
+        if($idEmpresa){
             $j=0;
              
             //Busca relatórios
@@ -191,19 +217,61 @@ class VerEmpresasController extends Controller
                         }
                     }
                 }
-                if(isset($relatorio)){
-                    return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-                    'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio]);
-                }else{
-                    return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-                    'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
-                }
                 
             }
         } 
+        
+        $chave = '';
+        foreach ($relatorio as $nomeEmpresa => $value) {
+            foreach($listaFiltros as $key => $filtros){
+                if($chave == ''){
+                    $chave = $key;
+                }
 
-        return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
-        'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'']);
+                if($chave == $key){
+                    for ($j=0; $j <sizeof($relatorio[$nomeEmpresa]) ; $j++) {
+                        if($relatorio[$nomeEmpresa][$j]->$key == $filtros){
+                            $lista1Filtro[$nomeEmpresa][] = $relatorio[$nomeEmpresa][$j];
+                        }  
+                    } 
+                }else{
+                    for ($j=0; $j <sizeof($lista1Filtro[$nomeEmpresa]) ; $j++) {
+                        if($lista1Filtro[$nomeEmpresa][$j]->$key == $filtros){
+                            $lista2Filtro[$nomeEmpresa][] = $lista1Filtro[$nomeEmpresa][$j];
+                        }  
+                    } 
+                }
+                $chave = $key;
+                
+            }
+        }
+
+
+        $status = classifica_relatorio::all();
+        if($listaFiltros != null){
+            if(isset($lista2Filtro)){
+                return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+                'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$lista2Filtro,'status'=>$status]);
+                
+            }else if(isset($lista1Filtro)){
+                return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+                'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$lista1Filtro,'status'=>$status]);
+
+            }else{
+                return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+                'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'','status'=>'']);
+            }
+
+        }else if(isset($relatorio)){
+            return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>$relatorio,'status'=>$status]);
+
+        }else{
+            return view('empresa-relatorios',['empresa'=>$empresa,'porcentagem'=>$porcentagem[$cont],
+            'oportunidades'=>$oportunidades[$cont],'cont'=>$cont,'relatorios'=>'','status'=>'']);
+        }
+        
+        
         
     }
 }

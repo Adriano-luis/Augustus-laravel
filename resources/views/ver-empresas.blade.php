@@ -46,17 +46,20 @@
                 </div>
                 <div class="col pesquisa">
                     <form>
-                        <input  class="pesquisa" type="text" name="pesquisa" placeholder="Pesquise por uma empresa" /><a href=""><img  class="lupa" src="{{asset('/images/lupa.svg')}}"></a>
-                    </form>
+                        <input  class="pesquisa" type="text" name="pesquisa" placeholder="Pesquise por uma empresa" />
+                        <input  class="lupa" type="submit" value="">
+                        <img class="lupa-img" src="{{asset('/images/lupa.svg')}}">
+                    
                 </div>
                 <div class="col ordenar">
                     <div class="ordem">
                         <label>Ordernar por:</label>
-                        <select>
-                            <option value="0"></option>
-                            <option value="1"><img src="{{asset('/images/icon-Order.svg')}}">Alfabética</option>
+                        <select name="ordem">
+                            <option></option>
+                            <option value="asc"><img src="{{asset('/images/icon-Order.svg')}}">Alfabética</option>
                         </select>
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="cartoes">

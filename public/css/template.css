@@ -1020,6 +1020,19 @@ footer .info{
 }
 
 .home .empresas .topo .lupa{
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    left: 220px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    z-index: 1499;
+}
+
+.home .empresas .topo .lupa-img{
+    position: absolute;
+    left: 217px;
     width: 30px;
     padding: 10px;
     background-color: #FFFFFF;
@@ -3621,6 +3634,19 @@ input[type="file"]{
 }
 
 .ver-empresas .empresas .topo .lupa{
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    left: 220px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    z-index: 1499;
+}
+
+.ver-empresas  .empresas .topo .lupa-img{
+    position: absolute;
+    left: 217px;
     width: 30px;
     padding: 10px;
     background-color: #FFFFFF;
@@ -5675,22 +5701,18 @@ input[type="file"]{
 
 }
 
-.empresa-relatorios .relatorios .topo .filtro-1,
-.empresa-relatorios .relatorios .topo .filtro-3,
-.empresa-relatorios .relatorios .topo .filtro-4{
-    width: 100px;
-}
-
-.empresa-relatorios .relatorios .topo .filtro-2{
+.empresa-relatorios .relatorios .topo .filtro-3{
     width: 150px;
 }
-
+.empresa-relatorios .relatorios .topo .filtro-4,
 .empresa-relatorios .relatorios .topo .filtro-5{
-    width: 120px;
+    width: 150px;
+    margin-left: 50px;
 }
 
 .empresa-relatorios .relatorios .topo .filtro-6{
     width: 200px;
+    margin-left: 50px;
 }
 
 .empresa-relatorios .relatorios .topo input[type='submit']{

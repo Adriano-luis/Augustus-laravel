@@ -16,14 +16,30 @@ use App\classifica_relatorio;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         //Empresas
         $empresa = new Empresa();
         $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
         $qtEmpresas = sizeof($listaEmpresa);
         
+        
         //Dados das empresas
-        $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->paginate(3);
+        $ordem = $request->get('ordem');
+        $nomeEmp = $request->get('pesquisa');
+        if(isset($ordem) && $ordem != '' &&  isset($nomeEmp) && $nomeEmp != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->Where('nome','like','%'.$nomeEmp.'%')
+            ->orderBy('nome',$ordem)->paginate(3);
+        }else if(isset($ordem) && $ordem != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->orderBy('nome',$ordem)->paginate(3);
+        }elseif(isset($nomeEmp) && $nomeEmp != ''){
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])
+            ->Where('nome','like','%'.$nomeEmp.'%')->paginate(3);
+        }else{
+            $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->paginate(3);
+        }
+        
 
         //Noticias
         $cliente_noticia = $empresa->Where('id_cliente',$_SESSION['id'])->first();
@@ -159,8 +175,8 @@ class HomeController extends Controller
         //Dados das empresas
         $dadosEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
 
-         //Oportunidades
-         if($qtEmpresas > 0){
+        //Oportunidades
+        if($qtEmpresas > 0){
             $j=0;
             foreach($listaEmpresa as $empresaOp){
                 
@@ -244,21 +260,23 @@ class HomeController extends Controller
                     }
                 }
             }
-            
 
             $status = classifica_relatorio::all();
-            if(isset($lista2Filtro)){
-                return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista2Filtro,'status'=>$status,
-                'qt'=>$qtEmpresas]);
-            }else if(isset($lista1Filtro)){
-                return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista1Filtro,'status'=>$status,
-                'qt'=>$qtEmpresas]);
+            if($listaFiltros != null){
+                if(isset($lista2Filtro)){
+                    return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista2Filtro,'status'=>$status,
+                    'qt'=>$qtEmpresas]);
+                }else if(isset($lista1Filtro)){
+                    return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$lista1Filtro,'status'=>$status,
+                    'qt'=>$qtEmpresas]);
+                } else{
+                    return view('dashboard',['empresa'=>$empresa,'relatorios'=>'','status'=>'']);
+                }
             }
-            
-            return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
-                'qt'=>$qtEmpresas]);
-         }
 
+            return view('dashboard',['empresa'=>$listaEmpresa,'relatorios'=>$relatorio,'status'=>$status,
+            'qt'=>$qtEmpresas]);            
+        }
         return view('dashboard',['empresa'=>$empresa,'relatorios'=>'','status'=>'']);
     }
 
