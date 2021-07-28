@@ -18,6 +18,8 @@
                     <th>Sede</th>
                     <th>Filiais</th>
                     <th>Tipo</th>
+                    <th>Excluir</th>
+                    <th>Demo</th>
                 </tr>
                 @if ($empresas)
                     @foreach ($empresas as $empresa)
@@ -41,7 +43,10 @@
                             {{$empresa->tipo}}
                         </td>
                         <td>
-                            <a href="{{route('excluir-empresas-painel',['id'=>$empresa->id])}}" onclick="return confirm('Deseje mesmo excluir?')">Excluir</a>
+                            <a href="{{route('excluir-empresas-painel',['id'=>$empresa->id])}}" style="color: red" onclick="return confirm('Deseje mesmo excluir?')">Excluir</a>
+                        </td>
+                        <td>
+                            <a href="">Colocar</a>
                         </td>
                     </tr>
                     @endforeach

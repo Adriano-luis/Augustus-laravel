@@ -226,11 +226,13 @@ class HomeController extends Controller
                             }  
                         } 
                     }else{
-                        for ($j=0; $j <sizeof($lista1Filtro[$filtro->empresa]) ; $j++) {
-                            if($lista1Filtro[$filtro->empresa][$j]->$key == $filtros){
-                                $lista2Filtro[$filtro->empresa][] = $lista1Filtro[$filtro->empresa][$j];
-                            }  
-                        } 
+                        if ($lista1Filtro[$nomeEmpresa] != '') {
+                            for ($j=0; $j <sizeof($lista1Filtro[$nomeEmpresa]) ; $j++) {
+                                if($lista1Filtro[$nomeEmpresa][$j]->$key == $filtros){
+                                    $lista2Filtro[$nomeEmpresa][] = $lista1Filtro[$nomeEmpresa][$j];
+                                }  
+                            } 
+                        }
                     }
                     $chave = $key;
                     

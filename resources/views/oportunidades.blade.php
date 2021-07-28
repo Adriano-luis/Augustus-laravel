@@ -73,6 +73,9 @@
                                         $valorStatus = $x->classificacao;
                                     }
                                 }
+                                if(!isset($valorStatus)){
+                                    $valorStatus = '';
+                                }
                             ?>
                             <input id="valor" type="hidden" value="{{$valorStatus}}">
                             <hr class="linha">

@@ -56,6 +56,7 @@ class FornecaInformacoesController extends Controller
 
                 if($respostasAnterior != ''){
                     $aux = 0;
+                    $aux2 = 0;
                     foreach($ramo1 as $registro){
                         if(isset($respostasAnterior[$aux]->id_resposta_formulario)){
                             Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior[$aux]->id_resposta_formulario)
@@ -66,6 +67,15 @@ class FornecaInformacoesController extends Controller
                             'id_resposta'=>$registro]);
                         }
                         $aux++;
+                    }
+                    foreach ($respostasAnterior as $ra) {
+                        if(isset($ramo1[$aux2]) && $ra->id_resposta == $ramo1[$aux2]){
+                            $aux2++;
+                        }else{
+                            Resposta_formulario::Where('id_resposta_formulario',$ra->id_resposta_formulario)
+                            ->delete();
+                            $aux2++;
+                        }
                     }
                 }else{
                     foreach($ramo1 as $registro){
@@ -83,6 +93,7 @@ class FornecaInformacoesController extends Controller
                                     
                 if($respostasAnterior != ''){
                     $aux = 0;
+                    $aux2 = 0;
                     foreach($ramo2 as $registro){
                         if(isset($respostasAnterior[$aux]->id_resposta_formulario)){
                             Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior[$aux]->id_resposta_formulario)
@@ -93,6 +104,15 @@ class FornecaInformacoesController extends Controller
                             'id_resposta'=>$registro]);  
                         }
                         $aux++;
+                    }
+                    foreach ($respostasAnterior as $ra) {
+                        if(isset($ramo2[$aux2]) && $ra->id_resposta == $ramo2[$aux2]){
+                            $aux2++;
+                        }else{
+                            Resposta_formulario::Where('id_resposta_formulario',$ra->id_resposta_formulario)
+                            ->delete();
+                            $aux2++;
+                        }
                     }
                 }else{
                     foreach($ramo2 as $registro){
@@ -109,6 +129,7 @@ class FornecaInformacoesController extends Controller
                                     
                 if($respostasAnterior != ''){
                     $aux = 0;
+                    $aux2 = 0;
                     foreach($ramo3 as $registro){
                         if(isset($respostasAnterior[$aux]->id_resposta_formulario)){
                             Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior[$aux]->id_resposta_formulario)
@@ -119,6 +140,15 @@ class FornecaInformacoesController extends Controller
                             'id_resposta'=>$registro]); 
                         }
                         $aux++;
+                    }
+                    foreach ($respostasAnterior as $ra) {
+                        if(isset($ramo3[$aux2]) && $ra->id_resposta == $ramo3[$aux2]){
+                            $aux2++;
+                        }else{
+                            Resposta_formulario::Where('id_resposta_formulario',$ra->id_resposta_formulario)
+                            ->delete();
+                            $aux2++;
+                        }
                     }
                 }else{
                     foreach($ramo3 as $registro){
@@ -135,6 +165,7 @@ class FornecaInformacoesController extends Controller
                                     
                 if($respostasAnterior != ''){
                     $aux = 0;
+                    $aux2 = 0;
                     foreach($ramo4 as $registro){
                         if(isset($respostasAnterior[$aux]->id_resposta_formulario)){
                             Resposta_formulario::Where('id_resposta_formulario',$respostasAnterior[$aux]->id_resposta_formulario)
@@ -145,6 +176,15 @@ class FornecaInformacoesController extends Controller
                             'id_resposta'=>$registro]); 
                         }
                         $aux++;
+                    }
+                    foreach ($respostasAnterior as $ra) {
+                        if(isset($ramo4[$aux2]) && $ra->id_resposta == $ramo4[$aux2]){
+                            $aux2++;
+                        }else{
+                            Resposta_formulario::Where('id_resposta_formulario',$ra->id_resposta_formulario)
+                            ->delete();
+                            $aux2++;
+                        }
                     }
                 }else{
                     foreach($ramo4 as $registro){

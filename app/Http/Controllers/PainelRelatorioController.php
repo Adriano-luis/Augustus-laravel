@@ -87,4 +87,8 @@ class PainelRelatorioController extends Controller
         }
     }
 
+    public function selecionar(){
+        
+    }
+
 }
