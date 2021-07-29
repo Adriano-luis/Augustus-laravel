@@ -96,6 +96,7 @@ class OportunidadesController extends Controller
         $entendendo = $request->get('enviaEntendendo');
         $posicao = $request->get('enviaPosicao');
         $estimativas = $request->get('enviaestimativas');
+        $assunto = 'Oportunidade gerada';
 
         $para = $email;
         $corpo = "Nome: Prezado Cliente - E-mail:".$email."\r\n"."Resumo:".$resumo."Entendendo a oportunidade:".$entendendo
