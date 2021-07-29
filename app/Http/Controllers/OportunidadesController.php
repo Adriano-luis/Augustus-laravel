@@ -98,7 +98,7 @@ class OportunidadesController extends Controller
         $estimativas = $request->get('enviaestimativas');
 
         $para = $email;
-        $corpo = "Nome:".$nome." - E-mail:".$email."\r\n"."Resumo:".$resumo."Entendendo a oportunidade:".$entendendo
+        $corpo = "Nome: Prezado Cliente - E-mail:".$email."\r\n"."Resumo:".$resumo."Entendendo a oportunidade:".$entendendo
         ."Posição nos Tribunais:".$posicao."Estimativas de ganho:".$estimativas;
         $cabecalho = "From:contato@augustus.digital.com.br"."\r\n".
                     "Reply-To:".$email."\r\n".
