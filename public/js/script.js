@@ -146,5 +146,25 @@ $('.filtro-1').click(function() {
     });
 });
 
+//Envia email de oportunidade
+$('#modal-btn-enviar').click(function() {
+    email = $('.enviarEmail').val();
+    resumo = $('#enviaResumo').val();
+    entendendo = $('#enviaEntendendo').val();
+    posicao = $('#enviaPosicao').val();
+    estimativas = $('#enviaestimativas').val();
+
+
+    $.ajax({
+        type:'post',
+        url:'/Augustus/public/oportunidades-envia',
+        data:{"_token": $('meta[name="csrf-token"]').attr('content'),email,resumo,entendendo,posicao,estimativas},
+        success:function(){
+            window.location.href =  '/Augustus/public/oportunidades-enviar';
+            
+        }
+    });
+});
+
 
 });

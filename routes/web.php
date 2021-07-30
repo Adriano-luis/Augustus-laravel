@@ -72,7 +72,17 @@ Route::middleware('login')->prefix('')->group(function (){
     //Oportunidades
     Route::get('/oportunidades', 'OportunidadesController@index')->name('oportunidades');
     Route::post('/oportunidades', 'OportunidadesController@indexPost')->name('oportunidades');
-    Route::post('/oportunidades-envia', 'OportunidadesController@enviar')->name('enviar-oportunidade');
+    Route::post('/oportunidades-envia','OportunidadesController@enviar')->name('enviar-oportunidade');
+    Route::get('/oportunidades-enviar',function(){
+        $email = [
+        $_SESSION['envEmail'],
+        $_SESSION['envResumo'],
+        $_SESSION['envEntendendo'],
+        $_SESSION['envPosicao'],
+        $_SESSION['envEstimativas']
+        ];
+        Mail::send(new App\Mail\enviaOportunidade($email));
+    });
 
     //Usuários
     Route::get('/perfil-usuario', 'PerfilUsuarioController@index')->name('perfil-usuario');

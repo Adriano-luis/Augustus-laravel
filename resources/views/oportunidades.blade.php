@@ -315,10 +315,10 @@
             <div class="row title">
                 <h3>Enviar por email</h3>
             </div>
-            <form action="{{route('enviar-oportunidade')}}" method="POST">
+            <form>
                 @csrf
                 <input type="text" class="enviarEmail" name="enviarEmail" placeholder="Informe um Email"><br>
-                <input type="submit" id="modal-btn-enviar" class="enviar" value="Enviar">
+                <div id="modal-btn-enviar" class="enviar">Enviar</div>
                 <input type="hidden" id="enviaResumo" value="">
                 <input type="hidden" id="enviaEntendendo" value="">
                 <input type="hidden" id="enviaPosicao" value="">

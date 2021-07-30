@@ -755,7 +755,9 @@ footer .info{
     max-width: 120px;
     height: 40px;
     margin-top: 20px;
-    padding-left: 9px;
+    margin-left: 207px;
+    padding-top:8px ;
+    padding-left: 3px;
     font-size: 14px;
     color: #FFFFFF;
     cursor: pointer;
