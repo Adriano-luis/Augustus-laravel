@@ -319,6 +319,8 @@
                 @csrf
                 <input type="text" class="enviarEmail" name="enviarEmail" placeholder="Informe um Email"><br>
                 <div id="modal-btn-enviar" class="enviar">Enviar</div>
+                <input type="hidden" id="empresa" value="{{$empresa->id}}">
+                <input type="hidden" id="cont" value="{{$cont}}">
                 <input type="hidden" id="enviaResumo" value="">
                 <input type="hidden" id="enviaEntendendo" value="">
                 <input type="hidden" id="enviaPosicao" value="">

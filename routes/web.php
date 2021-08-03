@@ -79,9 +79,12 @@ Route::middleware('login')->prefix('')->group(function (){
         $_SESSION['envResumo'],
         $_SESSION['envEntendendo'],
         $_SESSION['envPosicao'],
-        $_SESSION['envEstimativas']
+        $_SESSION['envEstimativas'],
+        $_SESSION['envEmpresa'],
+        $_SESSION['envCont']
         ];
         Mail::send(new App\Mail\enviaOportunidade($email));
+        return view('oportunidades');
     });
 
     //Usuários
@@ -89,10 +92,6 @@ Route::middleware('login')->prefix('')->group(function (){
     Route::post('/perfil-usuario', 'PerfilUsuarioController@atualizarInfo')->name('perfil-usuario');
     Route::post('/contato', 'PerfilUsuarioController@contato')->name('contato');
 
-    /*
-    Route::get('/home', 'HomeController@index');
-    Route::get('/home', 'HomeController@index');
-    */
 });
 
 Route::middleware('loginPainel')->prefix('painel')->group(function (){

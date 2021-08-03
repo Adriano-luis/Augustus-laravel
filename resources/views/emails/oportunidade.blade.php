@@ -1,5 +1,5 @@
 @component('mail::message')
-Está é a sua opotunidade:
+Esta é a sua oportunidade:
 
 <h1>Resumo:</h1>
 {{$resumo}}<br><br>
@@ -11,7 +11,7 @@ Está é a sua opotunidade:
 {{$estimativas}}<br><br>
 
 
-@component('mail::button', ['url' => 'http://augustus.erpscam.com.br/'])
+@component('mail::button', ['url' => 'http://augustus.erpscam.com.br/oportunidades?id={{$empresa}}&cont={{$cont}}'])
 Ver Oportunidade Completa
 @endcomponent
 

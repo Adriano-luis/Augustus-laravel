@@ -29,6 +29,8 @@ class enviaOportunidade extends Mailable
     public function build()
     {
         $this->to($this->email[0]);
-        return $this->markdown('emails.oportunidade',['resumo'=>$this->email[1],'entendendo'=>$this->email[2],'posicao'=>$this->email[3],'estimativas'=>$this->email[4]]);
+        return $this->markdown('emails.oportunidade',['resumo'=>$this->email[1],
+        'entendendo'=>$this->email[2],'posicao'=>$this->email[3],'estimativas'=>$this->email[4],
+        'empresa'=>$this->email[5],'cont'=>$this->email[6]]);
     }
 }

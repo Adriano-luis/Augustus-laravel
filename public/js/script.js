@@ -148,6 +148,8 @@ $('.filtro-1').click(function() {
 
 //Envia email de oportunidade
 $('#modal-btn-enviar').click(function() {
+    empresa = $('.enviarEmail').val();
+    cont = $('.enviarEmail').val();
     email = $('.enviarEmail').val();
     resumo = $('#enviaResumo').val();
     entendendo = $('#enviaEntendendo').val();
@@ -158,7 +160,7 @@ $('#modal-btn-enviar').click(function() {
     $.ajax({
         type:'post',
         url:'/Augustus/public/oportunidades-envia',
-        data:{"_token": $('meta[name="csrf-token"]').attr('content'),email,resumo,entendendo,posicao,estimativas},
+        data:{"_token": $('meta[name="csrf-token"]').attr('content'),email,resumo,entendendo,posicao,estimativas,empresa,cont},
         success:function(){
             window.location.href =  '/Augustus/public/oportunidades-enviar';
             

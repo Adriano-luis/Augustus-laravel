@@ -82,11 +82,12 @@ class OportunidadesController extends Controller
     }
 
     public function enviar(Request $request){
-        $teste = $request->all();
-        $_SESSION['envEmail'] = $teste['email'];
-        $_SESSION['envResumo'] = $teste['resumo'];
-        $_SESSION['envEntendendo'] = $teste['entendendo'];
-        $_SESSION['envPosicao'] = $teste['posicao'];
-        $_SESSION['envEstimativas'] = $teste['estimativas'];
+        $dados = $request->all();
+        $_SESSION['envEmpresa'] = $dados['empresa'];
+        $_SESSION['envCont'] = $dados['cont'];
+        $_SESSION['envResumo'] = $dados['resumo'];
+        $_SESSION['envEntendendo'] = $dados['entendendo'];
+        $_SESSION['envPosicao'] = $dados['posicao'];
+        $_SESSION['envEstimativas'] = $dados['estimativas'];
     }
 }
