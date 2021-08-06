@@ -46,7 +46,7 @@
                             <a href="{{route('excluir-empresas-painel',['id'=>$empresa->id])}}" style="color: red" onclick="return confirm('Deseje mesmo excluir?')">Excluir</a>
                         </td>
                         <td>
-                            <a href="">Colocar</a>
+                            <a href="{{route('demo-empresas-painel',['id'=>$empresa->id])}}">Colocar</a>
                         </td>
                     </tr>
                     @endforeach

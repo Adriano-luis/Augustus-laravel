@@ -84,7 +84,7 @@ Route::middleware('login')->prefix('')->group(function (){
         $_SESSION['envCont']
         ];
         Mail::send(new App\Mail\enviaOportunidade($email));
-        return view('oportunidades');
+        return  redirect()->back();
     });
 
     //Usuários
@@ -113,6 +113,7 @@ Route::middleware('loginPainel')->prefix('painel')->group(function (){
     //Empresas
     Route::get('/empresas', 'PainelEmpresasController@index')->name('empresas-painel');
     Route::get('/empresas-excluir', 'PainelEmpresasController@excluir')->name('excluir-empresas-painel');
+    Route::get('/empresas-demo', 'PainelEmpresasController@demo')->name('demo-empresas-painel');
 
     //Relatorios
     Route::get('/ver-relatorio', 'PainelRelatorioController@index')->name('ver-relatorio-painel');

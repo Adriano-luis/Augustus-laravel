@@ -148,8 +148,8 @@ $('.filtro-1').click(function() {
 
 //Envia email de oportunidade
 $('#modal-btn-enviar').click(function() {
-    empresa = $('.enviarEmail').val();
-    cont = $('.enviarEmail').val();
+    empresa = $('#empresa').val();
+    cont = $('#cont').val();
     email = $('.enviarEmail').val();
     resumo = $('#enviaResumo').val();
     entendendo = $('#enviaEntendendo').val();

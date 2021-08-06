@@ -23,7 +23,7 @@ class HomeController extends Controller
         $qtEmpresas = sizeof($listaEmpresa);
         
         
-        //Dados das empresas
+        //Dados das empresas + filtro
         $ordem = $request->get('ordem');
         $nomeEmp = $request->get('pesquisa');
         if(isset($ordem) && $ordem != '' &&  isset($nomeEmp) && $nomeEmp != ''){
@@ -283,9 +283,6 @@ class HomeController extends Controller
     }
 
     public function dashboardPop(Request $request){
-
-            $cidades = [];
-            $json =[];
             $empresa = new Empresa();
             $listaEmpresa = $empresa->Where('id_cliente',$_SESSION['id'])->get();
         

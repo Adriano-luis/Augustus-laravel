@@ -83,6 +83,7 @@ class OportunidadesController extends Controller
 
     public function enviar(Request $request){
         $dados = $request->all();
+        $_SESSION['envEmail'] = $dados['email'];
         $_SESSION['envEmpresa'] = $dados['empresa'];
         $_SESSION['envCont'] = $dados['cont'];
         $_SESSION['envResumo'] = $dados['resumo'];
