@@ -71,6 +71,12 @@ class HomeController extends Controller
             $j=0;
             $totalOportunidades=0;
             foreach($listaEmpresa as $empresaOp){
+
+                if($empresaOp->demo == '' || $empresaOp->demo == null ){
+                    unset($demo);
+                }else{
+                    $demo = explode('/',$empresaOp->demo);
+                }
                 
                 //Busca relatórios
                 $listaRelatorio = array();
@@ -78,7 +84,13 @@ class HomeController extends Controller
                 $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
                 if (sizeof($mysqli) > 0){
                     foreach ($mysqli as $value){
-                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                        if(isset($demo) && $demo != ''){
+                            if(in_array($value->id_relatorio,$demo)){
+                                $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                            }
+                        }else{
+                            $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                        }
                     }
                 }else{
                     $auxListaRelatorio[$empresaOp->nome][] = '';
@@ -179,6 +191,12 @@ class HomeController extends Controller
         if($qtEmpresas > 0){
             $j=0;
             foreach($listaEmpresa as $empresaOp){
+
+                if($empresaOp->demo == '' || $empresaOp->demo == null ){
+                    unset($demo);
+                }else{
+                    $demo = explode('/',$empresaOp->demo);
+                }
                 
                 //Busca relatórios
                 $listaRelatorio = array();
@@ -186,7 +204,14 @@ class HomeController extends Controller
                 $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
                 if (sizeof($mysqli) > 0){
                     foreach ($mysqli as $value){
-                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                        if(isset($demo) && $demo != ''){
+                            if(in_array($value->id_relatorio,$demo)){
+                                $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                            
+                            }else{
+                                $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                            }
+                        }
                     }
                 }else{
                     $auxListaRelatorio[$empresaOp->nome][] = '';

@@ -114,6 +114,7 @@ Route::middleware('loginPainel')->prefix('painel')->group(function (){
     Route::get('/empresas', 'PainelEmpresasController@index')->name('empresas-painel');
     Route::get('/empresas-excluir', 'PainelEmpresasController@excluir')->name('excluir-empresas-painel');
     Route::get('/empresas-demo', 'PainelEmpresasController@demo')->name('demo-empresas-painel');
+    Route::post('/empresas-demo', 'PainelEmpresasController@demoPost')->name('demo-empresas-painel');
 
     //Relatorios
     Route::get('/ver-relatorio', 'PainelRelatorioController@index')->name('ver-relatorio-painel');

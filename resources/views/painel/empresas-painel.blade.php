@@ -6,6 +6,7 @@
                 <h3 class="titulo-pagina">Empresas Cadastradas</h3>
             </div>
             <h1>{{isset($mensagem) ? $mensagem : ''}}</h1>
+            <h1>{{isset($msg) ? $msg : ''}}</h1>
             <hr>
             <div class="col">
                 <h3 class="quantidade">Empresas {{sizeOf($empresas)}}</h3>

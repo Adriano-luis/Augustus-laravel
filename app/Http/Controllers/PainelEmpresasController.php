@@ -61,4 +61,23 @@ class PainelEmpresasController extends Controller
         return view('painel.empresas-demo-painel',['relatorios'=>$relatorio]);
        
     }
+
+    public function demoPost(Request $request){
+        $demo = $request->all();
+        unset($demo['_token']);
+        $novo = '';
+        foreach ($demo as $item) {
+            $teste = explode(',',$item);
+            $antigo = Empresa::Where('id',$teste[0])->get()->first();
+            if ($novo == '') {
+                $novo = $antigo->demo;
+            }
+            $novo.= $teste[1].'/';
+
+        }
+        Empresa::Where('id',$teste[0])->update(['demo'=>$novo]);
+
+        return redirect()->route('empresas-painel');
+
+    }
 }

@@ -19,13 +19,25 @@ class OportunidadesController extends Controller
         $porcentagem = $_SESSION['porcentagem'];
         $oportunidades = $_SESSION['oportunidades'];
 
+        if($empresa->demo == '' || $empresa->demo == null ){
+            unset($demo);
+        }else{
+            $demo = explode('/',$empresa->demo);
+        }
+
         //Busca relatórios
         $listaRelatorio = array();
         $arrRelatorioDuplicado = array();
         $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresa->id]);
         if (sizeof($mysqli) > 0){
             foreach ($mysqli as $value){
-                $auxListaRelatorio[] = $value->id_relatorio;
+                if(isset($demo) && $demo != ''){
+                    if(in_array($value->id_relatorio,$demo)){
+                        $auxListaRelatorio[]= $value->id_relatorio;
+                    }
+                }else{
+                    $auxListaRelatorio[]= $value->id_relatorio;
+                }
             }
         }else{
             $auxListaRelatorio = array();

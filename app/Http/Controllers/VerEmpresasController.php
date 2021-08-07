@@ -53,6 +53,12 @@ class VerEmpresasController extends Controller
             $j=0;
             $totalOportunidades=0;
             foreach($listaEmpresa as $empresaOp){
+
+                if($empresaOp->demo == '' || $empresaOp->demo == null ){
+                    unset($demo);
+                }else{
+                    $demo = explode('/',$empresaOp->demo);
+                }
                 
                 //Busca relatórios
                 $listaRelatorio = array();
@@ -60,7 +66,13 @@ class VerEmpresasController extends Controller
                 $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresaOp->id]);
                 if (sizeof($mysqli) > 0){
                     foreach ($mysqli as $value){
-                        $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                        if(isset($demo) && $demo != ''){
+                            if(in_array($value->id_relatorio,$demo)){
+                                $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                            }
+                        }else{
+                            $auxListaRelatorio[$empresaOp->nome][]= $value->id_relatorio;
+                        }
                     }
                 }else{
                     $auxListaRelatorio[$empresaOp->nome][] = '';
@@ -117,6 +129,12 @@ class VerEmpresasController extends Controller
         $porcentagem = $_SESSION['porcentagem'];
         $oportunidades = $_SESSION['oportunidades'];
 
+        if($empresa->demo == '' || $empresa->demo == null ){
+            unset($demo);
+        }else{
+            $demo = explode('/',$empresa->demo);
+        }
+
         $respostasEmpresa=Resposta_formulario::join('respostas', 'resposta_formulario.id_resposta', '=', 'respostas.id')
         ->join('perguntas', 'resposta_formulario.id_pergunta', '=', 'perguntas.id')
         ->where('id_formulario',$idEmpresa)->get(['respostas.post_title','id_pergunta']);
@@ -128,7 +146,14 @@ class VerEmpresasController extends Controller
         $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresa->id]);
         if (sizeof($mysqli) > 0){
             foreach ($mysqli as $value){
-                $auxListaRelatorio[] = $value->id_relatorio;
+                if(isset($demo) && $demo != ''){
+                    if(in_array($value->id_relatorio,$demo)){
+                        $auxListaRelatorio[]= $value->id_relatorio;
+                    
+                    }else{
+                        $auxListaRelatorio[]= $value->id_relatorio;
+                    }
+                }
             }
         }else{
             $auxListaRelatorio = array();
@@ -183,6 +208,12 @@ class VerEmpresasController extends Controller
         $porcentagem = $_SESSION['porcentagem'];
         $oportunidades = $_SESSION['oportunidades'];
 
+        if($empresa->demo == '' || $empresa->demo == null ){
+            unset($demo);
+        }else{
+            $demo = explode('/',$empresa->demo);
+        }
+
          //Oportunidades
         if($idEmpresa){
             $j=0;
@@ -193,7 +224,14 @@ class VerEmpresasController extends Controller
             $mysqli = DB::select('CALL SP_EXIBE_RELATORIO(?)', [$empresa->id]);
             if (sizeof($mysqli) > 0){
                 foreach ($mysqli as $value){
-                    $auxListaRelatorio[$empresa->nome][]= $value->id_relatorio;
+                    if(isset($demo) && $demo != ''){
+                        if(in_array($value->id_relatorio,$demo)){
+                            $auxListaRelatorio[$empresa->nome][]= $value->id_relatorio;
+                        
+                        }else{
+                            $auxListaRelatorio[$empresa->nome][]= $value->id_relatorio;
+                        }
+                    }
                 }
             }else{
                 $auxListaRelatorio[$empresa->nome][] = '';
