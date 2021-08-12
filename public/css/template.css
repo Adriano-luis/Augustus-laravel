@@ -1338,6 +1338,13 @@ footer .info{
     padding-top: 30px;
 }
 
+.cadastro .erro-data{
+    position: absolute;
+    margin-top: -16px;
+    font-size: 12px;
+    color: red;
+}
+
 .cadastro .form label{
     margin-top: 20px;
     font-style: normal;

@@ -23,6 +23,7 @@
                             <input type="text" name="cnpj" placeholder="CNPJ"/><br/>
                         </div>
                         <div class="row mini">
+                            <h1 class="erro-data">{{isset($erro) && $erro != '' ? 'Formato inválido' : ''}}</h1>
                             <input type="text" name="ano" placeholder="Ano de constituição" />
                             <input type="text" name="cidade" placeholder="Cidade sede" />
                         </div>
